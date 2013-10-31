@@ -38,8 +38,19 @@
 
 				<field name="vat" position="attributes">
 					<!-- <attribute name="attrs">{'required':['&',('vat_required','=',True),('is_company','=',True)]}</attribute>-->
-					<attribute name="attrs">{'required':[('vatnumber_required','=',True)]}</attribute>	
+					<attribute name="attrs">{'invisible':[('vatnumber_required','=',False)], 
+									'required':[('vatnumber_required','=',True)]}</attribute>	
 				</field>
+
+				<field name="vat_subjected" position="attributes">
+					<attribute name="attrs">{'invisible':[('vatnumber_required','=',False)], 
+									'required':[('vatnumber_required','=',True)]}</attribute>	
+				</field>
+
+				<button name="button_check_vat" position="attributes">
+					<attribute name="attrs">{'invisible':[('vatnumber_required','=',False)], 
+									'required':[('vatnumber_required','=',True)]}</attribute>	
+				</button>
 
 
 				
