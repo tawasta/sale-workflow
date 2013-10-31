@@ -12,6 +12,7 @@
 Adds a mandatory, unique business ID field for all customers that are companies.
 """,
     'data': [
-             'view/partner.xml',
+            'view/partner.xml',
+            'view/sale_order.xml',
     ],
 }
