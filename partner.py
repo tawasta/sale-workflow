@@ -131,24 +131,25 @@ class Partner(osv.Model):
     def business_id_change(self, cr, uid, ids, country_id, is_company, parent_id, context=None):
         #res = super(Partner, self).onchange_method(cr, uid, ids, context=context)
         
-        if country_id is False or parent_id is not False:
-            return {}
-        
-        # List of all countries that trigger the condition. Use only Finland.
-        b_id_check_countries = ['Finland']
-
-        country_obj = self.pool.get('res.country')
-        selected_country = country_obj.browse(cr, uid, [country_id])[0]
-        
-        name = selected_country['name']
-        
-        if name in b_id_check_countries and is_company is True:
-            val = { 'businessid_required': True }
-        else:
+        if country_id is False:
             val = { 'businessid_required': False }
-        
-        
-        return {'value': val } 
+            return {'value': val } 
+        else:
+            # List of all countries that trigger the condition. Use only Finland.
+            b_id_check_countries = ['Finland']
+    
+            country_obj = self.pool.get('res.country')
+            selected_country = country_obj.browse(cr, uid, [country_id])[0]
+            
+            name = selected_country['name']
+            
+            if name in b_id_check_countries and is_company is True and parent_id is False:
+                val = { 'businessid_required': True }
+            else:
+                val = { 'businessid_required': False }
+            
+            
+            return {'value': val } 
         
     _columns = {
         'businessid': fields.char(string="Business id", size=20),

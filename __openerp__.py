@@ -7,7 +7,7 @@
     'category': 'CRM',
     'version': '0.1',
     'author': 'Vizucom Oy',
-    'depends': ['sale_customer_names'],
+    'depends': ['sale_customer_names','account'],
     'description': """
 Adds a mandatory, unique business ID field for all customers that are companies.
 """,
