@@ -35,9 +35,10 @@
 				<field name="vat" position="after">
 					<field name="vatnumber_required" invisible="1" />
 				</field>
-
+				
+				<!--
 				<field name="vat" position="attributes">
-					<!-- <attribute name="attrs">{'required':['&',('vat_required','=',True),('is_company','=',True)]}</attribute>-->
+					
 					<attribute name="attrs">{'invisible':[('vatnumber_required','=',False)], 
 									'required':[('vatnumber_required','=',True)]}</attribute>	
 				</field>
@@ -47,10 +48,31 @@
 									'required':[('vatnumber_required','=',True)]}</attribute>	
 				</field>
 
+
+
 				<button name="button_check_vat" position="attributes">
 					<attribute name="attrs">{'invisible':[('vatnumber_required','=',False)], 
 									'required':[('vatnumber_required','=',True)]}</attribute>	
 				</button>
+				-->
+				<label for="vat" position="replace"/>
+				<field name="vat" position="replace"/>
+				<button name="button_check_vat" position="replace"/>
+				<field name="vat_subjected" position="replace"/>
+				
+				<field name="website" position="after">
+					<label for="vat" attrs="{'invisible':[('vatnumber_required','=',False)], 
+									'required':[('vatnumber_required','=',True)]}"/>
+                    <div name="vat_info" attrs="{'invisible':[('vatnumber_required','=',False)]}">
+                        <field name="vat" on_change="vat_change(vat)" placeholder="e.g. BE0477472701" class="oe_inline" attrs="{'invisible':[('vatnumber_required','=',False)], 
+									'required':[('vatnumber_required','=',True)]}"/>
+                        <button colspan="2" name="button_check_vat" string="Check Validity" type="object" icon="gtk-execute" class="oe_inline" attrs="{'invisible':[('vatnumber_required','=',False)], 
+									'required':[('vatnumber_required','=',True)]}"/>
+                        <field name="vat_subjected" class="oe_inline" attrs="{'invisible':[('vatnumber_required','=',False)], 
+									'required':[('vatnumber_required','=',True)]}"/>
+                    </div>
+				</field>
+
 
 
 				
