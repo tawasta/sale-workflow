@@ -5,7 +5,7 @@
             <field name="name">res.partner.form</field>
             <field name="model">res.partner</field>
             <field eval="3" name="priority"/>
-            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
 
 				<field name="website" position="after">
@@ -21,15 +21,24 @@
 				     whether business id should be set to be mandatory -->
 				<field name="country_id" position="attributes">
                         <attribute name="required">True</attribute>
-						<attribute name="on_change">business_id_change(country_id, is_company, parent_id)</attribute>					
+						<attribute name="on_change">business_id_and_vat_change(country_id, is_company, parent_id)</attribute>					
 				</field>
 
 				<field name="is_company" position="attributes">
-						<attribute name="on_change">business_id_change(country_id, is_company, parent_id)</attribute>					
+						<attribute name="on_change">business_id_and_vat_change(country_id, is_company, parent_id)</attribute>					
 				</field>
 
 				<field name="parent_id" position="attributes">
-						<attribute name="on_change">business_id_change(country_id, is_company, parent_id)</attribute>					
+						<attribute name="on_change">business_id_and_vat_change(country_id, is_company, parent_id)</attribute>					
+				</field>
+
+				<field name="vat" position="after">
+					<field name="vatnumber_required" invisible="1" />
+				</field>
+
+				<field name="vat" position="attributes">
+					<!-- <attribute name="attrs">{'required':['&',('vat_required','=',True),('is_company','=',True)]}</attribute>-->
+					<attribute name="attrs">{'required':[('vatnumber_required','=',True)]}</attribute>	
 				</field>
 
 
