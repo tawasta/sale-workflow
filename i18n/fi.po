@@ -1,13 +1,13 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* hyria_crm_customer_fields
+#	* sale_business_id
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0-20130723-231040\n"
+"Project-Id-Version: OpenERP Server 7.0-20131021-232357\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 11:46+0000\n"
-"PO-Revision-Date: 2013-09-06 11:46+0000\n"
+"POT-Creation-Date: 2013-11-01 10:04+0000\n"
+"PO-Revision-Date: 2013-11-01 10:04+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,18 +15,54 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: hyria_crm_customer_fields
-#: model:ir.model,name:hyria_crm_customer_fields.model_res_partner
-msgid "Partner"
-msgstr "Asiakas"
+#. module: sale_business_id
+#: view:res.partner:0
+msgid "Check Validity"
+msgstr "Tarkista"
 
-#. module: hyria_crm_customer_fields
-#: field:res.partner,business_id:0
-msgid "Business ID"
+#. module: sale_business_id
+#: view:res.partner:0
+msgid "business_id_and_vat_change(country_id, is_company, parent_id)"
+msgstr "business_id_and_vat_change(country_id, is_company, parent_id)"
+
+#. module: sale_business_id
+#: field:res.partner,businessid_required:0
+msgid "Business ID required"
+msgstr "Y-tunnus pakollinen"
+
+#. module: sale_business_id
+#: field:res.partner,businessid:0
+msgid "Business id"
 msgstr "Y-tunnus"
 
-#. module: hyria_crm_customer_fields
-#: code:addons/hyria_crm_customer_fields/partner.py:12
+#. module: sale_business_id
+#: field:res.partner,vatnumber_required:0
+msgid "Vat required"
+msgstr "ALV-tunnus pakolinen"
+
+#. module: sale_business_id
+#: view:account.invoice:0
+#: view:sale.order:0
+msgid "{'show_only_top_level':1}"
+msgstr "{'show_only_top_level':1}"
+
+#. module: sale_business_id
+#: view:res.partner:0
+msgid "e.g. BE0477472701"
+msgstr "esim. BE0477472701"
+
+#. module: sale_business_id
+#: model:ir.model,name:sale_business_id.model_res_partner
+msgid "Partner"
+msgstr "Yhteistyökumppani"
+
+#. module: sale_business_id
+#: view:res.partner:0
+msgid "True"
+msgstr "True"
+
+#. module: sale_business_id
+#: code:addons/sale_business_id/partner.py:109
 #: sql_constraint:res.partner:0
 #, python-format
 msgid "The business ID already exists for another customer."
