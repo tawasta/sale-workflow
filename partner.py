@@ -55,6 +55,7 @@ class Partner(osv.Model):
     def business_id_and_vat_change(self, cr, uid, ids, country_id, is_company, parent_id, context=None):
         #res = super(Partner, self).onchange_method(cr, uid, ids, context=context)
         
+        
         if country_id is False:
             val = { 'businessid_required': False, 'vatnumber_required': False }
             return {'value': val } 

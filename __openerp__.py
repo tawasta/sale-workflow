@@ -3,13 +3,13 @@
 # Vizucom 2013
 #
 {
-    'name': 'Business ID',
-    'category': 'CRM',
+    'name': 'Business ID and VAT fields',
+    'category': 'Sale',
     'version': '0.1',
     'author': 'Vizucom Oy',
-    'depends': ['sale_customer_names','account'],
+    'depends': ['sale_customer_names','account','base_vat'],
     'description': """
-Adds a mandatory, unique business ID field for all customers that are companies.
+Adds a business ID field for Finnish companies, and hides the VAT field from non-european companies
 """,
     'data': [
             'view/partner.xml',
