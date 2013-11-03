@@ -68,8 +68,13 @@
 									'required':[('vatnumber_required','=',True)]}"/>
                         <button colspan="2" name="button_check_vat" string="Check Validity" type="object" icon="gtk-execute" class="oe_inline" attrs="{'invisible':[('vatnumber_required','=',False)], 
 									'required':[('vatnumber_required','=',True)]}"/>
+						<!--
                         <field name="vat_subjected" class="oe_inline" attrs="{'invisible':[('vatnumber_required','=',False)], 
 									'required':[('vatnumber_required','=',True)]}"/>
+						-->
+
+                        <field name="vat_subjected" class="oe_inline" attrs="{'invisible': 1 }"/>
+
                     </div>
 				</field>
 
