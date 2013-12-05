@@ -10,11 +10,10 @@
 
 				<field name="website" position="after">
 					<!-- Business ID is only shown for Finnish top-level companies, i.e. those that don't have a parent. -->
-					<field name="businessid_required" invisible="1"/>
+					<field name="businessid_shown" invisible="1"/>
 					
 					<field name="businessid" 
-						   attrs="{'invisible':[('businessid_required','=',False)], 
-									'required':[('businessid_required','=',True)]}"/>
+						   attrs="{'invisible':[('businessid_shown','=',False)]}"/>
 				</field>
 
 				<!-- Attach onchange methods to is_company, parent_id and country_id. They trigger the check
@@ -33,7 +32,7 @@
 				</field>
 
 				<field name="vat" position="after">
-					<field name="vatnumber_required" invisible="1" />
+					<field name="vatnumber_shown" invisible="1" />
 				</field>
 				
 				<!--
@@ -61,13 +60,10 @@
 				<field name="vat_subjected" position="replace"/>
 				
 				<field name="website" position="after">
-					<label for="vat" attrs="{'invisible':[('vatnumber_required','=',False)], 
-									'required':[('vatnumber_required','=',True)]}"/>
-                    <div name="vat_info" attrs="{'invisible':[('vatnumber_required','=',False)]}">
-                        <field name="vat" on_change="vat_change(vat)" placeholder="e.g. BE0477472701" class="oe_inline" attrs="{'invisible':[('vatnumber_required','=',False)], 
-									'required':[('vatnumber_required','=',True)]}"/>
-                        <button colspan="2" name="button_check_vat" string="Check Validity" type="object" icon="gtk-execute" class="oe_inline" attrs="{'invisible':[('vatnumber_required','=',False)], 
-									'required':[('vatnumber_required','=',True)]}"/>
+					<label for="vat" attrs="{'invisible':[('vatnumber_shown','=',False)]}"/>
+                    <div name="vat_info" attrs="{'invisible':[('vatnumber_shown','=',False)]}">
+                        <field name="vat" on_change="vat_change(vat)" placeholder="e.g. BE0477472701" class="oe_inline" attrs="{'invisible':[('vatnumber_shown','=',False)]}"/>
+                        <button colspan="2" name="button_check_vat" string="Check Validity" type="object" icon="gtk-execute" class="oe_inline" attrs="{'invisible':[('vatnumber_shown','=',False)]}"/>
 						<!--
                         <field name="vat_subjected" class="oe_inline" attrs="{'invisible':[('vatnumber_required','=',False)], 
 									'required':[('vatnumber_required','=',True)]}"/>
