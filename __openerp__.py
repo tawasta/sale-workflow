@@ -1,19 +1,28 @@
+# -*- coding: utf-8 -*-
+##############################################################################
 #
-# Kopar Project Fields
-# Vizucom 2013
+#   Copyright (c) 2013- Vizucom Oy (http://www.vizucom.com)
 #
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+
 {
     'name': 'Business ID and VAT fields',
     'category': 'Sale',
     'version': '0.1',
     'author': 'Vizucom Oy',
-    'depends': ['sale_customer_names','account','base_vat'],
+    'depends': ['base_vat'],
     'description': """
 Adds a business ID field for Finnish companies, and hides the VAT field from non-european companies
 """,
     'data': [
             'view/partner.xml',
-            'view/sale_order.xml',
-            'view/account_invoice.xml',
     ],
 }
