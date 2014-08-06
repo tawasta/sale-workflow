@@ -20,7 +20,7 @@
 		
 		<!-- Action definition for SBID settings -->	
 		<record model="ir.actions.act_window" id="action_sbid_settings">
-			<field name="name">SCN Settings</field>
+			<field name="name">Business ID settings</field>
 			<field name="view_id" ref="view_sbid_settings"/>
 			<field name="domain"></field>
 			<field name="res_model">sale_business_id.settings</field>
@@ -31,7 +31,8 @@
 		</record>
 		
 		<!-- Menu items for SBID settings -->
-		<menuitem id="menu_sale_business_id" parent="base.menu_administration" name="Business Id Module" sequence="999" action="action_sbid_settings"/>
+		<menuitem id="menu_misc_module_settings" parent="base.menu_administration" name="Misc. module settings" sequence="999"/>
+		<menuitem id="menu_sale_business_id" parent="menu_misc_module_settings" name="Business Id Module" action="action_sbid_settings"/>
 		
 		
 	</data>
