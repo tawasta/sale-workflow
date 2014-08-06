@@ -66,11 +66,6 @@ class Partner(osv.Model):
         'businessid_shown': fields.boolean(string='Business ID shown'),
         'vatnumber_shown': fields.boolean(string='Vat shown'),
     }
-    
-    _defaults = {
-        'businessid_shown': False,
-        'vatnumber_shown': False,                
-    }
 
     _sql_constraints = [
         ('businessid_unique', 'unique(businessid)', _('The business ID already exists for another partner.'))
