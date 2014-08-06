@@ -24,5 +24,7 @@ Adds a business ID field for Finnish companies, and hides the VAT field from non
 """,
     'data': [
             'view/partner.xml',
+            'view/sbid_settings.xml',
+            'data/sbid_data.xml',
     ],
 }
