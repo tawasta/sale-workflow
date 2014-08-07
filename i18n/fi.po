@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0-20131021-232357\n"
+"Project-Id-Version: OpenERP Server 8.0alpha1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 10:04+0000\n"
-"PO-Revision-Date: 2013-11-01 10:04+0000\n"
+"POT-Creation-Date: 2014-08-07 11:44+0000\n"
+"PO-Revision-Date: 2014-08-07 11:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,19 +16,19 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_business_id
-#: view:res.partner:0
-msgid "Check Validity"
-msgstr "Tarkista"
+#: model:ir.actions.act_window,name:sale_business_id.action_sbid_settings
+msgid "Business ID settings"
+msgstr "Y-tunnusasetukset"
 
 #. module: sale_business_id
-#: view:res.partner:0
-msgid "business_id_and_vat_change(country_id, is_company, parent_id)"
-msgstr "business_id_and_vat_change(country_id, is_company, parent_id)"
+#: field:res.partner,businessid_shown:0
+msgid "Business ID shown"
+msgstr "Y-tunnus näkyvissä"
 
 #. module: sale_business_id
-#: field:res.partner,businessid_required:0
-msgid "Business ID required"
-msgstr "Y-tunnus pakollinen"
+#: model:ir.ui.menu,name:sale_business_id.menu_sale_business_id
+msgid "Business Id Module"
+msgstr "Y-tunnusmoduli"
 
 #. module: sale_business_id
 #: field:res.partner,businessid:0
@@ -36,25 +36,44 @@ msgid "Business id"
 msgstr "Y-tunnus"
 
 #. module: sale_business_id
-#: field:res.partner,vatnumber_required:0
-msgid "Vat required"
-msgstr "ALV-tunnus pakolinen"
-
-#. module: sale_business_id
-#: view:account.invoice:0
-#: view:sale.order:0
-msgid "{'show_only_top_level':1}"
-msgstr "{'show_only_top_level':1}"
+#: view:sale_business_id.settings:0
+msgid "Cancel"
+msgstr "Peruuta"
 
 #. module: sale_business_id
 #: view:res.partner:0
-msgid "e.g. BE0477472701"
-msgstr "esim. BE0477472701"
+msgid "Check Validity"
+msgstr "Tarkista voimassaolo"
 
 #. module: sale_business_id
 #: model:ir.model,name:sale_business_id.model_res_partner
 msgid "Partner"
-msgstr "Yhteistyökumppani"
+msgstr "Kumppani"
+
+#. module: sale_business_id
+#: view:sale_business_id.settings:0
+msgid "Save"
+msgstr "Tallenna"
+
+#. module: sale_business_id
+#: view:sale_business_id.settings:0
+msgid "Settings"
+msgstr "Asetukset"
+
+#. module: sale_business_id
+#: view:sale_business_id.settings:0
+msgid "Settings for 'Sale Business ID' module"
+msgstr "'Sale Business ID' -modulin asetukset"
+
+#. module: sale_business_id
+#: field:sale_business_id.settings,show_bid_vat_for_affiliates:0
+msgid "Show business ID and VAT fields for affiliates"
+msgstr "Näytä Y-tunnus ja verokoodi -kentät myös toimipaikoille"
+
+#. module: sale_business_id
+#: sql_constraint:res.partner:0
+msgid "The business ID already exists for another partner."
+msgstr "Sama Y-tunnus löytyy jo toiselta kumppanilta."
 
 #. module: sale_business_id
 #: view:res.partner:0
@@ -62,9 +81,27 @@ msgid "True"
 msgstr "True"
 
 #. module: sale_business_id
-#: code:addons/sale_business_id/partner.py:109
-#: sql_constraint:res.partner:0
-#, python-format
-msgid "The business ID already exists for another customer."
-msgstr "Y-tunnus löytyy jo toiselta asiakkaalta."
+#: field:res.partner,vatnumber_shown:0
+msgid "Vat shown"
+msgstr "Verokoodi shown"
+
+#. module: sale_business_id
+#: view:res.partner:0
+msgid "business_id_and_vat_change(country_id, is_company, parent_id)"
+msgstr "business_id_and_vat_change(country_id, is_company, parent_id)"
+
+#. module: sale_business_id
+#: view:res.partner:0
+msgid "e.g. BE0477472701"
+msgstr "esim. BE0477472701"
+
+#. module: sale_business_id
+#: view:sale_business_id.settings:0
+msgid "or"
+msgstr "tai"
+
+#. module: sale_business_id
+#: model:ir.model,name:sale_business_id.model_sale_business_id_settings
+msgid "sale_business_id.settings"
+msgstr "sale_business_id.settings"
 
