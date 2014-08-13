@@ -9,5 +9,3 @@ class sbid_settings(osv.osv):
     _columns = {
         'show_bid_vat_for_affiliates': fields.boolean('Show business ID and VAT fields for affiliates'),  
     }
-    
-    

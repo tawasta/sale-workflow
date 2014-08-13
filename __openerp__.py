@@ -33,5 +33,6 @@ Business ID and VAT fields handling
             'view/partner.xml',
             'view/sbid_settings.xml',
             'data/sbid_data.xml',
+            'security/ir.model.access.csv',
     ],
 }
