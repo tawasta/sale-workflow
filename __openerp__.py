@@ -22,17 +22,19 @@
     'description': """
 Business ID and VAT fields handling
 ===================================
-* Adds a new business ID field 
-* Shows business ID and existing TIN fields only for appropriate companies, based on their country (bID for Finland, TIN for EU-based countries)
-* Adds a settings window for defining whether to show bID/TIN just for top-level companies, or affiliates also
-* Restricts business IDs so that they must be unique
-* Uses the standard VIES VAT check functionality in OE core for checking the TIN authenticity
-
+ * Adds a new business ID field 
+ * Shows business ID and existing TIN fields only for appropriate companies, based on their country (bID for Finland, TIN for EU-based countries)
+ * Adds a settings window for defining whether to show bID/TIN just for top-level companies, or affiliates also
+ * Restricts business IDs so that they must be unique
+ * Uses the standard VIES VAT check functionality in OE core for checking the TIN authenticity
+ * Initializes whether new fields are shown also for existing partners, when module is installed
+ 
 """,
     'data': [
             'view/partner.xml',
             'view/sbid_settings.xml',
             'data/sbid_data.xml',
+            'data/init.xml',
             'security/ir.model.access.csv',
     ],
 }
