@@ -14,15 +14,13 @@
 				</field>
 			</field>
 		</record>
-
-
-        <record id="view_partner_form_add_affiliate" model="ir.ui.view">
-            <field name="name">res.partner.form</field>
+		
+        <record id="view_partner_form_add_businessid" model="ir.ui.view">
+            <field name="name">res.partner.form.add.businessid</field>
             <field name="model">res.partner</field>
-            <field eval="3" name="priority"/>
-            <field name="inherit_id" ref="base_vat.view_partner_form"/>
+            <field eval="2" name="priority"/>
+            <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-
 				<field name="website" position="after">
 					<!-- Business ID is only shown for Finnish top-level companies, i.e. those that don't have a parent. -->
 					<field name="businessid_shown" invisible="1"/>
@@ -30,7 +28,7 @@
 					<field name="businessid" 
 						   attrs="{'invisible':[('businessid_shown','=',False)]}"/>
 				</field>
-
+				
 				<!-- Attach onchange methods to is_company, parent_id and country_id. They trigger the check
 				     whether business id should be set to be invisible -->
 				<field name="country_id" position="attributes">
@@ -45,6 +43,16 @@
 				<field name="parent_id" position="attributes">
 						<attribute name="on_change">business_id_and_vat_change(country_id, is_company, parent_id)</attribute>					
 				</field>
+			</field>
+		</record>
+
+
+        <record id="view_partner_form_add_affiliate" model="ir.ui.view">
+            <field name="name">res.partner.form.add.vat</field>
+            <field name="model">res.partner</field>
+            <field eval="3" name="priority"/>
+            <field name="inherit_id" ref="base_vat.view_partner_form"/>
+            <field name="arch" type="xml">
 
 				<field name="vat" position="after">
 					<field name="vatnumber_shown" invisible="1" />
@@ -67,9 +75,6 @@
                         <field name="vat_subjected" class="oe_inline" attrs="{'invisible': 1 }"/>
                     </div>
 				</field>
-
-
-
 				
 			</field>
 		</record>
