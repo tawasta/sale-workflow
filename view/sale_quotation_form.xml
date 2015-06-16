@@ -1,7 +1,7 @@
 <openerp>
     <data>
         <record id="sale_quotation_simplified_form_view" model="ir.ui.view">
-			<field name="name">Sale Quotation form view</field>
+			<field name="name">Sale Quotation Form</field>
 			<field name="model">sale.order</field>
 			<field name="inherit_id" ref="sale.view_order_form"/>
 			<field name="priority" eval="15" />
@@ -10,15 +10,42 @@
             <!-- Show the datetime as date for simplicity -->
             <field name="date_order" position="attributes">
             	<attribute name="widget">date</attribute>
-            </field>                
+            </field>     
+            
+            <!-- Hide some fields by default -->     
+            <field name='invoiced' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
             
 			<!-- Add a 'show all' checkbox after the main group -->
-				<xpath expr="//group[1]" position="after">
+			<xpath expr="//group[1]" position="after">
 			 	<div id='show_all' class="oe_right">
 			 		<label for="show_all" />
 			 		<field name="show_all" />
 			 	</div>
 			</xpath>
+			      
+			</field>
+        </record>
+        
+        <record id="sale_quotation_simplified_form_view_tracking" model="ir.ui.view">
+			<field name="name">Sale Quotation Form Tracking</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale_crm.sale_view_inherit123"/>
+			<field name="arch" type="xml">
+            
+            <!-- Hide some fields by default -->     
+            <field name='campaign_id' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
+            
+            <field name='medium_id' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
+            
+            <field name='source_id' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
 			      
 			</field>
         </record>
