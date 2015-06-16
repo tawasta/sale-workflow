@@ -1,0 +1,27 @@
+<openerp>
+    <data>
+        <record id="sale_quotation_simplified_form_view" model="ir.ui.view">
+			<field name="name">Sale Quotation form view</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="priority" eval="15" />
+			<field name="arch" type="xml">
+            
+            <!-- Show the datetime as date for simplicity -->
+            <field name="date_order" position="attributes">
+            	<attribute name="widget">date</attribute>
+            </field>                
+            
+			<!-- Add a 'show all' checkbox after the main group -->
+				<xpath expr="//group[1]" position="after">
+			 	<div id='show_all' class="oe_right">
+			 		<label for="show_all" />
+			 		<field name="show_all" />
+			 	</div>
+			</xpath>
+			      
+			</field>
+        </record>
+        
+    </data>
+</openerp>

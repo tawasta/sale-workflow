@@ -33,6 +33,6 @@ Features
 * Unifies sale quotation and sale order form syntax
 ''',
     'data': [
-
+        'view/sale_quotation_form.xml'
     ],
 }
