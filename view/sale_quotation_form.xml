@@ -17,6 +17,10 @@
             	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
             </field>
             
+            <field name='origin' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
+            
 			<!-- Add a 'show all' checkbox after the main group -->
 			<xpath expr="//group[1]" position="after">
 			 	<div id='show_all' class="oe_right">
