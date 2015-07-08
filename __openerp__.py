@@ -19,8 +19,7 @@
     'author': 'Oy Tawasta Technologies Ltd.',
     'website': 'http://www.tawasta.fi',
     'depends': [
-        'sale_defaults_finnish',
-        'sale_order_qweb_fi',
+        'sale',
     ],
     'description': '''
 Sale Order Description
@@ -35,6 +34,6 @@ Features
 * Adds description notebook page
 ''',
     'data': [
-
+        'views/sale_order.xml',
     ],
 }

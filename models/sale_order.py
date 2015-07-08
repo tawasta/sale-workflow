@@ -7,4 +7,4 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     description = fields.Text("Description",
-                              help='Internal notes about the sale')
+                              help='Internal notes')
