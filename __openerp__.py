@@ -32,9 +32,10 @@ Links Opportunity and sale to work together as seamlessly as possible
 
 Features
 ========
-* None yet
+* Adds sale actions to crm case stage
 ''',
     'data': [
-        'views/sale_order.xml',
+        'views/crm_case_stage_form.xml',
+        'views/crm_case_stage_tree.xml',
     ],
 }
