@@ -1,4 +1,4 @@
-Sale Opportunity Connector
+Sale-Opportunity Integration
 ==================
 
 Links Opportunity and sale to work together as seamlessly as possible
@@ -6,4 +6,4 @@ Links Opportunity and sale to work together as seamlessly as possible
 
 Features
 ========
-* None yet
+* Adds sale actions to crm case stage

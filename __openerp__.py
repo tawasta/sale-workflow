@@ -13,7 +13,7 @@
 #
 ##############################################################################
 {
-    'name': 'Sale Opportunity Connector',
+    'name': 'Sale-Opportunity Integration',
     'category': 'Sale',
     'version': '0.1',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -24,7 +24,7 @@
         'sale',
     ],
     'description': '''
-Sale Opportunity Connector
+Sale-Opportunity Integration
 ==================
 
 Links Opportunity and sale to work together as seamlessly as possible
