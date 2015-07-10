@@ -14,4 +14,5 @@
 ##############################################################################
 
 import crm_lead
+import crm_case_stage
 import sale_order
