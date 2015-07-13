@@ -22,6 +22,7 @@
         'crm',
         'crm_lead_to_sale',
         'sale',
+        'sale_crm',
     ],
     'description': '''
 Sale-Opportunity Integration
