@@ -36,6 +36,8 @@ Features
 * Adds sale actions to crm case stage
 ''',
     'data': [
+        'views/crm_lead_form.xml',
+
         'views/crm_case_stage_form.xml',
         'views/crm_case_stage_tree.xml',
     ],
