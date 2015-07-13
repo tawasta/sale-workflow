@@ -61,8 +61,10 @@ class CrmLead(models.Model):
 
     def _get_pricelist(self):
         for record in self:
-            self.pricelist_id = record.sale_order.pricelist_id
+            if record.sale_order:
+                record.pricelist_id = record.sale_order.pricelist_id
 
     def _set_sale_order_lines(self):
         for record in self:
-            self.sale_order.order_line = record.sale_order_lines
+            if record.sale_order:
+                record.sale_order.order_line = record.sale_order_lines
