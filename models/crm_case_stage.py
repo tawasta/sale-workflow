@@ -14,6 +14,7 @@ class CrmCaseStage(models.Model):
         sale_actions = (
             ('send_quotation', 'Send quotation'),
             ('opportunity_won', 'Opportunity won'),
+            ('opportunity_lost', 'Opportunity lost'),
         )
 
         return sale_actions
