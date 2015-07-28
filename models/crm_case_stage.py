@@ -12,7 +12,7 @@ class CrmCaseStage(models.Model):
 
     def _get_sale_actions(self):
         sale_actions = (
-            ('send_quotation', 'Send quotation'),
+            ('quotation_send', 'Send quotation'),
             ('opportunity_won', 'Opportunity won'),
             ('opportunity_lost', 'Opportunity lost'),
         )
@@ -21,11 +21,37 @@ class CrmCaseStage(models.Model):
 
     @api.one
     def _set_sale_action(self):
-        # Unsets any duplicate action variables
 
-        records = self.search([('sale_action', '=', self.sale_action),
-                               ('sale_action', '!=', 'False'),
-                               ('id', '!=', self.id)])
+        if self.sale_action == "quotation_send":
 
-        for record in records:
-            record.sale_action = False
+            ''' Unsetter unsets all lower sequence actions even when updating
+            # Unset duplicate action variables with lower sequence
+            records_unset = self.search([
+                ('sale_action', '=', self.sale_action),
+                ('sequence', '>', self.sequence),
+            ])
+
+            for record in records_unset:
+                record.sale_action = False
+            '''
+
+            # Update all higher sequence actions
+            records_update = self.search([
+                ('sequence', '>=', self.sequence),
+                ('sale_action', '=', False)],
+                order='sequence ASC')
+
+            for record in records_update:
+                record.sale_action = self.sale_action
+
+        else:
+            # Unset any duplicate action variables
+            records = self.search([
+                ('sale_action', '=', self.sale_action),
+                ('sale_action', '!=', 'False'),
+                ('id', '!=', self.id)
+            ])
+
+            for record in records:
+                print "unset: %s" % record.name
+                record.sale_action = False
