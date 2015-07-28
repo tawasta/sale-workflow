@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from openerp import models, api, fields
 from openerp import exceptions
+from openerp import _
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -40,7 +41,9 @@ class CrmLead(models.Model):
         ''' Updates sale order on opportunity action stages '''
         if sale_action == 'quotation_send' and not self.sale_order:
             if not self.partner_id:
-                raise exceptions.Warning("Please set a customer for the quotation before moving it to this stage!")
+                warn = _("Please set a customer for the quotation") + " "
+                warn += _("before moving it to this stage!")
+                raise exceptions.Warning(warn)
 
             else:
                 sale_order_object = self.env['sale.order']
@@ -53,6 +56,12 @@ class CrmLead(models.Model):
                 sale_order = sale_order_object.create(vals)
                 self.sale_order = sale_order.id
                 self.ref = sale_order
+
+                msg = _("Sale order")
+                msg += " <b>%s</b> " % self.sale_order.name
+                msg += _("created")
+
+                self.message_post(msg)
 
     def _get_sale_order_lines(self):
         for record in self:
