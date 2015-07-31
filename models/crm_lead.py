@@ -39,7 +39,9 @@ class CrmLead(models.Model):
     @api.one
     def _update_sale_order(self, sale_action):
         ''' Updates sale order on opportunity action stages '''
-        if sale_action == 'quotation_send' and not self.sale_order:
+        if (sale_action == 'quotation_send' or sale_action == 'opportunity_won')\
+                and not self.sale_order:
+
             if not self.partner_id:
                 warn = _("Please set a customer for the quotation") + " "
                 warn += _("before moving it to this stage!")
