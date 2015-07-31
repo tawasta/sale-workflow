@@ -21,6 +21,7 @@
     'depends': [
         'crm',
         'crm_lead_to_sale',
+        'crm_simplification',
         'sale',
         'sale_crm',
     ],
