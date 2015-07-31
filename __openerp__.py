@@ -41,5 +41,7 @@ Features
 
         'views/crm_case_stage_form.xml',
         'views/crm_case_stage_tree.xml',
+
+        'data/crm_case_stage_data.xml',
     ],
 }

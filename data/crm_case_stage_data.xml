@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- Update the default stage actions -->
+        <record id="crm.stage_lead3" model="crm.case.stage">
+            <field name="sale_action">quotation_send</field>
+        </record>
+
+        <record id="crm.stage_lead4" model="crm.case.stage">
+            <field name="sale_action">quotation_send</field>
+        </record>
+
+        <record id="crm.stage_lead6" model="crm.case.stage">
+            <field name="sale_action">opportunity_won</field>
+        </record>
+
+        <record id="crm.stage_lead7" model="crm.case.stage">
+            <field name="sale_action">opportunity_lost</field>
+        </record>
+
+
+    </data>
+</openerp>
