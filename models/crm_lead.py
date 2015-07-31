@@ -65,6 +65,15 @@ class CrmLead(models.Model):
 
                 self.message_post(msg)
 
+        elif (sale_action == 'opportunity_lost') and self.sale_order:
+            self.sale_order.action_cancel()
+
+            msg = _("Sale order")
+            msg += " <b>%s</b> " % self.sale_order.name
+            msg += _("cancelled")
+
+            self.message_post(msg)
+
     def _get_sale_order_lines(self):
         for record in self:
             if record.sale_order:
