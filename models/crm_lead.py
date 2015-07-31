@@ -18,10 +18,17 @@ class CrmLead(models.Model):
         compute='_get_sale_order_lines',
         inverse='_set_sale_order_lines',
     )
+
     pricelist_id = fields.Many2one(
         'product.pricelist',
         string='Pricelist',
         compute='_get_pricelist',
+    )
+
+    sale_order_description = fields.Text(
+        string='Description',
+        compute='_get_sale_order_description',
+        inverse='_set_sale_order_description',
     )
 
     @api.multi
@@ -54,6 +61,7 @@ class CrmLead(models.Model):
                     'partner_invoice_id': self.partner_id.id,
                     'partner_shipping_id': self.partner_id.id,
                     'lead_id': self.id,
+                    'description': self.description,
                 }
                 sale_order = sale_order_object.create(vals)
                 self.sale_order = sale_order.id
@@ -79,12 +87,24 @@ class CrmLead(models.Model):
             if record.sale_order:
                 record.sale_order_lines = self.sale_order.order_line
 
+    def _set_sale_order_lines(self):
+        for record in self:
+            if record.sale_order:
+                record.sale_order.order_line = record.sale_order_lines
+
     def _get_pricelist(self):
         for record in self:
             if record.sale_order:
                 record.pricelist_id = record.sale_order.pricelist_id
 
-    def _set_sale_order_lines(self):
+    def _get_sale_order_description(self):
+        _logger.warn("Getter")
         for record in self:
             if record.sale_order:
-                record.sale_order.order_line = record.sale_order_lines
+                record.sale_order_description = self.sale_order.description
+
+    def _set_sale_order_description(self):
+        _logger.warn("Setter")
+        for record in self:
+            if record.sale_order:
+                record.sale_order.description, record.description = record.sale_order_description

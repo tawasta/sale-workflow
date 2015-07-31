@@ -18,4 +18,7 @@ class SaleOrder(models.Model):
             # Sale is confirmed. Mark the opportunity as won
             self.lead_id.case_mark_won()
 
+        if 'description' in vals and self.lead_id:
+            self.lead_id.description = vals['description']
+
         return super(SaleOrder, self).write(vals)

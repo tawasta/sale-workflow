@@ -15,7 +15,15 @@
             		<field name="sale_order" readonly="1"/>
             		<field name="pricelist_id" invisible="1"/>
             	</field>
-            
+
+				<field name="description" position="attributes">
+					<attribute name="attrs">{'invisible': [('sale_order', '!=', False)]}</attribute>
+				</field>
+
+				<field name="description" position="after">
+					<field name="sale_order_description" attrs="{'invisible': [('sale_order', '=', False)]}" />
+				</field>
+
             	<page string="Internal Notes" position="before">
             		<page string="Order lines" attrs="{'invisible': [('sale_order', '=', False)]}">
             			<field name="sale_order_lines">
