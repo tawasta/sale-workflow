@@ -17,7 +17,7 @@
             	</field>
             
             	<page string="Internal Notes" position="before">
-            		<page string="Order lines" attrs="{'invisible': [('ref', '=', False)]}">
+            		<page string="Order lines" attrs="{'invisible': [('sale_order', '=', False)]}">
             			<field name="sale_order_lines">
 	                        <tree string="Sales Order Lines" editable="bottom">
 	                            <field name="sequence" widget="handle"/>
