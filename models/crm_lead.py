@@ -98,13 +98,11 @@ class CrmLead(models.Model):
                 record.pricelist_id = record.sale_order.pricelist_id
 
     def _get_sale_order_description(self):
-        _logger.warn("Getter")
         for record in self:
             if record.sale_order:
                 record.sale_order_description = self.sale_order.description
 
     def _set_sale_order_description(self):
-        _logger.warn("Setter")
         for record in self:
             if record.sale_order:
                 record.sale_order.description, record.description = record.sale_order_description
