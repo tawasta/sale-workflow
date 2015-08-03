@@ -15,7 +15,7 @@
 {
     'name': 'Sale-Opportunity Integration',
     'category': 'Sale',
-    'version': '0.1',
+    'version': '0.2',
     'author': 'Oy Tawasta Technologies Ltd.',
     'website': 'http://www.tawasta.fi',
     'depends': [
@@ -29,12 +29,15 @@
 Sale-Opportunity Integration
 ==================
 
-Links Opportunity and sale to work together as seamlessly as possible
-
+Links opportunity and sale order to work together as seamlessly as possible
 
 Features
 ========
 * Adds sale actions to crm case stage
+* Auto-creates SO when the opportunity reaches to certain state
+* Auto-cancels SO if the opportunity is canceled
+* Adds sale orders lines to the opportunity
+* Syncs opportunity and sale order descriptions
 ''',
     'data': [
         'views/crm_lead_form.xml',
