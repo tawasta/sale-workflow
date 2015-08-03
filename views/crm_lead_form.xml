@@ -56,5 +56,22 @@
 			</field>
         </record>
         
+        <record id="crm_opportunity_form_view_header_buttons" model="ir.ui.view">
+			<field name="name">CRM Lead Header Buttons</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
+			<field name="arch" type="xml">
+
+	            <!-- Only show "Create Quotation"button when opportunity is marked as won -->
+	            <button string="Convert to Quotation" position="replace" />
+	            
+	            <button string="Create Quotation" position="attributes">
+	            	<attribute name='class'>oe_highlight</attribute>
+	            	<attribute name='attrs'>{'invisible': ['|',('sale_order', '!=', False),('probability', '&lt;', 100)]}</attribute>
+	            </button>
+	            
+			</field>
+		</record>
+        
     </data>
 </openerp>
