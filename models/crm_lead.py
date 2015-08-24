@@ -105,4 +105,5 @@ class CrmLead(models.Model):
     def _set_sale_order_description(self):
         for record in self:
             if record.sale_order:
-                record.sale_order.description, record.description = record.sale_order_description
+                record.sale_order.description = record.sale_order_description
+                record.description = record.sale_order_description
