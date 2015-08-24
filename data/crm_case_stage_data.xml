@@ -3,10 +3,6 @@
     <data noupdate="0">
 
         <!-- Update the default stage actions -->
-        <record id="crm.stage_lead3" model="crm.case.stage">
-            <field name="sale_action">quotation_send</field>
-        </record>
-
         <record id="crm.stage_lead4" model="crm.case.stage">
             <field name="sale_action">quotation_send</field>
         </record>
