@@ -8,7 +8,9 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
 			<field name="arch" type="xml">
 				<field name="partner_shipping_id" position="after">
-					<field name="customer_contact" attrs="{ 'readonly' : [('state', 'in', ('cancel','archived','lost'))] }"/>
+					<field name="customer_contact" 
+					   attrs="{ 'readonly' : [('state', 'in', ('cancel','archived','lost'))] }"
+					   context="{ 'default_parent_id': partner_id }"/>
 	        	</field>
 
             </field>
