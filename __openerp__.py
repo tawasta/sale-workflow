@@ -24,11 +24,6 @@
     'author': 'Vizucom Oy',
     'website': 'http://www.vizucom.com',
     'depends': ['sale'],
-    'description': """
-Customer Contact for Sale Orders
-================================
-* Adds a partner selection field to sale orders
-""",
     'data': [
         'view/sale_order.xml',
     ],
