@@ -6,4 +6,4 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    customer_contact = fields.Many2one('res.partner', "Customer's contact"),
+    customer_contact = fields.Many2one('res.partner', "Customer's contact")
