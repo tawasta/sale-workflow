@@ -17,7 +17,7 @@ msgstr ""
 
 #. module: sale_order_customer_contact
 #: field:sale.order,customer_contact:0
-msgid "Customer's contact"
+msgid "Customers contact"
 msgstr "Asiakkaan yhteyshenkilö"
 
 #. module: sale_order_customer_contact
