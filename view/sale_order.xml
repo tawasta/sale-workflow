@@ -10,7 +10,8 @@
 				<field name="partner_shipping_id" position="after">
 					<field name="customer_contact" 
 					   attrs="{ 'readonly' : [('state', 'in', ('cancel','archived','lost'))] }"
-					   context="{ 'default_parent_id': partner_id }"/>
+					   context="{ 'default_parent_id': partner_id }"
+					   domain="[('parent_id', '=', partner_id)]"/>
 	        	</field>
 
             </field>
