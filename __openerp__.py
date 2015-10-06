@@ -21,7 +21,7 @@
 
 {
     'name': 'Sale Order Internal Sale',
-    'version': '8.0.0.2.0',
+    'version': '8.0.0.3.0',
     'category': 'Sale',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -34,6 +34,7 @@
     ],
     'data': [
         'views/sale_order.xml',
+        'data/account_analytic_account.xml',
     ],
     'demo': [
     ],
