@@ -50,10 +50,19 @@ class SaleOrder(models.Model):
     # @api.constrains('seats_max', 'seats_available')
     # def _check_seats_limit(self):
       
+    @api.onchange('internal_sale')
+    @api.depends('name', 'project_id')
+    def _onchange_internal_sale(self):
+        if self.internal_sale and not self.project_id:
+            vals = {}
+            vals['name'] = self.partner_id.name
+            vals['type'] = 'view'
+            vals['parent_id'] = self.project_id.sudo().search([('code','=','INTSAL')]).id
+            vals['partner_id'] = self.partner_id.id
 
-    # @api.onchange('date_begin')
-    # def _onchange_date_begin(self):
-
+            analytic_account = self.project_id.create(vals)
+            
+            self.project_id = analytic_account.id
 
     # 6. CRUD methods
     # def create(self):
