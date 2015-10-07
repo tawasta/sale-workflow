@@ -7,7 +7,7 @@ Sale Order Internal Sale
 ========================
 
 This module will allow salespersons to mark internal sales easily.
-A analytic account will be created automatically
+An analytic account will be created automatically
 
 Installation
 ============

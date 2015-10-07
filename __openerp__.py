@@ -21,7 +21,7 @@
 
 {
     'name': 'Sale Order Internal Sale',
-    'version': '8.0.0.4.1',
+    'version': '8.0.0.4.2',
     'category': 'Sale',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
