@@ -10,7 +10,6 @@
 from openerp import api, fields, models
 
 # 4. Imports from Odoo modules (rarely, and only if necessary):
-#	from openerp.addons.website.models.website import slug
 
 # 5. Local imports in the relative form:
 #	from . import utils
@@ -41,23 +40,51 @@ class SaleOrder(models.Model):
     # 4. compute and search fields, in the same order that fields declaration
 
     # 5. Constraints and onchanges
-      
-    @api.onchange('internal_sale')
+    
+    @api.onchange('internal_sale', 'project_id')
     @api.depends('name', 'project_id')
     def _onchange_internal_sale(self):
+        analytic_intsal = self.project_id.sudo().search(
+            [('code','=','INTSAL')]
+        )
+
+        if self.project_id and self.internal_sale:
+            self.project_id.parent_id = analytic_intsal.id
+
+        if self.project_id.parent_id.id == analytic_intsal.id:
+            self.internal_sale = True
+        else:
+            self.internal_sale = False
+        
+        '''
         if self.internal_sale and not self.project_id:
             vals = {}
             vals['name'] = self.partner_id.name
             vals['type'] = 'view'
             vals['parent_id'] = self.project_id.sudo().search([('code','=','INTSAL')]).id
             vals['partner_id'] = self.partner_id.id
-
-            # This thing is broken
-            analytic_account = self.project_id.with_context(partner_id = vals['partner_id']).create(vals)
             
-            self.project_id = analytic_account.id
+            
+            project = self.project_id.new(vals)
+            print self.project_id
+            
+            self.project_id = project.id
+            
+            print self.project_id
+        '''
 
     # 6. CRUD methods
+    @api.one
+    def write(self, vals):
+        super(SaleOrder, self).write(vals)
+        
+        if self.project_id \
+            and self.internal_sale:
+            parent = self.project_id.sudo().search(
+                [('code','=','INTSAL')], limit=1
+            )
+
+            self.project_id.parent_id = parent.id
     
     # 7. Action methods
     
