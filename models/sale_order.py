@@ -44,14 +44,12 @@ class SaleOrder(models.Model):
     @api.onchange('internal_sale', 'project_id')
     @api.depends('name', 'project_id')
     def _onchange_internal_sale(self):
-        analytic_intsal = self.project_id.sudo().search(
-            [('code','=','INTSAL')]
-        )
+        analytic = self._get_account_internal_sale()
 
         if self.project_id and self.internal_sale:
-            self.project_id.parent_id = analytic_intsal.id
+            self.project_id.parent_id = analytic.id
 
-        if self.project_id.parent_id.id == analytic_intsal.id:
+        if self.project_id.parent_id.id == analytic.id:
             self.internal_sale = True
         else:
             self.internal_sale = False
@@ -78,15 +76,21 @@ class SaleOrder(models.Model):
     def write(self, vals):
         super(SaleOrder, self).write(vals)
         
-        if self.project_id \
-            and self.internal_sale:
-            parent = self.project_id.sudo().search(
-                [('code','=','INTSAL')], limit=1
-            )
+        if self.project_id and self.internal_sale:
+            analytic = self._get_account_internal_sale()
 
-            self.project_id.parent_id = parent.id
+            self.project_id.parent_id = analytic.id
     
     # 7. Action methods
     
     # 8. Business methods
+    def _get_account_internal_sale(self):
+        analytic_account = self.project_id.sudo().search(
+            [('code','like','INTSAL'),
+             ('company_id','=',self.company_id.id)],
+            limit=1,
+        )
+        
+        return analytic_account
+
     
