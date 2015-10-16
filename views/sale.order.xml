@@ -13,7 +13,7 @@
 	                   string="Create Contract" 
 	                   type="object" 
 	                   class="oe_highlight"
-	                   attrs="{'invisible': [('state', 'not in', ('confirmed', 'manual'))]}"   
+	                   attrs="{'invisible': ['|',('state', 'not in', ('confirmed', 'manual')),('project_id','!=',False)]}"   
 	                />
 	           </button>
 
