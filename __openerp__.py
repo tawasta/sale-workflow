@@ -20,8 +20,8 @@
 ##############################################################################
 
 {
-    'name': 'Sale Order to Contact',
-    'version': '8.0.0.1.0',
+    'name': 'Sale Order to Contract',
+    'version': '8.0.0.2.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -33,10 +33,10 @@
         'bin': [],
     },
     'depends': [
-        'base',
+        'sale',
+        'account_analytic_analysis',
     ],
     'data': [
-    ],
-    'demo': [
-    ],
+        'views/sale.order.xml',
+    ]
 }
