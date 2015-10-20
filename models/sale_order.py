@@ -61,7 +61,7 @@ class SaleOrder(models.Model):
                 'quantity':     order_line.product_uom_qty,
                 'product_id':   order_line.product_id.id,
             }
-            contract.recurring_invoice_line_ids = [(0, 0, vals)]
+            contract.write({'recurring_invoice_line_ids': [(0, 0, vals)]})
 
         self.project_id = contract.id
 
