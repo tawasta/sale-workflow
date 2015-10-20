@@ -31,8 +31,7 @@ Credits
 Contributors
 ------------
 
-* Firstname Lastname <email.address@tawasta.fi>
-* Second Person <second.person@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 
 Maintainer
 ----------
