@@ -10,7 +10,12 @@
             <!-- Show the datetime as date for simplicity -->
             <field name="date_order" position="attributes">
             	<attribute name="widget">date</attribute>
-            </field>     
+            </field>
+            
+            <!-- Don't allow adding users from here -->
+            <field name="user_id" position="attributes">
+            	<attribute name="options">{"no_create": True, "no_open": True}</attribute>
+            </field>
             
             <!-- Hide some fields by default -->     
             <field name='invoiced' position='attributes'>
@@ -33,7 +38,7 @@
         </record>
         
         <record id="sale_quotation_view_form_simplified_tracking" model="ir.ui.view">
-			<field name="name">Sale Quotation Form Tracking</field>
+			<field name="name">Sale Quotation Form Tracking Simplification</field>
 			<field name="model">sale.order</field>
 			<field name="inherit_id" ref="sale_crm.sale_view_inherit123"/>
 			<field name="arch" type="xml">
@@ -48,6 +53,42 @@
             </field>
             
             <field name='source_id' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
+			      
+			</field>
+        </record>
+        
+        <record id="sale_quotation_view_form_simplified_stock" model="ir.ui.view">
+			<field name="name">Sale Quotation Form Stock Simplification</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+			<field name="arch" type="xml">
+            
+            <!-- Move payment term to the top of the page -->
+            <field name='payment_term' position='replace' />
+            <field name='incoterm' position='before'>
+            	<field name='payment_term' options='{"no_create": True, "no_open": True}' />
+            </field>
+            
+            <!-- Hide some fields by default -->     
+            <field name='incoterm' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
+            
+            <field name='picking_policy' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
+            
+            <field name='order_policy' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
+            
+            <field name='fiscal_position' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
+            
+            <field name='company_id' position='attributes'>
             	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
             </field>
 			      
