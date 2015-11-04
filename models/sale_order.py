@@ -12,6 +12,8 @@ class SaleOrder(models.Model):
 
     @api.onchange('partner_invoice_id')
     def onchange_partner_invoice_id(self):
-        self.customer_contact = self.env['res.partner'].search([
+        self.customer_contact = self.partner_id.search([
             ('parent_id', '=', self.partner_id.id),
+            ('type', '=', 'contact'),
+            ('is_company', '=', False),
         ], limit=1)
