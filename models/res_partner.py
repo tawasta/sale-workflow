@@ -10,6 +10,13 @@ class ResPartner(models.Model):
         '# of Sales Order',
         compute='_sale_order_count'
     )
+    invoices = fields.One2many(
+        'account.invoice',
+        'partner_id',
+        string='Invoices',
+        readonly=True,
+        domain=[('type', '=', 'out_invoice')]
+    )
 
     @api.one
     def _sale_order_count(self):
