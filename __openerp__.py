@@ -20,7 +20,7 @@
 {
     'name': 'Customer Contact for Sale Orders',
     'category': 'Sales',
-    'version': '8.0.0.1.1',
+    'version': '8.0.0.1.2',
     'author': '''
 Vizucom Oy,
 Oy Tawasta OS Technologies Ltd.

@@ -6,8 +6,15 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
+    _FIELD_STATES = {
+        'draft': [('readonly', False)],
+        'sent': [('readonly', False)],
+        'manual': [('readonly', False)],
+    }
+
     customer_contact = fields.Many2one(
         'res.partner', "Customers contact",
+        states=_FIELD_STATES
     )
 
     @api.onchange('partner_invoice_id')
