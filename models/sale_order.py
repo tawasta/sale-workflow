@@ -13,12 +13,21 @@ class SaleOrder(models.Model):
     }
 
     customer_contact = fields.Many2one(
-        'res.partner', "Customers contact",
+        'res.partner', "Contact",
         states=_FIELD_STATES
     )
 
-    @api.onchange('partner_invoice_id')
-    def onchange_partner_invoice_id(self):
+    @api.one
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        # Don't get a contact if there is no partner
+        if not self.partner_id:
+            return False
+
+        # Contact is already set
+        if self.customer_contact.parent_id == self.partner_id:
+            return False
+
         self.customer_contact = self.partner_id.search([
             ('parent_id', '=', self.partner_id.id),
             ('type', '=', 'contact'),
