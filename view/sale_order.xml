@@ -10,7 +10,7 @@
 				<field name="partner_shipping_id" position="after">
 					<field name="customer_contact" 
 					   context="{'default_parent_id': partner_id }"
-					   domain="[('parent_id', '=', partner_id)]"/>
+					   domain="[('parent_id', '=', partner_id),('type','=','contact'),('is_company','=',False)]"/>
 	        	</field>
 
             </field>
