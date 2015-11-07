@@ -35,14 +35,17 @@ class ResPartner(models.Model):
 
         self.validate_business_id(self.businessid)
 
+        self.update_vat(self.businessid)
+
     # 6. CRUD methods
 
     # 7. Action methods
 
     # 8. Business methods
     def validate_business_id(self, businessid):
+        # Validates business ID format
         if not businessid:
-            return True
+            return False
 
         '''
         Regular Finnish business id (y-tunnus)
@@ -54,3 +57,13 @@ class ResPartner(models.Model):
         if not re.match('^[0-9]{7}[-][0-9]{1}$', businessid) and not re.match('^[0-9]{3}[.][0-9]{3}$', businessid):
             raise exceptions.Warning("Invalid business id!" + " " + "Please use format '1234567-1' or '123.456'")
             return False
+
+    def update_vat(self, businessid):
+        # Auto-update VAT
+        if not self.vat:
+            return False
+
+        #TODO: Split this into country code-specific methods
+
+        if self.country_id.code == 'FI':
+            self.vat = "FI" + self.businessid.replace('-', '')
