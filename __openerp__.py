@@ -21,7 +21,7 @@
 
 {
     'name': 'Business ID Extension',
-    'version': '8.0.0.1.0',
+    'version': '8.0.0.2.0',
     'category': 'Sale',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
