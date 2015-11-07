@@ -60,7 +60,7 @@ class ResPartner(models.Model):
 
     def update_vat(self, businessid):
         # Auto-update VAT
-        if not self.vat:
+        if not self.businessid:
             return False
 
         #TODO: Split this into country code-specific methods
