@@ -16,7 +16,6 @@ class ResPartner(models.Model):
         string='Invoices',
         readonly=True,
         domain=[('type', '=', 'out_invoice')],
-        readonly=True
     )
 
     @api.one
