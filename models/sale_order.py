@@ -37,3 +37,29 @@ class SaleOrder(models.Model):
 
     date_order = fields.Datetime(states=_FIELD_STATES)
     order_line = fields.One2many(states=_FIELD_STATES)
+
+    # 3. Default methods
+
+    # 4. Compute and search fields, in the same order that fields declaration
+
+    # 5. Constraints and onchanges
+    @api.one
+    @api.onchange('partner_id')
+    def onchange_partner(self):
+        if self.partner_id:
+            # Partner is a contact person
+            if self.partner_id.type == 'contact'\
+                    and not self.partner_id.is_company:
+                self.customer_contact = self.partner_id
+                self.partner_id = self.partner_id.parent_id
+
+            self.partner_invoice_id = self.partner_id
+            self.partner_shipping_id = self.partner_id
+
+        super(SaleOrder, self).onchange_partner()
+
+    # 6. CRUD methods
+
+    # 7. Action methods
+
+    # 8. Business methods
