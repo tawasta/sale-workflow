@@ -19,7 +19,7 @@ class SaleOrder(models.Model):
 
     @api.one
     @api.onchange('partner_id')
-    def onchange_partner_id(self):
+    def onchange_partner(self):
         # Don't get a contact if there is no partner
         if not self.partner_id:
             return False
