@@ -15,16 +15,23 @@ from openerp import exceptions
 
 # 6. Unknown third party imports:
 
+
 class ResPartner(models.Model):
     
     # 1. Private attributes
     _inherit = 'res.partner'
 
     # 2. Fields declaration
+    businessid_parent = fields.Char('Business id', size=20, readonly=True, compute='_get_businessid')
+    businessid_use_parent = fields.Boolean('Use Company business ID')
 
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
+    @api.one
+    def _get_businessid(self):
+        if self.businessid_use_parent:
+            self.businessid_parent = self.parent_id.businessid
 
     # 5. Constraints and onchanges
     @api.onchange('businessid')
@@ -34,8 +41,14 @@ class ResPartner(models.Model):
             self.businessid = self.businessid[:7] + '-' + self.businessid[7:]
 
         self.validate_business_id(self.businessid)
-
         self.update_vat(self.businessid)
+
+    @api.one
+    @api.onchange('businessid_use_parent')
+    def onchange_businessid_use_parent(self):
+        if self.businessid_use_parent:
+            self.businessid_parent = self.parent_id.businessid
+            self.vat = self.parent_id.vat
 
     # 6. CRUD methods
 

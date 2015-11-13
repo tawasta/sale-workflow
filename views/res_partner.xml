@@ -3,11 +3,11 @@
 	<data>
 
 		<record id="view_partner_form_add_affiliate" model="ir.ui.view">
-			<field name="name">Check VAT-button improvements</field>
+			<field name="name">VAT-button improvements</field>
 			<field name="model">res.partner</field>
 			<field name="inherit_id" ref="sale_business_id.view_partner_form_add_affiliate" />
 			<field name="arch" type="xml">
-				
+
  				<button name="button_check_vat" position="attributes">
                     <attribute name="colspan">1</attribute>
                     <attribute name="string">Check</attribute>
@@ -15,6 +15,30 @@
                     <attribute name="icon">fa-cogs</attribute>
                     <attribute name="style">width: 90px !important;</attribute>
                 </button>
+			</field>
+		</record>
+
+        <record id="view_partner_form_add_businessid" model="ir.ui.view">
+			<field name="name">Business ID hierarchy</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="sale_business_id.view_partner_form_add_businessid" />
+			<field name="arch" type="xml">
+
+                <field name="businessid" position="replace">
+                    <label for="businessid" />
+                    <div id="div-business-id">
+                        <field name="businessid_use_parent" class="oe_inline oe_edit_only"
+                               attrs="{'invisible': ['|',('businessid_shown','=',False),('parent_id','=',False)]}" />
+                        <label for="businessid_use_parent"  class="oe_edit_only"
+                               attrs="{'invisible': ['|',('businessid_shown','=',False),('parent_id','=',False)]}" />
+
+                        <field name="businessid"
+                               attrs="{'invisible':['|',('businessid_shown','=',False),('businessid_use_parent','=',True)]}"/>
+                        <field name="businessid_parent"
+                               attrs="{'invisible': ['|',('businessid_shown','=',False),('businessid_use_parent','=',False)]}" />
+                    </div>
+				</field>
+
 			</field>
 		</record>
 
