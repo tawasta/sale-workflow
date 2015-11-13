@@ -8,6 +8,7 @@ import re
 # 3. Odoo imports (openerp):
 from openerp import api, fields, models
 from openerp import exceptions
+from openerp import _
 
 # 4. Imports from Odoo modules:
 
@@ -40,13 +41,29 @@ class ResPartner(models.Model):
         if isinstance(self.businessid, basestring) and re.match('^[0-9]{8}$', self.businessid):
             self.businessid = self.businessid[:7] + '-' + self.businessid[7:]
 
-        self.validate_business_id(self.businessid)
+        valid_businessid = self.validate_business_id(self.businessid)
+
+        # Check if a company with this business id already exists
+        if valid_businessid and self.businessid:
+            existing_partner = self.env['res.partner'].search(
+                [
+                ('businessid','=',self.businessid),
+                ('businessid', '!=', False)
+                ],
+                limit=1)
+
+            if existing_partner:
+                msg = "This business id is already in use for '%s'!" % existing_partner.name
+                raise exceptions.Warning(msg)
+                return False
+
         self.update_vat(self.businessid)
 
     @api.one
     @api.onchange('businessid_use_parent')
     def onchange_businessid_use_parent(self):
         if self.businessid_use_parent:
+            self.businessid = False
             self.businessid_parent = self.parent_id.businessid
             self.vat = self.parent_id.vat
 
