@@ -55,15 +55,15 @@ class CrmLead(models.Model):
                 raise exceptions.Warning(warn)
 
             else:
-                sale_order_object = self.env['sale.order']
                 vals = {
                     'partner_id': self.partner_id.id,
                     'partner_invoice_id': self.partner_id.id,
                     'partner_shipping_id': self.partner_id.id,
-                    'lead_id': self.id,
+                    'lead': self.id,
                     'description': self.description,
                 }
-                sale_order = sale_order_object.create(vals)
+
+                sale_order = self.sale_order.create(vals)
                 self.sale_order = sale_order.id
                 self.ref = sale_order
 
