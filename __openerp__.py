@@ -21,7 +21,7 @@
 
 {
     'name': 'Sale Simplification',
-    'version': '8.0.0.3.9',
+    'version': '8.0.0.3.10',
     'category': 'Sale',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -31,8 +31,9 @@
     'depends': [
         'account',
         'sale',
-        'sale_stock',
         'sale_order_customer_contact',
+        'sale_order_header',
+        'sale_stock',
     ],
     'data': [
         'view/sale_order_form.xml',

@@ -115,6 +115,10 @@
             <field name='company_id' position='attributes'>
             	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
             </field>
+
+            <field name='warehouse_id' position='attributes'>
+            	<attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+            </field>
 			      
 			</field>
         </record>
