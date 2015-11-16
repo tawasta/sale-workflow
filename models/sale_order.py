@@ -18,30 +18,13 @@ class SaleOrder(models.Model):
     # 1. Private attributes
     _inherit = 'sale.order'
 
-    _FIELD_STATES = {
-        'draft': [('readonly', False)],
-        'sent': [('readonly', False)],
-        'manual': [('readonly', False)],
-    }
+
 
     # 2. Fields declaration
     show_all = fields.Boolean(
         'Show all fields',
         help="Some of the lesser used fields are hidden by default"
     )
-
-    # Allow modifying fields until the invoice is created
-    partner_id = fields.Many2one(states=_FIELD_STATES)
-    partner_invoice_id = fields.Many2one(states=_FIELD_STATES)
-    partner_shipping_id = fields.Many2one(states=_FIELD_STATES)
-
-    date_order = fields.Datetime(states=_FIELD_STATES)
-    order_line = fields.One2many(states=_FIELD_STATES)
-
-    customer_contact = fields.Many2one(states=_FIELD_STATES)
-    header_text = fields.Char(states=_FIELD_STATES)
-    client_order_ref = fields.Char(states=_FIELD_STATES)
-    warehouse_id = fields.Many2one(states=_FIELD_STATES)
 
     # 3. Default methods
 
