@@ -53,5 +53,4 @@ class CrmCaseStage(models.Model):
             ])
 
             for record in records:
-                print "unset: %s" % record.name
                 record.sale_action = False

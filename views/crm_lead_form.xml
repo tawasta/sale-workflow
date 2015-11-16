@@ -1,10 +1,9 @@
 <openerp>
     <data>
-        <record id="crm_opportunity_simplified_form_view_order_lines" model="ir.ui.view">
+        <record id="crm_case_form_view_oppor" model="ir.ui.view">
 			<field name="name">CRM Lead Sale Order Lines</field>
 			<field name="model">crm.lead</field>
-			<field name="inherit_id" ref="crm_simplification.crm_opportunity_simplified_form_view"/>
-			<field name="priority" eval="18" />
+			<field name="inherit_id" ref="crm_lead_to_sale.crm_case_form_view_oppor"/>
 			<field name="arch" type="xml">
             
             	<field name="ref" position="attributes">
@@ -12,7 +11,6 @@
             	</field>
             
             	<field name="ref" position="after">
-            		<field name="sale_order" readonly="1"/>
             		<field name="pricelist_id" invisible="1"/>
             	</field>
 
@@ -62,7 +60,7 @@
 			<field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
 			<field name="arch" type="xml">
 
-	            <!-- Only show "Create Quotation"button when opportunity is marked as won -->
+	            <!-- Only show "Create Quotation" button when opportunity is marked as won -->
 	            <button string="Convert to Quotation" position="replace" />
 	            
 	            <button string="Create Quotation" position="attributes">
