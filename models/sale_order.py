@@ -38,6 +38,11 @@ class SaleOrder(models.Model):
     date_order = fields.Datetime(states=_FIELD_STATES)
     order_line = fields.One2many(states=_FIELD_STATES)
 
+    customer_contact = fields.Many2one(states=_FIELD_STATES)
+    header_text = fields.Char(states=_FIELD_STATES)
+    client_order_ref = fields.Char(states=_FIELD_STATES)
+    warehouse_id = fields.Many2one(states=_FIELD_STATES)
+
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
