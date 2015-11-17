@@ -1,0 +1,48 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_business_id_extension
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-17 08:45+0000\n"
+"PO-Revision-Date: 2015-11-17 10:46+0200\n"
+"Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fi\n"
+"X-Generator: Poedit 1.7.5\n"
+
+#. module: sale_business_id_extension
+#: view:res.partner:sale_business_id_extension.view_partner_form_add_affiliate
+msgid "Check"
+msgstr "Tarkista"
+
+#. module: sale_business_id_extension
+#: model:ir.model,name:sale_business_id_extension.model_res_partner
+msgid "Partner"
+msgstr "Kumppani"
+
+#. module: sale_business_id_extension
+#: field:res.partner,businessid_use_parent:0
+msgid "Use Company business ID"
+msgstr "Käytä yrityksen y-tunnusta"
+
+#. module: sale_business_id_extension
+#: view:res.partner:sale_business_id_extension.view_partner_form_add_affiliate
+msgid "fa-cogs"
+msgstr "fa-cogs"
+
+#. module: sale_business_id_extension
+#: view:res.partner:sale_business_id_extension.view_partner_form_add_affiliate
+msgid "oe_inline oe_stat_button oe_edit_only"
+msgstr "oe_inline oe_stat_button oe_edit_only"
+
+#. module: sale_business_id_extension
+#: view:res.partner:sale_business_id_extension.view_partner_form_add_affiliate
+msgid "width: 90px !important;"
+msgstr "width: 90px !important;"
