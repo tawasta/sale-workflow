@@ -31,8 +31,12 @@ class SaleOrder(models.Model):
             default=False,
             help="A sale within the company group. These sales will be given "
             + "an analytic account automatically",
-            readonly=True,
-            states={'draft': [('readonly', False)]},
+            readonly=False,
+            states={
+                'manual': [('readonly', True)],
+                'progress': [('readonly', True)],
+                'done': [('readonly', True)],
+            }
         )
 
     # 3. Default methods
