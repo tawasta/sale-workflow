@@ -21,7 +21,7 @@
 
 {
     'name': 'Sale Simplification',
-    'version': '8.0.0.3.14',
+    'version': '8.0.0.3.15',
     'category': 'Sale',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
