@@ -45,30 +45,59 @@ class ResPartner(models.Model):
         # Validate the business id
         self.validate_business_id(self.businessid)
 
-        current_id = 0
+        partners = []
+
         if not isinstance(self.id, models.NewId):
-            current_id = self.id
+            partners.append(self.id)
 
         if self.parent_id:
             # Get the top company and all its children
             parent = self._get_recursive_parent()[0]
             children = self._get_recursive_child_ids(parent)
-            children.append(parent.id)
-        else:
-            # Only current id
-            children = [current_id]
+
+            partners.extend(children)
+            partners.append(parent.id)
 
         # Check if a company with this business id already exists
         existing_partner = self.env['res.partner'].search([
             ('businessid', '=', self.businessid),
             ('businessid', '!=', False),
-            ('id', 'not in', children),
+            ('id', 'not in', partners),
             ],
             limit=1,
         )
 
         if existing_partner:
             msg = "This business id is already in use for '%s'!" % existing_partner.name
+            raise ValidationError(msg) \
+
+    @api.one
+    @api.constrains('vat')
+    def _check_vat(self):
+        partners = []
+
+        if not isinstance(self.id, models.NewId):
+            partners.append(self.id)
+
+        if self.parent_id:
+            # Get the top company and all its children
+            parent = self._get_recursive_parent()[0]
+            children = self._get_recursive_child_ids(parent)
+
+            partners.extend(children)
+            partners.append(parent.id)
+
+        # Check if a company with this vat already exists
+        existing_partner = self.env['res.partner'].search([
+            ('vat', '=', self.vat),
+            ('vat', '!=', False),
+            ('id', 'not in', partners),
+            ],
+            limit=1,
+        )
+
+        if existing_partner:
+            msg = "This VAT is already in use for '%s'!" % existing_partner.name
             raise ValidationError(msg)
 
     ''' Override existing sql constraint with one that always returns true '''
