@@ -14,10 +14,11 @@ class SaleOrder(models.Model):
         ''' Extends default write to update opportunity as the
         sale progresses '''
 
+        # Sale is confirmed. Mark the opportunity as won
         if 'state' in vals and vals['state'] == 'manual' and self.lead:
-            # Sale is confirmed. Mark the opportunity as won
             self.lead.case_mark_won()
 
+        # Update description to the lead
         if 'description' in vals and self.lead:
             self.lead.description = vals['description']
 
