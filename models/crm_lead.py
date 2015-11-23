@@ -82,26 +82,31 @@ class CrmLead(models.Model):
 
             self.message_post(msg)
 
+    @api.multi
     def _get_sale_order_lines(self):
         for record in self:
             if record.sale_order:
                 record.sale_order_lines = self.sale_order.order_line
 
+    @api.multi
     def _set_sale_order_lines(self):
         for record in self:
             if record.sale_order:
                 record.sale_order.order_line = record.sale_order_lines
 
+    @api.multi
     def _get_pricelist(self):
         for record in self:
             if record.sale_order:
                 record.pricelist_id = record.sale_order.pricelist_id
 
+    @api.multi
     def _get_sale_order_description(self):
         for record in self:
             if record.sale_order:
                 record.sale_order_description = self.sale_order.description
 
+    @api.multi
     def _set_sale_order_description(self):
         for record in self:
             if record.sale_order:
