@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import models, api
+from openerp import models, api, fields
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -7,8 +7,14 @@ _logger = logging.getLogger(__name__)
 
 class SaleOrder(models.Model):
 
+    # 1. Private attributes
     _inherit = 'sale.order'
 
+    # 2. Fields declaration
+
+    # 3. Default methods
+
+    # 4. Compute and search fields, in the same order that fields declaration
     @api.one
     def write(self, vals):
         ''' Extends default write to update opportunity as the
@@ -23,3 +29,11 @@ class SaleOrder(models.Model):
             self.lead.description = vals['description']
 
         return super(SaleOrder, self).write(vals)
+
+    # 5. Constraints and onchanges
+
+    # 6. CRUD methods
+
+    # 7. Action methods
+
+    # 8. Business methods
