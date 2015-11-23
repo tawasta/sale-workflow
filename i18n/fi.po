@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-17 08:45+0000\n"
-"PO-Revision-Date: 2015-11-17 10:46+0200\n"
+"POT-Creation-Date: 2015-11-23 17:37+0000\n"
+"PO-Revision-Date: 2015-11-23 19:39+0200\n"
 "Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,14 +23,38 @@ msgid "Check"
 msgstr "Tarkista"
 
 #. module: sale_business_id_extension
+#: code:addons/sale_business_id_extension/models/res_partner.py:124
+#, python-format
+msgid "Invalid business id!"
+msgstr "Virheellinen y-tunnus!"
+
+#. module: sale_business_id_extension
 #: model:ir.model,name:sale_business_id_extension.model_res_partner
 msgid "Partner"
 msgstr "Kumppani"
 
 #. module: sale_business_id_extension
-#: field:res.partner,businessid_use_parent:0
-msgid "Use Company business ID"
-msgstr "Käytä yrityksen y-tunnusta"
+#: code:addons/sale_business_id_extension/models/res_partner.py:124
+#, python-format
+msgid "Please use format '1234567-1' or '123.456'"
+msgstr "Ole hyvä ja käytä muotoa '12345671' tai '123.456'"
+
+#. module: sale_business_id_extension
+#: code:addons/sale_business_id_extension/models/res_partner.py:100
+#, python-format
+msgid "This VAT is already in use for '%s'!"
+msgstr "Tämä VAT on jo käytössä kumppanilla '%s'!"
+
+#. module: sale_business_id_extension
+#: sql_constraint:res.partner:0
+msgid "This business id is already in use"
+msgstr "Tämä y-tunnus on jo käytössä"
+
+#. module: sale_business_id_extension
+#: code:addons/sale_business_id_extension/models/res_partner.py:71
+#, python-format
+msgid "This business id is already in use for '%s'!"
+msgstr "Tämä y-tunnus on jo käytössä kumppanilla '%s'!"
 
 #. module: sale_business_id_extension
 #: view:res.partner:sale_business_id_extension.view_partner_form_add_affiliate

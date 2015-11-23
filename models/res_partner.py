@@ -68,7 +68,7 @@ class ResPartner(models.Model):
         )
 
         if existing_partner:
-            msg = "This business id is already in use for '%s'!" % existing_partner.name
+            msg = _("This business id is already in use for '%s'!") % existing_partner.name
             raise ValidationError(msg) \
 
     @api.one
@@ -97,7 +97,7 @@ class ResPartner(models.Model):
         )
 
         if existing_partner:
-            msg = "This VAT is already in use for '%s'!" % existing_partner.name
+            msg = _("This VAT is already in use for '%s'!") % existing_partner.name
             raise ValidationError(msg)
 
     ''' Override existing sql constraint with one that always returns true '''
@@ -121,7 +121,8 @@ class ResPartner(models.Model):
         Format 123.456
         '''
         if not re.match('^[0-9]{7}[-][0-9]{1}$', businessid) and not re.match('^[0-9]{3}[.][0-9]{3}$', businessid):
-            raise ValidationError("Invalid business id!" + " " + "Please use format '1234567-1' or '123.456'")
+            msg = _("Invalid business id!") + " " + _("Please use format '1234567-1' or '123.456'")
+            raise ValidationError(msg)
             return False
 
     def update_vat(self, businessid):
