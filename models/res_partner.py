@@ -8,6 +8,7 @@ import re
 # 3. Odoo imports (openerp):
 from openerp import api, fields, models
 from openerp import exceptions
+from openerp.exceptions import ValidationError
 from openerp import _
 
 # 4. Imports from Odoo modules:
@@ -23,16 +24,10 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     # 2. Fields declaration
-    businessid_parent = fields.Char('Business id', size=20, readonly=True, compute='_get_businessid')
-    businessid_use_parent = fields.Boolean('Use Company business ID')
 
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
-    @api.one
-    def _get_businessid(self):
-        if self.businessid_use_parent:
-            self.businessid_parent = self.parent_id.businessid
 
     # 5. Constraints and onchanges
     @api.onchange('businessid')
@@ -41,31 +36,43 @@ class ResPartner(models.Model):
         if isinstance(self.businessid, basestring) and re.match('^[0-9]{8}$', self.businessid):
             self.businessid = self.businessid[:7] + '-' + self.businessid[7:]
 
-        valid_businessid = self.validate_business_id(self.businessid)
-
-        # Check if a company with this business id already exists
-        if valid_businessid and self.businessid:
-            existing_partner = self.env['res.partner'].search(
-                [
-                ('businessid','=',self.businessid),
-                ('businessid', '!=', False)
-                ],
-                limit=1)
-
-            if existing_partner:
-                msg = "This business id is already in use for '%s'!" % existing_partner.name
-                raise exceptions.Warning(msg)
-                return False
-
-        self.update_vat(self.businessid)
+        if self._check_businessid():
+            self.update_vat(self.businessid)
 
     @api.one
-    @api.onchange('businessid_use_parent')
-    def onchange_businessid_use_parent(self):
-        if self.businessid_use_parent:
-            self.businessid = False
-            self.businessid_parent = self.parent_id.businessid
-            self.vat = self.parent_id.vat
+    @api.constrains('businessid')
+    def _check_businessid(self):
+        # Validate the business id
+        self.validate_business_id(self.businessid)
+
+        current_id = 0
+        if not isinstance(self.id, models.NewId):
+            current_id = self.id
+
+        if self.parent_id:
+            # Get the top company and all its children
+            parent = self._get_recursive_parent()[0]
+            children = self._get_recursive_child_ids(parent)
+            children.append(parent.id)
+        else:
+            # Only current id
+            children = [current_id]
+
+        # Check if a company with this business id already exists
+        existing_partner = self.env['res.partner'].search([
+            ('businessid', '=', self.businessid),
+            ('businessid', '!=', False),
+            ('id', 'not in', children),
+            ],
+            limit=1,
+        )
+
+        if existing_partner:
+            msg = "This business id is already in use for '%s'!" % existing_partner.name
+            raise ValidationError(msg)
+
+    ''' Override existing sql constraint with one that always returns true '''
+    _sql_constraints = [('businessid_unique', 'CHECK(1=1)', 'This business id is already in use')]
 
     # 6. CRUD methods
 
@@ -85,7 +92,7 @@ class ResPartner(models.Model):
         Format 123.456
         '''
         if not re.match('^[0-9]{7}[-][0-9]{1}$', businessid) and not re.match('^[0-9]{3}[.][0-9]{3}$', businessid):
-            raise exceptions.Warning("Invalid business id!" + " " + "Please use format '1234567-1' or '123.456'")
+            raise ValidationError("Invalid business id!" + " " + "Please use format '1234567-1' or '123.456'")
             return False
 
     def update_vat(self, businessid):
