@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-07 17:26+0000\n"
-"PO-Revision-Date: 2015-11-07 19:59+0200\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2015-11-24 16:29+0000\n"
+"PO-Revision-Date: 2015-11-24 18:29+0200\n"
+"Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,15 +18,36 @@ msgstr ""
 "X-Generator: Poedit 1.7.5\n"
 
 #. module: sale_simplification
-#: view:res.partner:sale_simplification.view_partner_form
+#: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
+msgid "Client reference"
+msgstr "Asiakasviite"
+
+#. module: sale_simplification
+#: view:res.partner:sale_simplification.view_partner_property_form
 #: field:res.partner,invoices:0
+#: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
 msgid "Invoices"
 msgstr "Laskut"
+
+#. module: sale_simplification
+#: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
+msgid "Other Information"
+msgstr "Lisätiedot"
+
+#. module: sale_simplification
+#: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
+msgid "Our reference"
+msgstr "Oma viite"
 
 #. module: sale_simplification
 #: model:ir.model,name:sale_simplification.model_res_partner
 msgid "Partner"
 msgstr "Kumppani"
+
+#. module: sale_simplification
+#: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
+msgid "Responsible"
+msgstr "Vastuullinen"
 
 #. module: sale_simplification
 #: model:ir.model,name:sale_simplification.model_sale_order
@@ -50,6 +71,16 @@ msgstr "Joitain vähemmän käytettyjä kenttiä on piilotettu oletuksena"
 
 #. module: sale_simplification
 #: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
+msgid "Total Amount"
+msgstr "Yhteensä"
+
+#. module: sale_simplification
+#: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
+msgid "Untaxed Amount"
+msgstr "Veroton määrä"
+
+#. module: sale_simplification
+#: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
 msgid "date"
 msgstr "päivä"
 
@@ -61,6 +92,5 @@ msgstr "{\"no_create\": True, \"no_open\": True}"
 #. module: sale_simplification
 #: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
 #: view:sale.order:sale_simplification.sale_quotation_view_form_simplified_stock
-#: view:sale.order:sale_simplification.sale_quotation_view_form_simplified_tracking
 msgid "{'invisible':[('show_all','=',False)]}"
 msgstr "{'invisible':[('show_all','=',False)]}"
