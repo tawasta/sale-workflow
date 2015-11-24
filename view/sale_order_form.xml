@@ -22,15 +22,6 @@
                     <attribute name="options">{"no_create": True, "no_open": True}</attribute>
                 </field>
 
-                <!-- Hide some fields by default -->
-                <field name='invoiced' position='attributes'>
-                    <attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
-                </field>
-
-                <field name='origin' position='attributes'>
-                    <attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
-                </field>
-
                 <!-- Add a 'show all' checkbox after the main group -->
                 <xpath expr="//group[1]" position="after">
                     <div id='show_all' class="oe_right oe_edit_only">
@@ -103,6 +94,12 @@
                 <field name='payment_term' position='replace' />
                 <field name='incoterm' position='before'>
                     <field name='payment_term' options='{"no_create": True, "no_open": True}' />
+                </field>
+
+                <!-- Move not after the incoterm -->
+                <field name="note" position="replace" />
+                <field name="incoterm" position="after">
+                    <field name="note" />
                 </field>
 
                 <!-- Hide some fields by default -->
