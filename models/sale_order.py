@@ -7,7 +7,7 @@ from dateutil.relativedelta import relativedelta
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from openerp import api, fields, models
+from openerp import api, fields, models, _
 from openerp.exceptions import ValidationError
 
 # 4. Imports from Odoo modules:
@@ -25,7 +25,13 @@ class SaleOrder(models.Model):
     # 2. Fields declaration
     date_validity = fields.Date(
         'Validity date',
-        default=lambda self: self._default_date_validity()
+        default=lambda self: self._default_date_validity(),
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+            'sent': [('readonly', False)],
+            'manual': [('readonly', False)],
+        }
     )
 
     # 3. Default methods
@@ -56,10 +62,12 @@ class SaleOrder(models.Model):
     @api.constrains('date_validity')
     def _check_date_validity(self):
         if self.date_order > self.date_validity:
-            raise ValidationError("Validity date can't be before order date")
+            raise ValidationError(_("Validity date can't be before order date"))
 
     # 6. CRUD methods
 
     # 7. Action methods
+    # @api.multi
+    # def action_button_confirm(self):
 
     # 8. Business methods

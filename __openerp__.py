@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order Validity',
     'summary': 'SO Validity date',
-    'version': '8.0.0.3.1',
+    'version': '8.0.0.3.2',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
