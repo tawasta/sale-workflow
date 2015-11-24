@@ -8,7 +8,9 @@
 			<field name="inherit_id" ref="sale.view_order_form" />
 			<field name="arch" type="xml">
 				
-				<!-- Content goes here-->
+				<field name="date_order" position="after">
+					<field name="date_validity" />
+				</field>
 
 			</field>
 		</record> 

@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order Validity',
     'summary': 'SO Validity date',
-    'version': '8.0.0.1.0',
+    'version': '8.0.0.2.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -30,8 +30,9 @@
     'application': False,
     'installable': True,
     'depends': [
-        'base',
+        'sale',
     ],
     'data': [
+        'views/sale_order.xml',
     ],
 }
