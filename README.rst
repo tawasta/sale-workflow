@@ -6,7 +6,13 @@
 Sale Order Validity
 ===================
 
-Adds a validity date for sale orders
+Adds a validity date for sale orders.
+
+Features
+========
+* Validity date field
+* Validity date default
+* Validity date onchange
 
 Installation
 ============
@@ -23,7 +29,7 @@ Usage
 
 Known issues / Roadmap
 ======================
-\-
+- Default validity length can't be changed
 
 Credits
 =======
