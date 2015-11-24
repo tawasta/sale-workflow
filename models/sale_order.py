@@ -8,6 +8,7 @@ from dateutil.relativedelta import relativedelta
 
 # 3. Odoo imports (openerp):
 from openerp import api, fields, models
+from openerp.exceptions import ValidationError
 
 # 4. Imports from Odoo modules:
 
@@ -17,7 +18,7 @@ from openerp import api, fields, models
 
 
 class SaleOrder(models.Model):
-    
+
     # 1. Private attributes
     _inherit = 'sale.order'
 
@@ -37,6 +38,11 @@ class SaleOrder(models.Model):
     # 4. Compute and search fields, in the same order that fields declaration
 
     # 5. Constraints and onchanges
+    @api.one
+    @api.constrains('date_validity')
+    def _check_date_validity(self):
+        if self.date_order > self.date_validity:
+            raise ValidationError("Validity date can't be before order date")
 
     # 6. CRUD methods
 
