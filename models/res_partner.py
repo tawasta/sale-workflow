@@ -47,6 +47,9 @@ class ResPartner(models.Model):
 
         partners = []
 
+        if 'default_parent_id' in self._context:
+            self.parent_id = self._context['default_parent_id']
+
         if not isinstance(self.id, models.NewId):
             partners.append(self.id)
 
