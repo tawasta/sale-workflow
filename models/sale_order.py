@@ -18,8 +18,6 @@ class SaleOrder(models.Model):
     # 1. Private attributes
     _inherit = 'sale.order'
 
-
-
     # 2. Fields declaration
     show_all = fields.Boolean(
         'Show all fields',
@@ -35,21 +33,19 @@ class SaleOrder(models.Model):
     @api.onchange('partner_id')
     def onchange_partner(self):
         if self.partner_id:
-            partner = self.partner_id
-
             # Partner is a contact person
-            if partner.type == 'contact'\
-                    and not partner.is_company \
-                    and partner.parent_id:
-                self.customer_contact = partner
-                self.partner_id = partner.parent_id
+            if self.partner_id.type == 'contact'\
+                    and not self.partner_id.is_company \
+                    and self.partner_id.parent_id:
+                self.customer_contact = self.partner_id
+                self.partner_id = self.partner_id.parent_id
 
-            self.partner_invoice_id = partner
-            self.partner_shipping_id = partner
+            self.partner_invoice_id = self.partner_id
+            self.partner_shipping_id = self.partner_id
 
-            self.pricelist_id = partner.property_product_pricelist
+            self.pricelist_id = self.partner_id.property_product_pricelist
             self.currency_id = self.pricelist_id.currency_id
-            self.payment_term = partner.property_payment_term
+            self.payment_term = self.partner_id.property_payment_term
 
         super(SaleOrder, self).onchange_partner()
 
