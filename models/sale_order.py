@@ -38,7 +38,7 @@ class SaleOrder(models.Model):
     order_line = fields.One2many(states=_FIELD_STATES)
     header_text = fields.Char(states=_FIELD_STATES, readonly=True)
     client_order_ref = fields.Char(string='Reference', states=_FIELD_STATES, readonly=True)
-    user_id = fields.Char(states=_FIELD_STATES, readonly=True)
+    user_id = fields.Many2one(states=_FIELD_STATES, readonly=True)
     origin = fields.Many2one(states=_FIELD_STATES, readonly=True)
 
     ### Stock
