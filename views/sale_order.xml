@@ -9,8 +9,7 @@
 			<field name="arch" type="xml">
 				
 				<field name='project_id' position='after'>
-				    <field name='internal_sale' 
-				        attrs="{'invisible':[('project_id','=',False)]}"/>
+				    <field name='internal_sale'/>
 				</field>
 
 			</field>

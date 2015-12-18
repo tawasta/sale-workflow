@@ -44,36 +44,29 @@ class SaleOrder(models.Model):
     # 4. compute and search fields, in the same order that fields declaration
 
     # 5. Constraints and onchanges
-    
-    @api.onchange('internal_sale', 'project_id')
-    @api.depends('name', 'project_id')
-    def _onchange_internal_sale(self):
+    @api.onchange('internal_sale')
+    @api.depends('project_id')
+    def onchange_internal_sale(self):
         analytic = self._get_account_internal_sale()
 
         if self.project_id and self.internal_sale:
-            self.project_id.parent_id = analytic.id
+            if not self.project_id.id == analytic.id:
+                self.project_id.parent_id = analytic.id
+        elif self.internal_sale and not self.project_id:
+            self.project_id = analytic
 
-        if self.project_id.parent_id.id == analytic.id:
+    @api.onchange('project_id')
+    @api.depends('internal_sale')
+    def onchange_project_id(self):
+        if not self.project_id:
+            self.internal_sale = False
+
+        analytic = self._get_account_internal_sale()
+
+        if self.project_id.parent_id.id == analytic.id or self.project_id.id == analytic.id:
             self.internal_sale = True
         else:
             self.internal_sale = False
-        
-        '''
-        if self.internal_sale and not self.project_id:
-            vals = {}
-            vals['name'] = self.partner_id.name
-            vals['type'] = 'view'
-            vals['parent_id'] = self.project_id.sudo().search([('code','=','INTSAL')]).id
-            vals['partner_id'] = self.partner_id.id
-            
-            
-            project = self.project_id.new(vals)
-            print self.project_id
-            
-            self.project_id = project.id
-            
-            print self.project_id
-        '''
 
     # 6. CRUD methods
     @api.one
@@ -83,18 +76,17 @@ class SaleOrder(models.Model):
         if self.project_id and self.internal_sale:
             analytic = self._get_account_internal_sale()
 
-            self.project_id.parent_id = analytic.id
+            if not self.project_id.id == analytic.id:
+                self.project_id.parent_id = analytic.id
     
     # 7. Action methods
     
     # 8. Business methods
     def _get_account_internal_sale(self):
         analytic_account = self.project_id.sudo().search(
-            [('code','like','INTSAL'),
-             ('company_id','=',self.company_id.id)],
+            [('code', 'like', 'INTSAL'),
+             ('company_id', '=', self.company_id.id)],
             limit=1,
         )
         
         return analytic_account
-
-    
