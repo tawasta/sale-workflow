@@ -42,8 +42,55 @@ class ResPartner(models.Model):
     @api.one
     @api.constrains('businessid')
     def _check_businessid(self):
-        # Validate the business id
-        self.validate_business_id(self.businessid)
+        # Validate the business id format
+        format_error = self.businessid_invalid_format(self.businessid)
+        if format_error:
+            raise ValidationError(format_error)
+
+        # Validate business id usage
+        used_error = self.businessid_used()
+
+        if used_error:
+            raise ValidationError(used_error)
+
+    @api.one
+    @api.constrains('vat')
+    def _check_vat(self):
+        used_error = self.vat_used()
+
+        if used_error:
+            raise ValidationError(used_error)
+
+    ''' Override existing sql constraint with one that always returns true '''
+    _sql_constraints = [('businessid_unique', 'CHECK(1=1)', 'This business id is already in use')]
+
+    # 6. CRUD methods
+
+    # 7. Action methods
+
+    # 8. Business methods
+    def businessid_invalid_format(self, businessid):
+        # Validates business ID format
+        # Returns False when business ID is valid
+        if not businessid:
+            return False
+
+        '''
+        Regular Finnish business id (y-tunnus)
+        Format '1234567-1'
+        OR
+        Registered association (rekisteröity yhdistys, ry/r.y.).
+        Format 123.456
+        '''
+        if not re.match('^[0-9]{7}[-][0-9]{1}$', businessid) and not re.match('^[0-9]{3}[.][0-9]{3}$', businessid):
+            msg = _("Invalid business id!") + " " + _("Please use format '1234567-1' or '123.456'")
+            return msg
+
+        return False
+
+    def businessid_used(self):
+        # Validates business id usage
+        # Returns False when business ID is not used
 
         partners = []
 
@@ -72,11 +119,13 @@ class ResPartner(models.Model):
 
         if existing_partner:
             msg = _("This business id is already in use for '%s'!") % existing_partner.name
-            raise ValidationError(msg) \
+            return msg
 
-    @api.one
-    @api.constrains('vat')
-    def _check_vat(self):
+        return False
+
+    def vat_used(self):
+        # Validates VAT usage
+        # Returns False when VAT is not used
         partners = []
 
         if not isinstance(self.id, models.NewId):
@@ -101,32 +150,9 @@ class ResPartner(models.Model):
 
         if existing_partner:
             msg = _("This VAT is already in use for '%s'!") % existing_partner.name
-            raise ValidationError(msg)
+            return msg
 
-    ''' Override existing sql constraint with one that always returns true '''
-    _sql_constraints = [('businessid_unique', 'CHECK(1=1)', 'This business id is already in use')]
-
-    # 6. CRUD methods
-
-    # 7. Action methods
-
-    # 8. Business methods
-    def validate_business_id(self, businessid):
-        # Validates business ID format
-        if not businessid:
-            return False
-
-        '''
-        Regular Finnish business id (y-tunnus)
-        Format '1234567-1'
-        OR
-        Registered association (rekisteröity yhdistys, ry/r.y.).
-        Format 123.456
-        '''
-        if not re.match('^[0-9]{7}[-][0-9]{1}$', businessid) and not re.match('^[0-9]{3}[.][0-9]{3}$', businessid):
-            msg = _("Invalid business id!") + " " + _("Please use format '1234567-1' or '123.456'")
-            raise ValidationError(msg)
-            return False
+        return False
 
     def update_vat(self, businessid):
         # Auto-update VAT
