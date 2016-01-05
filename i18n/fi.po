@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-23 17:37+0000\n"
-"PO-Revision-Date: 2015-11-23 19:39+0200\n"
+"PO-Revision-Date: 2016-01-05 15:13+0200\n"
 "Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr "Kumppani"
 #: code:addons/sale_business_id_extension/models/res_partner.py:124
 #, python-format
 msgid "Please use format '1234567-1' or '123.456'"
-msgstr "Ole hyvä ja käytä muotoa '12345671' tai '123.456'"
+msgstr "Ole hyvä ja käytä muotoa '1234567-1' tai '123.456'"
 
 #. module: sale_business_id_extension
 #: code:addons/sale_business_id_extension/models/res_partner.py:100
