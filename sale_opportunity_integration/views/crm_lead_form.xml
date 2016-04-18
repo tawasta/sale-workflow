@@ -1,0 +1,75 @@
+<openerp>
+    <data>
+        <record id="crm_case_form_view_oppor" model="ir.ui.view">
+			<field name="name">CRM Lead Sale Order Lines</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm_lead_to_sale.crm_case_form_view_oppor"/>
+			<field name="arch" type="xml">
+            
+            	<field name="ref" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</field>
+            
+            	<field name="ref" position="after">
+            		<field name="pricelist_id" invisible="1"/>
+            	</field>
+
+				<field name="description" position="attributes">
+					<attribute name="attrs">{'invisible': [('sale_order', '!=', False)]}</attribute>
+				</field>
+
+				<field name="description" position="after">
+					<field name="sale_order_description" attrs="{'invisible': [('sale_order', '=', False)]}" />
+				</field>
+
+            	<page string="Internal Notes" position="before">
+            		<page string="Order lines" attrs="{'invisible': [('sale_order', '=', False)]}">
+            			<field name="sale_order_lines">
+	                        <tree string="Sales Order Lines" editable="bottom">
+	                            <field name="sequence" widget="handle"/>
+	                            <field name="state" invisible="1"/>
+	                            <field name="th_weight" invisible="1"/>
+	                            <field name="product_id"
+	                                context="{'partner_id': parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom}"
+	                                groups="base.group_user"
+	                                on_change="product_id_change(parent.pricelist_id, product_id, product_uom_qty, False, product_uos_qty, False, name, parent.partner_id, False, True, parent.date_order, False, parent.fiscal_position, False, context)"/>
+	                            <field name="name"/>
+	                            <field name="product_uom_qty"
+	                                context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom}"
+	                                on_change="product_id_change(parent.pricelist_id, product_id, product_uom_qty, product_uom, product_uos_qty, product_uos, name, parent.partner_id, False, False, parent.date_order, False, parent.fiscal_position, True, context)"/>
+	                            <field name="product_uom"
+	                                on_change="product_uom_change(parent.pricelist_id, product_id, product_uom_qty, product_uom, product_uos_qty, product_uos, name, parent.partner_id, False, False, parent.date_order, context)"
+	                                groups="product.group_uom" options='{"no_open": True}'/>
+	                            <field name="product_uos_qty" groups="product.group_uos" invisible="1"/>
+	                            <field name="product_uos" string="UoS" groups="product.group_uos" invisible="1"/>
+	                            <field name="price_unit"/>
+	                            <field name="tax_id" widget="many2many_tags" domain="[('parent_id','=',False),('type_tax_use','&lt;&gt;','purchase')]"/>
+	                            <field name="discount" groups="sale.group_discount_per_so_line"/>
+	                            <field name="price_subtotal"/>
+	                        </tree>
+            			</field>
+            		</page>
+            	</page>
+            
+			</field>
+        </record>
+        
+        <record id="crm_opportunity_form_view_header_buttons" model="ir.ui.view">
+			<field name="name">CRM Lead Header Buttons</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
+			<field name="arch" type="xml">
+
+	            <!-- Only show "Create Quotation" button when opportunity is marked as won -->
+	            <button string="Convert to Quotation" position="replace" />
+	            
+	            <button string="Create Quotation" position="attributes">
+	            	<attribute name='class'>oe_highlight</attribute>
+	            	<attribute name='attrs'>{'invisible': ['|',('sale_order', '!=', False),('probability', '&lt;', 100)]}</attribute>
+	            </button>
+	            
+			</field>
+		</record>
+        
+    </data>
+</openerp>
