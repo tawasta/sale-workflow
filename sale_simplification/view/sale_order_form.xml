@@ -1,0 +1,141 @@
+<openerp>
+    <data>
+        <record id="sale_quotation_view_form_simplified" model="ir.ui.view">
+			<field name="name">Sale Quotation Form</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="priority" eval="15" />
+			<field name="arch" type="xml">
+            
+                <!-- Remove the old onchange -->
+                <field name='partner_id' position='attributes'>
+                    <attribute name='on_change'>1</attribute>
+                </field>
+
+                <!-- Show the datetime as date for simplicity -->
+                <field name="date_order" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </field>
+
+                <!-- Don't allow adding users from here -->
+                <field name="user_id" position="attributes">
+                    <attribute name="options">{"no_create": True, "no_open": True}</attribute>
+                </field>
+
+                <!-- Add a 'show all' checkbox after the main group -->
+                <xpath expr="//group[1]" position="after">
+                    <div id='show_all' class="oe_right oe_edit_only">
+                        <label for="show_all" />
+                        <field name="show_all" />
+                    </div>
+                </xpath>
+
+                <page string='Other Information' position='after'>
+                    <page string='Invoices'>
+                        <field name='invoice_ids'>
+                            <tree colors="blue:state == 'draft';black:state in ('proforma','proforma2','open');gray:state == 'cancel'">
+                                <field name="number"/>
+                                <field name="name"/>
+                                <field name="date_invoice"/>
+                                <field name="date_due"/>
+
+                                <field name="amount_untaxed" sum="Untaxed Amount"/>
+                                <field name="amount_total" sum="Total Amount"/>
+
+                                <field name="user_id" string="Responsible"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+
+                <!-- Move origin after client ref -->
+                <field name="origin" position="replace" />
+                <field name="client_order_ref" position="after">
+                    <field name="origin" string="Our reference" />
+                </field>
+
+                <!-- Rename client ref -->
+                <field name="client_order_ref" position="attributes">
+                    <attribute name="string">Client reference</attribute>
+                </field>
+			      
+			</field>
+        </record>
+        
+        <record id="sale_quotation_view_form_simplified_tracking" model="ir.ui.view">
+			<field name="name">Sale Quotation Form Tracking Simplification</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale_crm.sale_view_inherit123"/>
+			<field name="arch" type="xml">
+            
+                <!-- Move fields to extra info page and hide them by default -->
+                <field name="campaign_id" position="replace" />
+                <field name="medium_id" position="replace" />
+                <field name="source_id" position="replace" />
+
+
+                <field name="user_id" position="after">
+                    <field name="campaign_id" attrs="{'invisible':[('show_all','=',False)]}" />
+                    <field name="medium_id" attrs="{'invisible':[('show_all','=',False)]}" />
+                    <field name="source_id" attrs="{'invisible':[('show_all','=',False)]}" />
+                </field>
+			      
+			</field>
+        </record>
+        
+        <record id="sale_quotation_view_form_simplified_stock" model="ir.ui.view">
+			<field name="name">Sale Quotation Form Stock Simplification</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+			<field name="arch" type="xml">
+            
+                <!-- Move payment term to the top of the page -->
+                <field name='payment_term' position='replace' />
+                <field name='incoterm' position='before'>
+                    <field name='payment_term' options='{"no_create": True, "no_open": True}' />
+                </field>
+
+                <!-- Move not after the incoterm -->
+                <field name="note" position="replace" />
+                <field name="incoterm" position="after">
+                    <field name="note" />
+                </field>
+
+                <!-- Hide some fields by default -->
+                <field name='incoterm' position='attributes'>
+                    <attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+                </field>
+
+                <field name='picking_policy' position='attributes'>
+                    <attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+                </field>
+
+                <field name='order_policy' position='attributes'>
+                    <attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+                </field>
+
+                <field name='fiscal_position' position='attributes'>
+                    <attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+                </field>
+
+                <field name='company_id' position='attributes'>
+                    <attribute name='attrs'>{'invisible':[('show_all','=',False)]}</attribute>
+                </field>
+
+                <field name='warehouse_id' position='replace' />
+                <field name="user_id" position="after">
+                    <field name="warehouse_id"
+                           attrs="{'invisible':[('show_all','=',False)]}"
+                           on_change="onchange_warehouse_id(warehouse_id)"
+                           options="{'no_create': True}"
+                           groups="stock.group_locations"
+                    />
+
+                </field>
+			      
+			</field>
+        </record>
+        
+    </data>
+</openerp>
