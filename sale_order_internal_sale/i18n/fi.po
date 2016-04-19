@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_internal_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-13 14:30+0000\n"
+"PO-Revision-Date: 2015-10-13 17:31+0200\n"
+"Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fi\n"
+"X-Generator: Poedit 1.7.5\n"
+
+#. module: sale_order_internal_sale
+#: help:sale.order,internal_sale:0
+msgid "A sale within the company group. These sales will be given an analytic account automatically"
+msgstr "Yhtiöryhmän sisäinen myynti. Nämä myynnit merkataan automaattisesti kustannuspaikalle"
+
+#. module: sale_order_internal_sale
+#: field:sale.order,internal_sale:0
+msgid "Internal sale"
+msgstr "Sisäinen myynti"
+
+#. module: sale_order_internal_sale
+#: model:ir.model,name:sale_order_internal_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
