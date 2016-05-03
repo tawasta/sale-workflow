@@ -21,6 +21,7 @@
 
 {
     'name': 'Sale Order Internal Sale',
+    'summary': 'Simplifies internal invoicing process',
     'version': '8.0.0.5.5',
     'category': 'Sale',
     'website': 'http://www.tawasta.fi',

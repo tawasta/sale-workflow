@@ -21,7 +21,7 @@
 
 {
     'name': 'Sale Order Validity',
-    'summary': 'SO Validity date',
+    'summary': 'Adds a validity date for sale orders',
     'version': '8.0.0.3.2',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',

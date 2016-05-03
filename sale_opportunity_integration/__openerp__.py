@@ -20,6 +20,7 @@
 ##############################################################################
 {
     'name': 'Sale-Opportunity Integration',
+    'summary': 'Integrates opportunities and sales',
     'category': 'Sale',
     'version': '8.0.0.3.3',
     'author': 'Oy Tawasta Technologies Ltd.',
