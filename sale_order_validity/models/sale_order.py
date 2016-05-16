@@ -31,7 +31,8 @@ class SaleOrder(models.Model):
             'draft': [('readonly', False)],
             'sent': [('readonly', False)],
             'manual': [('readonly', False)],
-        }
+        },
+        copy=False
     )
 
     # 3. Default methods
