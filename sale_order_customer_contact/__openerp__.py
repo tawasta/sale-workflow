@@ -20,7 +20,7 @@
 {
     'name': 'Customer Contact for Sale Orders',
     'category': 'Sales',
-    'version': '8.0.0.1.6',
+    'version': '8.0.0.1.7',
     'author': '''
 Vizucom Oy,
 Oy Tawasta OS Technologies Ltd.
@@ -28,6 +28,6 @@ Oy Tawasta OS Technologies Ltd.
     'website': 'http://www.vizucom.com',
     'depends': ['sale'],
     'data': [
-        'view/sale_order.xml',
+        'views/sale_order.xml',
     ],
 }
