@@ -7,6 +7,7 @@ class Partner(osv.Model):
     _inherit = 'res.partner'
 
     def _init_business_id_and_vat(self, cr, uid, ids=None, context=None):
+        return False
         ''' If customer data was imported to Odoo before the module installation,
         the business id and vat fields won't get shown until the onchange function
         gets triggered. To avoid this, loop through partner data when the module
