@@ -159,7 +159,7 @@ class ResPartner(models.Model):
         if not self.businessid:
             return False
 
-        #TODO: Split this into country code-specific methods
+        #  TODO: Split this into country code-specific methods
 
-        if self.country_id.code == 'FI':
+        if self.country_id.code == 'FI' and re.match('^[0-9]{7}[-][0-9]{1}$', self.businessid):
             self.vat = "FI" + self.businessid.replace('-', '')
