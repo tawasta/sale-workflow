@@ -49,10 +49,10 @@
                     </page>
                 </page>
 
-                <!-- Move origin after client ref -->
+                <!-- Move origin after client ref and hide it for now -->
                 <field name="origin" position="replace" />
                 <field name="client_order_ref" position="after">
-                    <field name="origin" string="Our reference" />
+                    <field name="origin" string="Our reference" invisible="1" />
                 </field>
 
                 <!-- Rename client ref -->
