@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Jarmo Kortetjärvi
+#    Author: Oy Tawasta OS Technologies Ltd.
 #    Copyright 2015 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@
     'name': 'Sale-Opportunity Integration',
     'summary': 'Integrates opportunities and sales',
     'category': 'Sale',
-    'version': '8.0.0.3.3',
+    'version': '8.0.0.3.4',
     'author': 'Oy Tawasta Technologies Ltd.',
     'website': 'http://www.tawasta.fi',
     'depends': [
