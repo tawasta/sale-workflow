@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 16:29+0000\n"
-"PO-Revision-Date: 2015-11-24 18:29+0200\n"
-"Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
+"POT-Creation-Date: 2016-06-08 09:09+0000\n"
+"PO-Revision-Date: 2016-06-08 12:09+0300\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: fi\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: sale_simplification
 #: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
@@ -43,6 +43,18 @@ msgstr "Oma viite"
 #: model:ir.model,name:sale_simplification.model_res_partner
 msgid "Partner"
 msgstr "Kumppani"
+
+#. module: sale_simplification
+#: code:addons/sale_simplification/models/sale_order.py:62
+#, python-format
+msgid "Partner has no business id!"
+msgstr "Kumppanilla ei ole y-tunnusta!"
+
+#. module: sale_simplification
+#: code:addons/sale_simplification/models/sale_order.py:64
+#, python-format
+msgid "Please set a business id before confirming"
+msgstr "Ole hyvä ja aseta y-tunnus ennen vahvistamista"
 
 #. module: sale_simplification
 #: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
@@ -90,7 +102,6 @@ msgid "{\"no_create\": True, \"no_open\": True}"
 msgstr "{\"no_create\": True, \"no_open\": True}"
 
 #. module: sale_simplification
-#: view:sale.order:sale_simplification.sale_quotation_view_form_simplified
 #: view:sale.order:sale_simplification.sale_quotation_view_form_simplified_stock
 msgid "{'invisible':[('show_all','=',False)]}"
 msgstr "{'invisible':[('show_all','=',False)]}"

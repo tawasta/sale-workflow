@@ -6,6 +6,8 @@
 
 # 3. Odoo imports (openerp):
 from openerp import api, fields, models
+from openerp.exceptions import ValidationError
+from openerp import _
 
 # 4. Imports from Odoo modules (rarely, and only if necessary):
 
@@ -52,5 +54,17 @@ class SaleOrder(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
+    @api.multi
+    def action_button_confirm(self):
+        self.ensure_one()
+
+        if not self.partner_id.businessid:
+            msg = _('Partner has no business id!')
+            msg += "\n"
+            msg += _('Please set a business id before confirming')
+
+            raise ValidationError(msg)
+
+        return super(SaleOrder, self).action_button_confirm()
 
     # 8. Business methods
