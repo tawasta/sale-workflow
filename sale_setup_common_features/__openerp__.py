@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'Use delivery address on sale',
-    'summary': 'Checks group_sale_delivery_address',
-    'version': '8.0.0.1.0',
+    'name': 'Setup common sale features',
+    'summary': 'Sets up common sale features automatically',
+    'version': '8.0.1.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -35,8 +35,10 @@
     },
     'depends': [
         'sale',
+        'sales_team',
     ],
     'data': [
+        'data/init.xml',
     ],
     'demo': [
     ],
