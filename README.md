@@ -18,3 +18,4 @@ Available addons
 [sale_order_to_contract](sale_order_to_contract/) | Sale Order to Contract
 [sale_order_validity](sale_order_validity/) | Adds a validity date for sale orders
 [sale_simplification](sale_simplification/) | Sale Simplification
+[sale_use_delivery_address](sale_use_delivery_address/) | Checks group_sale_delivery_address
