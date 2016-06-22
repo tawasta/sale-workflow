@@ -54,6 +54,8 @@ class SaleOrder(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
+
+    # TODO: Don't require business id if the company is not Finnish
     # @api.multi
     # def action_button_confirm(self):
     #     self.ensure_one()
