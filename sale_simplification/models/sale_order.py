@@ -49,7 +49,9 @@ class SaleOrder(models.Model):
             self.currency_id = self.pricelist_id.currency_id
             self.payment_term = self.partner_id.property_payment_term
 
-        super(SaleOrder, self).onchange_partner()
+        res = super(SaleOrder, self).onchange_partner()
+
+        return res
 
     # 6. CRUD methods
 
