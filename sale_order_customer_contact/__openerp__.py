@@ -20,13 +20,16 @@
 {
     'name': 'Customer Contact for Sale Orders',
     'category': 'Sales',
-    'version': '8.0.0.1.7',
+    'version': '8.0.0.2.0',
     'author': '''
 Vizucom Oy,
 Oy Tawasta OS Technologies Ltd.
 ''',
     'website': 'http://www.vizucom.com',
-    'depends': ['sale'],
+    'depends': [
+        'res_partner_recursion',
+        'sale',
+    ],
     'data': [
         'views/sale_order.xml',
     ],
