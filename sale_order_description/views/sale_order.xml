@@ -9,7 +9,7 @@
 				<page string='Other Information' position='after'>
 					<!-- Add a description page to the notebook -->
 					<page string='Description'>
-						<field name='description' placeholder='Add internal notes...' />
+						<field name='description' placeholder='Add internal notes...' widget="bootstrap_markdown" />
 					</page>
 				</page>
 

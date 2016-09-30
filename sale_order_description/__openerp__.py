@@ -15,7 +15,7 @@
 {
     'name': 'Sale Order Description',
     'category': 'Sale',
-    'version': '0.1',
+    'version': '8.0.1.0.1',
     'author': 'Oy Tawasta Technologies Ltd.',
     'website': 'http://www.tawasta.fi',
     'depends': [
@@ -23,7 +23,7 @@
     ],
     'description': '''
 Sale Order Description
-==================
+======================
 
 Adds a description (an internal note) to sale order
 
