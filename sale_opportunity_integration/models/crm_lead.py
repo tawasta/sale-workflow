@@ -56,6 +56,7 @@ class CrmLead(models.Model):
 
             else:
                 vals = {
+                    'header_text': self.name,
                     'partner_id': self.partner_id.id,
                     'partner_invoice_id': self.partner_id.id,
                     'partner_shipping_id': self.partner_id.id,
