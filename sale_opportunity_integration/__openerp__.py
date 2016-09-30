@@ -22,7 +22,7 @@
     'name': 'Sale-Opportunity Integration',
     'summary': 'Integrates opportunities and sales',
     'category': 'Sale',
-    'version': '8.0.0.3.5',
+    'version': '8.0.0.3.6',
     'author': 'Oy Tawasta Technologies Ltd.',
     'website': 'http://www.tawasta.fi',
     'depends': [

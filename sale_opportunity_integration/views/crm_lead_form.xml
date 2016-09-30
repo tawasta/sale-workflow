@@ -19,7 +19,7 @@
 				</field>
 
 				<field name="description" position="after">
-					<field name="sale_order_description" attrs="{'invisible': [('sale_order', '=', False)]}" />
+					<field name="sale_order_description" widget="bootstrap_markdown" attrs="{'invisible': [('sale_order', '=', False)]}" />
 				</field>
 
             	<page string="Internal Notes" position="before">
