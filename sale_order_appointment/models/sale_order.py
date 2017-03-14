@@ -22,6 +22,7 @@ class SaleOrder(models.Model):
     # 2. Fields declaration
     appointment_date = fields.Datetime("Scheduled date")
     appointment_cancel_url = fields.Char("Cancel url")
+    appointment_existing_customer = fields.Boolean("Existing customer")
 
     # 3. Default methods
 

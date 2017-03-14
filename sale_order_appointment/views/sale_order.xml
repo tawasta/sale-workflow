@@ -11,6 +11,7 @@
 				<field name="date_order" position="after">
 					<field name="appointment_date" />
 					<field name="appointment_cancel_url" widget="url" />
+					<field name="appointment_existing_customer" />
 				</field>
 
 			</field>
