@@ -22,7 +22,7 @@
 {
     'name': 'Sale order appointments',
     'summary': 'Add appointment time and cancel url for sale orders',
-    'version': '8.0.0.2.1',
+    'version': '8.0.0.2.2',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

@@ -20,6 +20,7 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     # 2. Fields declaration
+    discount_code = fields.Char("Discount code")
     appointment_date = fields.Datetime("Scheduled date")
     appointment_cancel_url = fields.Char("Cancel url")
     appointment_existing_customer = fields.Boolean("Existing customer")
