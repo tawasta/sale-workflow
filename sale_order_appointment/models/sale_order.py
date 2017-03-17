@@ -22,6 +22,7 @@ class SaleOrder(models.Model):
     # 2. Fields declaration
     discount_code = fields.Char("Discount code")
     appointment_date = fields.Datetime("Scheduled date")
+    appointment_date_end = fields.Datetime("Scheduled date end")
     appointment_cancel_url = fields.Char("Cancel url")
     appointment_existing_customer = fields.Boolean("Existing customer")
 
