@@ -16,7 +16,7 @@
 				<field name='property_payment_term' position='replace' />
 				<field name='property_supplier_payment_term' position='replace' />
 
-				<field name='lang' position='after'>
+				<field name='date' position='before'>
 	                <field name='property_payment_term' options='{"no_create": True, "no_open": True}'/>
 	                <field name='property_supplier_payment_term' options='{"no_create": True, "no_open": True}'/>
 				</field>
