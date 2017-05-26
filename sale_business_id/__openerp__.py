@@ -19,6 +19,7 @@
     'version': '0.1',
     'author': 'Vizucom Oy',
     'depends': ['base_vat','base_misc_modules_menuitem'],
+    'installable': False,
     'description': """
 Business ID and VAT fields handling
 ===================================
