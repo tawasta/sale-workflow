@@ -7,8 +7,8 @@ Available addons
 ----------------
 **Addon** | **Summary**
 --- | ---
-[sale_business_id](sale_business_id/) | Business ID and VAT fields (DEPRECATED)
-[sale_business_id_extension](sale_business_id_extension/) | Business ID Extension (DEPRECATED)
+[sale_business_id](sale_business_id/) | DEPRECATED: Business ID and VAT fields
+[sale_business_id_extension](sale_business_id_extension/) | DEPRECATED: Business ID Extension
 [sale_opportunity_integration](sale_opportunity_integration/) | Integrates opportunities and sales
 [sale_order_appointment](sale_order_appointment/) | Add appointment time and cancel url for sale orders
 [sale_order_customer_contact](sale_order_customer_contact/) | Customer Contact for Sale Orders
