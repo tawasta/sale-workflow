@@ -27,7 +27,7 @@
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
-    'installable': False,
+    'installable': True,
     'depends': [
         'res_partner_recursion',
         'sale_business_id',
