@@ -22,7 +22,7 @@
 {
     'name': 'Mandatory taxes for sale order',
     'summary': 'Requires a tax for sale order lines before confirming',
-    'version': '8.0.0.1.0',
+    'version': '8.0.1.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -37,6 +37,7 @@
         'sale',
     ],
     'data': [
+        'views/sale_order.xml',
     ],
     'demo': [
     ],
