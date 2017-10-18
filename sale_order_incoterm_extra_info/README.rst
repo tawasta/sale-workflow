@@ -7,7 +7,7 @@ Sale Order Incoterm Extra Info
 ===============================
 
 * Adds a new field to Sale Orders for storing sale-specific incoterm Info
-* Incoterms can be configured so that the Sale Order's partner's name automatically appears at the end of the incoterm extra info, to indicate responsibility for delivery/pickup
+* Incoterms can be configured so that the Sale Order's shipping address partner's name automatically appears in the incoterm extra info, to indicate e.g. responsibility for delivery/pickup
 
 Installation
 ============
