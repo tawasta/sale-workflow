@@ -21,6 +21,7 @@
     'name': 'Customer Contact for Sale Orders',
     'category': 'Sales',
     'version': '8.0.0.2.0',
+    'installable': False,
     'author': '''
 Vizucom Oy,
 Oy Tawasta OS Technologies Ltd.

@@ -24,6 +24,7 @@
     'category': 'Sale',
     'version': '8.0.0.3.6',
     'author': 'Oy Tawasta Technologies Ltd.',
+    'installable': False,
     'website': 'http://www.tawasta.fi',
     'depends': [
         'crm',

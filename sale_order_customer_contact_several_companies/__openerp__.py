@@ -27,7 +27,7 @@
     'author': 'Oy Tawasta Technologies Ltd., Vizucom Oy',
     'license': 'AGPL-3',
     'application': False,
-    'installable': True,
+    'installable': False,
     'external_dependencies': {
         'python': [],
         'bin': [],
