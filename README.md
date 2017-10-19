@@ -11,6 +11,7 @@ Available addons
 [sale_order_incoterm_extra_info](sale_order_incoterm_extra_info/) | New field for SO-specific incoterm info
 [sale_order_mark_returned](sale_order_mark_returned/) | Enables marking Sale Orders manually as having been returned
 [sale_order_promised_delivery_date](sale_order_promised_delivery_date/) | Promised delivery date field for Sale Orders
+[sale_order_to_purchase_order](sale_order_to_purchase_order/) | Button for creating a PO from SO, containing the same lines
 
 Unported addons
 ---------------
