@@ -9,6 +9,7 @@ Available addons
 --- | ---
 [sale_order_description](sale_order_description/) | Freetext internal comment field for Sale Orders
 [sale_order_incoterm_extra_info](sale_order_incoterm_extra_info/) | New field for SO-specific incoterm info
+[sale_order_mark_direct_sale](sale_order_mark_direct_sale/) | Enables marking Sale Orders manually as being direct sales
 [sale_order_mark_returned](sale_order_mark_returned/) | Enables marking Sale Orders manually as having been returned
 [sale_order_promised_delivery_date](sale_order_promised_delivery_date/) | Promised delivery date field for Sale Orders
 [sale_order_to_purchase_order](sale_order_to_purchase_order/) | Button for creating a PO from SO, containing the same lines
