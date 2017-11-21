@@ -15,6 +15,7 @@ Available addons
 [sale_order_mark_returned](sale_order_mark_returned/) | Enables marking Sale Orders manually as having been returned
 [sale_order_mark_sent_button](sale_order_mark_sent_button/) | Printing a draft SO no longer moves it to "Quotation Sent" state
 [sale_order_promised_delivery_date](sale_order_promised_delivery_date/) | Promised delivery date field for Sale Orders
+[sale_order_show_only_companies](sale_order_show_only_companies/) | Sale order's partner dropdown shows only companies
 [sale_order_stock_warning_disable](sale_order_stock_warning_disable/) | Disabled Stock Level Warning for Sale Orders
 [sale_order_to_purchase_order](sale_order_to_purchase_order/) | Button for creating a PO from SO, containing the same lines
 
