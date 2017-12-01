@@ -8,6 +8,7 @@ Available addons
 **Addon** | **Summary**
 --- | ---
 [sale_order_customer_contact](sale_order_customer_contact/) | Customer Contact for Sale Orders
+[sale_order_header](sale_order_header/) | Header field for Sale Orders
 [sale_order_customer_order_number](sale_order_customer_order_number/) | Customer order number field for Sale Orders
 [sale_order_description](sale_order_description/) | Freetext internal comment field for Sale Orders
 [sale_order_finalization_state](sale_order_finalization_state/) | New state for SOs between Quotation Sent and Sale Order
