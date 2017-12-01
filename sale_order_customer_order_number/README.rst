@@ -6,7 +6,8 @@
 Customer Order Number for Sale Orders
 =====================================
 
-* Adds a simple customer order number field for sale orders
+* Adds a simple customer order number field to Sale Orders
+* When an invoice is created from an SO, the data is passed to the invoice as well
 * Intended for situations where the customer has supplied their own order # to be used along with the Odoo standard SOxxx.
 
 Installation

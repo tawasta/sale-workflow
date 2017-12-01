@@ -37,6 +37,7 @@
         'sale',
     ],
     'data': [
+        'views/account_invoice.xml',
         'views/sale_order.xml',
     ],
     'demo': [
