@@ -14,15 +14,14 @@ from openerp import models, fields, api
 # 6. Unknown third party imports:
 
 
-class SaleOrder(models.Model):
+class AccountInvoice(models.Model):
 
     # 1. Private attributes
-    _inherit = 'sale.order'
+    _inherit = 'account.invoice'
 
     _FIELD_STATES = {
         'draft': [('readonly', False)],
-        'sent': [('readonly', False)],
-        'manual': [('readonly', False)],
+        'open': [('readonly', False)],
     }
 
     # 2. Fields declaration
@@ -39,7 +38,6 @@ class SaleOrder(models.Model):
     @api.multi
     @api.onchange('partner_id')
     def onchange_partner(self):
-        print "oc2"
         self.ensure_one()
 
         # Don't get a contact if there is no partner
@@ -61,7 +59,7 @@ class SaleOrder(models.Model):
     @api.depends('customer_contact')
     def onchange_partner_domain_change(self):
         # Get the contact domain
-        print "oc1"
+
         res = dict()
 
         top_parent_list = self.partner_id._get_recursive_parent()
@@ -87,10 +85,3 @@ class SaleOrder(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
-    @api.multi
-    def _prepare_invoice(self):
-        # Handling for when invoicing the invoiceable lines
-        self.ensure_one()
-        invoice_vals = super(SaleOrder, self)._prepare_invoice()
-        invoice_vals['customer_contact'] = self.customer_contact and self.customer_contact.id or False
-        return invoice_vals

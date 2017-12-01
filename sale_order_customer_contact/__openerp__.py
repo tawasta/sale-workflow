@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright 2015 Vizucom Oy
+#    Copyright 2017 Tawasta OS Technologies
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,18 +20,16 @@
 {
     'name': 'Customer Contact for Sale Orders',
     'category': 'Sales',
-    'version': '8.0.0.2.0',
-    'installable': False,
-    'author': '''
-Vizucom Oy,
-Oy Tawasta OS Technologies Ltd.
-''',
-    'website': 'http://www.vizucom.com',
+    'version': '10.0.0.1.0',
+    'installable': True,
+    'author': 'Oy Tawasta OS Technologies Ltd.',
+    'website': 'http://www.tawasta.fi',
     'depends': [
         'res_partner_recursion',
         'sale',
     ],
     'data': [
+        'views/account_invoice.xml',
         'views/sale_order.xml',
     ],
 }
