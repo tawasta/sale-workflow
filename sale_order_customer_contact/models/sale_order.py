@@ -39,7 +39,6 @@ class SaleOrder(models.Model):
     @api.multi
     @api.onchange('partner_id')
     def onchange_partner(self):
-        print "oc2"
         self.ensure_one()
 
         # Don't get a contact if there is no partner
@@ -61,7 +60,6 @@ class SaleOrder(models.Model):
     @api.depends('customer_contact')
     def onchange_partner_domain_change(self):
         # Get the contact domain
-        print "oc1"
         res = dict()
 
         top_parent_list = self.partner_id._get_recursive_parent()
