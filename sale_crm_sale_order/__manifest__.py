@@ -19,26 +19,24 @@
 #
 ##############################################################################
 {
-    'name': 'Sale-Opportunity Integration',
-    'summary': 'Integrates opportunities and sales',
+    'name': 'Opportunity-Quotation integration',
+    'summary': 'Integrates opportunities and quotations',
     'category': 'Sale',
-    'version': '8.0.0.3.6',
+    'version': '10.0.1.0.0',
     'author': 'Oy Tawasta Technologies Ltd.',
     'installable': False,
     'website': 'http://www.tawasta.fi',
     'depends': [
         'crm',
-        'crm_lead_to_sale',
-        'crm_simplification',
         'sale',
         'sale_crm',
     ],
     'data': [
-        'views/crm_lead_form.xml',
+        #'views/crm_lead_form.xml',
 
-        'views/crm_case_stage_form.xml',
-        'views/crm_case_stage_tree.xml',
+        #'views/crm_case_stage_form.xml',
+        #'views/crm_case_stage_tree.xml',
 
-        'data/crm_case_stage_data.xml',
+        #'data/crm_case_stage_data.xml',
     ],
 }
