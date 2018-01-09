@@ -1,114 +1,85 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* sale_opportunity_integration
+# 	* sale_crm_sale_order
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-16 13:33+0000\n"
-"PO-Revision-Date: 2015-11-16 15:34+0200\n"
-"Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
+"POT-Creation-Date: 2018-01-09 08:21+0000\n"
+"PO-Revision-Date: 2018-01-09 10:23+0200\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: fi\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#. module: sale_opportunity_integration
-#: view:crm.lead:sale_opportunity_integration.crm_opportunity_form_view_header_buttons
-msgid "Convert to Quotation"
-msgstr "Muuta tarjoukseksi"
-
-#. module: sale_opportunity_integration
-#: view:crm.lead:sale_opportunity_integration.crm_opportunity_form_view_header_buttons
-msgid "Create Quotation"
-msgstr "Luo tarjous"
-
-#. module: sale_opportunity_integration
-#: view:crm.lead:sale_opportunity_integration.crm_case_form_view_oppor
-msgid "Internal Notes"
-msgstr "Sisäiset muistiinpanot"
-
-#. module: sale_opportunity_integration
-#: model:ir.model,name:sale_opportunity_integration.model_crm_lead
+#. module: sale_crm_sale_order
+#: model:ir.model,name:sale_crm_sale_order.model_crm_lead
 msgid "Lead/Opportunity"
 msgstr "Liidi/mahdollisuus"
 
-#. module: sale_opportunity_integration
-#: view:crm.lead:sale_opportunity_integration.crm_case_form_view_oppor
+#. module: sale_crm_sale_order
+#: code:addons/sale_crm_sale_order/models/crm_lead.py:31
+#, python-format
+msgid "Opportunity lost"
+msgstr "Mahdollisuus hävitty"
+
+#. module: sale_crm_sale_order
+#: code:addons/sale_crm_sale_order/models/crm_lead.py:40
+#, python-format
+msgid "Opportunity won"
+msgstr "Mahdollisuus voitettu"
+
+#. module: sale_crm_sale_order
+#: model:ir.model.fields,field_description:sale_crm_sale_order.field_crm_lead_order_line_ids
+msgid "Order Lines"
+msgstr "Tilausrivit"
+
+#. module: sale_crm_sale_order
+#: model:ir.ui.view,arch_db:sale_crm_sale_order.crm_case_form_view_oppor
 msgid "Order lines"
 msgstr "Tilausrivit"
 
-#. module: sale_opportunity_integration
-#: code:addons/sale_opportunity_integration/models/crm_lead.py:53
-#, python-format
-msgid "Please set a customer for the quotation"
-msgstr "Ole hyvä ja aseta mahdollisuudelle asiakas"
+#. module: sale_crm_sale_order
+#: model:ir.model.fields,field_description:sale_crm_sale_order.field_crm_lead_pricelist_id
+msgid "Pricelist"
+msgstr "Hinnasto"
 
-#. module: sale_opportunity_integration
-#: field:crm.case.stage,sale_action:0
-msgid "Sale action"
-msgstr "Myynnin toiminto"
+#. module: sale_crm_sale_order
+#: model:ir.ui.view,arch_db:sale_crm_sale_order.crm_case_form_view_oppor
+msgid "Qty"
+msgstr "Määrä"
 
-#. module: sale_opportunity_integration
-#: code:addons/sale_opportunity_integration/models/crm_lead.py:70
-#: code:addons/sale_opportunity_integration/models/crm_lead.py:79
-#, python-format
-msgid "Sale order"
-msgstr "Myyntitilaus"
-
-#. module: sale_opportunity_integration
-#: model:ir.model,name:sale_opportunity_integration.model_sale_order
+#. module: sale_crm_sale_order
+#: model:ir.model,name:sale_crm_sale_order.model_sale_order
 msgid "Sales Order"
 msgstr "Myyntitilaus"
 
-#. module: sale_opportunity_integration
-#: view:crm.lead:sale_opportunity_integration.crm_case_form_view_oppor
+#. module: sale_crm_sale_order
+#: model:ir.ui.view,arch_db:sale_crm_sale_order.crm_case_form_view_oppor
 msgid "Sales Order Lines"
 msgstr "Myyntitilausrivit"
 
-#. module: sale_opportunity_integration
-#: model:ir.model,name:sale_opportunity_integration.model_crm_case_stage
-msgid "Stage of case"
-msgstr "Tapauksen vaihe"
+#. module: sale_crm_sale_order
+#: model:ir.ui.view,arch_db:sale_crm_sale_order.crm_case_form_view_oppor
+msgid "Total"
+msgstr "Yhteensä"
 
-#. module: sale_opportunity_integration
-#: view:crm.lead:sale_opportunity_integration.crm_case_form_view_oppor
-msgid "UoS"
-msgstr "Varastoyksikkö"
+#. module: sale_crm_sale_order
+#: model:ir.ui.view,arch_db:sale_crm_sale_order.crm_case_form_view_oppor
+msgid "Unit of Measure"
+msgstr "Mittayksikkö"
 
-#. module: sale_opportunity_integration
-#: code:addons/sale_opportunity_integration/models/crm_lead.py:54
-#, python-format
-msgid "before moving it to this stage!"
-msgstr "ennen siirtoa tähän tilaan!"
+#. module: sale_crm_sale_order
+#: model:ir.ui.view,arch_db:sale_crm_sale_order.crm_case_form_view_oppor
+msgid "You can modify order lines after creating a Quotation"
+msgstr "Voit muokata tilausrivejä luotuasi tarjouksen"
 
-#. module: sale_opportunity_integration
-#: code:addons/sale_opportunity_integration/models/crm_lead.py:81
-#, python-format
-msgid "cancelled"
-msgstr "peruttu"
-
-#. module: sale_opportunity_integration
-#: code:addons/sale_opportunity_integration/models/crm_lead.py:72
-#, python-format
-msgid "created"
-msgstr "luotu"
-
-#. module: sale_opportunity_integration
-#: view:crm.lead:sale_opportunity_integration.crm_opportunity_form_view_header_buttons
-msgid "oe_highlight"
-msgstr "oe_highlight"
-
-#. module: sale_opportunity_integration
-#: view:crm.lead:sale_opportunity_integration.crm_opportunity_form_view_header_buttons
-msgid "{'invisible': ['|',('sale_order', '!=', False),('probability', '<', 100)]}"
-msgstr "{'invisible': ['|',('sale_order', '!=', False),('probability', '<', 100)]}"
-
-#. module: sale_opportunity_integration
-#: view:crm.lead:sale_opportunity_integration.crm_case_form_view_oppor
-msgid "{'invisible': [('sale_order', '!=', False)]}"
-msgstr "{'invisible': [('sale_order', '!=', False)]}"
+#. module: sale_crm_sale_order
+#: model:ir.ui.view,arch_db:sale_crm_sale_order.crm_case_form_view_oppor
+msgid "You can not modify order lines when there are multiple Quotations"
+msgstr "Et voi muokata tilausrivejä koska mahdollisuudesta on luotu useampi tarjous"
