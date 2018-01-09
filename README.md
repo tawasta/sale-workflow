@@ -39,3 +39,4 @@ Unported addons
 [sale_order_validity](sale_order_validity/) | Adds a validity date for sale orders (obsolete: 10.0 includes Expiration Date)
 [sale_setup_common_features](sale_setup_common_features/) | Sets up common sale features automatically
 [sale_simplification](sale_simplification/) | Sale Simplification
+[sale_crm_sale_order](sale_crm_sale_order/) | 10.0.1.0.0 | Integrates opportunities and quotations
