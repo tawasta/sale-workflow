@@ -18,13 +18,17 @@
 #    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
 #
 ##############################################################################
+
 {
     'name': 'Opportunity-Quotation integration',
     'summary': 'Integrates opportunities and quotations',
     'category': 'Sale',
     'version': '10.0.1.0.0',
+    'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
-    'installable': False,
+    'license': 'AGPL-3',
+    'application': False,
+    'installable': True,
     'website': 'http://www.tawasta.fi',
     'depends': [
         'crm',
@@ -32,11 +36,6 @@
         'sale_crm',
     ],
     'data': [
-        #'views/crm_lead_form.xml',
-
-        #'views/crm_case_stage_form.xml',
-        #'views/crm_case_stage_tree.xml',
-
-        #'data/crm_case_stage_data.xml',
+        'views/crm_lead_form.xml',
     ],
 }

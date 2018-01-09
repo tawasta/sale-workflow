@@ -44,17 +44,23 @@ class CrmLead(models.Model):
     @api.multi
     def _get_sale_order_lines(self):
         for record in self:
-            if len(record.order_ids) == 1:
-                record.order_line_ids = record.order_ids[0].order_line
+            if record.sale_number == 1:
+                record.order_line_ids = record.order_ids\
+                    .filtered(lambda r: r.state in ('draft', 'sent'))\
+                    .order_line
 
     @api.multi
     def _set_sale_order_lines(self):
         for record in self:
-            if len(record.order_ids) == 1:
-                record.order_ids[0].order_line = record.order_line_ids
+            if record.sale_number == 1:
+                record.order_ids \
+                    .filtered(lambda r: r.state in ('draft', 'sent'))\
+                    .order_line = record.order_line_ids
 
     @api.multi
     def _get_pricelist(self):
         for record in self:
-            if record.sale_order:
-                record.pricelist_id = record.sale_order.pricelist_id
+            if record.sale_number == 1:
+                record.pricelist_id = record.order_ids \
+                    .filtered(lambda r: r.state in ('draft', 'sent'))\
+                    .pricelist_id
