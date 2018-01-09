@@ -6,13 +6,20 @@
         <field name="arch" type="xml">
 
             <xpath expr="//page" position="before">
-                <page string="Order lines"
-                      attrs="{'invisible': [('order_ids', '=', [])]}">
+                <page string="Order lines">
                     <field name="order_ids" invisible="1" />
-                    <label for="order_line_ids"
-                           attrs="{'invisible': [('sale_number', '==', 1)]}" string="Can not modify order lines when there are multiple Quotes" />
 
-                    <field name="order_line_ids" attrs="{'invisible': [('sale_number', '>', 1)]}">
+                    <div attrs="{'invisible': [('sale_number', '=', 1)]}">
+                        <label for="order_line_ids"
+                               attrs="{'invisible': [('sale_number', '&gt;', 1)]}"
+                               string="You can modify order lines after creating a Quotation" />
+
+                        <label for="order_line_ids"
+                               attrs="{'invisible': [('sale_number', '&lt;', 1)]}"
+                               string="You can not modify order lines when there are multiple Quotations" />
+                    </div>
+
+                    <field name="order_line_ids" attrs="{'invisible': [('sale_number', '!=', 1)]}">
                         <tree string="Sales Order Lines" editable="bottom">
                             <field name="sequence" widget="handle"/>
                             <field name="product_id" />
