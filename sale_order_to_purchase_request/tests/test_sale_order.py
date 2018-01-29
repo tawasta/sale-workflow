@@ -49,18 +49,22 @@ class TestSale(TransactionCase):
 
         self.main_assembly_2 = product_model.create({
             'name': 'Main assembly 2',
+            'route_ids': [(6, 0, [self.manufacture_route.id])],
             'purchase_line_warn': 'no-message'})
 
         self.subassembly_1 = product_model.create({
             'name': 'Sub-assembly 1',
+            'route_ids': [(6, 0, [self.manufacture_route.id])],
             'purchase_line_warn': 'no-message'})
 
         self.subassembly_2 = product_model.create({
             'name': 'Sub-assembly 2',
+            'route_ids': [(6, 0, [self.manufacture_route.id])],
             'purchase_line_warn': 'no-message'})
 
         self.subassembly_3 = product_model.create({
             'name': 'Sub-assembly 3',
+            'route_ids': [(6, 0, [self.manufacture_route.id])],
             'purchase_line_warn': 'no-message'})
 
         self.component_1 = product_model.create({
@@ -106,6 +110,109 @@ class TestSale(TransactionCase):
             'product_qty': 5
         })
 
+        # Main assembly2 BOM
+        # Main assembly2
+        #  - Component1 x 1 units
+        #  - Component2 x 2 units
+        #  - Sub-assembly1 x 2 units
+        #    - Component1 x 1 units
+        #    - Component3 x 3 units
+        #  - Sub-assembly2 x 2 units
+        #    - Component1 x 1 units
+        #    - Component3 x 3 units
+        #    - Sub-assembly3 x 3 units
+        #      - Component2 x 2 units
+        #      - Sub-assembly1 x 2 units
+        #        - Component1 x 1 units
+        #        - Component3 x 3 units
+        #
+        # Expected totals:
+        # - Component 1: 1 + (2*1) + (2*1) + (2*3*2*1) = 17
+        # - Component 2: 2 + (2*3*2) = 14
+        # - Component 3: (2*3) + (2*3) + (2*3*2*3) = 48
+
+        subassembly_1_bom_res = self.env['mrp.bom'].create({
+            'product_tmpl_id': self.subassembly_1.product_tmpl_id.id
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': subassembly_1_bom_res.id,
+            'product_id': self.component_1.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 1
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': subassembly_1_bom_res.id,
+            'product_id': self.component_3.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 3
+        })
+
+        subassembly_3_bom_res = self.env['mrp.bom'].create({
+            'product_tmpl_id': self.subassembly_3.product_tmpl_id.id
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': subassembly_3_bom_res.id,
+            'product_id': self.component_2.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 2
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': subassembly_3_bom_res.id,
+            'product_id': self.subassembly_1.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 2
+        })
+
+        subassembly_2_bom_res = self.env['mrp.bom'].create({
+            'product_tmpl_id': self.subassembly_2.product_tmpl_id.id
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': subassembly_2_bom_res.id,
+            'product_id': self.component_1.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 1
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': subassembly_2_bom_res.id,
+            'product_id': self.component_3.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 3
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': subassembly_2_bom_res.id,
+            'product_id': self.subassembly_3.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 3
+        })
+
+        main_assembly_2_bom_res = self.env['mrp.bom'].create({
+            'product_tmpl_id': self.main_assembly_2.product_tmpl_id.id
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': main_assembly_2_bom_res.id,
+            'product_id': self.component_1.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 1
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': main_assembly_2_bom_res.id,
+            'product_id': self.component_2.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 2
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': main_assembly_2_bom_res.id,
+            'product_id': self.subassembly_1.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 2
+        })
+        self.env['mrp.bom.line'].create({
+            'bom_id': main_assembly_2_bom_res.id,
+            'product_id': self.subassembly_2.id,
+            'product_uom_id': self.uom_unit.id,
+            'product_qty': 2
+        })
+
 
         # Sale order 1 with main assembly
         self.sale_1 = sale_order_model.create({
@@ -142,14 +249,33 @@ class TestSale(TransactionCase):
 
         self.env['sale.order.line'].create({
             'product_id': self.component_2.id,
-            'name': 'Component 1 with a different description',
+            'name': 'Component 2',
             'product_uom_qty': 20,
             'product_uom': self.uom_unit.id,
             'order_id': self.sale_2.id,
         })
 
-        return res
+        # Sale order 3 with main assembly 2 and individual components
+        self.sale_3 = sale_order_model.create({
+            'partner_id': self.partner_1.id,
+        })
 
+        self.env['sale.order.line'].create({
+            'product_id': self.main_assembly_2.id,
+            'product_uom_qty': 1,
+            'product_uom': self.uom_unit.id,
+            'order_id': self.sale_3.id,
+        })
+
+        self.env['sale.order.line'].create({
+            'product_id': self.component_1.id,
+            'name': 'Component 1',
+            'product_uom_qty': 10,
+            'product_uom': self.uom_unit.id,
+            'order_id': self.sale_3.id,
+        })
+
+        return res
 
     def test_manufacturables_empty_stock(self):
         '''Test calculated PR quantities for a manufacturable when the stock is empty '''
@@ -297,6 +423,7 @@ class TestSale(TransactionCase):
             self.assertEquals(len(pr_lines), 1,
                 'There should be one purchase request line per product')
 
+
     def test_purchasables_full_stock(self):
         '''Test a purchasable when everything is in stock '''
 
@@ -384,6 +511,148 @@ class TestSale(TransactionCase):
 
         for p in products_to_check:
             args = [('request_id', '=', self.sale_2.purchase_request_id.id),
+                    ('product_id', '=', p[0].id)]
+            pr_lines = purchase_request_line_model.search(args)
+            self.assertEquals(pr_lines[0].product_qty, p[1],
+                'Wrong amount of raw materials for purchase request')
+            self.assertEquals(len(pr_lines), 1,
+                'There should be one purchase request line per product')
+
+
+    def test_purchasables_manufacturables_empty_stock(self):
+        '''Test calculated PR quantities for a sale order containing
+        both purchasables and manufacturables when the stock is empty '''
+
+        purchase_request_line_model = self.env['purchase.request.line']
+
+        # Confirm the order
+        self.sale_3.action_confirm()
+
+        self.assertTrue(self.sale_3.purchase_request_id,
+                        'Purchase request should have been created')
+        #self.assertEquals(len(self.sale_3.purchase_request_id.line_ids), 3,
+        #                'The purchase request should have 3 lines')
+
+        products_to_check = [(self.component_1, 27),
+                             (self.component_2, 14),
+                             (self.component_3, 48)]
+
+        for p in products_to_check:
+            args = [('request_id', '=', self.sale_3.purchase_request_id.id),
+                    ('product_id', '=', p[0].id)]
+            pr_lines = purchase_request_line_model.search(args)
+            self.assertEquals(pr_lines[0].product_qty, p[1],
+                'Wrong amount of raw materials for purchase request')
+            self.assertEquals(len(pr_lines), 1,
+                'There should be one purchase request line per product')
+
+
+    def test_purchasables_manufacturables_full_stock(self):
+        '''Test calculated PR quantities for a sale order containing
+        both purchasables and manufacturables when everything in stock '''
+
+        # Update Inventory so that all components are in stock
+        self.env['stock.change.product.qty'].create({
+            'product_id': self.component_1.id,
+            'location_id': self.common_location.id,
+            'new_quantity': 100,
+        }).change_product_qty()
+
+        self.env['stock.change.product.qty'].create({
+            'product_id': self.component_2.id,
+            'location_id': self.common_location.id,
+            'new_quantity': 100,
+        }).change_product_qty()
+
+        self.env['stock.change.product.qty'].create({
+            'product_id': self.component_3.id,
+            'location_id': self.common_location.id,
+            'new_quantity': 100,
+        }).change_product_qty()
+
+        # Confirm the order
+        self.sale_1.action_confirm()
+
+        self.assertFalse(self.sale_3.purchase_request_id,
+                        'Purchase request should not have been created')
+
+
+
+    def test_purchasables_manufacturables_partial_stock(self):
+        '''Test calculated PR quantities for a sale order containing
+        both purchasables and manufacturables when one product in stock '''
+
+        purchase_request_line_model = self.env['purchase.request.line']
+
+        # Update Inventory
+        self.env['stock.change.product.qty'].create({
+            'product_id': self.component_1.id,
+            'location_id': self.common_location.id,
+            'new_quantity': 100,
+        }).change_product_qty()
+
+        # Confirm the order
+        self.sale_3.action_confirm()
+
+        self.assertTrue(self.sale_3.purchase_request_id,
+                        'Purchase request should have been created')
+        self.assertEquals(len(self.sale_3.purchase_request_id.line_ids), 2,
+                        'The purchase request should have 2 lines')
+
+        products_to_check = [(self.component_2, 14),
+                             (self.component_3, 48)]
+
+        for p in products_to_check:
+            args = [('request_id', '=', self.sale_3.purchase_request_id.id),
+                    ('product_id', '=', p[0].id)]
+            pr_lines = purchase_request_line_model.search(args)
+            self.assertEquals(pr_lines[0].product_qty, p[1],
+                'Wrong amount of raw materials for purchase request')
+            self.assertEquals(len(pr_lines), 1,
+                'There should be one purchase request line per product')
+
+
+
+    def test_purchasables_manufacturables_partial_stock_partial_qty(self):
+        '''Test calculated PR quantities for a sale order containing
+        both purchasables and manufacturables when one product is
+        partially in stock '''
+
+        purchase_request_line_model = self.env['purchase.request.line']
+
+        # Update Inventory
+        self.env['stock.change.product.qty'].create({
+            'product_id': self.component_1.id,
+            'location_id': self.common_location.id,
+            'new_quantity': 2,
+        }).change_product_qty()
+
+        self.env['stock.change.product.qty'].create({
+            'product_id': self.component_2.id,
+            'location_id': self.common_location.id,
+            'new_quantity': 3,
+        }).change_product_qty()
+
+        self.env['stock.change.product.qty'].create({
+            'product_id': self.component_3.id,
+            'location_id': self.common_location.id,
+            'new_quantity': 10,
+        }).change_product_qty()        
+
+        # Confirm the order
+        self.sale_3.action_confirm()
+
+        self.assertTrue(self.sale_3.purchase_request_id,
+                        'Purchase request should have been created')
+        self.assertEquals(len(self.sale_3.purchase_request_id.line_ids), 3,
+                        'The purchase request should have 3 lines')
+
+        products_to_check = [(self.component_1, 25),
+                             (self.component_2, 11),
+                             (self.component_3, 38)]
+
+        for p in products_to_check:
+            args = [('request_id', '=', self.sale_3.purchase_request_id.id),
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
