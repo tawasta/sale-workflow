@@ -80,7 +80,9 @@ class SaleOrder(models.Model):
 
         return manufacturables
 
-    def get_purchase_request_values(self):
+    def prepare_purchase_request_values(self):
+        '''Form a dictionary of field values to pass to the created
+        Purchase Request'''
         vals = {
             'origin': self.name,
             'requested_by': self.user_id.id,
@@ -110,41 +112,53 @@ class SaleOrder(models.Model):
 
         # Get a list containing the total raw material requirements of the 
         # sold manufacturables' BOMs
-        raw_materials \
+        materials_needed \
             = bom_model.browse(boms_to_compute).compute_raw_material_qties()
 
-        # TODO: update raw_materials list to contain possible purchasables
-        # ...
+        # Go through the list of SO lines that contain products that are sold 
+        # without manufacturing them. Add them to the total list of needed
+        # materials
+        for p in purchaseables:
+            product_index = \
+                next((i for (i, d) \
+                    in enumerate(materials_needed) \
+                    if d['product'] == p.product_id), None)
 
-        raw_materials_compared_to_stock = []
+            if product_index is None:
+                materials_needed.append({
+                    'product': p.product_id,
+                    'quantity': p.product_uom_qty
+                })
+            else:
+                materials_needed[product_index]['quantity'] += p.product_uom_qty
 
+        materials_compared_to_stock = []
+
+        # Go through the total material requirements and compare them to
+        # stock levels. Store the quantities 
         if self.company_id.purchase_request_location_rule \
             == 'project_and_custom':
             locations_to_check \
                 = [l.id for l in self.company_id.purchase_request_location_ids]
 
-            # Go through the total material requirements and compare them to
-            # stock levels. Store the quantities 
-
-            for material in raw_materials:
+            for material in materials_needed:
                 qty_available = material['product'] \
                     .with_context(location=locations_to_check) \
                     .qty_available
             
                 if qty_available < material['quantity']:
-                    raw_materials_compared_to_stock.append({
+                    materials_compared_to_stock.append({
                         'product': material['product'],
                         'quantity': material['quantity'] - qty_available
                     })
 
             # If stock levels are lower than required for any of the materials,
-            # create a purchase request
-            if raw_materials_compared_to_stock:
-
-                pr_values = self.get_purchase_request_values()
+            # create a purchase request containing one line for each product
+            if materials_compared_to_stock:
+                pr_values = self.prepare_purchase_request_values()
                 pr_res = purchase_request_model.create(pr_values)
 
-                for material in raw_materials_compared_to_stock:
+                for material in materials_compared_to_stock:
                     purchase_request_line_model.create({
                         'request_id': pr_res.id,
                         'product_id': material['product'].id,
@@ -152,6 +166,7 @@ class SaleOrder(models.Model):
                         'product_qty': material['quantity']
                     })
 
+                # Link the new purchase request to the sale order
                 self.purchase_request_id = pr_res.id
         else:
             raise exceptions \
