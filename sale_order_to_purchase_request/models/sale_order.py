@@ -139,7 +139,9 @@ class SaleOrder(models.Model):
         if self.company_id.purchase_request_location_rule \
             == 'project_and_custom':
             locations_to_check \
-                = [l.id for l in self.company_id.purchase_request_location_ids]
+                = [l.id for l in self.company_id.purchase_request_location_ids] \
+                + [self.project_id.default_location_id.id]
+
 
             for material in materials_needed:
                 qty_available = material['product'] \
