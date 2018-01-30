@@ -23,6 +23,7 @@ Available addons
 [sale_order_show_only_companies](sale_order_show_only_companies/) | Sale order's partner dropdown shows only companies
 [sale_order_stock_warning_disable](sale_order_stock_warning_disable/) | Disabled Stock Level Warning for Sale Orders
 [sale_order_to_purchase_order](sale_order_to_purchase_order/) | Button for creating a PO from SO, containing the same lines
+[sale_order_to_purchase_request](sale_order_to_purchase_request/) | Auto-creation of a PR based on specific stock levels
 
 Unported addons
 ---------------
