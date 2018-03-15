@@ -32,9 +32,8 @@
     'website': 'http://www.tawasta.fi',
     'depends': [
         'mrp_bom_raw_material_quantities',
-        'purchase_request',
-        'sale',
-        'stock_location_analytic_account',
+        'purchase_request_analytic_account_location',
+        'sale_order_project_location_in_header',
     ],
     'data': [
         'views/sale_config_settings.xml',
