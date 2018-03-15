@@ -86,6 +86,8 @@ class SaleOrder(models.Model):
         vals = {
             'origin': self.name,
             'requested_by': self.user_id.id,
+            'analytic_account_id': self.project_id.id,
+            'stock_location_id': self.stock_location_id.id
         }
         return vals
 
