@@ -1,12 +1,12 @@
 <openerp>
     <data>
         <record id="sale_quotation_view_form_simplified" model="ir.ui.view">
-			<field name="name">Sale Quotation Form</field>
-			<field name="model">sale.order</field>
-			<field name="inherit_id" ref="sale.view_order_form"/>
-			<field name="priority" eval="15" />
-			<field name="arch" type="xml">
-            
+            <field name="name">Sale Quotation Form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority" eval="15" />
+            <field name="arch" type="xml">
+
                 <!-- Remove the old onchange -->
                 <field name='partner_id' position='attributes'>
                     <attribute name='on_change'>1</attribute>
@@ -59,16 +59,16 @@
                 <field name="client_order_ref" position="attributes">
                     <attribute name="string">Client reference</attribute>
                 </field>
-			      
-			</field>
+
+            </field>
         </record>
-        
+
         <record id="sale_quotation_view_form_simplified_tracking" model="ir.ui.view">
-			<field name="name">Sale Quotation Form Tracking Simplification</field>
-			<field name="model">sale.order</field>
-			<field name="inherit_id" ref="sale_crm.sale_view_inherit123"/>
-			<field name="arch" type="xml">
-            
+            <field name="name">Sale Quotation Form Tracking Simplification</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_crm.sale_view_inherit123"/>
+            <field name="arch" type="xml">
+
                 <!-- Move fields to extra info page and hide them by default -->
                 <field name="campaign_id" position="replace" />
                 <field name="medium_id" position="replace" />
@@ -80,16 +80,16 @@
                     <field name="medium_id" attrs="{'invisible':[('show_all','=',False)]}" />
                     <field name="source_id" attrs="{'invisible':[('show_all','=',False)]}" />
                 </field>
-			      
-			</field>
+
+            </field>
         </record>
-        
+
         <record id="sale_quotation_view_form_simplified_stock" model="ir.ui.view">
-			<field name="name">Sale Quotation Form Stock Simplification</field>
-			<field name="model">sale.order</field>
-			<field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
-			<field name="arch" type="xml">
-            
+            <field name="name">Sale Quotation Form Stock Simplification</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+            <field name="arch" type="xml">
+
                 <!-- Move payment term to the top of the page -->
                 <field name='payment_term' position='replace' />
                 <field name='incoterm' position='before'>
@@ -133,9 +133,9 @@
                     />
 
                 </field>
-			      
-			</field>
+
+            </field>
         </record>
-        
+
     </data>
 </openerp>
