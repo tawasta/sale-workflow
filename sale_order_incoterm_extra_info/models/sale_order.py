@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import models, fields, api, _, exceptions
+from odoo import models, fields, api
 
 
 class SaleOrder(models.Model):
@@ -8,10 +8,15 @@ class SaleOrder(models.Model):
 
     @api.onchange('incoterm')
     def onchange_incoterm(self):
-        ''' Append the shipping address' name to the extra info field, if the incoterm so indicates '''
-        if self.partner_shipping_id and self.incoterm and self.incoterm.append_partner_name:
+        ''' Append the shipping address' name to the extra info field,
+        if the incoterm so indicates '''
+        if self.partner_shipping_id and self.incoterm \
+                and self.incoterm.append_partner_name:
             self.incoterm_extra_info = self.partner_shipping_id.name
         else:
             self.incoterm_extra_info = False
 
-    incoterm_extra_info = fields.Char('Incoterms additional info', help='''Use for storing e.g. the pickup location''')
+    incoterm_extra_info = fields.Char(
+        string='Incoterms additional info',
+        help='''Use for storing e.g. the pickup location'''
+    )

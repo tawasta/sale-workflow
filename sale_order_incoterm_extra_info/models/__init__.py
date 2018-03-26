@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
-import sale_order
-import stock_incoterms
+from . import sale_order
+from . import stock_incoterms
