@@ -66,7 +66,8 @@ class SaleOrder(models.Model):
 
         if top_parent_list:
             top_parent = top_parent_list[0]
-            partners = self.partner_id._get_recursive_child_ids(top_parent) + [top_parent.id]
+            partners = self.partner_id \
+                ._get_recursive_child_ids(top_parent) + [top_parent.id]
 
             contacts = self.env['res.partner'].search([
                 ('id', 'in', partners),
@@ -90,5 +91,6 @@ class SaleOrder(models.Model):
         # Handling for when invoicing the invoiceable lines
         self.ensure_one()
         invoice_vals = super(SaleOrder, self)._prepare_invoice()
-        invoice_vals['customer_contact'] = self.customer_contact and self.customer_contact.id or False
+        invoice_vals['customer_contact'] \
+            = self.customer_contact and self.customer_contact.id or False
         return invoice_vals

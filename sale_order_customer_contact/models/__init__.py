@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
-import account_invoice
-import sale_order
+from . import account_invoice
+from . import sale_order

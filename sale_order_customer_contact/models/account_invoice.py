@@ -66,7 +66,8 @@ class AccountInvoice(models.Model):
 
         if top_parent_list:
             top_parent = top_parent_list[0]
-            partners = self.partner_id._get_recursive_child_ids(top_parent) + [top_parent.id]
+            partners = self.partner_id \
+                ._get_recursive_child_ids(top_parent) + [top_parent.id]
 
             contacts = self.env['res.partner'].search([
                 ('id', 'in', partners),

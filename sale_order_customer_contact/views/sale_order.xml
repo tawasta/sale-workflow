@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
+<odoo>
     <data>
-
         <record id="sale_form_view" model="ir.ui.view">
             <field name="name">sale.order.form.inherit</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
-			<field name="arch" type="xml">
-				<field name="partner_shipping_id" position="after">
-					<field name="customer_contact" 
-					   context="{'default_parent_id': partner_id }" />
-	        	</field>
-
+            <field name="arch" type="xml">
+                <field name="partner_shipping_id" position="after">
+                    <field name="customer_contact" 
+                       context="{'default_parent_id': partner_id }" />
+                </field>
             </field>
         </record>
-
     </data>
-</openerp>
+</odoo>
 
