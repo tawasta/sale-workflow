@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 
 
 class SaleOrder(models.Model):
@@ -14,4 +14,7 @@ class SaleOrder(models.Model):
         invoice_vals['customer_order_number'] = self.customer_order_number
         return invoice_vals
 
-    customer_order_number = fields.Char("Customer's Order Number", help='''If the customer has specified an order number of their own''')
+    customer_order_number = fields.Char(
+        string="Customer's Order Number",
+        help='''If the customer has specified an order number of their own'''
+    )
