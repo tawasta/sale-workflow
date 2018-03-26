@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
-from openerp import models, fields, api, _, exceptions
+from odoo import models, fields
 
 
 class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    direct_sale = fields.Boolean('Direct Sale')
+    direct_sale = fields.Boolean(
+        string='Direct Sale'
+    )
