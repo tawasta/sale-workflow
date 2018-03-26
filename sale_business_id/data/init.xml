@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<openerp>
-  <data noupdate="0">
-    <!-- Set 'shown' booleans -->
-    <function model="res.partner" name="_init_business_id_and_vat"/>
-  </data>
-</openerp>

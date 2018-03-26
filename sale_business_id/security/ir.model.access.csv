@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-"access_sbn_settings_perm","access_sbn_settings_perm","model_sale_business_id_settings","base.group_user",1,0,0,0
-"access_sbn_settings_portal_perm","access_sbn_settings_portal_perm","model_sale_business_id_settings","base.group_portal",1,0,0,0

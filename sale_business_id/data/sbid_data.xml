@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data noupdate="1">
-        <record id="1" model="sale_business_id.settings">
-            <field name="show_bid_vat_for_affiliates" eval="1"></field>
-        </record>
-	</data>
-</openerp>
