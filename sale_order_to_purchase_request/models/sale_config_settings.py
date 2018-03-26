@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _, exceptions
+from odoo import fields, models
 
 
 class SaleConfigSettings(models.TransientModel):
@@ -24,4 +24,4 @@ class SaleConfigSettings(models.TransientModel):
 
     purchase_request_location_ids = fields.Many2many(
         related='company_id.purchase_request_location_ids',
-        string='Custom locations')        
+        string='Custom locations')

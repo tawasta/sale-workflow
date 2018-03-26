@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _, exceptions
+from odoo import fields, models
 
 
 class ResCompany(models.Model):
@@ -18,15 +18,16 @@ class ResCompany(models.Model):
                 and are missing stock. ''')
 
     purchase_request_location_rule = fields.Selection(
-        selection=[('project_and_custom', 
-                    'Project Default Location and a list of custom locations')],
+        selection=[('project_and_custom',
+                    ('Project Default Location and a list '
+                     'of custom locations'))],
         string='Locations to Check',
-        help='''Purchase Request will be created if the combined available stock
-                in these locations is not enough. ''')
+        help=('Purchase Request will be created if the combined available '
+              'stock in these locations is not enough.'))
 
     purchase_request_location_ids = fields.Many2many(
         comodel_name='stock.location',
         string='Custom locations',
         domain=[('usage', '=', 'internal')],
-        help='''List of custom locations to use when checking 
-                available stock''')
+        help=('List of custom locations to use when checking'
+              'available stock'))

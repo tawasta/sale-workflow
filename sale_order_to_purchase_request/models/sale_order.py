@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, api, fields, _, exceptions
+from odoo import models, api, fields, exceptions
 from math import ceil
 
 
@@ -26,17 +26,17 @@ class SaleOrder(models.Model):
     # 7. Action methods
     @api.multi
     def action_confirm(self):
-        '''Check the need for a new purchase request when the sale order is 
+        '''Check the need for a new purchase request when the sale order is
         confirmed'''
 
         res = super(SaleOrder, self).action_confirm()
-        
+
         purchaseables = self.get_purchaseables()
         manufacturables = self.get_manufacturables()
 
-        if (self.company_id.purchase_request_from_sale_mrp \
+        if (self.company_id.purchase_request_from_sale_mrp
             or self.company_id.purchase_request_from_sale_buy) \
-            and (manufacturables or purchaseables):
+                and (manufacturables or purchaseables):
 
             self.create_purchase_request(purchaseables, manufacturables)
 
@@ -47,16 +47,17 @@ class SaleOrder(models.Model):
         '''Get those products on sale order lines that have a purchase route
         but no manufacturing route '''
         buy_route = self.env.ref('purchase.route_warehouse0_buy',
-            raise_if_not_found=False)
+                                 raise_if_not_found=False)
 
         manufacture_route = self.env.ref('mrp.route_warehouse0_manufacture',
-            raise_if_not_found=False)
-        
+                                         raise_if_not_found=False)
+
         purchaseables = []
 
         for sale_line in self.order_line:
             if buy_route in sale_line.product_id.route_ids \
-            and manufacture_route not in sale_line.product_id.route_ids:
+                    and manufacture_route not in \
+                    sale_line.product_id.route_ids:
                 purchaseables.append(sale_line)
 
         return purchaseables
@@ -65,17 +66,17 @@ class SaleOrder(models.Model):
         '''Get those products on sale order lines that have a manufacture route
         but no buy route '''
         buy_route = self.env.ref('purchase.route_warehouse0_buy',
-            raise_if_not_found=False)
+                                 raise_if_not_found=False)
 
         manufacture_route = self.env.ref('mrp.route_warehouse0_manufacture',
-            raise_if_not_found=False)
-        
+                                         raise_if_not_found=False)
+
         manufacturables = []
 
         for sale_line in self.order_line:
             if manufacture_route in sale_line.product_id.route_ids \
-            and buy_route not in sale_line.product_id.route_ids \
-            and sale_line.product_id.bom_ids:
+                    and buy_route not in sale_line.product_id.route_ids \
+                    and sale_line.product_id.bom_ids:
                 manufacturables.append(sale_line)
 
         return manufacturables
@@ -106,25 +107,25 @@ class SaleOrder(models.Model):
                             product_tmpl=line.product_id.product_tmpl_id,
                             product=line.product_id)
 
-            # If for some reason the amount sold on line is a float, 
-            # round it up to nearest integer 
+            # If for some reason the amount sold on line is a float,
+            # round it up to nearest integer
             # for the purposes of calculating required materials
             for i in range(int(ceil(line.product_uom_qty))):
                 boms_to_compute.append(bom.id)
 
-        # Get a list containing the total raw material requirements of the 
+        # Get a list containing the total raw material requirements of the
         # sold manufacturables' BOMs
         materials_needed \
             = bom_model.browse(boms_to_compute).compute_raw_material_qties()
 
-        # Go through the list of SO lines that contain products that are sold 
+        # Go through the list of SO lines that contain products that are sold
         # without manufacturing them. Add them to the total list of needed
         # materials
         for p in purchaseables:
             product_index = \
-                next((i for (i, d) \
-                    in enumerate(materials_needed) \
-                    if d['product'] == p.product_id), None)
+                next((i for (i, d)
+                     in enumerate(materials_needed)
+                     if d['product'] == p.product_id), None)
 
             if product_index is None:
                 materials_needed.append({
@@ -132,24 +133,25 @@ class SaleOrder(models.Model):
                     'quantity': p.product_uom_qty
                 })
             else:
-                materials_needed[product_index]['quantity'] += p.product_uom_qty
+                materials_needed[product_index]['quantity'] \
+                    += p.product_uom_qty
 
         materials_compared_to_stock = []
 
         # Go through the total material requirements and compare them to
-        # stock levels. Store the quantities 
+        # stock levels. Store the quantities
         if self.company_id.purchase_request_location_rule \
-            == 'project_and_custom':
-            locations_to_check \
-                = [l.id for l in self.company_id.purchase_request_location_ids] \
+                == 'project_and_custom':
+            locations_to_check = \
+                [l.id for l in
+                 self.company_id.purchase_request_location_ids] \
                 + [self.project_id.default_location_id.id]
-
 
             for material in materials_needed:
                 qty_available = material['product'] \
                     .with_context(location=locations_to_check) \
                     .qty_available
-            
+
                 if qty_available < material['quantity']:
                     materials_compared_to_stock.append({
                         'product': material['product'],

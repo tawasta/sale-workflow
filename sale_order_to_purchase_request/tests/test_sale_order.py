@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo.tests.common import TransactionCase
-import unittest
+
 
 class TestSale(TransactionCase):
 
@@ -16,7 +16,8 @@ class TestSale(TransactionCase):
 
         # Routes
         self.buy_route = self.env.ref('purchase.route_warehouse0_buy')
-        self.manufacture_route = self.env.ref('mrp.route_warehouse0_manufacture')
+        self.manufacture_route \
+            = self.env.ref('mrp.route_warehouse0_manufacture')
 
         # UOMs
         self.uom_unit = self.env.ref('product.product_uom_unit')
@@ -81,7 +82,6 @@ class TestSale(TransactionCase):
             'name': 'Component 3',
             'route_ids': [(6, 0, [self.buy_route.id])],
             'purchase_line_warn': 'no-message'})
-
 
         # Main assembly BOM
         # Main assembly
@@ -213,7 +213,6 @@ class TestSale(TransactionCase):
             'product_qty': 2
         })
 
-
         # Sale order 1 with main assembly
         self.sale_1 = sale_order_model.create({
             'partner_id': self.partner_1.id,
@@ -278,7 +277,8 @@ class TestSale(TransactionCase):
         return res
 
     def test_manufacturables_empty_stock(self):
-        '''Test calculated PR quantities for a manufacturable when the stock is empty '''
+        '''Test calculated PR quantities for a manufacturable
+        when the stock is empty '''
 
         purchase_request_line_model = self.env['purchase.request.line']
 
@@ -288,7 +288,7 @@ class TestSale(TransactionCase):
         self.assertTrue(self.sale_1.purchase_request_id,
                         'Purchase request should have been created')
         self.assertEquals(len(self.sale_1.purchase_request_id.line_ids), 2,
-                        'The purchase request should have 2 lines')
+                          'The purchase request should have 2 lines')
 
         products_to_check = [(self.component_1, 5),
                              (self.component_2, 10)]
@@ -298,10 +298,11 @@ class TestSale(TransactionCase):
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
-                'Wrong amount of raw materials for purchase request')
+                              'Wrong amount of raw materials for ' +
+                              'purchase request')
             self.assertEquals(len(pr_lines), 1,
-                'There should be one purchase request line per product')
-
+                              'There should be one purchase request ' +
+                              'line per product')
 
     def test_manufacturables_full_stock(self):
         '''Test a manufacturable when everything is in stock '''
@@ -323,8 +324,7 @@ class TestSale(TransactionCase):
         self.sale_1.action_confirm()
 
         self.assertFalse(self.sale_1.purchase_request_id,
-                        'Purchase request should not have been created')
-
+                         'Purchase request should not have been created')
 
     def test_manufacturables_partial_stock(self):
         '''Test a manufacturable when one of the products is in stock '''
@@ -344,7 +344,7 @@ class TestSale(TransactionCase):
         self.assertTrue(self.sale_1.purchase_request_id,
                         'Purchase request should have been created')
         self.assertEquals(len(self.sale_1.purchase_request_id.line_ids), 1,
-                        'The purchase request should have 1 line')
+                          'The purchase request should have 1 line')
 
         products_to_check = [(self.component_2, 10)]
 
@@ -353,10 +353,11 @@ class TestSale(TransactionCase):
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
-                'Wrong amount of raw materials for purchase request')
+                              'Wrong amount of raw materials for ' +
+                              'purchase request')
             self.assertEquals(len(pr_lines), 1,
-                'There should be one purchase request line per product')
-
+                              'There should be one purchase request ' +
+                              'line per product')
 
     def test_manufacturables_partial_stock_partial_qty(self):
         '''Test a manufacturable when products are in stock but there
@@ -383,7 +384,7 @@ class TestSale(TransactionCase):
         self.assertTrue(self.sale_1.purchase_request_id,
                         'Purchase request should have been created')
         self.assertEquals(len(self.sale_1.purchase_request_id.line_ids), 2,
-                        'The purchase request should have 2 lines')
+                          'The purchase request should have 2 lines')
 
         products_to_check = [(self.component_1, 3),
                              (self.component_2, 7)]
@@ -393,13 +394,15 @@ class TestSale(TransactionCase):
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
-                'Wrong amount of raw materials for purchase request')
+                              'Wrong amount of raw materials ' +
+                              'for purchase request')
             self.assertEquals(len(pr_lines), 1,
-                'There should be one purchase request line per product')
-
+                              'There should be one purchase request ' +
+                              'line per product')
 
     def test_purchasables_empty_stock(self):
-        '''Test calculated PR quantities for a purchasable when the stock is empty '''
+        '''Test calculated PR quantities for a purchasable
+        when the stock is empty '''
 
         purchase_request_line_model = self.env['purchase.request.line']
 
@@ -409,7 +412,7 @@ class TestSale(TransactionCase):
         self.assertTrue(self.sale_2.purchase_request_id,
                         'Purchase request should have been created')
         self.assertEquals(len(self.sale_2.purchase_request_id.line_ids), 2,
-                        'The purchase request should have 2 lines')
+                          'The purchase request should have 2 lines')
 
         products_to_check = [(self.component_1, 15),
                              (self.component_2, 20)]
@@ -419,10 +422,11 @@ class TestSale(TransactionCase):
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
-                'Wrong amount of raw materials for purchase request')
+                              'Wrong amount of raw materials for ' +
+                              'purchase request')
             self.assertEquals(len(pr_lines), 1,
-                'There should be one purchase request line per product')
-
+                              'There should be one purchase request ' +
+                              'line per product')
 
     def test_purchasables_full_stock(self):
         '''Test a purchasable when everything is in stock '''
@@ -444,8 +448,7 @@ class TestSale(TransactionCase):
         self.sale_1.action_confirm()
 
         self.assertFalse(self.sale_1.purchase_request_id,
-                        'Purchase request should not have been created')
-
+                         'Purchase request should not have been created')
 
     def test_purchasables_partial_stock(self):
         '''Test a purchasable when one of the products is in stock '''
@@ -465,7 +468,7 @@ class TestSale(TransactionCase):
         self.assertTrue(self.sale_2.purchase_request_id,
                         'Purchase request should have been created')
         self.assertEquals(len(self.sale_2.purchase_request_id.line_ids), 1,
-                        'The purchase request should have 1 line')
+                          'The purchase request should have 1 line')
 
         products_to_check = [(self.component_2, 20)]
 
@@ -474,10 +477,11 @@ class TestSale(TransactionCase):
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
-                'Wrong amount of raw materials for purchase request')
+                              'Wrong amount of raw materials for ' +
+                              'purchase request')
             self.assertEquals(len(pr_lines), 1,
-                'There should be one purchase request line per product')
-
+                              'There should be one purchase request ' +
+                              'line per product')
 
     def test_purchasables_partial_stock_partial_qty(self):
         '''Test a purchasable when products are in stock but there
@@ -504,7 +508,7 @@ class TestSale(TransactionCase):
         self.assertTrue(self.sale_2.purchase_request_id,
                         'Purchase request should have been created')
         self.assertEquals(len(self.sale_2.purchase_request_id.line_ids), 2,
-                        'The purchase request should have 2 lines')
+                          'The purchase request should have 2 lines')
 
         products_to_check = [(self.component_1, 13),
                              (self.component_2, 17)]
@@ -514,10 +518,11 @@ class TestSale(TransactionCase):
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
-                'Wrong amount of raw materials for purchase request')
+                              'Wrong amount of raw materials for ' +
+                              'purchase request')
             self.assertEquals(len(pr_lines), 1,
-                'There should be one purchase request line per product')
-
+                              'There should be one purchase request line ' +
+                              'per product')
 
     def test_purchasables_manufacturables_empty_stock(self):
         '''Test calculated PR quantities for a sale order containing
@@ -530,8 +535,6 @@ class TestSale(TransactionCase):
 
         self.assertTrue(self.sale_3.purchase_request_id,
                         'Purchase request should have been created')
-        #self.assertEquals(len(self.sale_3.purchase_request_id.line_ids), 3,
-        #                'The purchase request should have 3 lines')
 
         products_to_check = [(self.component_1, 27),
                              (self.component_2, 14),
@@ -542,10 +545,11 @@ class TestSale(TransactionCase):
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
-                'Wrong amount of raw materials for purchase request')
+                              'Wrong amount of raw materials for ' +
+                              'purchase request')
             self.assertEquals(len(pr_lines), 1,
-                'There should be one purchase request line per product')
-
+                              'There should be one purchase request line ' +
+                              'per product')
 
     def test_purchasables_manufacturables_full_stock(self):
         '''Test calculated PR quantities for a sale order containing
@@ -574,9 +578,7 @@ class TestSale(TransactionCase):
         self.sale_1.action_confirm()
 
         self.assertFalse(self.sale_3.purchase_request_id,
-                        'Purchase request should not have been created')
-
-
+                         'Purchase request should not have been created')
 
     def test_purchasables_manufacturables_partial_stock(self):
         '''Test calculated PR quantities for a sale order containing
@@ -597,7 +599,7 @@ class TestSale(TransactionCase):
         self.assertTrue(self.sale_3.purchase_request_id,
                         'Purchase request should have been created')
         self.assertEquals(len(self.sale_3.purchase_request_id.line_ids), 2,
-                        'The purchase request should have 2 lines')
+                          'The purchase request should have 2 lines')
 
         products_to_check = [(self.component_2, 14),
                              (self.component_3, 48)]
@@ -607,11 +609,11 @@ class TestSale(TransactionCase):
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
-                'Wrong amount of raw materials for purchase request')
+                              'Wrong amount of raw materials for ' +
+                              'purchase request')
             self.assertEquals(len(pr_lines), 1,
-                'There should be one purchase request line per product')
-
-
+                              'There should be one purchase request line ' +
+                              'per product')
 
     def test_purchasables_manufacturables_partial_stock_partial_qty(self):
         '''Test calculated PR quantities for a sale order containing
@@ -637,7 +639,7 @@ class TestSale(TransactionCase):
             'product_id': self.component_3.id,
             'location_id': self.common_location.id,
             'new_quantity': 10,
-        }).change_product_qty()        
+        }).change_product_qty()
 
         # Confirm the order
         self.sale_3.action_confirm()
@@ -645,7 +647,7 @@ class TestSale(TransactionCase):
         self.assertTrue(self.sale_3.purchase_request_id,
                         'Purchase request should have been created')
         self.assertEquals(len(self.sale_3.purchase_request_id.line_ids), 3,
-                        'The purchase request should have 3 lines')
+                          'The purchase request should have 3 lines')
 
         products_to_check = [(self.component_1, 25),
                              (self.component_2, 11),
@@ -656,6 +658,8 @@ class TestSale(TransactionCase):
                     ('product_id', '=', p[0].id)]
             pr_lines = purchase_request_line_model.search(args)
             self.assertEquals(pr_lines[0].product_qty, p[1],
-                'Wrong amount of raw materials for purchase request')
+                              'Wrong amount of raw materials for ' +
+                              'purchase request')
             self.assertEquals(len(pr_lines), 1,
-                'There should be one purchase request line per product')
+                              'There should be one purchase request line ' +
+                              'per product')
