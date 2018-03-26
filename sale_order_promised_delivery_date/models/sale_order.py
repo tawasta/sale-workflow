@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
-from openerp import models, fields, api, _, exceptions
+from odoo import models, fields
 
 
 class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    date_delivery_promised = fields.Date('Promised Delivery Date', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]})
+    date_delivery_promised = fields.Date(
+        string='Promised Delivery Date',
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+            'sent': [('readonly', False)]
+        }
+    )
