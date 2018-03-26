@@ -21,7 +21,7 @@
 
 {
     'name': '"Mark as Sent" button for Sale Orders',
-    'summary': 'Printing a draft SO no longer moves it to "Quotation Sent" state',
+    'summary': 'Printing a draft SO no longer moves it to Sent state',
     'version': '10.0.1.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',

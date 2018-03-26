@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import models, fields, api, _, exceptions
+from odoo import models, api
 
 
 class SaleOrder(models.Model):
@@ -8,7 +8,8 @@ class SaleOrder(models.Model):
 
     @api.multi
     def print_quotation(self):
-        # Remove the state-changing functionality from core's print button, and just print the SO
+        # Remove the state-changing functionality from core's print button,
+        # and just print the SO
         return self.env['report'].get_action(self, 'sale.report_saleorder')
 
     def action_quotation_mark_sent(self):
