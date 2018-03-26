@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from openerp import models, fields, api, _, exceptions
+from odoo import models, fields, api
 
 
-class SaleOrder(models.Model):  
+class SaleOrder(models.Model):
 
-    _inherit = 'sale.order'    
-    
+    _inherit = 'sale.order'
+
     @api.multi
     def copy(self, default=None):
         # When copying a sale order, exclude the purchase order info
@@ -14,4 +14,9 @@ class SaleOrder(models.Model):
         default['purchase_order_ids'] = False
         return super(SaleOrder, self).copy(default)
 
-    purchase_order_ids = fields.One2many('purchase.order', 'sale_order_id', 'Purchase Orders', help='''Purchase Orders created from this Sale Order''') 
+    purchase_order_ids = fields.One2many(
+        comodel_name='purchase.order',
+        inverse_name='sale_order_id',
+        string='Purchase Orders',
+        help='Purchase Orders created from this Sale Order'
+    )

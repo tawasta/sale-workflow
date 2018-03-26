@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-import purchase_order_wizard
+from . import purchase_order_wizard
