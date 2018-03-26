@@ -25,8 +25,7 @@ class SaleOrder(models.Model):
         in the calculation'''
 
         for order in self:
-            if all([l.product_id.type == 'service'
-                    or l.product_uom_qty == 0
+            if all([l.product_id.type == 'service' or l.product_uom_qty == 0
                     for l in order.order_line]):
                 # All services or lines with 0 qties, nothing to deliver
                 order.delivery_status = 'none'
