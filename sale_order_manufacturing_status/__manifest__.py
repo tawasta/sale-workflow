@@ -29,7 +29,6 @@
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
-    'website': 'http://www.tawasta.fi',
     'depends': [
         'mrp',
         'sale',
