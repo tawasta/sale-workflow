@@ -21,7 +21,7 @@
 
 {
     'name': 'Finalization state for Sale Orders - Stock Support',
-    'summary': 'Adds state-based readonly attributes to those SO fields in sale_stock',
+    'summary': 'Adds state-based readonly attributes to sale_stock SO fields',
     'version': '10.0.1.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
