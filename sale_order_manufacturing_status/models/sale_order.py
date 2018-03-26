@@ -25,7 +25,7 @@ class SaleOrder(models.Model):
 
     # 4. Compute and search fields, in the same order that fields declaration
     @api.multi
-    def _compute_compute_production_ids(self):
+    def _compute_mrp_production_ids(self):
         ''' Find all manufacturing orders that belong to the Sale Order's
         procurement group '''
 
