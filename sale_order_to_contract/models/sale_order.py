@@ -1,31 +1,27 @@
 # -*- coding: utf-8 -*-
 
 # 1. Standard library imports:
-#	import base64
 
-# 2. Known third party imports (One per line sorted and splitted in python stdlib):
-#	import lxml
+# 2. Known third party imports
 
 # 3. Odoo imports (openerp):
-from openerp import api, fields, models
+from openerp import api, models
 
 # 4. Imports from Odoo modules (rarely, and only if necessary):
-#	from openerp.addons.website.models.website import slug
 
 # 5. Local imports in the relative form:
-#	from . import utils
 
-# 6. Unknown third party imports (One per line sorted and splitted in python stdlib):
-#	_logger = logging.getLogger(__name__)
+# 6. Unknown third party imports
+
 
 class SaleOrder(models.Model):
-    
+
     # Variable names:
     # Use underscore lowercase notation for common variable (snake_case)
-    # since new API works with record or recordset instead of id list, 
-    # don't suffix variable name with _id or _ids if they do not contain 
+    # since new API works with record or recordset instead of id list,
+    # don't suffix variable name with _id or _ids if they do not contain
     # an id or a list of ids.
-   
+
     # Constants:
     # Use underscore uppercase notation for global variables or constants.
 
@@ -33,7 +29,7 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     # 2. Fields declaration
-    
+
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
@@ -50,7 +46,7 @@ class SaleOrder(models.Model):
             'partner_id': self.partner_id.id,
             'type': 'contract',
         }
-        
+
         contract = self.project_id.create(vals)
 
         for order_line in self.order_line:
@@ -66,4 +62,3 @@ class SaleOrder(models.Model):
         self.project_id = contract.id
 
     # 8. Business methods
-    
