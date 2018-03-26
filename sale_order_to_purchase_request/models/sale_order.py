@@ -34,8 +34,8 @@ class SaleOrder(models.Model):
         purchaseables = self.get_purchaseables()
         manufacturables = self.get_manufacturables()
 
-        if (self.company_id.purchase_request_from_sale_mrp
-            or self.company_id.purchase_request_from_sale_buy) \
+        if (self.company_id.purchase_request_from_sale_mrp or
+            self.company_id.purchase_request_from_sale_buy) \
                 and (manufacturables or purchaseables):
 
             self.create_purchase_request(purchaseables, manufacturables)
@@ -104,8 +104,8 @@ class SaleOrder(models.Model):
 
         for line in manufacturables:
             bom = self.env['mrp.bom']._bom_find(
-                            product_tmpl=line.product_id.product_tmpl_id,
-                            product=line.product_id)
+                product_tmpl=line.product_id.product_tmpl_id,
+                product=line.product_id)
 
             # If for some reason the amount sold on line is a float,
             # round it up to nearest integer
