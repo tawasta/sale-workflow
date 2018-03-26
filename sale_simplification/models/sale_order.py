@@ -6,8 +6,6 @@
 
 # 3. Odoo imports (openerp):
 from openerp import api, fields, models
-from openerp.exceptions import ValidationError
-from openerp import _
 
 # 4. Imports from Odoo modules (rarely, and only if necessary):
 
