@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import fields, models, api, _
+from openerp import fields, models, api
 
 
 class SaleOrder(models.Model):
@@ -14,4 +14,7 @@ class SaleOrder(models.Model):
         invoice_vals['header_text'] = self.header_text
         return invoice_vals
 
-    header_text = fields.Char('Header', help='Header or title of the Sale')
+    header_text = fields.Char(
+        string='Header',
+        help='Header or title of the Sale'
+    )
