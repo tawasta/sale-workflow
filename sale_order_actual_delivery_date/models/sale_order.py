@@ -18,7 +18,7 @@ class SaleOrder(models.Model):
 
                 order.date_delivery_actual = fields.Datetime.now()
 
-    date_delivery_actual = fields.Date(
+    date_delivery_actual = fields.Datetime(
         compute='_compute_date_delivery_actual',
         string='Actual Delivery Date',
         readonly=True,
