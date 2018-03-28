@@ -62,20 +62,24 @@ class PurchaseOrderWizard(models.TransientModel):
         }
 
     def _get_default_picking_type(self):
+        args = [('code', '=', 'incoming'),
+                ('warehouse_id', '=', self.env.context['warehouse_id'])
+                ]
+
         res = self.env['stock.picking.type'] \
-            .search(args=[('code', '=', 'incoming')], limit=1)
+            .search(args=args, limit=1)
         return res and res[0] or False
 
     partner_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Supplier', domain=[('supplier', '=', True)],
+        string='Supplier',
+        domain=[('supplier', '=', True)],
         required=True
     )
 
     picking_type_id = fields.Many2one(
         comodel_name='stock.picking.type',
         string='Delivery Location',
-        domain=[('code', '=', 'incoming')],
         required=True,
         default=_get_default_picking_type
     )
