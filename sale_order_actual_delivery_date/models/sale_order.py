@@ -24,5 +24,5 @@ class SaleOrder(models.Model):
         string='Actual Delivery Date',
         readonly=True,
         store=True,
-        help='Date of delivering all the ordered products shipped'
+        help='Date of shipping out all the ordered products'
     )
