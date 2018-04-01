@@ -20,7 +20,8 @@ Usage
 Known issues / Roadmap
 ======================
 * Note: the module does not take into account any possible product returns and
-  subsequent re-deliveries.
+  subsequent re-deliveries, or the possibility of modifying the SO after
+  confirming it
 
 Credits
 =======

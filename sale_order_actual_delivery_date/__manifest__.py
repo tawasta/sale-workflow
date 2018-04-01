@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order Actual Delivery Date',
     'summary': 'Logs the date when all lines have been delivered',
-    'version': '10.0.1.1.0',
+    'version': '10.0.2.1.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

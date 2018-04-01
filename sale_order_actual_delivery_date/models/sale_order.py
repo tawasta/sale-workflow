@@ -9,12 +9,13 @@ class SaleOrder(models.Model):
     @api.depends('order_line.qty_delivered')
     def _compute_date_delivery_actual(self):
         for order in self:
-            # All physical products have been delivered
-            # and the field has not been previously set
+            # The order contains physical products all of which have been
+            # delivered, and the field has not been previously set
             if all([l.qty_delivered >= l.product_uom_qty for l
                     in order.order_line
                     if l.product_id.type != 'service']) and \
-                    not order.date_delivery_actual:
+                    any([l.product_id.type != 'service' for l
+                         in order.order_line]):
 
                 order.date_delivery_actual = fields.Datetime.now()
 
