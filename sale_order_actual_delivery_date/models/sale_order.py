@@ -10,7 +10,7 @@ class SaleOrder(models.Model):
     def _compute_date_delivery_actual(self):
         for order in self:
             # The order contains physical products all of which have been
-            # delivered, and the field has not been previously set
+            # delivered
             if all([l.qty_delivered >= l.product_uom_qty for l
                     in order.order_line
                     if l.product_id.type != 'service']) and \
