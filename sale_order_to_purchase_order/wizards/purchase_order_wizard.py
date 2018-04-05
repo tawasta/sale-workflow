@@ -7,41 +7,62 @@ class PurchaseOrderWizard(models.TransientModel):
     _name = "sale_order_to_purchase_order.po_wizard"
 
     def create_purchase(self, current_sale):
-        # Override to add new fields as necessary
+
         purchase_order_model = self.env['purchase.order']
 
-        vals = {
+        initial_values = {
             'partner_id': self.partner_id.id,
             'picking_type_id': self.picking_type_id.id,
             'sale_order_id': current_sale.id,
+            'fiscal_position_id': False,
         }
 
-        # Call core's onchanges so that the rest of field values
-        # get initialized
-        res = purchase_order_model.create(vals)
-        res.onchange_partner_id()
-        res._onchange_picking_type_id()
+        # Trigger onchanges programmatically to get fiscal position
+        po_spec = purchase_order_model._onchange_spec()
+        updates = purchase_order_model.onchange(initial_values,
+                                                ['partner_id'],
+                                                po_spec)
+
+        onchange_values = updates.get('value', {})
+        for name, val in onchange_values.iteritems():
+            if isinstance(val, tuple):
+                onchange_values[name] = val[0]
+
+        initial_values.update(onchange_values)
+        res = purchase_order_model.create(initial_values)
         return res
 
     def create_purchase_line(self, current_sale_line, purchase_order):
-        # Override to add new fields as necessary
+
         purchase_order_line_model = self.env['purchase.order.line']
 
-        vals = {
+        initial_values = {
             'order_id': purchase_order.id,
-            'state': 'draft',
             'product_id': current_sale_line.product_id.id,
-            'date_planned': fields.Date.today(),
-            'name': current_sale_line.name,
-            'partner_id': self.partner_id.id,
-            'price_unit': current_sale_line.price_unit,
             'product_qty': current_sale_line.product_uom_qty,
-            'product_uom': current_sale_line.product_uom.id
+            'product_uom': current_sale_line.product_uom.id,
+            'partner_id': purchase_order.partner_id.id,
+            'price_unit': False,
+            'name': False,
+            'date_planned': False,
+            'taxes_id': False,
         }
 
-        # Do not call onchange here as we want to preserve the line values.
-        # This means that e.g. taxes have to be set manually though
-        purchase_order_line_model.create(vals)
+        # Trigger onchanges programmatically to get price, product name,
+        # planned date and taxes.
+        po_line_spec = purchase_order_line_model._onchange_spec()
+        updates = purchase_order_line_model.onchange(initial_values,
+                                                     ['product_id'],
+                                                     po_line_spec)
+
+        onchange_values = updates.get('value', {})
+        for name, val in onchange_values.iteritems():
+            if isinstance(val, tuple):
+                onchange_values[name] = val[0]
+
+        initial_values.update(onchange_values)
+
+        purchase_order_line_model.create(initial_values)
 
     def button_create_po(self):
 

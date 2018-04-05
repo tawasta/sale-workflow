@@ -6,11 +6,8 @@
 Sale Order to Purchase Order
 ============================
 
-* Adds a button to Sale Orders that enables the user to create a draft Purchase Order with the same lines
-
-Installation
-============
-* Just install this module
+* Adds a button to Sale Orders that enables the user to create a draft Purchase
+  Order with the same lines
 
 Configuration
 =============
@@ -18,11 +15,15 @@ Configuration
 
 Usage
 =====
-* Click the new "Create RFQ" button on the Sale Order form, and select a supplier and a delivery location
+* Click the new "Create RFQ" button on the Sale Order form, and select a
+  supplier and a delivery location
 
 Known issues / Roadmap
 ======================
-* None
+* Note that the PO creation respects supplier's minimum quantities, so by
+  default the quantity on the SO will be incremented on the PO to meet the
+  required  quantity if it was too low. The quantity can be edited manually on
+  the PO afterwards.
 
 Credits
 =======
