@@ -62,7 +62,8 @@ class PurchaseOrderWizard(models.TransientModel):
 
         initial_values.update(onchange_values)
 
-        purchase_order_line_model.create(initial_values)
+        res = purchase_order_line_model.create(initial_values)
+        return res
 
     def button_create_po(self):
 
@@ -91,11 +92,21 @@ class PurchaseOrderWizard(models.TransientModel):
             .search(args=args, limit=1)
         return res and res[0] or False
 
+    def _get_default_customer(self):
+        return self.env.context.get('customer_id', False)
+
     partner_id = fields.Many2one(
         comodel_name='res.partner',
         string='Supplier',
         domain=[('supplier', '=', True)],
         required=True
+    )
+
+    customer_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Customer',
+        readonly=True,
+        default=_get_default_customer
     )
 
     picking_type_id = fields.Many2one(

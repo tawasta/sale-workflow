@@ -10,7 +10,8 @@
                 <button name="%(sale_order_to_purchase_order.action_po_wizard)d"
                     string="Create RFQ"
                     type="action"
-                    context="{ 'warehouse_id': warehouse_id }"/>
+                    context="{ 'warehouse_id': warehouse_id,
+                        'customer_id': partner_id }"/>
             </field>
 
             <notebook position="inside">
