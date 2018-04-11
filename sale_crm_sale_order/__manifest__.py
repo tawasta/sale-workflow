@@ -23,7 +23,7 @@
     'name': 'Opportunity-Quotation integration',
     'summary': 'Integrates opportunities and quotations',
     'category': 'Sale',
-    'version': '10.0.1.0.1',
+    'version': '10.0.1.1.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

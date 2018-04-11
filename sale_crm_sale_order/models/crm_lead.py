@@ -28,8 +28,9 @@ class CrmLead(models.Model):
     def action_set_lost(self):
         for record in self:
             for order in record.order_ids:
-                order.message_post(_('Opportunity lost'))
-                order.action_cancel()
+                if order.state in ['draft', 'sent']:
+                    order.message_post(_('Opportunity lost'))
+                    order.action_cancel()
 
         return super(CrmLead, self).action_set_lost()
 
@@ -37,7 +38,9 @@ class CrmLead(models.Model):
     def action_set_won(self):
         for record in self:
             for order in record.order_ids:
-                order.message_post(_('Opportunity won'))
+                if order.state in ['draft', 'sent']:
+                    order.message_post(_('Opportunity won'))
+                    order.action_confirm()
 
         return super(CrmLead, self).action_set_won()
 
