@@ -10,12 +10,16 @@ class CrmLead(models.Model):
 
     _inherit = 'crm.lead'
 
+    order_id = fields.Many2one(
+        comodel_name='sale.order',
+        string='Sale order',
+        compute='_compute_order_id',
+        store=True,
+    )
+
     order_line_ids = fields.One2many(
-        comodel_name='sale.order.line',
-        inverse_name='order_id',
-        string='Order Lines',
-        compute='_get_sale_order_lines',
-        inverse='_set_sale_order_lines',
+        related='order_id.order_line',
+        string='Order lines',
     )
 
     pricelist_id = fields.Many2one(
@@ -44,21 +48,13 @@ class CrmLead(models.Model):
 
         return super(CrmLead, self).action_set_won()
 
-    @api.multi
-    def _get_sale_order_lines(self):
+    @api.depends('order_ids')
+    def _compute_order_id(self):
         for record in self:
             if record.sale_number == 1:
-                record.order_line_ids = record.order_ids\
-                    .filtered(lambda r: r.state in ('draft', 'sent'))\
-                    .order_line
-
-    @api.multi
-    def _set_sale_order_lines(self):
-        for record in self:
-            if record.sale_number == 1:
-                record.order_ids \
-                    .filtered(lambda r: r.state in ('draft', 'sent'))\
-                    .order_line = record.order_line_ids
+                record.order_id = record.order_ids[0]
+            else:
+                record.order_id = False
 
     @api.multi
     def _get_pricelist(self):

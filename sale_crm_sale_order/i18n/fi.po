@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 08:21+0000\n"
-"PO-Revision-Date: 2018-01-09 10:23+0200\n"
+"POT-Creation-Date: 2018-04-12 11:20+0000\n"
+"PO-Revision-Date: 2018-04-12 14:21+0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,23 +23,19 @@ msgid "Lead/Opportunity"
 msgstr "Liidi/mahdollisuus"
 
 #. module: sale_crm_sale_order
-#: code:addons/sale_crm_sale_order/models/crm_lead.py:31
+#: code:addons/sale_crm_sale_order/models/crm_lead.py:36
 #, python-format
 msgid "Opportunity lost"
 msgstr "Mahdollisuus hävitty"
 
 #. module: sale_crm_sale_order
-#: code:addons/sale_crm_sale_order/models/crm_lead.py:40
+#: code:addons/sale_crm_sale_order/models/crm_lead.py:46
 #, python-format
 msgid "Opportunity won"
 msgstr "Mahdollisuus voitettu"
 
 #. module: sale_crm_sale_order
 #: model:ir.model.fields,field_description:sale_crm_sale_order.field_crm_lead_order_line_ids
-msgid "Order Lines"
-msgstr "Tilausrivit"
-
-#. module: sale_crm_sale_order
 #: model:ir.ui.view,arch_db:sale_crm_sale_order.crm_case_form_view_oppor
 msgid "Order lines"
 msgstr "Tilausrivit"
@@ -53,6 +49,23 @@ msgstr "Hinnasto"
 #: model:ir.ui.view,arch_db:sale_crm_sale_order.crm_case_form_view_oppor
 msgid "Qty"
 msgstr "Määrä"
+
+#. module: sale_crm_sale_order
+#: code:addons/sale_crm_sale_order/models/sale_order.py:41
+#, python-format
+msgid "Sale cancelled"
+msgstr "Myynti peruttu"
+
+#. module: sale_crm_sale_order
+#: code:addons/sale_crm_sale_order/models/sale_order.py:30
+#, python-format
+msgid "Sale confirmed"
+msgstr "Myynti vahvistettu"
+
+#. module: sale_crm_sale_order
+#: model:ir.model.fields,field_description:sale_crm_sale_order.field_crm_lead_order_id
+msgid "Sale order"
+msgstr "Myyntitilaus"
 
 #. module: sale_crm_sale_order
 #: model:ir.model,name:sale_crm_sale_order.model_sale_order
