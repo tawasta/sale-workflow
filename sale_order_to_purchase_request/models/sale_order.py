@@ -165,12 +165,13 @@ class SaleOrder(models.Model):
                 pr_res = purchase_request_model.create(pr_values)
 
                 for material in materials_compared_to_stock:
-                    purchase_request_line_model.create({
-                        'request_id': pr_res.id,
-                        'product_id': material['product'].id,
-                        'product_uom_id': material['product'].uom_id.id,
-                        'product_qty': material['quantity']
-                    })
+                    if material['product'].type == 'product':
+                        purchase_request_line_model.create({
+                            'request_id': pr_res.id,
+                            'product_id': material['product'].id,
+                            'product_uom_id': material['product'].uom_id.id,
+                            'product_qty': material['quantity']
+                        })
 
                 # Link the new purchase request to the sale order
                 self.purchase_request_id = pr_res.id
