@@ -19,6 +19,8 @@
                                string="You can not modify order lines when there are multiple Quotations" />
                     </div>
 
+                    <field name="order_id" invisible="1"/>
+
                     <field name="order_line_ids" attrs="{'invisible': [('sale_number', '!=', 1)]}">
                         <tree string="Sales Order Lines" editable="bottom">
                             <field name="sequence" widget="handle"/>
