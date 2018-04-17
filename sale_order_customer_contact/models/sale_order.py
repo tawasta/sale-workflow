@@ -61,25 +61,25 @@ class SaleOrder(models.Model):
     def onchange_partner_domain_change(self):
         # Get the contact domain
         res = dict()
+        if self.partner_id:
+            top_parent_list = self.partner_id._get_recursive_parent()
 
-        top_parent_list = self.partner_id._get_recursive_parent()
+            if top_parent_list:
+                top_parent = top_parent_list[0]
+                partners = self.partner_id \
+                    ._get_recursive_child_ids(top_parent) + [top_parent.id]
 
-        if top_parent_list:
-            top_parent = top_parent_list[0]
-            partners = self.partner_id \
-                ._get_recursive_child_ids(top_parent) + [top_parent.id]
+                contacts = self.env['res.partner'].search([
+                    ('id', 'in', partners),
+                    ('type', '=', 'contact'),
+                    ('is_company', '=', False)
+                ])
 
-            contacts = self.env['res.partner'].search([
-                ('id', 'in', partners),
-                ('type', '=', 'contact'),
-                ('is_company', '=', False)
-            ])
-
-            if contacts:
-                domain = [
-                    ('id', 'in', contacts.ids),
-                ]
-                res['domain'] = {'customer_contact': domain}
+                if contacts:
+                    domain = [
+                        ('id', 'in', contacts.ids),
+                    ]
+                    res['domain'] = {'customer_contact': domain}
 
         return res
 
