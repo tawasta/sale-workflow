@@ -20,7 +20,7 @@
 {
     'name': 'Customer Contact for Sale Orders',
     'category': 'Sales',
-    'version': '10.0.0.1.1',
+    'version': '10.0.1.0.2',
     'installable': True,
     'author': 'Oy Tawasta OS Technologies Ltd.',
     'website': 'http://www.tawasta.fi',

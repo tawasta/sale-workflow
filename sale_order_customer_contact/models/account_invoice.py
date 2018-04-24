@@ -58,7 +58,11 @@ class AccountInvoice(models.Model):
     @api.onchange('partner_id')
     @api.depends('customer_contact')
     def onchange_partner_domain_change(self):
-        # Get the contact domain
+        self.ensure_one()
+
+        # Get the contact domain of there is a partner selected
+        if not self.partner_id:
+            return False
 
         res = dict()
 
