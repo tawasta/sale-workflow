@@ -20,8 +20,8 @@
 ##############################################################################
 
 {
-    'name': 'Quotation from sale',
-    'summary': 'Allows creating quotations from sales',
+    'name': 'Opportunity from sale',
+    'summary': 'Allows creating opportunities from sales',
     'category': 'Sale',
     'version': '10.0.1.0.2',
     'website': 'http://www.tawasta.fi',

@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===================
-Quotation from sale
-===================
+=====================
+Opportunity from sale
+=====================
 
-Allows creating quotations from sales
+Allows creating opportunities from sales
 
 Configuration
 =============
