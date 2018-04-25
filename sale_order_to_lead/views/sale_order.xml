@@ -17,6 +17,7 @@
                             'default_name': name,
                             'default_order_ids': [(6, 0, [active_id])],
                          }"
+                        attrs="{'invisible': ['|',('opportunity_id', '!=', False),('state', 'in', ['done', 'cancel'])]}"
                 />
             </xpath>
 
