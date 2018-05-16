@@ -23,7 +23,7 @@
     'name': 'Product availability on SO line',
     'summary': 'Add product availability to SO line',
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.1.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
