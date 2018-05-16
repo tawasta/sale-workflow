@@ -6,7 +6,6 @@
 
 # 3. Odoo imports (openerp):
 from odoo import api, fields, models
-from odoo.tools import float_compare
 from odoo.addons import decimal_precision as dp
 
 # 4. Imports from Odoo modules:
