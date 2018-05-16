@@ -13,5 +13,6 @@ class SaleOrder(models.Model):
             'draft': [('readonly', False)],
             'sent': [('readonly', False)]
         },
-        help='''Delivery date requested by the customer'''
+        help='Delivery date requested by the customer',
+        copy=False,
     )
