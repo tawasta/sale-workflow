@@ -12,5 +12,6 @@ class SaleOrder(models.Model):
         states={
             'draft': [('readonly', False)],
             'sent': [('readonly', False)]
-        }
+        },
+        copy=False,
     )
