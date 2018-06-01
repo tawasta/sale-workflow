@@ -28,6 +28,7 @@ addon | version | summary
 [sale_order_project_in_header](sale_order_project_in_header/) | 10.0.1.1.0 | Moves analytic account to SO header and sets it as required
 [sale_order_project_location_in_header](sale_order_project_location_in_header/) | 10.0.1.0.0 | Adds analytic account stock location to SO header
 [sale_order_promised_delivery_date](sale_order_promised_delivery_date/) | 10.0.1.1.1 | Adds a new field for storing date of promised delivery
+[sale_order_promised_delivery_range](sale_order_promised_delivery_range/) | 10.0.1.0.0 | Adds new fields for storing date range of promised delivery
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 10.0.1.0.1 | Adds a new field for storing date of requested delivery
 [sale_order_show_only_companies](sale_order_show_only_companies/) | 10.0.1.0.0 | SO's partner dropdown shows only companies
 [sale_order_stock_warning_disable](sale_order_stock_warning_disable/) | 10.0.1.0.0 | No out-of-stock warning when adding products to SO lines
@@ -35,6 +36,7 @@ addon | version | summary
 [sale_order_to_purchase_order](sale_order_to_purchase_order/) | 10.0.1.2.2 | Button for creating a PO from SO, containing the same lines
 [sale_order_to_purchase_order_customer_code](sale_order_to_purchase_order_customer_code/) | 10.0.1.0.0 | Transfer customer product codes to PO lines
 [sale_order_to_purchase_request](sale_order_to_purchase_request/) | 10.0.1.0.0 | Create Purchase Requests of sold products and BOM components
+[sale_partner_default_note](sale_partner_default_note/) | 10.0.1.0.0 | Add a default sale note (terms and conditions) for partner
 [sale_stock_availability](sale_stock_availability/) | 10.0.1.1.0 | Add product availability to SO line
 
 
