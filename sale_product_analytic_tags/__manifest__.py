@@ -34,7 +34,7 @@
         'bin': [],
     },
     'depends': [
-        'account',
+        'sale',
         'product_analytic_tags',
     ],
     'data': [
