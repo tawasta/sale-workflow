@@ -20,8 +20,8 @@
 ##############################################################################
 
 {
-    'name': 'Product analytic tags on sale order lines',
-    'summary': 'Adds sale order line analytic tags from products',
+    'name': 'Product template tag analytic tags on sale order lines',
+    'summary': 'Adds sale order line analytic tags from product tags',
     'version': '10.0.1.1.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
@@ -35,7 +35,7 @@
     },
     'depends': [
         'sale',
-        'product_analytic_tags',
+        'product_template_tags',
     ],
     'data': [
 
