@@ -22,7 +22,7 @@
 {
     'name': 'Analytic account analytic tags on sale order lines',
     'summary': 'Adds sale order line analytic tags from analytic account',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.1.0',
     'category': 'Invoicing',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

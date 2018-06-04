@@ -13,4 +13,4 @@ class SaleOrder(models.Model):
                     record.project_id.tag_ids:
 
                 for line in record.order_line:
-                    line.analytic_tag_ids = record.project_id.tag_ids
+                    line.analytic_tag_ids += record.project_id.tag_ids
