@@ -21,8 +21,8 @@
 
 {
     'name': 'Customer Order Number for Sale Orders',
-    'summary': 'New field for order# given by customer',
-    'version': '10.0.1.0.0',
+    'summary': 'New field for order number provided by customer',
+    'version': '10.0.2.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -37,7 +37,7 @@
         'sale',
     ],
     'data': [
-        'views/account_invoice.xml',
+        'views/sale_config_settings.xml',
         'views/sale_order.xml',
     ],
     'demo': [
