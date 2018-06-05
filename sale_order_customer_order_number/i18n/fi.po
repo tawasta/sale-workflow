@@ -17,6 +17,7 @@ msgstr ""
 
 #. module: sale_order_customer_order_number
 #: model:ir.model,name:sale_order_customer_order_number.model_res_company
+msgstr "Companies"
 msgid "Yritykset"
 
 #. module: sale_order_customer_order_number
