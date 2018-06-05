@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'Customer Order Number for Sale Orders',
-    'summary': 'New field for order number provided by customer',
-    'version': '10.0.2.0.0',
+    'name': 'Sale Order Promised Delivery Date - Calendar',
+    'summary': 'Makes the sale order calendar utilize promised delivery date',
+    'version': '10.0.1.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -34,10 +34,9 @@
         'bin': [],
     },
     'depends': [
-        'sale',
+        'sale_order_promised_delivery_date',
     ],
     'data': [
-        'views/sale_config_settings.xml',
         'views/sale_order.xml',
     ],
     'demo': [

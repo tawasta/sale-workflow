@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, models
+from odoo import api, models, _
 
 
 class SaleAdvancePaymentInv(models.TransientModel):
@@ -12,6 +12,12 @@ class SaleAdvancePaymentInv(models.TransientModel):
         invoice = super(SaleAdvancePaymentInv, self) \
             ._create_invoice(order, so_line, amount)
 
-        if order.customer_order_number:
-            invoice.customer_order_number = order.customer_order_number
+        if order.customer_order_number \
+                and order.company_id.customer_order_number_to_invoice:
+            invoice.comment = \
+                u'%s%s: %s' % \
+                (invoice.comment and (invoice.comment + '\n') or '',
+                 _('Customer Order Number'),
+                 order.customer_order_number)
+
         return invoice

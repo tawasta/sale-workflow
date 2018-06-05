@@ -7,16 +7,14 @@ Customer Order Number for Sale Orders
 =====================================
 
 * Adds a simple customer order number field to Sale Orders
-* When an invoice is created from an SO, the data is passed to the invoice as well
-* Intended for situations where the customer has supplied their own order # to be used along with the Odoo standard SOxxx.
-
-Installation
-============
-* Just install the module
+* Intended for situations where the customer has supplied their own order # to
+  be used along with the Odoo standard SOxxx.
 
 Configuration
 =============
-* No configuration needed
+* Optional: Go to sales configuration and check the 'Pass Customer Order Number
+  to Invoice' checkbox. This transfers the order number to the Terms and
+  Conditions freetext field when creating an invoice from the sale.
 
 Usage
 =====
@@ -24,7 +22,10 @@ Usage
 
 Known issues / Roadmap
 ======================
-* None
+* Note that previously this module provided a Customer Order Number field also
+  for invoices. Due to invoicing integrations field limitations this field has
+  been removed, and the data is now appended to the Terms and Conditions field
+  instead.
 
 Credits
 =======
