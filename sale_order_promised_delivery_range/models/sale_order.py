@@ -37,31 +37,13 @@ class SaleOrder(models.Model):
                 record.date_delivery_promised_end = start
 
     @api.multi
-    def action_confirm(self):
-        res = super(SaleOrder, self).action_confirm()
+    def _prepare_invoice(self):
+        invoice_vals = super(SaleOrder, self)._prepare_invoice()
 
-        # Add delivery range to sale note
-        for order in self:
-            if order.date_delivery_promised_start:
+        invoice_vals['date_delivery_promised_start'] \
+            = self.date_delivery_promised_start
 
-                # TODO: use user format?
-                date_format = '%d.%m.%Y'
+        invoice_vals['date_delivery_promised_end'] \
+            = self.date_delivery_promised_end
 
-                start = parser.parse(order.date_delivery_promised_start)
-                date_range = start.strftime(date_format)
-
-                end = parser.parse(order.date_delivery_promised_end)
-
-                if end:
-                    date_range = '%s - %s' \
-                                 % (date_range, end.strftime(date_format))
-
-                delivery = '%s: %s\n' % (_('Delivery'), date_range)
-
-                if order.note:
-                    order.note += '\n' + delivery
-                else:
-                    order.note = delivery
-
-
-        return res
+        return invoice_vals

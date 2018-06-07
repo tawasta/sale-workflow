@@ -10,7 +10,7 @@
             <field name="confirmation_date" position="after">
                 <label for="date_delivery_promised_start" string="Promised delivery"/>
                 <div class="o_row mr16" id="promised-delivery-div">
-                    <field name="date_delivery_promised_start"/>
+                    <field name="date_delivery_promised_start"/> -
                     <field name="date_delivery_promised_end"/>
                 </div>
             </field>
