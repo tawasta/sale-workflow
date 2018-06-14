@@ -20,10 +20,8 @@ Usage
 
 Known issues / Roadmap
 ======================
-* Note that the PO creation respects supplier's minimum quantities, so by
-  default the quantity on the SO will be incremented on the PO to meet the
-  required  quantity if it was too low. The quantity can be edited manually on
-  the PO afterwards.
+* Requires OCA's onchange_helper module
+  (https://github.com/OCA/server-tools/tree/10.0/onchange_helper)
 
 Credits
 =======
