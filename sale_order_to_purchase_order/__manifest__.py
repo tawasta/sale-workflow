@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order to Purchase Order',
     'summary': 'Button for creating a PO from SO, containing the same lines',
-    'version': '10.0.1.2.2',
+    'version': '10.0.1.3.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -35,7 +35,8 @@
     },
     'depends': [
         'sale',
-        'purchase'
+        'purchase',
+        'onchange_helper',
     ],
     'data': [
         'wizards/purchase_order_wizard.xml',

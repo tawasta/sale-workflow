@@ -14,23 +14,13 @@ class PurchaseOrderWizard(models.TransientModel):
             'partner_id': self.partner_id.id,
             'picking_type_id': self.picking_type_id.id,
             'sale_order_id': current_sale.id,
-            'fiscal_position_id': False,
         }
 
-        # Trigger onchanges programmatically to get fiscal position
-        po_spec = purchase_order_model._onchange_spec()
-        updates = purchase_order_model.onchange(initial_values,
-                                                ['partner_id'],
-                                                po_spec)
+        updated_values = purchase_order_model.play_onchanges(
+            initial_values, ['partner_id']
+        )
 
-        onchange_values = updates.get('value', {})
-        for name, val in onchange_values.iteritems():
-            if isinstance(val, tuple):
-                onchange_values[name] = val[0]
-
-        initial_values.update(onchange_values)
-        res = purchase_order_model.create(initial_values)
-        return res
+        return purchase_order_model.create(updated_values)
 
     def create_purchase_line(self, current_sale_line, purchase_order):
 
@@ -41,29 +31,19 @@ class PurchaseOrderWizard(models.TransientModel):
             'product_id': current_sale_line.product_id.id,
             'product_qty': current_sale_line.product_uom_qty,
             'product_uom': current_sale_line.product_uom.id,
-            'partner_id': purchase_order.partner_id.id,
-            'price_unit': False,
-            'name': False,
-            'date_planned': False,
-            'taxes_id': False,
+            'partner_id': purchase_order.partner_id.id
         }
 
-        # Trigger onchanges programmatically to get price, product name,
-        # planned date and taxes.
-        po_line_spec = purchase_order_line_model._onchange_spec()
-        updates = purchase_order_line_model.onchange(initial_values,
-                                                     ['product_id'],
-                                                     po_line_spec)
+        updated_values = purchase_order_line_model.play_onchanges(
+            initial_values, ['product_id']
+        )
 
-        onchange_values = updates.get('value', {})
-        for name, val in onchange_values.iteritems():
-            if isinstance(val, tuple):
-                onchange_values[name] = val[0]
+        # Price is mandatory, so set is as 0 in case no
+        # supplier price was found
+        if 'price_unit' not in updated_values:
+            updated_values['price_unit'] = 0.00
 
-        initial_values.update(onchange_values)
-
-        res = purchase_order_line_model.create(initial_values)
-        return res
+        return purchase_order_line_model.create(updated_values)
 
     def button_create_po(self):
 
