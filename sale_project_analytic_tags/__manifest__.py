@@ -38,7 +38,7 @@
         'analytic',
     ],
     'data': [
-
+        'views/sale_order_form.xml',
     ],
     'demo': [
     ],
