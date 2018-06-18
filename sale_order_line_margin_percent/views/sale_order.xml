@@ -22,7 +22,7 @@
             <field name="margin" position="after">
                 <label for="margin_percent" string="Margin"/>
                 <div class="o_row mr16" id="margin-percent">
-                    <field name="margin_percent" /> %
+                    <field name="margin_percent" />%
                 </div>
             </field>
 
