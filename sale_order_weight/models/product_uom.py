@@ -26,6 +26,9 @@ class ProductUom(models.Model):
     # 4. Compute and search fields, in the same order that fields declaration
     @api.multi
     def _compute_weight(self, weight, to_unit):
+        if len(self) == 0:
+            return 0
+
         self.ensure_one()
 
         if not self or not weight or not to_unit or self == to_unit:
