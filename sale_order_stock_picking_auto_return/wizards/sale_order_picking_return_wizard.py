@@ -12,17 +12,7 @@ class SaleOrderPickingReturnWizard(models.TransientModel):
         sale = self._get_sale_order()
 
         for picking in sale.picking_ids:
-            return {
-                'type': 'ir.actions.act_window',
-                'res_model': 'stock.return.picking',
-                'view_mode': 'form',
-                'target': 'new',
-                'context': {
-                    'active_id': picking.id,
-                },
-            }
 
-            '''
             StockReturnPicking = self.env['stock.return.picking']
 
             context = dict(
@@ -30,13 +20,10 @@ class SaleOrderPickingReturnWizard(models.TransientModel):
                 location_id=picking.location_id,
             )
             return_wizard = StockReturnPicking.new()
-            return_wizard.original_location_id = picking.location_id
 
-            return_wizard.with_context(context).create_returns(
-                location_id=picking.location_id,
-                force_defaults=True,
+            return_wizard.with_context(context).force_create_returns(
+               location_id=picking.location_id,
             )
-            '''
 
         sale.action_cancel()
 
