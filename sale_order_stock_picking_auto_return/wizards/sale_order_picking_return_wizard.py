@@ -11,7 +11,7 @@ class SaleOrderPickingReturnWizard(models.TransientModel):
 
         sale = self._get_sale_order()
 
-        for picking in sale.picking_ids:
+        for picking in sale.picking_ids.filtered(lambda r: r.state == 'done'):
 
             StockReturnPicking = self.env['stock.return.picking']
 
