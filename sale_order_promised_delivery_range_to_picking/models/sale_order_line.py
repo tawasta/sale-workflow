@@ -25,13 +25,13 @@ class SaleOrderLine(models.Model):
                         self.order_id.date_delivery_promised_start,
                         DEFAULT_SERVER_DATE_FORMAT
                     ) \
-                    + timedelta(days=self.customer_lead, hours=12)
+                    + timedelta(days=self.customer_lead, hours=20)
 
                 if self.order_id.date_delivery_promised_end:
                     picking.max_date = datetime.strptime(
                         self.order_id.date_delivery_promised_end,
                         DEFAULT_SERVER_DATE_FORMAT
                     ) \
-                    + timedelta(days=self.customer_lead, hours=12)
+                    + timedelta(days=self.customer_lead, hours=20)
 
         return procurements
