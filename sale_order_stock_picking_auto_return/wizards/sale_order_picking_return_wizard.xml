@@ -7,7 +7,8 @@
         <field name="arch" type="xml">
             <form>
                 <p class="oe_grey">
-                    Do you want to return all deliveries linked to this sale?
+                    <span>Do you want to return all deliveries linked to this sale?</span><br/>
+                    <span>This will return the delivered items to stock.</span>
                 </p>
 
                 <footer>

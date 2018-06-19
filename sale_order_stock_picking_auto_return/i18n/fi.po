@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * sale_order_stock_picking_auto_return
+# 	* sale_order_stock_picking_auto_return
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-19 04:20+0000\n"
-"PO-Revision-Date: 2018-06-19 08:54+0300\n"
+"POT-Creation-Date: 2018-06-19 06:23+0000\n"
+"PO-Revision-Date: 2018-06-19 09:25+0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,13 +19,22 @@ msgstr ""
 
 #. module: sale_order_stock_picking_auto_return
 #: model:ir.ui.view,arch_db:sale_order_stock_picking_auto_return.sale_order_picking_return_wizard
+msgid ""
+"<span>Do you want to return all deliveries linked to this sale?</span><br/>\n"
+"                    <span>This will return the delivered items to stock.</span>"
+msgstr ""
+"<span>Haluatko palauttaa kaikki tähän myyntiin liittyvät toimitukset?</span><br/>\n"
+"                    <span>Tämä palauttaa toimitetut tuotteet takaisin varastoon.</span>"
+
+#. module: sale_order_stock_picking_auto_return
+#: model:ir.ui.view,arch_db:sale_order_stock_picking_auto_return.sale_order_picking_return_wizard
 msgid "Back"
 msgstr "Takaisin"
 
 #. module: sale_order_stock_picking_auto_return
 #: model:ir.ui.view,arch_db:sale_order_stock_picking_auto_return.view_order_form
 msgid "Cancel"
-msgstr "Peru"
+msgstr "Peruuta"
 
 #. module: sale_order_stock_picking_auto_return
 #: model:ir.actions.act_window,name:sale_order_stock_picking_auto_return.action_sale_order_picking_return
@@ -46,11 +55,6 @@ msgstr "Luotu"
 #: model:ir.model.fields,field_description:sale_order_stock_picking_auto_return.field_sale_order_picking_return_wizard_display_name
 msgid "Display Name"
 msgstr "Näyttönimi"
-
-#. module: sale_order_stock_picking_auto_return
-#: model:ir.ui.view,arch_db:sale_order_stock_picking_auto_return.sale_order_picking_return_wizard
-msgid "Do you want to return all deliveries linked to this sale?"
-msgstr "Haluatko peruuttaa kaikki tähän myyntiin liittyvät toimitukset?"
 
 #. module: sale_order_stock_picking_auto_return
 #: model:ir.model.fields,field_description:sale_order_stock_picking_auto_return.field_sale_order_picking_return_wizard_id
