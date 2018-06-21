@@ -16,12 +16,7 @@ class SaleOrderLine(models.Model):
             lang=self.order_id.partner_id.lang,
         )
 
-        if product:
-            name = product.name_get()[0][1]
-
-            if product.description_sale:
-                name = product.description_sale
-
-            self.name = name
+        if product and product.description_sale:
+            self.name = product.description_sale
 
         return res
