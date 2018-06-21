@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-from . import stock_return_picking_line
+from . import stock_return_picking
