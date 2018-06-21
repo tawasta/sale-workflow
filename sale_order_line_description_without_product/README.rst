@@ -7,8 +7,6 @@ Sale order line description without product
 ===========================================
 
 Remove product and product code from default description.
-The line description will always be sale description, even when it is empty
-
 
 Configuration
 =============
