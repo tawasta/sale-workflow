@@ -19,7 +19,7 @@ Usage
 
 Known issues / Roadmap
 ======================
-Rewrite with JS Widget to avoid unnecessary reload
+\-
 
 Credits
 =======
