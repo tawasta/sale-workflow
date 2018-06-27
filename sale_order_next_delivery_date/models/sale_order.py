@@ -33,17 +33,11 @@ class SaleOrder(models.Model):
     def compute_next_delivery_date(self):
         for record in self:
             if record.picking_ids:
-                print record.picking_ids
                 next_delivery_ids = record.picking_ids.filtered(
                     lambda r: r.state not in ('cancel', 'done', 'draft')
                 ).sorted(
                     key=lambda r: r.min_date
                 )
-
-                print next_delivery_ids
-                for n in next_delivery_ids:
-                    print n.name
-                    print n.state
 
                 if next_delivery_ids:
                     record.next_delivery_date = next_delivery_ids[0].min_date
