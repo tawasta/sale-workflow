@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+from odoo import models, fields, api, _
+
+
+class SaleOrder(models.Model):
+
+    _inherit = 'sale.order'
+
+    @api.multi
+    def action_confirm(self):
+        res = super(SaleOrder, self).action_confirm()
+
+        # Add salesperson to sale note
+        for order in self:
+            if order.user_id:
+
+                salesperson = _('Salesperson: %s' % order.user_id.name)
+
+                if order.note:
+                    order.note += '\n' + salesperson
+                else:
+                    order.note = salesperson
+
+        return res
