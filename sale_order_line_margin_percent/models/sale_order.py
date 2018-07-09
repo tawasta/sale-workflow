@@ -16,9 +16,6 @@ class SaleOrder(models.Model):
 
     def _compute_margin_percent(self):
         for record in self:
-            line_sum = sum(record.order_line.filtered(
-                lambda r: r.state != 'cancel').mapped('price_subtotal'))
-            line_margin = sum(record.order_line.filtered(
-                lambda r: r.state != 'cancel').mapped('margin'))
-
-            record.margin_percent = round(line_margin / line_sum, 4) * 100
+            if record.amount_untaxed:
+                margin_percent = (record.margin / record.amount_untaxed) * 100
+                record.margin_percent = margin_percent
