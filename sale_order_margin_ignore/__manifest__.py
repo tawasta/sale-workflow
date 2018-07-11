@@ -20,19 +20,20 @@
 ##############################################################################
 
 {
-    'name': 'Margin percents in Sales Order lines',
-    'summary': 'Adds margins (percent) in Sales Order lines',
+    'name': 'Ignore products from margin calculation',
+    'summary': 'Ignore products when calculating margins',
     'category': 'Sale',
-    'version': '10.0.1.2.0',
+    'version': '10.0.1.0.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
     'depends': [
+        'product',
         'sale_margin',
     ],
     'data': [
-        'views/sale_order.xml',
+        'views/product_template.xml',
     ],
 }
