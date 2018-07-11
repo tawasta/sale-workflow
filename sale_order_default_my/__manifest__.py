@@ -30,7 +30,7 @@
     'application': False,
     'installable': True,
     'depends': [
-        'base',
+        'sale',
     ],
     'data': [
         'data/ir_actions_act_window.xml',
