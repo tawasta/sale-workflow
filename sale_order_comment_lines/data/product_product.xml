@@ -5,7 +5,6 @@
         <field name="standard_price">0.0</field>
         <field name="list_price">0.0</field>
         <field name="sale_ok" eval="True"/>
-        <field name="force_invoicing" eval="True"/>
         <field name="type">consu</field>
         <field name="taxes_id">[(6, 0, [])]</field>
         <field name="supplier_taxes_id">[(6, 0, [])]</field>
