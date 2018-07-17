@@ -23,7 +23,7 @@
     'name': 'Allow using comment lines in sale orders',
     'summary': 'Allow using comment lines in sale orders',
     'category': 'Sale',
-    'version': '10.0.1.1.0',
+    'version': '10.0.1.2.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
