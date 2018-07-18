@@ -18,5 +18,7 @@ class SaleOrderLine(models.Model):
 
         if product and product.description_sale:
             self.name = product.description_sale
+        elif product.name:
+            self.name = product.name
 
         return res
