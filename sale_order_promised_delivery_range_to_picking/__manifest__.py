@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order Promised Delivery Date Range to Stock Picking',
     'summary': 'Adds promised delivery range to stock picking',
-    'version': '10.0.1.0.1',
+    'version': '10.0.1.0.2',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

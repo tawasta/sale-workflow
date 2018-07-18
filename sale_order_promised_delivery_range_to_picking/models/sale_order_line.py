@@ -13,6 +13,8 @@ class SaleOrderLine(models.Model):
         procurements = super(SaleOrderLine, self)._action_procurement_create()
 
         StockPicking = self.env['stock.picking']
+        sale_order = self[0].order_id
+
         for procurement in procurements:
             # Search all pickings in this procurement
             pickings = StockPicking.search([(
@@ -20,18 +22,18 @@ class SaleOrderLine(models.Model):
             )])
 
             for picking in pickings:
-                if self.order_id.date_delivery_promised_start:
+                if sale_order.date_delivery_promised_start:
                     picking.min_date = datetime.strptime(
-                        self.order_id.date_delivery_promised_start,
+                        sale_order.date_delivery_promised_start,
                         DEFAULT_SERVER_DATE_FORMAT
                     ) \
-                    + timedelta(days=self.customer_lead, hours=20)
+                    + timedelta(days=self[0].customer_lead, hours=20)
 
-                if self.order_id.date_delivery_promised_end:
+                if sale_order.date_delivery_promised_end:
                     picking.max_date = datetime.strptime(
-                        self.order_id.date_delivery_promised_end,
+                        sale_order.date_delivery_promised_end,
                         DEFAULT_SERVER_DATE_FORMAT
                     ) \
-                    + timedelta(days=self.customer_lead, hours=20)
+                    + timedelta(days=self[0].customer_lead, hours=20)
 
         return procurements
