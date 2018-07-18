@@ -14,7 +14,7 @@ class SaleOrder(models.Model):
         for order in self:
             if order.name:
 
-                reference = _('Our reference: %s' % order.name)
+                reference = _('Our reference: %s') % order.name
 
                 if order.note:
                     order.note += '\n' + reference
