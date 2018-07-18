@@ -14,7 +14,7 @@ class SaleOrder(models.Model):
         for order in self:
             if order.user_id:
 
-                salesperson = _('Salesperson: %s' % order.user_id.name)
+                salesperson = _('Salesperson: %s') % order.user_id.name
 
                 if order.note:
                     order.note += '\n' + salesperson
