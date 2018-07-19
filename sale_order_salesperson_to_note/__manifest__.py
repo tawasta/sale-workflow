@@ -23,7 +23,7 @@
     'name': 'Add salesperson to sale order note on order confirm',
     'summary': 'Add salesperson to sale order note on order confirm',
     'category': 'Sale',
-    'version': '10.0.1.0.1',
+    'version': '10.0.1.1.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

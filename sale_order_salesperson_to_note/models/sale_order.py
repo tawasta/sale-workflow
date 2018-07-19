@@ -17,7 +17,7 @@ class SaleOrder(models.Model):
                 salesperson = _('Salesperson: %s') % order.user_id.name
 
                 if order.note:
-                    order.note += '\n' + salesperson
+                    order.note = salesperson + '\n' + order.note
                 else:
                     order.note = salesperson
 
