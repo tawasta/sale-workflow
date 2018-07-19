@@ -18,7 +18,8 @@ class SaleOrder(models.Model):
                             or self.company_id.default_notice_period
 
             if order.note:
-                order.note += '\n' + notice_period
+                order.note = notice_period + '\n' + order.note
+
             else:
                 order.note = notice_period
 
