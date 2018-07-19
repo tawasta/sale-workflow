@@ -17,7 +17,7 @@ class SaleOrder(models.Model):
                 reference = _('Our reference: %s') % order.name
 
                 if order.note:
-                    order.note += '\n' + reference
+                    order.note = reference + '\n' + order.note
                 else:
                     order.note = reference
 
