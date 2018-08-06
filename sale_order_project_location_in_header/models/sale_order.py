@@ -17,6 +17,7 @@ class SaleOrder(models.Model):
         default=lambda self: self._default_get_stock_location(),
         states=FIELD_STATES,
         readonly=True,
+        copy=False,
     )
 
     def _default_get_stock_location(self):
