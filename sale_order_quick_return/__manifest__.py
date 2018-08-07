@@ -20,10 +20,10 @@
 ##############################################################################
 
 {
-    'name': 'Automatically create a return for negative lines',
-    'summary': 'When sale is invoiced, automatically create a stock receipt',
+    'name': 'Create returns from sale order lines',
+    'summary': 'Create returns from sale order lines',
     'category': 'Sale',
-    'version': '10.0.1.1.0',
+    'version': '10.0.1.2.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
@@ -33,6 +33,7 @@
         'sale_stock',
     ],
     'data': [
-        'views/sale_advance_payment_inv.xml',
+        #'views/sale_advance_payment_inv.xml',
+        'views/sale_order_form.xml',
     ],
 }

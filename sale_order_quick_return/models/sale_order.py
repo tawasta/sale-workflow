@@ -5,6 +5,8 @@ from odoo import models, api, fields, _
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
+    '''
+    # This would make the returns on creating an invoice
     @api.multi
     def action_invoice_create(self, grouped=False, final=False):
         res = super(SaleOrder, self).action_invoice_create(
@@ -78,3 +80,4 @@ class SaleOrder(models.Model):
                         )
 
         return res
+        '''

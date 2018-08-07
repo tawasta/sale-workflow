@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-================================================
-Automatically create a return for negative lines
-================================================
+====================================
+Create returns from sale order lines
+====================================
 
-When sale is invoiced, automatically create a stock receipt if there are any refundable lines
+Create returns from sale order lines
 
 Configuration
 =============
