@@ -9,29 +9,52 @@ class SaleOrderPickingReturnWizard(models.TransientModel):
     def action_return_picking(self):
         # Sale order cancel with picking return
 
-        sale = self._get_sale_order()
+        sale_order = self._get_sale_order()
 
-        for picking in sale.picking_ids.filtered(lambda r: r.state == 'done'):
+        StockPicking = self.env['stock.picking']
+        StockReturnPicking = self.env['stock.return.picking']
+        StockMove = self.env['stock.move']
 
-            StockReturnPicking = self.env['stock.return.picking']
+        for line in sale_order.order_line:
+            # Search a move line to return
+            stock_moves = StockMove.search([
+                ('picking_id', 'in', sale_order.picking_ids.ids),
+                ('product_id', '=', line.product_id.id),
+                ('state', '=', 'done'),
+            ])
 
-            context = dict(
-                active_id=picking.id,
-                location_id=picking.location_id,
-            )
-            return_wizard = StockReturnPicking.new()
+            for stock_move in stock_moves:
+                pick = stock_move.picking_id
 
-            return_wizard.with_context(context).force_create_returns(
-               location_id=picking.location_id,
-            )
+                default_data = StockReturnPicking.with_context(
+                    active_ids=pick.ids,
+                    active_id=pick.ids[0]).default_get(
+                    ['move_dest_exists', 'original_location_id',
+                     'parent_location_id', 'location_id'])
 
-        sale.action_cancel()
+                default_data['product_return_moves'] = [(0, 0, dict(
+                    product_id=stock_move.product_id.id,
+                    move_id=stock_move.id,
+                    quantity=line.product_uom_qty,
+                ))]
+
+                return_wiz = StockReturnPicking.with_context(
+                    active_ids=pick.ids,
+                    active_id=pick.ids[0]).create(
+                    default_data
+                )
+
+                return_wiz.product_return_moves.to_refund_so = False
+
+                return_wiz.create_returns()
+
+                sale_order.action_cancel()
 
     def action_cancel(self):
         # Default sale order cancel
 
-        sale = self._get_sale_order()
-        sale.action_cancel()
+        sale_order = self._get_sale_order()
+        sale_order.action_cancel()
 
     def _get_sale_order(self):
         self.ensure_one()
