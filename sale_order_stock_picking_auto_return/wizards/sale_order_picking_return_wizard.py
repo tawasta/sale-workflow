@@ -46,7 +46,15 @@ class SaleOrderPickingReturnWizard(models.TransientModel):
 
                 return_wiz.product_return_moves.to_refund_so = False
 
-                return_wiz.create_returns()
+                res = return_wiz.create_returns()
+
+                # Validate picking
+                return_pick = self.env['stock.picking'].browse(res['res_id'])
+                return_pick.force_assign()
+                return_pick.pack_operation_product_ids.write({
+                    'qty_done': line.product_uom_qty,
+                })
+                return_pick.do_new_transfer()
 
                 sale_order.action_cancel()
 
