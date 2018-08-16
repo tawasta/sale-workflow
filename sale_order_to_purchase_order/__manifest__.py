@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order to Purchase Order',
     'summary': 'Button for creating a PO from SO, containing the same lines',
-    'version': '10.0.1.3.0',
+    'version': '10.0.1.4.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
