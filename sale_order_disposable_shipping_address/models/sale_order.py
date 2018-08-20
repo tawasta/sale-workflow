@@ -12,7 +12,8 @@ class SaleOrder(models.Model):
 
     @api.multi
     def action_confirm(self):
-        if not self.partner_shipping_id_keep:
+        if not self.partner_shipping_id_keep \
+                and self.partner_shipping_id.type == 'delivery':
             self.partner_shipping_id.active = False
 
         return super(SaleOrder, self).action_confirm()
