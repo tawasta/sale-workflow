@@ -32,7 +32,7 @@ class SaleOrderLine(models.Model):
         picking = stock_move.picking_id
 
         return {
-            'name': 'Wizard name',
+            'name': 'Picking return',
             'type': 'ir.actions.act_window',
             'res_model': 'stock.return.picking',
             'view_mode': 'form',
