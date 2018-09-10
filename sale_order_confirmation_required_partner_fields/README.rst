@@ -20,7 +20,11 @@ Usage
 
 Known issues / Roadmap
 ======================
-\-
+* Currently set as uninstallable: the module works, but safety limitations
+  in Odoo core prevent editing the m2m field connections to ir.models.fields
+  so reconfiguring the required fields always raises an exception. The
+  module still works as long as you configure the fields in one go, and
+  if there is need for reconfiguration, you re-install the whole module.
 
 Credits
 =======
