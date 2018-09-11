@@ -15,7 +15,20 @@ class SaleOrder(models.Model):
     )
 
     def _compute_margin_percent(self):
+        # Computes margin percent from SO lines
+
+        # If sale_order_margin_ignore is in use
+        margin_ignore = hasattr(self.env['product.template'], 'margin_ignore')
+
         for record in self:
             if record.amount_untaxed:
-                margin_percent = (record.margin / record.amount_untaxed) * 100
+                amount_untaxed = record.amount_untaxed
+
+                if margin_ignore:
+                    # Subtract ignored lines from margin percent
+                    for line in record.order_line.filtered(
+                            lambda l: l.product_id.margin_ignore):
+                        amount_untaxed -= line.price_subtotal
+
+                margin_percent = (record.margin / amount_untaxed) * 100
                 record.margin_percent = margin_percent

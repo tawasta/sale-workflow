@@ -23,7 +23,7 @@
     'name': 'Margin percents in Sales Order lines',
     'summary': 'Adds margins (percent) in Sales Order lines',
     'category': 'Sale',
-    'version': '10.0.1.2.0',
+    'version': '10.0.1.3.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
