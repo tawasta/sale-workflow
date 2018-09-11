@@ -20,19 +20,25 @@
 ##############################################################################
 
 {
-    'name': 'Disposable sale order shipping addresses',
-    'summary': 'Sale order shipping addresses can be deactivated after use',
-    'category': 'Sale',
-    'version': '10.0.1.2.0',
+    'name': 'Mandatory Partner Field Check Upon SO Confirmation',
+    'summary': 'Configurable fields that must be set before sale is confirmed',
+    'version': '10.0.1.0.0',
+    'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
-    'installable': True,
+    'installable': False,
+    'external_dependencies': {
+        'python': [],
+        'bin': [],
+    },
     'depends': [
         'sale',
     ],
     'data': [
-        'views/sale_order.xml',
+        'views/sale_config_settings.xml',
+    ],
+    'demo': [
     ],
 }

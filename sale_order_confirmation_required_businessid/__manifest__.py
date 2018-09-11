@@ -20,19 +20,24 @@
 ##############################################################################
 
 {
-    'name': 'Disposable sale order shipping addresses',
-    'summary': 'Sale order shipping addresses can be deactivated after use',
-    'category': 'Sale',
-    'version': '10.0.1.2.0',
+    'name': 'Sale Confirmation Check: Customer Business ID',
+    'summary': 'Prevents SO confirmation if customer has no business ID',
+    'version': '10.0.1.0.0',
+    'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
+    'external_dependencies': {
+        'python': [],
+        'bin': [],
+    },
     'depends': [
-        'sale',
+        'l10n_fi_business_code',
     ],
     'data': [
-        'views/sale_order.xml',
+    ],
+    'demo': [
     ],
 }

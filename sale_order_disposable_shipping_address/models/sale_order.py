@@ -8,6 +8,7 @@ class SaleOrder(models.Model):
 
     partner_shipping_id_keep = fields.Boolean(
         string='Keep shipping address',
+        default=True,
     )
 
     @api.multi
