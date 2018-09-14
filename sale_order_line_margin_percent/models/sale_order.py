@@ -30,5 +30,6 @@ class SaleOrder(models.Model):
                             lambda l: l.product_id.margin_ignore):
                         amount_untaxed -= line.price_subtotal
 
-                margin_percent = (record.margin / amount_untaxed) * 100
+                margin_percent = amount_untaxed \
+                    and (record.margin / amount_untaxed) * 100 or 0.00
                 record.margin_percent = margin_percent
