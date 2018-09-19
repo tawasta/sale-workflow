@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, api
+from odoo import models
 
 
 class SaleOrderPickingReturnWizard(models.TransientModel):
@@ -11,7 +11,6 @@ class SaleOrderPickingReturnWizard(models.TransientModel):
 
         sale_order = self._get_sale_order()
 
-        StockPicking = self.env['stock.picking']
         StockReturnPicking = self.env['stock.return.picking']
         StockMove = self.env['stock.move']
 
