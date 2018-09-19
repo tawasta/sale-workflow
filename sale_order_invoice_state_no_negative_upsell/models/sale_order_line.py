@@ -14,8 +14,8 @@ class SaleOrderLine(models.Model):
         for line in self:
 
             if line.invoice_status == 'upselling' and line.product_uom_qty < 0:
-                # If a deliverable product has a negative saldo but is invoiced,
-                # mark it as invoiced
+                # If a deliverable product has a negative saldo
+                # but has been invoiced, mark it as invoiced
                 precision = self.env['decimal.precision'].precision_get(
                     'Product Unit of Measure'
                 )
