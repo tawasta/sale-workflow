@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, api, fields, _
+from odoo import models
 
 
 class SaleOrder(models.Model):
@@ -76,7 +76,8 @@ class SaleOrder(models.Model):
 
                         return_pick.message_post(
                             _('This return was auto-created when invoicing a '
-                              'sale with refundable products (%s)' % order.name)
+                              'sale with refundable products (%s)' 
+                              % order.name)
                         )
 
         return res

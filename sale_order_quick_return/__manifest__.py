@@ -33,7 +33,7 @@
         'sale_stock',
     ],
     'data': [
-        #'views/sale_advance_payment_inv.xml',
+        # 'views/sale_advance_payment_inv.xml',
         'views/sale_order_form.xml',
     ],
 }
