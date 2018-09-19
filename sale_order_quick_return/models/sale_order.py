@@ -76,7 +76,7 @@ class SaleOrder(models.Model):
 
                         return_pick.message_post(
                             _('This return was auto-created when invoicing a '
-                              'sale with refundable products (%s)' 
+                              'sale with refundable products (%s)'
                               % order.name)
                         )
 
