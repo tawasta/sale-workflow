@@ -5,7 +5,7 @@
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import models, api, fields
+from odoo import models, api
 
 # 4. Imports from Odoo modules:
 
