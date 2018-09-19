@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-====================================
-Margin percents in Sales Order lines
-====================================
+===========================================
+Sale Confirmation Check: Customer Reference
+===========================================
 
-Adds margins (percent) in Sales Order lines
+* Prevents SO confirmation if customer reference is not set
 
 Configuration
 =============
@@ -26,7 +26,6 @@ Credits
 Contributors
 ------------
 
-* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 * Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer

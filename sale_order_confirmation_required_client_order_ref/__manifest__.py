@@ -20,19 +20,24 @@
 ##############################################################################
 
 {
-    'name': 'Margin percents in Sales Order lines',
-    'summary': 'Adds margins (percent) in Sales Order lines',
-    'category': 'Sale',
-    'version': '10.0.1.4.0',
+    'name': 'Sale Confirmation Check: Customer Reference',
+    'summary': 'Prevents SO confirmation if customer reference is not set',
+    'version': '10.0.1.0.0',
+    'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
+    'external_dependencies': {
+        'python': [],
+        'bin': [],
+    },
     'depends': [
-        'sale_margin',
+        'account',
     ],
     'data': [
-        'views/sale_order.xml',
+    ],
+    'demo': [
     ],
 }

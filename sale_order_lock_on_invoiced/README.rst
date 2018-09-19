@@ -2,11 +2,14 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-====================================
-Margin percents in Sales Order lines
-====================================
+===================================
+Lock sale order when it is invoiced
+===================================
 
-Adds margins (percent) in Sales Order lines
+Lock sale order after it state is fully invoiced.
+
+The sale order will not be unlocked if the invoice is cancelled, but you
+can create a new invoices from sale normally.
 
 Configuration
 =============
@@ -27,7 +30,6 @@ Contributors
 ------------
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
-* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------

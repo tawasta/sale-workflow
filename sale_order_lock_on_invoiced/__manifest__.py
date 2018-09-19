@@ -20,19 +20,24 @@
 ##############################################################################
 
 {
-    'name': 'Margin percents in Sales Order lines',
-    'summary': 'Adds margins (percent) in Sales Order lines',
+    'name': 'Lock sale order when it is invoiced',
+    'summary': 'Lock sale order after it state is fully invoiced',
+    'version': '10.0.1.0.0',
     'category': 'Sale',
-    'version': '10.0.1.4.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
+    'external_dependencies': {
+        'python': [],
+        'bin': [],
+    },
     'depends': [
-        'sale_margin',
+        'sale',
     ],
     'data': [
-        'views/sale_order.xml',
+    ],
+    'demo': [
     ],
 }

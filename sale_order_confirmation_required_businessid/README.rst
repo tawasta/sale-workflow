@@ -2,11 +2,12 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-====================================
-Margin percents in Sales Order lines
-====================================
+=============================================
+Sale Confirmation Check: Customer Business ID
+=============================================
 
-Adds margins (percent) in Sales Order lines
+* Prevents SO confirmation if customer has no business ID
+* The check is omitted if the customer is not a company
 
 Configuration
 =============
@@ -26,7 +27,6 @@ Credits
 Contributors
 ------------
 
-* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 * Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
