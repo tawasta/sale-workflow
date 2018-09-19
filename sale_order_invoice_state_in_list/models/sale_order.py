@@ -24,7 +24,8 @@ class SaleOrder(models.Model):
             invoice_state = False
             for invoice in record.invoice_ids:
                 # Prefer open invoices
-                if not invoice_state or invoice.state not in ['paid', 'cancel']:
+                if not invoice_state or \
+                        invoice.state not in ['paid', 'cancel']:
                     invoice_state = invoice.state
 
             record.invoice_state = invoice_state
