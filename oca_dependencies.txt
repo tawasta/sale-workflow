@@ -1,3 +1,4 @@
+account-invoicing https://github.com/tawasta/account-invoicing
 l10n-finland https://github.com/tawasta/l10n-finland
 mrp https://github.com/tawasta/mrp
 partner https://github.com/tawasta/partner
