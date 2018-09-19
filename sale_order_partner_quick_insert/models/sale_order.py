@@ -3,7 +3,6 @@ from odoo import models, fields
 
 
 class SaleOrder(models.Model):
-
     _inherit = 'sale.order'
 
     # Partner
@@ -47,7 +46,7 @@ class SaleOrder(models.Model):
         string='City',
         related='partner_invoice_id.city',
     )
-    
+
     # Shipping
     partner_shipping_id_street = fields.Char(
         string='Street',
