@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api
+from odoo import models, api
 from datetime import datetime, timedelta
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 
@@ -26,14 +26,12 @@ class SaleOrderLine(models.Model):
                     picking.min_date = datetime.strptime(
                         sale_order.date_delivery_promised_start,
                         DEFAULT_SERVER_DATE_FORMAT
-                    ) \
-                    + timedelta(days=self[0].customer_lead, hours=20)
+                    ) + timedelta(days=self[0].customer_lead, hours=20)
 
                 if sale_order.date_delivery_promised_end:
                     picking.max_date = datetime.strptime(
                         sale_order.date_delivery_promised_end,
                         DEFAULT_SERVER_DATE_FORMAT
-                    ) \
-                    + timedelta(days=self[0].customer_lead, hours=20)
+                    ) + timedelta(days=self[0].customer_lead, hours=20)
 
         return procurements
