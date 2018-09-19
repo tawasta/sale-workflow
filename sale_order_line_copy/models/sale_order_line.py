@@ -5,7 +5,7 @@
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models
+from odoo import models
 
 # 4. Imports from Odoo modules:
 
@@ -23,7 +23,7 @@ class SaleOrderLine(models.Model):
 
     # 3. Default methods
 
-    # 4. Compute and search fields, in the same order that fields declaration
+    # 4. Compute and search fields
 
     # 5. Constraints and onchanges
 
@@ -31,7 +31,6 @@ class SaleOrderLine(models.Model):
 
     # 7. Action methods
     def action_sale_order_line_copy(self):
-        ctx = dict(self.env.context)
         self.ensure_one()
 
         self.copy({'order_id': self.order_id.id})
