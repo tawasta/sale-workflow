@@ -12,9 +12,10 @@ class SaleOrder(models.Model):
         # Add notice period to sale note
         for order in self:
 
-            notice_period = _('Notice period: %s days') % \
-                            self.partner_id.notice_period \
-                            or self.company_id.default_notice_period
+            notice_period_days = self.partner_id.notice_period \
+                                 or self.company_id.default_notice_period
+
+            notice_period = _('Notice period: %s days') % notice_period_days
 
             if order.note:
                 order.note = notice_period + '\n' + order.note
