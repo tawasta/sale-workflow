@@ -3,7 +3,6 @@ from odoo import models, api, exceptions, _
 
 
 class ConfirmWizard(models.TransientModel):
-
     _name = "sale_order_confirm_multiple.confirm_wizard"
 
     def get_confirmable_states(self):
@@ -13,7 +12,7 @@ class ConfirmWizard(models.TransientModel):
     def confirm(self):
 
         sale_orders \
-             = self.env['sale.order'].browse(self._context.get('active_ids'))
+            = self.env['sale.order'].browse(self._context.get('active_ids'))
 
         allowed_states = self.get_confirmable_states()
 
