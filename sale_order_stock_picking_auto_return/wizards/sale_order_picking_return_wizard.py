@@ -55,7 +55,7 @@ class SaleOrderPickingReturnWizard(models.TransientModel):
                 })
                 return_pick.do_new_transfer()
 
-                sale_order.action_cancel()
+        sale_order.action_cancel()
 
     def action_cancel(self):
         # Default sale order cancel
