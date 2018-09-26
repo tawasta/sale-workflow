@@ -6,7 +6,7 @@
 Untaxed amount in sale order tree
 =================================
 
-Show untaxed amount in sale order tree
+Show untaxed amount in sale order and quotation tree views
 
 Configuration
 =============
@@ -27,6 +27,7 @@ Contributors
 ------------
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------
