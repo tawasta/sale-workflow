@@ -14,7 +14,7 @@
                 </field>
 
                 <!-- Add a new button for moving from Sent to Finalization -->
-                <button name="action_cancel" position="before">
+                <button name="action_confirm" position="before">
                     <button name="action_finalization" class="oe_highlight" type="object" string="To Finalization" states="sent"/>
                 </button>
 
