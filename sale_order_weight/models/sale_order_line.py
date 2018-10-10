@@ -37,7 +37,7 @@ class SaleOrderLine(models.Model):
                 record.product_uom,
             )
 
-            weight = record.product_uom_qty * uom_weight
+            weight = abs(record.product_uom_qty) * uom_weight
 
             record.weight = weight
 
