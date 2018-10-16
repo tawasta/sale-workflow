@@ -23,13 +23,14 @@
     'name': 'Default parent for new invoice and shipping addresses',
     'summary': 'Default parent for new invoice and shipping addresses',
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '10.0.2.0.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
     'depends': [
+        'base_view_inheritance_extension',
         'sale',
     ],
     'data': [
