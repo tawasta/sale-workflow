@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=======================================
-Ignore products from margin calculation
-=======================================
+============================================
+Ignore products from sale margin calculation
+============================================
 
-Ignore products when calculating margins
+Ignore products when calculating sale margins
 
 Configuration
 =============
@@ -27,6 +27,7 @@ Contributors
 ------------
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------

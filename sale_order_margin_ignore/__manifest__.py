@@ -23,17 +23,16 @@
     'name': 'Ignore products from margin calculation',
     'summary': 'Ignore products when calculating margins',
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '10.0.2.0.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
     'depends': [
-        'product',
+        'product_margin_ignore',
         'sale_margin',
     ],
     'data': [
-        'views/product_template.xml',
     ],
 }
