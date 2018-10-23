@@ -24,3 +24,8 @@ class PurchaseOrder(models.Model):
         related='sale_order_id.client_order_ref',
         string='Sale Order Customer Reference'
     )
+
+    so_partner_id = fields.Many2one(
+        related='sale_order_id.partner_id',
+        string='Sale Order Customer'
+    )

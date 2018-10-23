@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <field name="date_order" position="after">
                 <field name="sale_order_id" attrs="{ 'readonly': True, 'invisible': [('sale_order_id', '=', False)] }"/>
+                <field name="so_partner_id" attrs="{ 'readonly': True, 'invisible': [('sale_order_id', '=', False)] }"/>
                 <field name="so_client_order_ref" attrs="{ 'readonly': True, 'invisible': [('sale_order_id', '=', False)] }"/>
             </field>
         </field>
