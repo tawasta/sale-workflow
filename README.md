@@ -18,6 +18,7 @@ addon | version | summary
 [sale_order_confirmation_required_businessid](sale_order_confirmation_required_businessid/) | 10.0.1.0.0 | Prevents SO confirmation if customer has no business ID
 [sale_order_confirmation_required_client_order_ref](sale_order_confirmation_required_client_order_ref/) | 10.0.1.0.0 | Prevents SO confirmation if customer reference is not set
 [sale_order_confirmation_required_payment_term](sale_order_confirmation_required_payment_term/) | 10.0.1.0.0 | Prevents SO confirmation if customer has no payment terms set
+[sale_order_confirmation_required_so_payment_term](sale_order_confirmation_required_so_payment_term/) | 10.0.1.0.0 | Prevents SO confirmation if SO has no payment term set
 [sale_order_customer_contact](sale_order_customer_contact/) | 10.0.1.0.4 | Customer Contact for Sale Orders
 [sale_order_customer_contact_no_popup](sale_order_customer_contact_no_popup/) | 10.0.1.0.0 | Removes the possibility to open partner form
 [sale_order_customer_contact_show_address](sale_order_customer_contact_show_address/) | 10.0.1.0.0 | Show the contact address below the field
