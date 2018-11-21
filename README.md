@@ -56,6 +56,7 @@ addon | version | summary
 [sale_order_partner_quick_insert](sale_order_partner_quick_insert/) | 10.0.1.0.0 | Partner address fields as editable on sale order
 [sale_order_partner_strict](sale_order_partner_strict/) | 10.0.1.1.0 | Only allow correct type and parent for addresses
 [sale_order_partner_strict_with_partner_itself](sale_order_partner_strict_with_partner_itself/) | 10.0.1.0.0 | Only allow customer itself or correct type and parent for addresses
+[sale_order_pricelist_details](sale_order_pricelist_details/) | 10.0.1.0.0 | Show pricelist details button in pricelist
 [sale_order_pricelist_no_copy](sale_order_pricelist_no_copy/) | 10.0.1.0.0 | Do not copy pricelist when copying sale order
 [sale_order_project_in_header](sale_order_project_in_header/) | 10.0.1.1.0 | Moves analytic account to SO header and sets it as required
 [sale_order_project_location_in_header](sale_order_project_location_in_header/) | 10.0.1.0.1 | Adds analytic account stock location to SO header
