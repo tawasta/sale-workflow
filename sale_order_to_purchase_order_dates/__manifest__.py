@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'Sale Order to Purchase Order',
-    'summary': 'Button for creating a PO from SO, containing the same lines',
-    'version': '10.0.1.5.1',
+    'name': 'Sale Order to Purchase Order - Date Extension',
+    'summary': 'PO promised delivery based on vendor information',
+    'version': '10.0.1.0.1',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -34,14 +34,15 @@
         'bin': [],
     },
     'depends': [
-        'sale',
-        'purchase',
-        'onchange_helper',
+        'base_view_inheritance_extension',
+        'purchase_order_requested_receipt_date',
+        'sale_order_requested_delivery_date',
+        'sale_order_to_purchase_order',
     ],
     'data': [
         'wizards/purchase_order_wizard.xml',
+        'views/res_partner.xml',
         'views/sale_order.xml',
-        'views/purchase_order.xml',
     ],
     'demo': [
     ],

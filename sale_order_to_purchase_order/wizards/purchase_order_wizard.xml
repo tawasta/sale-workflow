@@ -5,12 +5,12 @@
         <field name="name">Create RFQ</field>
         <field name="model">sale_order_to_purchase_order.po_wizard</field>
         <field name="arch" type="xml">
-            <form string="Create RFQ" version="7.0">
+            <form string="Create RFQ">
                 <p class="oe_grey">
                     Select a supplier for the RFQ
                 </p>
 
-                <group>
+                <group name="basic_information">
                     <field name="partner_id"/>
                     <field name="picking_type_id"
                         domain="[('code', '=', 'incoming')]"

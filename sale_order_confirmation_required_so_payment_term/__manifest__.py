@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2017 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'Sale Order to Purchase Order',
-    'summary': 'Button for creating a PO from SO, containing the same lines',
-    'version': '10.0.1.5.1',
+    'name': 'Sale Confirmation Check: Payment Term',
+    'summary': 'Prevents SO confirmation if SO has no payment term set',
+    'version': '10.0.1.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -34,14 +34,9 @@
         'bin': [],
     },
     'depends': [
-        'sale',
-        'purchase',
-        'onchange_helper',
+        'account',
     ],
     'data': [
-        'wizards/purchase_order_wizard.xml',
-        'views/sale_order.xml',
-        'views/purchase_order.xml',
     ],
     'demo': [
     ],
