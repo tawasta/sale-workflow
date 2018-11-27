@@ -11,6 +11,7 @@ addon | version | summary
 --- | --- | ---
 [sale_crm_sale_order](sale_crm_sale_order/) | 10.0.1.1.1 | Integrates opportunities and quotations
 [sale_customer_default_my](sale_customer_default_my/) | 10.0.1.0.0 | Show my customers by default
+[sale_customer_info_check](sale_customer_info_check/) | 10.0.1.0.0 | Enables confirming multiple sales at once
 [sale_order_actual_delivery_date](sale_order_actual_delivery_date/) | 10.0.2.1.1 | Logs the date when all lines have been delivered
 [sale_order_carrier_in_list](sale_order_carrier_in_list/) | 10.0.1.0.1 | Add carrier to list view
 [sale_order_comment_lines](sale_order_comment_lines/) | 10.0.1.2.0 | Allow using comment lines in sale orders
