@@ -45,8 +45,7 @@ class SaleOrder(models.Model):
 
         if day_difference >= self._DAY_THRESHOLD:
             return ("Outdated - verified more than ") + str
-            (self._DAY_THRESHOLD) + " " + 
-            ('days ago')
+            (self._DAY_THRESHOLD) + " " + ('days ago')
         else:
             return ('Verified on ') + updated.strftime("%Y-%m-%d")
 
