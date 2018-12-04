@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields
 import datetime
+import odoo.osv.osv
 
 
 class SaleOrder(models.Model):
@@ -44,7 +45,7 @@ class SaleOrder(models.Model):
 
         if day_difference >= self._DAY_THRESHOLD:
             return ("Outdated - verified more than ") + str
-            (self._DAY_THRESHOLD) + " " + _
+            (self._DAY_THRESHOLD) + " " + 
             ('days ago')
         else:
             return ('Verified on ') + updated.strftime("%Y-%m-%d")
