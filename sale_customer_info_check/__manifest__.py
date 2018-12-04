@@ -34,7 +34,6 @@
         'bin': [],
     },
     'depends': [
-        #'sale_business_id',
         'sale',
     ],
     'data': [

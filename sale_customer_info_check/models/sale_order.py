@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields
+import datetime
 
 
 class SaleOrder(models.Model):
@@ -22,7 +23,7 @@ class SaleOrder(models.Model):
                 if res != 'OK':
                     raise osv.except_osv(('Error'), (res))
 
-        return super(Sale_order, self).write(values)
+        return super(SaleOrder, self).write(values)
 
     def _read_customer_uptodate_info(self, selected_partner_id):
         partner_model = self.env['res.partner']
@@ -42,7 +43,8 @@ class SaleOrder(models.Model):
         day_difference = delta.days
 
         if day_difference >= self._DAY_THRESHOLD:
-            return ("Outdated - verified more than ") + str(self._DAY_THRESHOLD) + " " + _
+            return ("Outdated - verified more than ") + str
+            (self._DAY_THRESHOLD) + " " + _
             ('days ago')
         else:
             return ('Verified on ') + updated.strftime("%Y-%m-%d")
