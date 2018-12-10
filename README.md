@@ -34,6 +34,7 @@ addon | version | summary
 [sale_order_finalization_state_stock](sale_order_finalization_state_stock/) | 10.0.1.0.0 | Adds state-based readonly attributes to sale_stock SO fields
 [sale_order_header](sale_order_header/) | 10.0.1.0.0 | New field for SO header/title
 [sale_order_incoterm_extra_info](sale_order_incoterm_extra_info/) | 10.0.1.0.0 | New field for storing sale-specific incoterm info
+[sale_order_internal_sale](sale_order_internal_sale/) | 10.0.1.0.0 | Simplifies internal invoicing process
 [sale_order_invoice_state_in_list](sale_order_invoice_state_in_list/) | 10.0.1.0.0 | Add invoice state to sale order list view
 [sale_order_invoice_state_no_negative_upsell](sale_order_invoice_state_no_negative_upsell/) | 10.0.1.0.0 | Don't tag negative sale order lines as to upsell
 [sale_order_line_copy](sale_order_line_copy/) | 10.0.0.1.0 | Sale order line copy
