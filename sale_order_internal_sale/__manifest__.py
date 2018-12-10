@@ -37,6 +37,8 @@
         'sale',
         'analytic',
         'account',
+        'project_parent',
+        'project',
     ],
     'data': [
         'views/sale_order.xml',

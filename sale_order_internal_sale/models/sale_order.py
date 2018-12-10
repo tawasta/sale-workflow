@@ -51,7 +51,7 @@ class SaleOrder(models.Model):
 
         if self.project_id and self.internal_sale:
             if not self.project_id.id == analytic.id:
-                self.project_id.parent_id = analytic.id
+                self.project_id.parent_project_id = analytic.id
         elif self.internal_sale and not self.project_id:
             self.project_id = analytic
 
@@ -63,7 +63,7 @@ class SaleOrder(models.Model):
 
         analytic = self._get_account_internal_sale()
 
-        if self.project_id.parent_id.id == analytic.id or self.project_id.id == analytic.id:
+        if self.project_id.parent_project_id.id == analytic.id or self.project_id.id == analytic.id:
             self.internal_sale = True
         else:
             self.internal_sale = False
@@ -77,7 +77,7 @@ class SaleOrder(models.Model):
             analytic = self._get_account_internal_sale()
 
             if not self.project_id.id == analytic.id:
-                self.project_id.parent_id = analytic.id
+                self.project_id.parent_project_id = analytic.id
 
     # 7. Action methods
 
