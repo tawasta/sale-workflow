@@ -16,7 +16,6 @@
                        attrs="{'invisible':[('state','=','sale')]}"
                        context="{'default_partner_id':partner_invoice_id, 'default_name':name}"
                        groups="analytic.group_analytic_accounting"
-                       required="1"
                 />
 
                 <field name="related_project_id"
@@ -24,7 +23,6 @@
                        attrs="{'readonly': ['|',('project_id','!=',False),('invoice_count','!=',0),('state','=','sale')],'invisible':[('state','!=','sale')]}"
                        context="{'default_partner_id':partner_invoice_id, 'default_name':name}"
                        groups="analytic.group_analytic_accounting"
-                       required="1"
                 />
             </field>
 
