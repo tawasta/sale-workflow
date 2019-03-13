@@ -1,25 +1,5 @@
 # -*- coding: utf-8 -*-
-
-# 1. Standard library imports:
-#   import base64
-
-# 2. Known third party imports (One per line sorted and splitted in python stdlib):
-#   import lxml
-
-# 3. Odoo imports (openerp):
-from odoo import api, fields, models
-
-# 4. Imports from Odoo modules (rarely, and only if necessary):
-#   from openerp.addons.website.models.website import slug
-
-# 5. Local imports in the relative form:
-#   from . import utils
-
-# 6. Unknown third party imports (One per line sorted and splitted in python stdlib):
-#   _logger = logging.getLogger(__name__)
-
-# Use camelcase for code in api v8 (class AccountInvoice), 
-# underscore lowercase notation for old api (class account_invoice).
+from odoo import api, models
 
 
 class AccountAnalyticAccount(models.Model):
@@ -30,7 +10,7 @@ class AccountAnalyticAccount(models.Model):
 
     # 3. Default methods
 
-    # 4. compute and search fields, in the same order that fields declaration
+    # 4. Compute and search fields
 
     # 5. Constraints and onchanges
 

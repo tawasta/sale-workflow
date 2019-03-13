@@ -14,6 +14,8 @@ class TestSale(TransactionCase):
         sale_order_model = self.env['sale.order']
         stock_location_model = self.env['stock.location']
 
+        payment_term = self.env.ref('account.account_payment_term_net')
+
         # Routes
         self.buy_route = self.env.ref('purchase.route_warehouse0_buy')
         self.manufacture_route \
@@ -216,6 +218,7 @@ class TestSale(TransactionCase):
         # Sale order 1 with main assembly
         self.sale_1 = sale_order_model.create({
             'partner_id': self.partner_1.id,
+            'payment_term_id': payment_term.id,
         })
 
         self.env['sale.order.line'].create({
@@ -228,6 +231,7 @@ class TestSale(TransactionCase):
         # Sale order 2 with no manufacturing, just components to sell
         self.sale_2 = sale_order_model.create({
             'partner_id': self.partner_1.id,
+            'payment_term_id': payment_term.id,
         })
 
         self.env['sale.order.line'].create({
@@ -257,6 +261,7 @@ class TestSale(TransactionCase):
         # Sale order 3 with main assembly 2 and individual components
         self.sale_3 = sale_order_model.create({
             'partner_id': self.partner_1.id,
+            'payment_term_id': payment_term.id,
         })
 
         self.env['sale.order.line'].create({

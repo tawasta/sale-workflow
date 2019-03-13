@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, api, fields, exceptions
+from odoo import models, api, fields, exceptions, _
 from math import ceil
 
 
@@ -177,4 +177,4 @@ class SaleOrder(models.Model):
                 self.purchase_request_id = pr_res.id
         else:
             raise exceptions \
-                .UserError('Unimplemented "Locations to Check" rule')
+                .UserError(_('Unimplemented "Locations to Check" rule'))

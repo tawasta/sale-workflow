@@ -1,24 +1,6 @@
 # -*- coding: utf-8 -*-
-
-# 1. Standard library imports:
-#   import base64
-
-# 2. Known third party imports (One per line sorted and splitted in python stdlib):
-#   import lxml
-
-# 3. Odoo imports (openerp):
 from odoo import api, fields, models
 
-# 4. Imports from Odoo modules (rarely, and only if necessary):
-
-# 5. Local imports in the relative form:
-#   from . import utils
-
-# 6. Unknown third party imports (One per line sorted and splitted in python stdlib):
-#   _logger = logging.getLogger(__name__)
-
-# Use camelcase for code in api v8 (class AccountInvoice), 
-# underscore lowercase notation for old api (class account_invoice).
 
 class SaleOrder(models.Model):
     # 1. Private attributes
@@ -41,7 +23,7 @@ class SaleOrder(models.Model):
 
     # 3. Default methods
 
-    # 4. compute and search fields, in the same order that fields declaration
+    # 4. Compute and search fields
 
     # 5. Constraints and onchanges
     @api.onchange('internal_sale')
@@ -63,21 +45,23 @@ class SaleOrder(models.Model):
 
         analytic = self._get_account_internal_sale()
 
-        if self.project_id.parent_project_id.id == analytic.id or self.project_id.id == analytic.id:
+        if self.project_id.parent_project_id.id == analytic.id \
+                or self.project_id.id == analytic.id:
             self.internal_sale = True
         else:
             self.internal_sale = False
 
     # 6. CRUD methods
-    @api.one
+    @api.multi
     def write(self, vals):
         super(SaleOrder, self).write(vals)
 
-        if self.project_id and self.internal_sale:
-            analytic = self._get_account_internal_sale()
+        for record in self:
+            if record.project_id and record.internal_sale:
+                analytic = record._get_account_internal_sale()
 
-            if not self.project_id.id == analytic.id:
-                self.project_id.parent_project_id = analytic.id
+                if not record.project_id.id == analytic.id:
+                    record.project_id.parent_project_id = analytic.id
 
     # 7. Action methods
 
