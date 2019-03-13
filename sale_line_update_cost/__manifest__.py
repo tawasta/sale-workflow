@@ -30,10 +30,10 @@
     'application': False,
     'installable': True,
     'depends': [
-        'base','purchase',
+        'base',
+        'purchase',
     ],
-    'data': ['views/costbutton_view.xml'
-    ],
-    'demo': [
+    'data': [
+        'views/costbutton_view.xml',
     ],
 }
