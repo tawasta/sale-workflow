@@ -9,13 +9,13 @@ class CostButton(models.Model):
 
     new_cost = fields.Float(
         string="Actual Cost", 
-        compute="update_cost",
+        compute="_compute_update_cost",
         help="Shows the current, actual cost behind the product."
         )
 
 
     @api.multi
-    def update_cost(self):
+    def _compute_update_cost(self):
 
         for record in self:
             product = record.product_id.with_context(
