@@ -26,8 +26,10 @@ class CostButton(models.Model):
                 uom=record.product_uom.id
             )
 
-            res = record._get_purchase_price(record.order_id.pricelist_id, product,
-                record.product_uom, record.order_id.date_order)
+            res = record._get_purchase_price(
+                record.order_id.pricelist_id, 
+                product, record.product_uom, record.order_id.date_order
+            )
 
             record.new_cost = res['purchase_price']
 
