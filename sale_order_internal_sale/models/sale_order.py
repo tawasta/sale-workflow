@@ -52,15 +52,16 @@ class SaleOrder(models.Model):
             self.internal_sale = False
 
     # 6. CRUD methods
-    @api.one
+    @api.multi
     def write(self, vals):
         super(SaleOrder, self).write(vals)
 
-        if self.project_id and self.internal_sale:
-            analytic = self._get_account_internal_sale()
+        for record in self:
+            if record.project_id and record.internal_sale:
+                analytic = record._get_account_internal_sale()
 
-            if not self.project_id.id == analytic.id:
-                self.project_id.parent_project_id = analytic.id
+                if not record.project_id.id == analytic.id:
+                    record.project_id.parent_project_id = analytic.id
 
     # 7. Action methods
 
