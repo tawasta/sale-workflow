@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields
+from odoo import models, fields, _
+from odoo.exceptions import ValidationError
 import datetime
-import odoo.osv.osv
 
 
 class SaleOrder(models.Model):
@@ -22,7 +22,7 @@ class SaleOrder(models.Model):
 
                 res = self._read_customer_vat_businessid_info(partner_id)
                 if res != 'OK':
-                    raise osv.except_osv(('Error'), (res))
+                    raise ValidationError(_('Error: %s') % res)
 
         return super(SaleOrder, self).write(values)
 
@@ -108,8 +108,8 @@ class SaleOrder(models.Model):
         if partner_id is False:
             result['value']['partner_info_msg'] = ""
         else:
-            result['value']['partner_info_msg'] = self._read_customer_uptodate_info(
-                partner_id)
+            result['value']['partner_info_msg'] = \
+                self._read_customer_uptodate_info(partner_id)
 
         return result
 
