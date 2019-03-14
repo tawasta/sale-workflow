@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* button_update_cost
+# 	* sale_order_line_update_cost
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-12 09:47+0000\n"
-"PO-Revision-Date: 2019-03-12 11:51+0200\n"
+"POT-Creation-Date: 2019-03-14 07:12+0000\n"
+"PO-Revision-Date: 2019-03-14 09:14+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Language: fi\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#. module: button_update_cost
-#: model:ir.model.fields,field_description:button_update_cost.field_sale_order_line_new_cost
+#. module: sale_order_line_update_cost
+#: model:ir.model.fields,field_description:sale_order_line_update_cost.field_sale_order_line_new_cost
 msgid "Actual Cost"
 msgstr "Todelliset kulut"
 
-#. module: button_update_cost
-#: model:ir.model,name:button_update_cost.model_sale_order_line
+#. module: sale_order_line_update_cost
+#: model:ir.model,name:sale_order_line_update_cost.model_sale_order_line
 msgid "Sales Order Line"
 msgstr "Myyntitilausrivi"
 
-#. module: button_update_cost
-#: model:ir.model.fields,help:button_update_cost.field_sale_order_line_new_cost
+#. module: sale_order_line_update_cost
+#: model:ir.model.fields,help:sale_order_line_update_cost.field_sale_order_line_new_cost
 msgid "Shows the current, actual cost behind the product."
 msgstr "Näyttää todellisen kustannushinnan tuotteen takaa."
 
-#. module: button_update_cost
-#: model:ir.ui.view,arch_db:button_update_cost.sale_view_order_form_inherited_
+#. module: sale_order_line_update_cost
+#: model:ir.ui.view,arch_db:sale_order_line_update_cost.view_order_form
 msgid "Update Cost"
 msgstr "Päivitä kulut"
 
-#. module: button_update_cost
-#: model:ir.ui.view,arch_db:button_update_cost.sale_view_order_form_inherited_
+#. module: sale_order_line_update_cost
+#: model:ir.ui.view,arch_db:sale_order_line_update_cost.view_order_form
 msgid "Use this button to update the actual cost for the product."
 msgstr "Käytä tätä nappia päivittääksesi todellisen kustannushinnan kulut-kenttään."
