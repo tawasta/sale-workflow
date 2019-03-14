@@ -8,7 +8,7 @@
             <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position='after'>  
                 <field name="new_cost"/>
                 <button name="button_cost"
-                        attrs="{'invisible': [('state', 'in', ['draft', 'sent', 'cancel'])]}"
+                        attrs="{'invisible': [('state', 'not in', ['draft', 'sent'])]}"
                         string="Update Cost"
                         type="object"
                         help="Use this button to update the actual cost for the product."                   

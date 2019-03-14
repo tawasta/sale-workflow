@@ -22,7 +22,7 @@
 {
     'name': 'Update sale order line product cost directly from order line',
     'summary': 'Add a button to update cost on sale order lines',
-    'version': '10.0.1.0.1',
+    'version': '10.0.1.0.2',
     'category': 'Sale',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
