@@ -2,13 +2,13 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==============
-Button to update cost
-==============
+============================================================
+Update sale order line product cost directly from order line
+============================================================
 
-This module was written to add a button to update cost on sale order lines.
+Add a button to update cost on sale order lines.
 
-This does not work with real price values.
+This does not work with real price valuation.
 
 Configuration
 =============

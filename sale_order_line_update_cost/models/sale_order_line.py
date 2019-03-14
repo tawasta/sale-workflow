@@ -3,7 +3,7 @@
 from odoo import api, fields, models
 
 
-class CostButton(models.Model):
+class SaleOrderLine(models.Model):
 
     _inherit = 'sale.order.line'
 

@@ -20,20 +20,19 @@
 ##############################################################################
 
 {
-    'name': 'Button to update cost',
-    'summary': 'Module summary',
-    'version': '10.0.0.1.0',
-    'category': 'Purchase',
+    'name': 'Update sale order line product cost directly from order line',
+    'summary': 'Add a button to update cost on sale order lines',
+    'version': '10.0.1.0.0',
+    'category': 'Sale',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
     'depends': [
-        'base',
-        'purchase',
+        'sale',
     ],
     'data': [
-        'views/costbutton_view.xml',
+        'views/sale_order_form.xml',
     ],
 }
