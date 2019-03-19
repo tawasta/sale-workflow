@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="sale_form_view_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <button name="action_done" position="after">
+                    <button string="Mark as Invoiced"
+                            name="action_mark_invoiced"
+                            type="object"
+                            states="sale"
+                            class=""
+                            groups="sales_team.group_sale_manager"
+                    />
+                </button>
+            </field>
+        </record>
+    </data>
+</openerp>
