@@ -20,10 +20,10 @@
 ##############################################################################
 
 {
-    'name': 'Update sale order line product cost directly from order line',
-    'summary': 'Add a button to update cost on sale order lines',
-    'version': '10.0.1.0.2',
-    'category': 'Sale',
+    'name': 'No Open Forms On Sales',
+    'summary': 'This module prevents to open forms on specified fields.',
+    'version': '10.0.1.0.0',
+    'category': 'Sales',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
@@ -31,8 +31,9 @@
     'installable': True,
     'depends': [
         'sale',
+        'base_view_inheritance_extension',
     ],
     'data': [
-        'views/sale_order_form.xml',
+        'views/no_open_view.xml',
     ],
 }
