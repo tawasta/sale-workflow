@@ -11,7 +11,7 @@ addon | version | summary
 --- | --- | ---
 [sale_crm_sale_order](sale_crm_sale_order/) | 10.0.1.1.1 | Integrates opportunities and quotations
 [sale_customer_default_my](sale_customer_default_my/) | 10.0.1.0.0 | Show my customers by default
-[sale_customer_info_check](sale_customer_info_check/) | 10.0.1.0.0 | Enables confirming multiple sales at once
+[sale_customer_info_check](sale_customer_info_check/) | 10.0.1.0.1 | Enables confirming multiple sales at once
 [sale_order_actual_delivery_date](sale_order_actual_delivery_date/) | 10.0.2.1.1 | Logs the date when all lines have been delivered
 [sale_order_carrier_in_list](sale_order_carrier_in_list/) | 10.0.1.0.1 | Add carrier to list view
 [sale_order_comment_lines](sale_order_comment_lines/) | 10.0.1.2.0 | Allow using comment lines in sale orders
@@ -41,26 +41,30 @@ addon | version | summary
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 10.0.1.4.0 | Remove product and product code from default description
 [sale_order_line_margin_percent](sale_order_line_margin_percent/) | 10.0.1.4.0 | Adds margins (percent) in Sales Order lines
 [sale_order_line_stock_pickings](sale_order_line_stock_pickings/) | 10.0.1.0.0 | Show deliveries (stock pickings) on sale order lines
+[sale_order_line_update_cost](sale_order_line_update_cost/) | 10.0.1.0.2 | Add a button to update cost on sale order lines
 [sale_order_lock_on_invoiced](sale_order_lock_on_invoiced/) | 10.0.1.0.0 | Lock sale order after it state is fully invoiced
 [sale_order_manufacturing_status](sale_order_manufacturing_status/) | 10.0.1.0.0 | Manufacturing Order information for Sales
 [sale_order_margin_ignore](sale_order_margin_ignore/) | 10.0.2.0.0 | Ignore products when calculating margins
 [sale_order_margin_in_tree](sale_order_margin_in_tree/) | 10.0.1.0.0 | Show the margin field in SO list
 [sale_order_mark_direct_sale](sale_order_mark_direct_sale/) | 10.0.1.0.0 | Adds a new field for indicating a direct sale
+[sale_order_mark_invoiced_button](sale_order_mark_invoiced_button/) | 10.0.1.1.0 | Mark sale orders as invoiced with a button
 [sale_order_mark_returned](sale_order_mark_returned/) | 10.0.1.0.0 | Adds a new field for indicating a reclamation/returned SO
 [sale_order_mark_sent_button](sale_order_mark_sent_button/) | 10.0.1.0.0 | Printing a draft SO no longer moves it to Sent state
 [sale_order_migration_info](sale_order_migration_info/) | 10.0.1.0.0 | Helper fields for migration tracking
 [sale_order_name_to_note](sale_order_name_to_note/) | 10.0.1.1.0 | Add sale order name to sale order note on order confirm
 [sale_order_next_delivery_date](sale_order_next_delivery_date/) | 10.0.1.0.0 | Show the next open delivery date on sale order list view
+[sale_order_no_open_form](sale_order_no_open_form/) | 10.0.1.0.0 | This module prevents to open forms on specified fields.
 [sale_order_notice_period_to_note](sale_order_notice_period_to_note/) | 10.0.1.1.0 | Add notice period to sale order note on order confirm
 [sale_order_partner_disable_onchange](sale_order_partner_disable_onchange/) | 10.0.1.0.1 | Disable partner (customer) onchange on sale
 [sale_order_partner_no_popups](sale_order_partner_no_popups/) | 10.0.1.0.0 | Removes the possibility to open partner forms from Sale
 [sale_order_partner_onchange_suggest_partner_itself](sale_order_partner_onchange_suggest_partner_itself/) | 10.0.1.0.0 | Suggest customer itself instead of its sub-addresses
 [sale_order_partner_quick_insert](sale_order_partner_quick_insert/) | 10.0.1.0.0 | Partner address fields as editable on sale order
 [sale_order_partner_strict](sale_order_partner_strict/) | 10.0.1.1.0 | Only allow correct type and parent for addresses
-[sale_order_partner_strict_with_partner_itself](sale_order_partner_strict_with_partner_itself/) | 10.0.1.0.0 | Only allow customer itself or correct type and parent for addresses
+[sale_order_partner_strict_with_partner_itself](sale_order_partner_strict_with_partner_itself/) | 10.0.1.0.0 | Allow customer itself or correct type and parent for address
 [sale_order_pricelist_details](sale_order_pricelist_details/) | 10.0.1.0.0 | Show pricelist details button in pricelist
 [sale_order_pricelist_no_copy](sale_order_pricelist_no_copy/) | 10.0.1.0.0 | Do not copy pricelist when copying sale order
-[sale_order_project_in_header](sale_order_project_in_header/) | 10.0.1.1.0 | Moves analytic account to SO header and sets it as required
+[sale_order_project_in_header](sale_order_project_in_header/) | 10.0.1.2.0 | Moves analytic account to SO header and sets it as required
+[sale_order_project_in_header_required](sale_order_project_in_header_required/) | 10.0.1.0.0 | Makes project in sale order header required
 [sale_order_project_location_in_header](sale_order_project_location_in_header/) | 10.0.1.0.1 | Adds analytic account stock location to SO header
 [sale_order_promised_delivery_date](sale_order_promised_delivery_date/) | 10.0.1.1.1 | Adds a new field for storing date of promised delivery
 [sale_order_promised_delivery_date_in_calendar](sale_order_promised_delivery_date_in_calendar/) | 10.0.1.0.0 | Makes the sale order calendar utilize promised delivery date
@@ -83,7 +87,7 @@ addon | version | summary
 [sale_order_to_purchase_order_dates](sale_order_to_purchase_order_dates/) | 10.0.1.0.1 | PO promised delivery based on vendor information
 [sale_order_to_purchase_order_sale_header](sale_order_to_purchase_order_sale_header/) | 10.0.1.0.0 | Show sale order header for the purchase orders
 [sale_order_to_purchase_order_tree_fields](sale_order_to_purchase_order_tree_fields/) | 10.0.1.0.0 | Show SO number, header and customer name in PO tree
-[sale_order_to_purchase_request](sale_order_to_purchase_request/) | 10.0.1.0.0 | Create Purchase Requests of sold products and BOM components
+[sale_order_to_purchase_request](sale_order_to_purchase_request/) | 10.0.1.0.1 | Create Purchase Requests of sold products and BOM components
 [sale_order_tree_no_salesperson](sale_order_tree_no_salesperson/) | 10.0.1.0.0 | Hide salesperson from quotation and order lists
 [sale_order_tree_no_total](sale_order_tree_no_total/) | 10.0.1.0.0 | Hide total from quotation and order lists
 [sale_order_tree_untaxed](sale_order_tree_untaxed/) | 10.0.1.1.0 | Show untaxed amount in sale order tree
