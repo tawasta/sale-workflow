@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+##############################################################################
+#
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
+#
+##############################################################################
+
+{
+    'name': 'Prevent Quotation To Sale Order For The Code',
+    'summary': 'If the custom field is checked on a product, a quotation cannot be confirmed to sale order',
+    'version': '10.0.1.0.0',
+    'category': 'Sales, Product',
+    'website': 'https://tawasta.fi',
+    'author': 'Oy Tawasta Technologies Ltd.',
+    'license': 'AGPL-3',
+    'application': False,
+    'installable': True,
+    'depends': [
+        'sale',
+        'stock',
+    ],
+    'data': ['views/product_view.xml','views/sale_view.xml',
+    ],
+}
