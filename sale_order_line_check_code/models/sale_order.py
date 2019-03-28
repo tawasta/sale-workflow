@@ -19,11 +19,13 @@ class SaleOrder(models.Model):
     def check_code(self):
         for order in self:
             for line in order.order_line:
-                if line.product_id.additional_code == True:
-                    raise ValidationError(_("Please replace the placeholder product %s") % line.product_id.name)
+                if line.product_id.additional_code:
+                    raise ValidationError(_(
+                        "Please replace the placeholder product %s") 
+                        % line.product_id.name)
 
 
-class SaleOrderLine(models.Model):   
+class SaleOrderLine(models.Model):
 
     _inherit = 'sale.order.line'
 
@@ -46,8 +48,10 @@ class SaleOrderLine(models.Model):
             nextline = ""
 
         if self.product_id.description_sale:
-            self.name = "%s%s%s" % (self.product_id.description_sale, nextline, self.old_product_id)
+            self.name = "%s%s%s" % (self.product_id.description_sale, 
+                nextline, self.old_product_id)
         else:
-            self.name = "%s%s%s" % (self.product_id.name, nextline, self.old_product_id)
+            self.name = "%s%s%s" % (self.product_id.name, nextline, 
+                self.old_product_id)
 
         return res
