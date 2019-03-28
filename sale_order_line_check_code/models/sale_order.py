@@ -49,9 +49,9 @@ class SaleOrderLine(models.Model):
 
         if self.product_id.description_sale:
             self.name = "%s%s%s" % (self.product_id.description_sale,
-                nextline, self.old_product_id)
+            nextline, self.old_product_id)
         else:
             self.name = "%s%s%s" % (self.product_id.name, nextline,
-                self.old_product_id)
+            self.old_product_id)
 
         return res
