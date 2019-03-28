@@ -21,7 +21,7 @@ class SaleOrder(models.Model):
             for line in order.order_line:
                 if line.product_id.additional_code:
                     raise ValidationError(_(
-                        "Please replace the placeholder product %s") 
+                        "Please replace the placeholder product %s")
                         % line.product_id.name)
 
 
@@ -48,10 +48,10 @@ class SaleOrderLine(models.Model):
             nextline = ""
 
         if self.product_id.description_sale:
-            self.name = "%s%s%s" % (self.product_id.description_sale, 
+            self.name = "%s%s%s" % (self.product_id.description_sale,
                 nextline, self.old_product_id)
         else:
-            self.name = "%s%s%s" % (self.product_id.name, nextline, 
+            self.name = "%s%s%s" % (self.product_id.name, nextline,
                 self.old_product_id)
 
         return res
