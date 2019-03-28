@@ -20,8 +20,8 @@
 ##############################################################################
 
 {
-    'name': 'Prevent Quotation To Sale Order For The Code',
-    'summary': 'If the custom field is checked on a product, a quotation cannot be confirmed to sale order',
+    'name': 'Prevent Quotation To Sale Order For A Marked Product',
+    'summary': 'Prevent Quotation To Sale Order For A Marked Product',
     'version': '10.0.1.0.0',
     'category': 'Sales, Product',
     'website': 'https://tawasta.fi',
@@ -33,6 +33,8 @@
         'sale',
         'stock',
     ],
-    'data': ['views/product_view.xml','views/sale_view.xml',
+    'data': [
+        'views/product_view.xml',
+        'views/sale_view.xml',
     ],
 }
