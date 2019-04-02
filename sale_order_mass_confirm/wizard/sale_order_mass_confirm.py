@@ -2,8 +2,8 @@
 from odoo import models, api, exceptions, _
 
 
-class ConfirmWizard(models.TransientModel):
-    _name = "sale_order_confirm_multiple.confirm_wizard"
+class SaleOrderMassConfirm(models.TransientModel):
+    _name = "sale.order.mass.confirm"
 
     def get_confirmable_states(self):
         return ['draft', 'sent']

@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==============================
-Sale Orders - Confirm Multiple
-==============================
+==========================
+Sale Orders - Mass confirm
+==========================
 
 * Enables confirming multiple quotations from the list view
 

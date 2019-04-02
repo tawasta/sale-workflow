@@ -20,11 +20,11 @@
 ##############################################################################
 
 {
-    'name': 'Sale Orders - Confirm Multiple',
+    'name': 'Sale Orders - Mass Confirm',
     'summary': 'Enables confirming multiple sales at once',
     'version': '10.0.1.0.0',
     'category': 'Sales',
-    'website': 'http://www.tawasta.fi',
+    'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
@@ -37,7 +37,7 @@
         'sale',
     ],
     'data': [
-        'wizard/confirm_multiple.xml',
+        'wizard/sale_order_mass_confirm.xml',
     ],
     'demo': [
     ],
