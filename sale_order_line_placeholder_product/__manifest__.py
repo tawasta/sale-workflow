@@ -20,8 +20,8 @@
 ##############################################################################
 
 {
-    'name': 'Prevent Quotation To Sale Order For A Marked Product',
-    'summary': 'Prevent Quotation To Sale Order For A Marked Product',
+    'name': 'Prevent Confirming Quotation With A Placeholder Product',
+    'summary': 'Prevent Confirming Quotation With A Placeholder Product',
     'version': '10.0.1.0.0',
     'category': 'Sales, Product',
     'website': 'https://tawasta.fi',
