@@ -6,7 +6,7 @@ class SaleOrderMassCancel(models.TransientModel):
     _name = "sale.order.mass.cancel"
 
     def get_cancellable_states(self):
-        return ['draft', 'sent']
+        return ['draft', 'sent', 'sale']
 
     @api.multi
     def confirm(self):
