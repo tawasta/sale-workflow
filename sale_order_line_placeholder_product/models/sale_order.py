@@ -52,7 +52,7 @@ class SaleOrderLine(models.Model):
                 self.product_id.description_sale,
                 nextline, self.old_product_id
             )
-        else:
+        elif self.product_id:
             self.name = "%s%s%s" % (
                 self.product_id.name, nextline,
                 self.old_product_id
