@@ -48,8 +48,8 @@ class SaleOrderLine(models.Model):
             nextline = ""
 
         if self.product_id.description_sale:
-            self.name = "%s%s%s" % (
-                self.product_id.description_sale,
+            self.name = "%s\n%s%s%s" % (
+                self.product_id.name, self.product_id.description_sale,
                 nextline, self.old_product_id
             )
         elif self.product_id:
