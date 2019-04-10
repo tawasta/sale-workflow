@@ -10,7 +10,12 @@ class SaleOrder(models.Model):
         # Set sale and its lines as invoiced
         self.ensure_one()
 
+        # Lock the SO
+        self.action_done()
+
+        # Force SO state
         self.invoice_status = "invoiced"
 
+        # Force state for SO lines
         for line in self.order_line:
             line.invoice_status = "invoiced"
