@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==============================
-Sale Orders - Confirm Multiple
-==============================
+==========================================
+Mark sale orders as invoiced with a button
+==========================================
 
-* Enables confirming multiple quotations from the list view
+Mark sale orders as invoiced with a button
 
 Configuration
 =============
@@ -14,18 +14,18 @@ Configuration
 
 Usage
 =====
-* Open the list view, select quotations and click Action -> Confirm Quotations
+\- 
 
 Known issues / Roadmap
 ======================
-* None
+\-
 
 Credits
 =======
 
 Contributors
 ------------
-* Timo Talvitie <timo.talvitie@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 
 Maintainer
 ----------

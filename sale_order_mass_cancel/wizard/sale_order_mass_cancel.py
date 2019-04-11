@@ -2,11 +2,11 @@
 from odoo import models, api, exceptions, _
 
 
-class ConfirmWizard(models.TransientModel):
-    _name = "sale_order_confirm_multiple.confirm_wizard"
+class SaleOrderMassCancel(models.TransientModel):
+    _name = "sale.order.mass.cancel"
 
-    def get_confirmable_states(self):
-        return ['draft', 'sent']
+    def get_cancellable_states(self):
+        return ['draft', 'sent', 'sale']
 
     @api.multi
     def confirm(self):
@@ -14,12 +14,12 @@ class ConfirmWizard(models.TransientModel):
         sale_orders \
             = self.env['sale.order'].browse(self._context.get('active_ids'))
 
-        allowed_states = self.get_confirmable_states()
+        allowed_states = self.get_cancellable_states()
 
         if any(s.state not in allowed_states for s in sale_orders):
             msg = _('Please select only quotations whose states '
-                    'allow confirming')
+                    'allow cancelling')
             raise exceptions.UserError(msg)
 
         for sale_order in sale_orders:
-            sale_order.action_confirm()
+            sale_order.action_cancel()
