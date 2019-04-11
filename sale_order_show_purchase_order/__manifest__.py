@@ -33,6 +33,7 @@
         'sale',
         'purchase',
     ],
-    'data': ['views/sale_order.xml'
+    'data': [
+        'views/sale_order.xml',
     ],
 }
