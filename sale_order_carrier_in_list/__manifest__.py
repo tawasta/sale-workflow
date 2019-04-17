@@ -23,7 +23,7 @@
     'name': 'Sale order carrier in list',
     'summary': 'Add carrier to list view',
     'category': 'Sale',
-    'version': '10.0.1.0.1',
+    'version': '1.0.1',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

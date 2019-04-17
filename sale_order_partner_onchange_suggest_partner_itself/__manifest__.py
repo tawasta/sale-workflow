@@ -23,7 +23,7 @@
     'name': 'Sale customer as default invoice/shipping address',
     'summary': 'Suggest customer itself instead of its sub-addresses',
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

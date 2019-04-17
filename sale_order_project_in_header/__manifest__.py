@@ -22,7 +22,7 @@
 {
     'name': 'Project in sale order header',
     'summary': 'Moves analytic account to SO header and sets it as required',
-    'version': '10.0.1.2.0',
+    'version': '1.2.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order Internal Sale',
     'summary': 'Simplifies internal invoicing process',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'category': 'CRM',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

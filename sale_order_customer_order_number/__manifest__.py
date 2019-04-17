@@ -22,7 +22,7 @@
 {
     'name': 'Customer Order Number for Sale Orders',
     'summary': 'New field for order number provided by customer',
-    'version': '10.0.2.1.0',
+    'version': '2.1.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

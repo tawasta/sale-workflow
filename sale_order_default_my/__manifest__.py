@@ -23,7 +23,7 @@
     'name': 'Show my sale orders by default',
     'summary': 'Show my sale orders by default',
     'category': 'Sale',
-    'version': '10.0.1.1.0',
+    'version': '1.1.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

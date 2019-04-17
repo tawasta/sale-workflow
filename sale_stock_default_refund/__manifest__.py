@@ -22,7 +22,7 @@
 {
     'name': 'Refund sale order returns by default',
     'summary': 'Refund sale order returns by default',
-    'version': '10.0.1.1.1',
+    'version': '1.1.1',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

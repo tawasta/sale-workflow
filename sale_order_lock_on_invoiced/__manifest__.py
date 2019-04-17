@@ -22,7 +22,7 @@
 {
     'name': 'Lock sale order when it is invoiced',
     'summary': 'Lock sale order after it state is fully invoiced',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'category': 'Sale',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

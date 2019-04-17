@@ -23,7 +23,7 @@
     'name': "Don't tag negative sale order lines as to upsell",
     'summary': "Don't tag negative sale order lines as to upsell",
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

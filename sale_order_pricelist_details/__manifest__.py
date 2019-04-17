@@ -23,7 +23,7 @@
     'name': 'Product pricelist details',
     'summary': 'Show pricelist details button in pricelist',
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'website': 'https://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

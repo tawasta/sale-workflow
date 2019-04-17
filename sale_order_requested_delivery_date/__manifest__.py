@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order Requested Delivery Date',
     'summary': 'Adds a new field for storing date of requested delivery',
-    'version': '10.0.1.0.1',
+    'version': '1.0.1',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

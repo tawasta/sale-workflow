@@ -22,7 +22,7 @@
 {
     'name': 'Finalization state for Sale Orders',
     'summary': 'New state for SOs between Quotation Sent and Sale Order',
-    'version': '10.0.1.0.1',
+    'version': '1.0.1',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

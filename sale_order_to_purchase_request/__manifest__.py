@@ -23,7 +23,7 @@
     'name': 'Sale Order to Purchase Request',
     'summary': "Create Purchase Requests of sold products and BOM components",
     'category': 'Sales',
-    'version': '10.0.1.0.1',
+    'version': '1.0.1',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

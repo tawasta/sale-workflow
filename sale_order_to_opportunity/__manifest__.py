@@ -23,7 +23,7 @@
     'name': 'Opportunity from sale',
     'summary': 'Allows creating opportunities from sales',
     'category': 'Sale',
-    'version': '10.0.1.0.2',
+    'version': '1.0.2',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

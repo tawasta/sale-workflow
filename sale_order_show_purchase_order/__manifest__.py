@@ -22,7 +22,7 @@
 {
     'name': 'Show Linked Purchase Orders on Sale Orders',
     'summary': 'Show Linked Purchase Orders on Sale Orders',
-    'version': '10.0.0.1.0',
+    'version': '0.1.0',
     'category': 'Purchases, Sales',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

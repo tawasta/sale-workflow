@@ -23,7 +23,7 @@
     'name': 'Sale order next delivery date',
     'summary': 'Show the next open delivery date on sale order list view',
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

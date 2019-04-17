@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order to Purchase Order, tree info fields',
     'summary': 'Show SO number, header and customer name in PO tree',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

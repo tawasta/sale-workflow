@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order Promised Delivery Date Range Helper',
     'summary': 'Adds day and week selector helpers for date range',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

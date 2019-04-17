@@ -23,7 +23,7 @@
     'name': 'Strict domain filters for partners on sale, with customer itself',
     'summary': 'Allow customer itself or correct type and parent for address',
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order to Purchase Order, Sale Order Header',
     'summary': 'Show sale order header for the purchase orders',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

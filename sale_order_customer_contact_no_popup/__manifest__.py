@@ -23,7 +23,7 @@
     'name': 'No edit popup for Sale Order customer contact',
     'summary': 'Removes the possibility to open partner form',
     'category': 'Sales',
-    'version': '10.0.1.0.0',
+    'version': '1.0.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

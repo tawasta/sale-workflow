@@ -23,7 +23,7 @@
     'name': 'Ignore products from margin calculation',
     'summary': 'Ignore products when calculating margins',
     'category': 'Sale',
-    'version': '10.0.2.0.0',
+    'version': '2.0.0',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

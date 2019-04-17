@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order Promised Delivery Date Range',
     'summary': 'Adds new fields for storing date range of promised delivery',
-    'version': '10.0.1.0.1',
+    'version': '1.0.1',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

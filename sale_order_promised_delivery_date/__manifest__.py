@@ -22,7 +22,7 @@
 {
     'name': 'Sale Order Promised Delivery Date',
     'summary': 'Adds a new field for storing date of promised delivery',
-    'version': '10.0.1.1.1',
+    'version': '1.1.1',
     'category': 'Sales',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
