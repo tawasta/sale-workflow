@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,9 +22,9 @@
 {
     'name': 'Project stock location in sale order header',
     'summary': 'Adds analytic account stock location to SO header',
-    'version': '1.0.1',
+    'version': '12.0.1.0.0',
     'category': 'Sales',
-    'website': 'http://www.tawasta.fi',
+    'website': 'https://github.com/Tawasta/sale-workflow',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,

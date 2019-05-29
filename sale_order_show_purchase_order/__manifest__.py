@@ -22,9 +22,9 @@
 {
     'name': 'Show Linked Purchase Orders on Sale Orders',
     'summary': 'Show Linked Purchase Orders on Sale Orders',
-    'version': '0.1.0',
+    'version': '12.0.1.0.0',
     'category': 'Purchases, Sales',
-    'website': 'https://tawasta.fi',
+    'website': 'https://github.com/Tawasta/sale-workflow',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,

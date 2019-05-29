@@ -20,10 +20,10 @@
 {
     'name': 'Customer Contact for Sale Orders',
     'category': 'Sales',
-    'version': '1.0.4',
+    'version': '12.0.1.0.0',
     'installable': True,
     'author': 'Oy Tawasta OS Technologies Ltd.',
-    'website': 'http://www.tawasta.fi',
+    'website': 'https://github.com/Tawasta/sale-workflow',
     'depends': [
         'res_partner_recursion',
         'sale',
