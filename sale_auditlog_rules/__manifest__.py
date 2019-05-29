@@ -26,11 +26,10 @@
     'license': 'AGPL-3',
     'website': "https://tawasta.fi",
     'category': 'Logging',
-    'application': True,
+    'application': False,
     'installable': True,
     'version': '12.0.1.0.0',
     'depends': [
-        'futural_erp_sale',
         'auditlog',
     ],
     'data': [
