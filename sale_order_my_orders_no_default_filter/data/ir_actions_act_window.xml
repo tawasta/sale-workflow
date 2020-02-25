@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record model="ir.actions.act_window" id="sale.action_quotations_with_onboarding">
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sale.action_orders">
+        <field name="context">{}</field>
+    </record>
+</odoo>
+
