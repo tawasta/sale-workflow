@@ -5,8 +5,8 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position='after'>  
-                <field name="old_product_id" string="Old Description" invisible="True"/>  
+            <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position='after'>
+                <field name="old_product_id" string="Old Description" invisible="True"/>
             </xpath>
         </field>
     </record>

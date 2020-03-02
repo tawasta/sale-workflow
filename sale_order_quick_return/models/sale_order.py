@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 from odoo import models
 
 
 class SaleOrder(models.Model):
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
-    '''
+    """
     # This would make the returns on creating an invoice
     @api.multi
     def action_invoice_create(self, grouped=False, final=False):
@@ -81,4 +80,4 @@ class SaleOrder(models.Model):
                         )
 
         return res
-        '''
+        """

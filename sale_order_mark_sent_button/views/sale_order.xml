@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <button name="action_quotation_send" position="before">
-                    <button string="Mark as Sent" name="action_quotation_mark_sent" type="object" states="draft" class="oe_highlight"/> 
+                    <button string="Mark as Sent" name="action_quotation_mark_sent" type="object" states="draft" class="oe_highlight"/>
                 </button>
             </field>
         </record>

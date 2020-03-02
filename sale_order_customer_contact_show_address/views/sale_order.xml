@@ -10,7 +10,7 @@
             </field>
 
             <field name="customer_contact" position="attributes">
-                <attribute name="options" operation="python_dict" key="always_reload">1</attribute>                
+                <attribute name="options" operation="python_dict" key="always_reload">1</attribute>
             </field>
         </field>
     </record>

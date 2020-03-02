@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
-from odoo import models, exceptions, _
+from odoo import _, exceptions, models
 
 
 class SaleOrder(models.Model):
 
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     def check_missing_partner_fields(self):
         missing_fields = []
@@ -17,8 +16,8 @@ class SaleOrder(models.Model):
     def action_confirm(self):
         missing_partner_fields = self.check_missing_partner_fields()
         if missing_partner_fields:
-            msg = _('Please fill in the following fields for the customer: ')
-            msg += ', '.join(missing_partner_fields)
+            msg = _("Please fill in the following fields for the customer: ")
+            msg += ", ".join(missing_partner_fields)
             raise exceptions.UserError(msg)
 
         return super(SaleOrder, self).action_confirm()

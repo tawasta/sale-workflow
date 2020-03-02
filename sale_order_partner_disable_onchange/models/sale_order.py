@@ -1,12 +1,11 @@
-# -*- coding: utf-8 -*-
-from odoo import models, api
+from odoo import api, models
 
 
 class SaleOrder(models.Model):
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     @api.multi
-    @api.onchange('partner_id')
+    @api.onchange("partner_id")
     def onchange_partner_id(self):
         # "Disable" invoice and delivery address onchange
         # Due to the original onchange_partner_id() structure, this is done

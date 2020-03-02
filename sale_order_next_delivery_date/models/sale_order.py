@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
@@ -17,27 +15,23 @@ from odoo import api, fields, models
 class SaleOrder(models.Model):
 
     # 1. Private attributes
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     # 2. Fields declaration
     next_delivery_date = fields.Date(
-        string='Next delivery',
-        compute='compute_next_delivery_date',
-        store=True,
+        string="Next delivery", compute="_compute_next_delivery_date", store=True
     )
 
     # 3. Default methods
 
     # 4. Compute and search fields
-    @api.depends('picking_ids')
-    def compute_next_delivery_date(self):
+    @api.depends("picking_ids")
+    def _compute_next_delivery_date(self):
         for record in self:
             if record.picking_ids:
                 next_delivery_ids = record.picking_ids.filtered(
-                    lambda r: r.state not in ('cancel', 'done', 'draft')
-                ).sorted(
-                    key=lambda r: r.min_date
-                )
+                    lambda r: r.state not in ("cancel", "done", "draft")
+                ).sorted(key=lambda r: r.min_date)
 
                 if next_delivery_ids:
                     record.next_delivery_date = next_delivery_ids[0].min_date

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright 2017 Tawasta OS Technologies
@@ -18,18 +17,13 @@
 #
 ##############################################################################
 {
-    'name': 'Customer Contact for Sale Orders',
-    'category': 'Sales',
-    'version': '12.0.1.0.0',
-    'installable': True,
-    'author': 'Oy Tawasta OS Technologies Ltd.',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'depends': [
-        'res_partner_recursion',
-        'sale',
-    ],
-    'data': [
-        'views/account_invoice.xml',
-        'views/sale_order.xml',
-    ],
+    "name": "Customer Contact for Sale Orders",
+    "category": "Sales",
+    "version": "12.0.1.0.0",
+    "installable": True,
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "depends": ["res_partner_recursion", "sale"],
+    "data": ["views/account_invoice.xml", "views/sale_order.xml"],
 }

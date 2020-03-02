@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,20 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Create returns from sale order lines',
-    'summary': 'Create returns from sale order lines',
-    'category': 'Sale',
-    'version': '12.0.1.0.0',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale_stock',
-    ],
-    'data': [
-        # 'views/sale_advance_payment_inv.xml',
-        'views/sale_order_form.xml',
-    ],
+    "name": "Create returns from sale order lines",
+    "summary": "Create returns from sale order lines",
+    "category": "Sale",
+    "version": "12.0.1.0.0",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale_stock"],
+    "data": ["views/sale_order_form.xml"],
 }

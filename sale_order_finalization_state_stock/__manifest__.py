@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,25 +19,17 @@
 ##############################################################################
 
 {
-    'name': 'Finalization state for Sale Orders - Stock Support',
-    'summary': 'Adds state-based readonly attributes to sale_stock SO fields',
-    'version': '12.0.1.0.0',
-    'category': 'Sales',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'sale_stock',
-        'sale_order_finalization_state',
-    ],
-    'data': [
-    ],
-    'demo': [
-    ],
+    "name": "Finalization state for Sale Orders - Stock Support",
+    "summary": "Adds state-based readonly attributes to sale_stock SO fields",
+    "version": "12.0.1.0.0",
+    "category": "Sales",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale_stock", "sale_order_finalization_state"],
+    "data": [],
+    "demo": [],
 }

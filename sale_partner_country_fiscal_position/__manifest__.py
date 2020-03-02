@@ -24,7 +24,7 @@
         Automatically selects Partner's Fiscal Position based on Country""",
     "version": "12.0.1.0.0",
     "category": "CRM",
-    "website": "https://tawasta.fi",
+    "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
