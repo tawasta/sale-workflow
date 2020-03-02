@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record model="ir.actions.act_window" id="base.action_partner_form">
+        <field name="context">{}</field>
+    </record>
+</odoo>
+
