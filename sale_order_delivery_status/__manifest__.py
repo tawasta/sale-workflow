@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,19 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Delivery Status for Sale Orders',
-    'summary': 'Delivery information for Sales',
-    'category': 'Sales',
-    'version': '12.0.1.0.0',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale_stock',
-    ],
-    'data': [
-        'views/sale_order.xml',
-    ],
+    "name": "Delivery Status for Sale Orders",
+    "summary": "Delivery information for Sales",
+    "category": "Sales",
+    "version": "12.0.1.0.0",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale_stock"],
+    "data": ["views/sale_order.xml"],
 }

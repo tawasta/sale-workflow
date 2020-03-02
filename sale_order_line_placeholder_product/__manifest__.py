@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,21 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Prevent Confirming Quotation With A Placeholder Product',
-    'summary': 'Prevent Confirming Quotation With A Placeholder Product',
-    'version': '12.0.1.0.0',
-    'category': 'Sales, Product',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale',
-        'stock',
-    ],
-    'data': [
-        'views/product_view.xml',
-        'views/sale_view.xml',
-    ],
+    "name": "Prevent Confirming Quotation With A Placeholder Product",
+    "summary": "Prevent Confirming Quotation With A Placeholder Product",
+    "version": "12.0.1.0.0",
+    "category": "Sales, Product",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale", "stock"],
+    "data": ["views/product_view.xml", "views/sale_view.xml"],
 }

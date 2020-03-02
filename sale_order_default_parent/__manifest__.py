@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,20 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Default parent for new invoice and shipping addresses',
-    'summary': 'Default parent for new invoice and shipping addresses',
-    'category': 'Sale',
-    'version': '12.0.1.0.0',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'base_view_inheritance_extension',
-        'sale',
-    ],
-    'data': [
-        'views/sale_order.xml',
-    ],
+    "name": "Default parent for new invoice and shipping addresses",
+    "summary": "Default parent for new invoice and shipping addresses",
+    "category": "Sale",
+    "version": "12.0.1.0.0",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["base_view_inheritance_extension", "sale"],
+    "data": ["views/sale_order.xml"],
 }

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
@@ -17,13 +15,10 @@ from odoo import fields, models
 class ResPartner(models.Model):
 
     # 1. Private attributes
-    _inherit = 'res.partner'
+    _inherit = "res.partner"
 
     # 2. Fields declaration
-    sale_note = fields.Char(
-        string='Sale note',
-        help='Default sale note',
-    )
+    sale_note = fields.Char(string="Sale note", help="Default sale note")
 
     # 3. Default methods
 

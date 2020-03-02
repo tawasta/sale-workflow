@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
@@ -17,7 +15,7 @@ from odoo import models
 class SaleOrderLine(models.Model):
 
     # 1. Private attributes
-    _inherit = 'sale.order.line'
+    _inherit = "sale.order.line"
 
     # 2. Fields declaration
 
@@ -33,10 +31,7 @@ class SaleOrderLine(models.Model):
     def action_sale_order_line_copy(self):
         self.ensure_one()
 
-        self.copy({'order_id': self.order_id.id})
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'reload',
-        }
+        self.copy({"order_id": self.order_id.id})
+        return {"type": "ir.actions.client", "tag": "reload"}
 
     # 8. Business methods

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
@@ -17,7 +15,7 @@ from odoo import api, models
 class StockPicking(models.Model):
 
     # 1. Private attributes
-    _inherit = 'stock.picking'
+    _inherit = "stock.picking"
 
     # 2. Fields declaration
 
@@ -32,9 +30,7 @@ class StockPicking(models.Model):
     def write(self, values):
         res = super(StockPicking, self).write(values)
 
-        if 'state' in values \
-                or 'min_date' in values \
-                or 'recompute_pack_op' in values:
+        if "state" in values or "min_date" in values or "recompute_pack_op" in values:
 
             # When delivery is changed, update SO
             self._compute_sale_order_next_delivery_date()

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,19 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Strict domain filters for partners on sale',
-    'summary': 'Only allow correct type and parent for addresses',
-    'category': 'Sale',
-    'version': '12.0.1.0.0',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale',
-    ],
-    'data': [
-        'views/sale_order.xml',
-    ],
+    "name": "Strict domain filters for partners on sale",
+    "summary": "Only allow correct type and parent for addresses",
+    "category": "Sale",
+    "version": "12.0.1.0.0",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale"],
+    "data": ["views/sale_order.xml"],
 }

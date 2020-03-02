@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
-from odoo import models, api, _
+from odoo import _, api, models
 
 
 class SaleOrder(models.Model):
 
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     @api.multi
     def action_confirm(self):
@@ -14,10 +13,10 @@ class SaleOrder(models.Model):
         for order in self:
             if order.user_id:
 
-                salesperson = _('Salesperson: %s') % order.user_id.name
+                salesperson = _("Salesperson: %s") % order.user_id.name
 
                 if order.note:
-                    order.note = salesperson + '\n' + order.note
+                    order.note = salesperson + "\n" + order.note
                 else:
                     order.note = salesperson
 

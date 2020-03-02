@@ -83,4 +83,3 @@ addon | version | summary
 [sale_order_contract_mandatory](sale_order_contract_mandatory/) | 12.0.1.0.0 (unported) | Make sale order contracts mandatory for sales persons
 
 [//]: # (end addons)
-

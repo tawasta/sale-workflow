@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
@@ -17,13 +15,10 @@ from odoo import api, fields, models
 class SaleOrderLine(models.Model):
 
     # 1. Private attributes
-    _inherit = 'sale.order.line'
+    _inherit = "sale.order.line"
 
     # 2. Fields declaration
-    delivery_info = fields.Text(
-        string='Deliveries',
-        compute='_compute_delivery_info',
-    )
+    delivery_info = fields.Text(string="Deliveries", compute="_compute_delivery_info")
 
     # 3. Default methods
 
@@ -34,17 +29,18 @@ class SaleOrderLine(models.Model):
         # based on done stock moves related to its procurements
 
         for record in self:
-            delivery_info = ''
+            delivery_info = ""
 
-            procurements = record.procurement_ids.mapped('move_ids').filtered(
-                lambda r: r.state == 'done' and not r.scrapped).sorted(
-                key=lambda r: r.picking_id.date_done)
+            procurements = (
+                record.procurement_ids.mapped("move_ids")
+                .filtered(lambda r: r.state == "done" and not r.scrapped)
+                .sorted(key=lambda r: r.picking_id.date_done)
+            )
 
             for move in procurements:
 
                 qty = move.product_uom._compute_quantity(
-                    move.product_uom_qty,
-                    record.product_uom
+                    move.product_uom_qty, record.product_uom
                 )
 
                 picking = move.picking_id
@@ -55,12 +51,10 @@ class SaleOrderLine(models.Model):
                         pass
 
                 elif move.location_dest_id.usage != "customer":
-                    delivery_info += '-'
+                    delivery_info += "-"
 
-                delivery_info += '%s %s / %s \n' % (
-                    qty,
-                    move.product_uom.name,
-                    picking.date_done
+                delivery_info += "{} {} / {} \n".format(
+                    qty, move.product_uom.name, picking.date_done
                 )
 
             record.delivery_info = delivery_info

@@ -1,14 +1,8 @@
-# -*- coding: utf-8 -*-
-
-
 from odoo import fields, models
 
 
 class ProductTemplate(models.Model):
 
-    _inherit = 'product.template'
+    _inherit = "product.template"
 
-    additional_code = fields.Boolean(
-        string="Placeholder product",
-        default=False
-        )
+    additional_code = fields.Boolean(string="Placeholder product", default=False)

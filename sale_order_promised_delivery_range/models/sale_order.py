@@ -1,32 +1,25 @@
-# -*- coding: utf-8 -*-
-from odoo import models, fields, api
+from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
 
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     date_delivery_promised_start = fields.Date(
-        string='Promised Delivery start',
+        string="Promised Delivery start",
         readonly=True,
-        states={
-            'draft': [('readonly', False)],
-            'sent': [('readonly', False)]
-        },
+        states={"draft": [("readonly", False)], "sent": [("readonly", False)]},
         copy=False,
     )
 
     date_delivery_promised_end = fields.Date(
-        string='Promised Delivery end',
+        string="Promised Delivery end",
         readonly=True,
-        states={
-            'draft': [('readonly', False)],
-            'sent': [('readonly', False)]
-        },
+        states={"draft": [("readonly", False)], "sent": [("readonly", False)]},
         copy=False,
     )
 
-    @api.onchange('date_delivery_promised_start')
+    @api.onchange("date_delivery_promised_start")
     def onchange_date_delivery_start_update_date_delivery_end(self):
         for record in self:
             start = record.date_delivery_promised_start
@@ -39,10 +32,8 @@ class SaleOrder(models.Model):
     def _prepare_invoice(self):
         invoice_vals = super(SaleOrder, self)._prepare_invoice()
 
-        invoice_vals['date_delivery_promised_start'] \
-            = self.date_delivery_promised_start
+        invoice_vals["date_delivery_promised_start"] = self.date_delivery_promised_start
 
-        invoice_vals['date_delivery_promised_end'] \
-            = self.date_delivery_promised_end
+        invoice_vals["date_delivery_promised_end"] = self.date_delivery_promised_end
 
         return invoice_vals

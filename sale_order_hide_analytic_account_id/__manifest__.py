@@ -19,21 +19,16 @@
 ##############################################################################
 
 {
-    'name': "Sale Order - Hide Analytic Account Id",
-    'summary': "Hides the analytic account from sale order view",
-    'description': "",
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'website': "https://tawasta.fi",
-    'category': 'Sale',
-    'application': False,
-    'installable': True,
-    'version': '12.0.1.0.0',
-    'depends': [
-        'sale_management',
-    ],
-    'data': [
-        'views/sale_view_order_form.xml',
-    ],
-    'demo': [],
+    "name": "Sale Order - Hide Analytic Account Id",
+    "summary": "Hides the analytic account from sale order view",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "category": "Sale",
+    "application": False,
+    "installable": True,
+    "version": "12.0.1.0.0",
+    "depends": ["sale_management"],
+    "data": ["views/sale_view_order_form.xml"],
+    "demo": [],
 }

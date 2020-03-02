@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,24 +19,17 @@
 ##############################################################################
 
 {
-    'name': 'Disabled Stock Level Warning for Sale Orders',
-    'summary': 'No out-of-stock warning when adding products to SO lines',
-    'version': '12.0.1.0.0',
-    'category': 'Sales',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'sale_stock',
-    ],
-    'data': [
-    ],
-    'demo': [
-    ],
+    "name": "Disabled Stock Level Warning for Sale Orders",
+    "summary": "No out-of-stock warning when adding products to SO lines",
+    "version": "12.0.1.0.0",
+    "category": "Sales",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale_stock"],
+    "data": [],
+    "demo": [],
 }

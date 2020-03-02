@@ -1,14 +1,14 @@
-# -*- coding: utf-8 -*-
-from odoo import models, api, _
-
 import logging
+
+from odoo import _, api, models
+
 _logger = logging.getLogger(__name__)
 
 
 class SaleOrder(models.Model):
 
     # 1. Private attributes
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     # 2. Fields declaration
 
@@ -27,7 +27,7 @@ class SaleOrder(models.Model):
 
         for record in self:
             opportunity = record.opportunity_id
-            opportunity.message_post(_('Sale confirmed'))
+            opportunity.message_post(_("Sale confirmed"))
             opportunity.action_set_won()
 
         return res
@@ -38,7 +38,7 @@ class SaleOrder(models.Model):
 
         for record in self:
             opportunity = record.opportunity_id
-            opportunity.message_post(_('Sale cancelled'))
+            opportunity.message_post(_("Sale cancelled"))
             opportunity.action_set_won()
 
         return res

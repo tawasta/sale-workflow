@@ -8,4 +8,4 @@ class CountryGroup(models.Model):
 
     sequence = fields.Integer()
 
-    delivery_terms = fields.Char(string="Delivery Terms",)
+    delivery_terms = fields.Char(string="Delivery Terms")
