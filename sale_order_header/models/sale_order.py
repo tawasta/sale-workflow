@@ -1,4 +1,4 @@
-from odoo import fields, models, api
+from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
@@ -13,7 +13,4 @@ class SaleOrder(models.Model):
         invoice_vals["header_text"] = self.header_text
         return invoice_vals
 
-    header_text = fields.Char(
-        string="Header",
-        help="Header or title of the Sale"
-    )
+    header_text = fields.Char(string="Header", help="Header or title of the Sale")

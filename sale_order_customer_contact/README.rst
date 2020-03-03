@@ -15,7 +15,7 @@ Configuration
 
 Usage
 =====
-\- 
+\-
 
 Known issues / Roadmap
 ======================
@@ -25,7 +25,9 @@ Credits
 
 Contributors
 ------------
+
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 * Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer

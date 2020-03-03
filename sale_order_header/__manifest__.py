@@ -19,27 +19,21 @@
 ##############################################################################
 
 {
-    'name': 'Header for Sale Orders',
-    'summary': 'New field for SO header/title',
-    'version': '12.0.1.0.1',
-    'category': 'Sales',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'sale',
+    "name": "Header for Sale Orders",
+    "summary": "New field for SO header/title",
+    "version": "12.0.1.0.1",
+    "category": "Sales",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale"],
+    "data": [
+        "report/sale_order_report.xml",
+        "views/account_invoice.xml",
+        "views/sale_order.xml",
     ],
-    'data': [
-        'report/sale_order_report.xml',
-        'views/account_invoice.xml',
-        'views/sale_order.xml',
-    ],
-    'demo': [
-    ],
+    "demo": [],
 }

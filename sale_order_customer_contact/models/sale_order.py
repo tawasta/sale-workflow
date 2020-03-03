@@ -13,9 +13,7 @@ class SaleOrder(models.Model):
 
     # TODO: change the field name to partner_contact_id when migrating
     customer_contact_id = fields.Many2one(
-        "res.partner",
-        "Contact",
-        states=_FIELD_STATES
+        "res.partner", "Contact", states=_FIELD_STATES
     )
 
     @api.multi

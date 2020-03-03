@@ -8,9 +8,7 @@ class AccountInvoice(models.Model):
     _FIELD_STATES = {"draft": [("readonly", False)], "open": [("readonly", False)]}
 
     customer_contact_id = fields.Many2one(
-        "res.partner",
-        "Contact",
-        states=_FIELD_STATES
+        "res.partner", "Contact", states=_FIELD_STATES
     )
 
     @api.multi
