@@ -6,7 +6,7 @@
 Header for Sale Orders
 ======================
 
-* Adds a header/title field to Sale Orders
+* Adds a header/title field to Sale Orders and Sale order report
 * When an invoice is created from an SO, the data is passed to the invoice as well
 
 Installation
@@ -19,7 +19,7 @@ Configuration
 
 Usage
 =====
-\- 
+\-
 
 Known issues / Roadmap
 ======================
@@ -30,6 +30,8 @@ Credits
 
 Contributors
 ------------
+
+* Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 * Timo Talvitie <timo.talvitie@tawasta.fi>
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 
