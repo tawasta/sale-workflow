@@ -22,11 +22,12 @@ class SaleOrder(models.Model):
     @api.onchange("date_delivery_promised_start")
     def onchange_date_delivery_start_update_date_delivery_end(self):
         for record in self:
-            start = record.date_delivery_promised_start
+            start = record.date_delivery_promised_start or False
             end = record.date_delivery_promised_end
 
-            if not end or end < start:
-                record.date_delivery_promised_end = start
+            if start:
+                if not end or end < start:
+                    record.date_delivery_promised_end = start
 
     @api.multi
     def _prepare_invoice(self):
