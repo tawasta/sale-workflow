@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@t-if='doc.client_order_ref']" position="after">
+            <div t-if="doc.delivery_term_id" name="delivery-term-id" class="col-auto mw-100 mb-2">
+                <strong>Delivery terms:</strong>
+                <p class="m-0" t-field="doc.delivery_term_id"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>
