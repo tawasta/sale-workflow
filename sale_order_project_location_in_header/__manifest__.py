@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,27 +19,21 @@
 ##############################################################################
 
 {
-    'name': 'Project stock location in sale order header',
-    'summary': 'Adds analytic account stock location to SO header',
-    'version': '12.0.1.0.0',
-    'category': 'Sales',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'sale',
-        'sale_order_project_in_header',
-        'stock_location_analytic_account',
+    "name": "Project stock location in sale order header",
+    "summary": "Adds analytic account stock location to SO header",
+    "version": "12.0.1.0.0",
+    "category": "Sales",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": [
+        "sale",
+        "sale_order_project_in_header",
+        "stock_location_analytic_account",
     ],
-    'data': [
-        'views/sale_order.xml',
-    ],
-    'demo': [
-    ],
+    "data": ["views/sale_order.xml"],
+    "demo": [],
 }

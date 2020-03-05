@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import models, api
+from odoo import api, models
 
 # 4. Imports from Odoo modules:
 
@@ -17,7 +15,7 @@ from odoo import models, api
 class SaleOrder(models.Model):
 
     # 1. Private attributes
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     # 2. Fields declaration
 
@@ -26,7 +24,7 @@ class SaleOrder(models.Model):
     # 4. Compute and search fields
 
     # 5. Constraints and onchanges
-    @api.onchange('partner_id')
+    @api.onchange("partner_id")
     def onchange_partner_id_update_sale_note(self):
         for record in self:
             if record.partner_id and record.partner_id.sale_note:

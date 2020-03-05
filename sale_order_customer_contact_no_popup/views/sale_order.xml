@@ -5,8 +5,8 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale_order_customer_contact.sale_form_view"/>
         <field name="arch" type="xml">
-            <field name="customer_contact" position="attributes">
-                <attribute name="options" operation="python_dict" key="no_open">1</attribute>                
+            <field name="customer_contact_id" position="attributes">
+                <attribute name="options" operation="python_dict" key="no_open">1</attribute>
             </field>
         </field>
     </record>

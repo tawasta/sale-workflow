@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2017 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,25 +19,17 @@
 ##############################################################################
 
 {
-    'name': 'Finalization state for Sale Orders',
-    'summary': 'New state for SOs between Quotation Sent and Sale Order',
-    'version': '12.0.1.0.0',
-    'category': 'Sales',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'sale',
-    ],
-    'data': [
-        'views/sale_order.xml',
-    ],
-    'demo': [
-    ],
+    "name": "Finalization state for Sale Orders",
+    "summary": "New state for SOs between Quotation Sent and Sale Order",
+    "version": "12.0.1.0.0",
+    "category": "Sales",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale"],
+    "data": ["views/sale_order.xml"],
+    "demo": [],
 }

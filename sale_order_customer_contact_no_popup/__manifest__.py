@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,20 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'No edit popup for Sale Order customer contact',
-    'summary': 'Removes the possibility to open partner form',
-    'category': 'Sales',
-    'version': '12.0.1.0.0',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale_order_customer_contact',
-        'base_view_inheritance_extension',
-    ],
-    'data': [
-        'views/sale_order.xml',
-    ],
+    "name": "No edit popup for Sale Order customer contact",
+    "summary": "Removes the possibility to open partner form",
+    "category": "Sales",
+    "version": "12.0.1.0.0",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale_order_customer_contact", "base_view_inheritance_extension"],
+    "data": ["views/sale_order.xml"],
 }

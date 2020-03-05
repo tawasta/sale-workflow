@@ -16,7 +16,7 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <notebook position="inside">
-                <page string="Manufacturing" 
+                <page string="Manufacturing"
                     attrs="{ 'invisible': [('manufacturing_status', '=', 'none')] }">
                     <group>
                         <field name="manufacturing_status"/>
@@ -25,5 +25,5 @@
                 </page>
             </notebook>
         </field>
-    </record>    
+    </record>
 </odoo>

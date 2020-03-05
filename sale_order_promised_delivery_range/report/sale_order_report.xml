@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@t-if='doc.payment_term_id']" position="before">
+            <div t-if="doc.date_delivery_promised_start" name="date-delivery-promised-start" class="col-auto mw-100 mb-2">
+                <strong>Delivery:</strong>
+                <br/>
+                <span class="m-0" t-field="doc.date_delivery_promised_start"/>
+                <t t-if="doc.date_delivery_promised_end and doc.date_delivery_promised_start != doc.date_delivery_promised_end"> - <p t-field="doc.date_delivery_promised_end"/></t>
+            </div>
+        </xpath>
+    </template>
+</odoo>

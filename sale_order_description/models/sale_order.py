@@ -1,12 +1,8 @@
-# -*- coding: utf-8 -*-
-from odoo import models, fields
+from odoo import fields, models
 
 
 class SaleOrder(models.Model):
 
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
-    description = fields.Text(
-        string='Description',
-        help='Internal notes'
-    )
+    description = fields.Text(string="Description", help="Internal notes")

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,23 +19,19 @@
 ##############################################################################
 
 {
-    'name': 'Sale order stock picking auto return',
-    'summary': 'Ask to return delivered products when cancelling a sale',
-    'category': 'Sale',
-    'version': '12.0.1.0.0',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale',
-        'stock',
-    ],
-    'data': [
+    "name": "Sale order stock picking auto return",
+    "summary": "Ask to return delivered products when cancelling a sale",
+    "category": "Sale",
+    "version": "12.0.1.0.0",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale", "stock"],
+    "data": [
         # Wizard first, because sale depends on a view in the wizard
-        'wizards/sale_order_picking_return_wizard.xml',
-
-        'views/sale_order.xml',
+        "wizards/sale_order_picking_return_wizard.xml",
+        "views/sale_order.xml",
     ],
 }

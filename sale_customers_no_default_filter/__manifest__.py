@@ -19,19 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Remove Customers default filter',
-    'summary': 'Remove Customers default filter',
-    'version': '12.0.1.0.0',
-    'category': 'Sales',
-    'website': 'https://github.com/Tawasta/sale',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale',
-    ],
-    'data': [
-        'data/ir_actions_act_window.xml',
-    ],
+    "name": "Remove Customers default filter",
+    "summary": "Remove Customers default filter",
+    "version": "12.0.1.0.0",
+    "category": "Sales",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale"],
+    "data": ["data/ir_actions_act_window.xml"],
 }
