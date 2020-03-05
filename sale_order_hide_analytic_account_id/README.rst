@@ -2,33 +2,30 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=====================
-Customer Info Checker
-=====================
+=====================================
+Sale Order - Hide Analytic Account Id
+=====================================
 
-* When creating a sale order, the user is notified if the customer's info has not been verified in the last 90 days
-* Also prevents confirming a quotation if VAT/Business ID info is missing
+Hides the analytic account from sale order view
+
+Installation
+============
+/*
 
 Configuration
 =============
-\-
+/*
 
 Usage
 =====
-\-
-
-Known issues / Roadmap
-======================
-\-
+/*
 
 Credits
 =======
 
 Contributors
 ------------
-
-* Valtteri Lattu <valtteri.lattu@tawasta.fi>
-* Timo Talvitie <timo.talvitie@tawasta.fi>
+* Joona Isoaho <joona.isoaho@tawasta.fi>
 
 Maintainer
 ----------

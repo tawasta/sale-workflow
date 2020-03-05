@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
 from odoo import fields, models
+
 from odoo.addons import decimal_precision as dp
 
 # 4. Imports from Odoo modules:
@@ -18,12 +17,11 @@ from odoo.addons import decimal_precision as dp
 class SaleOrder(models.Model):
 
     # 1. Private attributes
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     # 2. Fields declaration
     weight = fields.Float(
-        'Weight', digits=dp.get_precision('Stock Weight'),
-        compute='_compute_weight',
+        "Weight", digits=dp.get_precision("Stock Weight"), compute="_compute_weight"
     )
 
     # 3. Default methods

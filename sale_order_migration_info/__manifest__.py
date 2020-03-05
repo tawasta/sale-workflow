@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,24 +19,17 @@
 ##############################################################################
 
 {
-    'name': 'Migration Info Fields for Sale Order',
-    'summary': 'Helper fields for migration tracking',
-    'version': '12.0.1.0.0',
-    'category': 'Administration',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'sale',
-    ],
-    'data': [
-    ],
-    'demo': [
-    ],
+    "name": "Migration Info Fields for Sale Order",
+    "summary": "Helper fields for migration tracking",
+    "version": "12.0.1.0.0",
+    "category": "Administration",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale"],
+    "data": [],
+    "demo": [],
 }

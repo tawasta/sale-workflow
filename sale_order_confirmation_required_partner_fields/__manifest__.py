@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,25 +19,17 @@
 ##############################################################################
 
 {
-    'name': 'Mandatory Partner Field Check Upon SO Confirmation',
-    'summary': 'Configurable fields that must be set before sale is confirmed',
-    'version': '12.0.1.0.0',
-    'category': 'Sales',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': False,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'sale',
-    ],
-    'data': [
-        'views/sale_config_settings.xml',
-    ],
-    'demo': [
-    ],
+    "name": "Mandatory Partner Field Check Upon SO Confirmation",
+    "summary": "Configurable fields that must be set before sale is confirmed",
+    "version": "12.0.1.0.0",
+    "category": "Sales",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": False,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale"],
+    "data": ["views/sale_config_settings.xml"],
+    "demo": [],
 }

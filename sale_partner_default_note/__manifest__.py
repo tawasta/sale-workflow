@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,25 +19,17 @@
 ##############################################################################
 
 {
-    'name': 'Default sale note (terms and conditions) for partner',
-    'summary': 'Add a default sale note (terms and conditions) for partner',
-    'version': '12.0.1.0.0',
-    'category': 'Sale',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'sale',
-    ],
-    'data': [
-        'views/res_partner.xml',
-    ],
-    'demo': [
-    ],
+    "name": "Default sale note (terms and conditions) for partner",
+    "summary": "Add a default sale note (terms and conditions) for partner",
+    "version": "12.0.1.0.0",
+    "category": "Sale",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale"],
+    "data": ["views/res_partner.xml"],
+    "demo": [],
 }

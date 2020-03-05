@@ -6,8 +6,8 @@
 Sale Order Promised Delivery Date Range
 =======================================
 
-Adds new fields for storing date range of promised delivery
-
+Adds new fields for storing date range of promised delivery.
+date_delivery_promised_start-field is added to SO report.
 
 Configuration
 =============
@@ -15,7 +15,7 @@ Configuration
 
 Usage
 =====
-\-
+Just install the module
 
 Known issues / Roadmap
 ======================
@@ -26,7 +26,9 @@ Credits
 
 Contributors
 ------------
+
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 
 Maintainer
 ----------

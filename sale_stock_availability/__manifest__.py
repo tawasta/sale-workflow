@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,19 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Product availability on SO line',
-    'summary': 'Add product availability to SO line',
-    'category': 'Sale',
-    'version': '12.0.1.0.0',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale_stock',
-    ],
-    'data': [
-        'views/sale_order.xml',
-    ],
+    "name": "Product availability on SO line",
+    "summary": "Add product availability to SO line",
+    "category": "Sale",
+    "version": "12.0.1.0.0",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale_stock"],
+    "data": ["views/sale_order.xml"],
 }

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,21 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Sale order next delivery date',
-    'summary': 'Show the next open delivery date on sale order list view',
-    'category': 'Sale',
-    'version': '12.0.1.0.0',
-    'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale',
-        'stock',
-        'sale_stock',
-    ],
-    'data': [
-        'views/sale_order.xml',
-    ],
+    "name": "Sale order next delivery date",
+    "summary": "Show the next open delivery date on sale order list view",
+    "category": "Sale",
+    "version": "12.0.1.0.0",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale", "stock", "sale_stock"],
+    "data": ["views/sale_order.xml"],
 }

@@ -1,16 +1,15 @@
-# -*- coding: utf-8 -*-
-from odoo import models, exceptions, api, _
+from odoo import _, api, exceptions, models
 
 
 class SaleOrder(models.Model):
 
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     @api.multi
     def action_confirm(self):
         for sale in self:
             if not sale.payment_term_id:
-                msg = _('Please fill in the payment term.')
+                msg = _("Please fill in the payment term.")
                 raise exceptions.UserError(msg)
 
         return super(SaleOrder, self).action_confirm()

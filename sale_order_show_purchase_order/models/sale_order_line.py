@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
-
-
 from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
 
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     @api.multi
     def _get_purchase_ids(self):
@@ -31,11 +28,10 @@ class SaleOrder(models.Model):
 
             if purchase_list != []:
                 for i in purchase_list:
-                    self.purchase_order_ids \
-                        = [x for x in purchases.ids if x == i]
+                    self.purchase_order_ids = [x for x in purchases.ids if x == i]
 
     purchase_order_ids = fields.Many2many(
         compute=_get_purchase_ids,
-        comodel_name='purchase.order',
-        string='Purchase Orders'
-        )
+        comodel_name="purchase.order",
+        string="Purchase Orders",
+    )

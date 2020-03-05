@@ -19,26 +19,17 @@
 ##############################################################################
 
 {
-    'name': 'Sale Order Order Lines Analytic Account Required',
-    'summary': '',
-    'version': '12.0.1.0.0',
-    'category': 'Sales',
-    'website': 'http://www.tawasta.fi',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'sale',
-        'sale_product_analytic_tags',
-    ],
-    'data': [
-        'views/sale_view_order_form.xml',
-    ],
-    'demo': [
-    ],
+    "name": "Sale Order Order Lines Analytic Account Required",
+    "summary": "",
+    "version": "12.0.1.0.0",
+    "category": "Sales",
+    "website": "https://github.com/Tawasta/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale", "sale_product_analytic_tags"],
+    "data": ["views/sale_view_order_form.xml"],
+    "demo": [],
 }
