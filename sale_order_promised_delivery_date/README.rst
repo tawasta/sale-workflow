@@ -7,6 +7,7 @@ Sale Order Promised Delivery Date
 =================================
 
 * Adds a new field to Sale Orders for storing the delivery date promised to the customer
+* Field is added to SO report also
 
 Installation
 ============
@@ -18,7 +19,7 @@ Configuration
 
 Usage
 =====
-\- 
+\-
 
 Known issues / Roadmap
 ======================
@@ -29,6 +30,8 @@ Credits
 
 Contributors
 ------------
+
+* Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 * Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
