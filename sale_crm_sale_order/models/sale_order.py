@@ -16,7 +16,7 @@ class SaleOrder(models.Model):
         for record in self:
             if record.opportunity_id:
                 opportunity = record.opportunity_id
-                opportunity.message_post(_("Sale confirmed"))
+                opportunity.message_post(body=_("Sale confirmed"), title=None)
                 opportunity.action_set_won()
 
         return res
@@ -28,7 +28,7 @@ class SaleOrder(models.Model):
         for record in self:
             if record.opportunity_id:
                 opportunity = record.opportunity_id
-                opportunity.message_post(_("Sale cancelled"))
+                opportunity.message_post(body=_("Sale cancelled"), title=None)
                 opportunity.action_set_won()
 
         return res
