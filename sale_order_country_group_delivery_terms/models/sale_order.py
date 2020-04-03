@@ -18,7 +18,9 @@ class SaleOrder(models.Model):
             country_groups = (
                 shipping_address.country_id
                 and shipping_address.country_id.country_group_ids
-            )
+            ).filtered(lambda r: not r.skip_delivery_terms)
+
+            country_groups = [x for x in country_groups if x.delivery_terms]
 
             if country_groups:
                 delivery_terms = country_groups[0].delivery_terms
