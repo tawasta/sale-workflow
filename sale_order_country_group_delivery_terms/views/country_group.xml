@@ -9,6 +9,7 @@
             <group name="country_group" position="before">
                 <group name="delivery_terms">
                     <field name="delivery_terms"/>
+                    <field name="skip_delivery_terms"/>
                 </group>
             </group>
         </field>
@@ -24,6 +25,7 @@
             </field>
             <field name="name" position="after">
                 <field name="delivery_terms" />
+                <field name="skip_delivery_terms"/>
             </field>
         </field>
     </record>
