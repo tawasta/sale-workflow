@@ -6,7 +6,7 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <field name="cofirmation_date" position="before">
+                <field name="confirmation_date" position="before">
                     <field name="customer_order_date"></field>
                 </field>
             </field>
