@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale", "sale_management"],
+    "depends": ["sale", "sale_management", "l10n_fi_country_groups"],
     "data": ["views/country_group.xml", "report/sale_order.xml", "views/menu.xml"],
 }
