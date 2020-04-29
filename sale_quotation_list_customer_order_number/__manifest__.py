@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Customer Order Number for Sale Order List view",
-    "summary": "Adds customer order number to sale order list view",
+    "name": "Customer Order Number for Sale Quotation List view",
+    "summary": "Adds customer order number to sale quotation list view",
     "version": "12.0.1.0.0",
     "category": "Sales",
     "website": "https://github.com/Tawasta/sale-workflow",
@@ -30,6 +30,6 @@
     "installable": True,
     "external_dependencies": {"python": [], "bin": []},
     "depends": ["sale", "sale_management", "sale_order_customer_order_number"],
-    "data": ["views/sale_order_list.xml"],
+    "data": ["views/sale_quotation_list.xml"],
     "demo": [],
 }
