@@ -8,19 +8,13 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     def compute_default_week_of_shipment(self):
-        if (
-            isinstance(self.expected_date, datetime.datetime)
-            and self.week_of_shipment == 0
-        ):
+        if self.week_of_shipment == 0 and self.expected_date:
             week_number = datetime.date(
                 self.expected_date.year,
                 self.expected_date.month,
                 self.expected_date.day,
             ).isocalendar()[1]
-            if week_number.isdigit():
-                self.week_of_shipment = week_number
-            else:
-                self.week_of_shipment = 0
+            self.week_of_shipment = week_number
         else:
             self.week_of_shipment = 0
 
