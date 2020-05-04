@@ -21,7 +21,5 @@ class SaleOrder(models.Model):
     week_of_shipment = fields.Integer(
         string="Week of shipment",
         readonly=False,
-        stored=True,
         computed="compute_default_week_of_shipment",
-        default=0,
     )
