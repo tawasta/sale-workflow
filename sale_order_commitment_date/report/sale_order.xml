@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="sale_order_commitment_date" model="ir.ui.view">
-        <field name="name">sale.order.commitment.date</field>
+    <record id="sale_order_report_commitment_date" model="ir.ui.view">
+        <field name="name">sale.order.report.commitment.date.report</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.report_saleorder_document"/>
         <field name="arch" type="xml">

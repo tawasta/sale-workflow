@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Sale Order - Commitment Date",
-    "summary": "Add commitment date to sale order with title: Confirmed Date",
+    "name": "Sale Order Report - Commitment Date",
+    "summary": "Add commitment date to sale order report with title: Confirmed Date",
     "category": "Sale",
     "version": "12.0.1.0.0",
     "website": "https://github.com/Tawasta/sale-workflow",
