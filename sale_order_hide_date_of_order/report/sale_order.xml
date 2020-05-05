@@ -2,7 +2,8 @@
 
 <odoo>
     <template id="sale_order_customer_order_date_report_saleorder_document" inherit_id="sale.report_saleorder_document">
-        <xpath expr="//div[@id='informations']/div[2]" position="replace">
+        <xpath expr="//div[starts-with(@t-if,'doc.confirmation_date')]"
+            position="replace">
         </xpath>
     </template>
 </odoo>
