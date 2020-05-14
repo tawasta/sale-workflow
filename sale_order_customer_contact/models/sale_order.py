@@ -19,24 +19,30 @@ class SaleOrder(models.Model):
     @api.multi
     @api.onchange("partner_id")
     def onchange_partner(self):
-        self.ensure_one()
+        for record in self:
+            if not record.partner_id:
+                # Don't get a contact if there is no partner
+                continue
 
-        # Don't get a contact if there is no partner
-        if not self.partner_id:
-            return False
+            if record.partner_id != record.partner_id.commercial_partner_id:
+                # Force commercial partner as partner
+                record.partner_id = record.partner_id.commercial_partner_id
 
-        # Contact is already set
-        if self.customer_contact_id.parent_id == self.partner_id:
-            return False
+            if record.customer_contact_id.commercial_partner_id == \
+                    record.partner_id:
+                # Contact is already set
+                continue
 
-        self.customer_contact_id = self.partner_id.search(
-            [
-                ("parent_id", "=", self.partner_id.id),
-                ("type", "=", "contact"),
-                ("is_company", "=", False),
-            ],
-            limit=1,
-        )
+            customer_contact_id = record.partner_id.search(
+                [
+                    ("parent_id", "=", record.partner_id.id),
+                    ("type", "=", "contact"),
+                    ("is_company", "=", False),
+                ],
+                limit=1,
+            )
+
+            record.customer_contact_id = customer_contact_id
 
     @api.multi
     @api.onchange("partner_id")
@@ -68,3 +74,23 @@ class SaleOrder(models.Model):
             self.customer_contact_id and self.customer_contact_id.id or False
         )
         return invoice_vals
+
+    @api.multi
+    def create(self, values):
+        if 'customer_contact_id' not in values:
+            values['customer_contact_id'] = values['partner_id']
+
+        res = super(SaleOrder, self).create(values)
+        res.onchange_partner()
+
+        return res
+
+    @api.multi
+    def write(self, values):
+        if 'partner_id' in values:
+            # Force using commercial partner as partner
+            partner = self.env['res.partner'].browse(values['partner_id'])
+            if partner.commercial_partner_id != partner:
+                values['partner_id'] = partner.commercial_partner_id.id
+
+        return super(SaleOrder, self).write(values)
