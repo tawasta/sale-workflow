@@ -74,23 +74,3 @@ class SaleOrder(models.Model):
             self.customer_contact_id and self.customer_contact_id.id or False
         )
         return invoice_vals
-
-    @api.model
-    def create(self, values):
-        if 'customer_contact_id' not in values:
-            values['customer_contact_id'] = values['partner_id']
-
-        res = super(SaleOrder, self).create(values)
-        res.onchange_partner()
-
-        return res
-
-    @api.multi
-    def write(self, values):
-        if 'partner_id' in values:
-            # Force using commercial partner as partner
-            partner = self.env['res.partner'].browse(values['partner_id'])
-            if partner.commercial_partner_id != partner:
-                values['partner_id'] = partner.commercial_partner_id.id
-
-        return super(SaleOrder, self).write(values)
