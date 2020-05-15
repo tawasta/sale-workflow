@@ -75,7 +75,7 @@ class SaleOrder(models.Model):
         )
         return invoice_vals
 
-    @api.multi
+    @api.model
     def create(self, values):
         if 'customer_contact_id' not in values:
             values['customer_contact_id'] = values['partner_id']
