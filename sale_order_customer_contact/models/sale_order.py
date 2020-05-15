@@ -74,4 +74,3 @@ class SaleOrder(models.Model):
             self.customer_contact_id and self.customer_contact_id.id or False
         )
         return invoice_vals
-
