@@ -13,12 +13,12 @@ class SaleOrder(models.Model):
         store=True
     )
 
-    @api.depends("week_of_shipment", "date_order")
+    @api.depends("week_of_shipment", "expected_date")
     def _compute_week_of_shipment(self):
         for record in self:
-            if record.date_order:
+            if record.expected_date:
                 record.week_of_shipment = datetime.date(
-                    self.date_order.year,
-                    self.date_order.month,
-                    self.date_order.day
+                    self.expected_date.year,
+                    self.expected_date.month,
+                    self.expected_date.day
                 ).isocalendar()[1]
