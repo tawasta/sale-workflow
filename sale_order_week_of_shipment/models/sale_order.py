@@ -13,11 +13,14 @@ class SaleOrder(models.Model):
         stored=True
     )
 
+    _previous_week_of_shipment_value = fields.Integer()
+
     def compute_week_of_shipment(self):
         if self.expected_date:
-            if self.week_of_shipment == 0:
+            if self._previous_week_of_shipment_value == 0:
                 self.week_of_shipment = datetime.date(
                     self.expected_date.year,
                     self.expected_date.month,
                     self.expected_date.day
                 ).isocalendar()[1]
+                self._previous_week_of_shipment_value = self.week_of_shipment
