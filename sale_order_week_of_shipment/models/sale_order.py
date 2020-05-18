@@ -18,17 +18,5 @@ class SaleOrder(models.Model):
 
     week_of_shipment = fields.Integer(
         string="Week of shipment",
-        default=compute_week_of_shipment,
-        compute="temp_compute",
-        stored=True,
-        readonly=False
+        default=compute_week_of_shipment
     )
-
-    def temp_compute(self):
-        if self.week_of_shipment is None:
-            if self.expected_date:
-                self.week_of_shipment = datetime.date(
-                    self.expected_date.year,
-                    self.expected_date.month,
-                    self.expected_date.day
-                ).isocalendar()[1]
