@@ -17,8 +17,5 @@ class SaleOrder(models.Model):
     week_of_shipment = fields.Integer(
         string="Week of shipment",
         readonly=False,
-        default=compute_week_of_shipment,
-        stored=True
+        default=compute_week_of_shipment
     )
-
-    _previous_week_of_shipment_value = fields.Integer()
