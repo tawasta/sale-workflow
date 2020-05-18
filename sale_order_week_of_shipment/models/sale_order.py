@@ -23,3 +23,5 @@ class SaleOrder(models.Model):
                     self.expected_date.month,
                     self.expected_date.day
                 ).isocalendar()[1]
+            else:
+                record.week_of_shipment = 0
