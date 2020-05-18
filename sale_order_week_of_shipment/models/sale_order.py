@@ -27,4 +27,8 @@ class SaleOrder(models.Model):
     def temp_compute(self):
         if self.week_of_shipment is None:
             if self.expected_date:
-                self.week_of_shipment = self.compute_week_of_shipment()
+                self.week_of_shipment = datetime.date(
+                    self.expected_date.year,
+                    self.expected_date.month,
+                    self.expected_date.day
+                ).isocalendar()[1]
