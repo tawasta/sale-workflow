@@ -29,7 +29,7 @@
     "application": False,
     "installable": True,
     "external_dependencies": {"python": [], "bin": []},
-    "depends": ["stock", "sale", "sale_management"],
+    "depends": ["sale"],
     "data": ["views/sale_order.xml", "report/sale_order.xml"],
     "demo": [],
 }
