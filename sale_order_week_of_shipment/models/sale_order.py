@@ -18,6 +18,9 @@ class SaleOrder(models.Model):
 
     week_of_shipment = fields.Integer(
         string="Week of shipment",
-        readonly=False,
-        default=compute_week_of_shipment
+        default=compute_week_of_shipment,
+        compute="temp_compute"
     )
+
+    def temp_compute(self):
+        self.week_of_shipment = self.compute_week_of_shipment()
