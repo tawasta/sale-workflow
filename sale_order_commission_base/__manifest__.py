@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,17 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Sale Order - Week of Shipment",
-    "summary": "Week of shipment field to sale order",
+    "name": "Sale Order commission base",
+    "summary": "Sale Order commission base",
     "version": "12.0.1.0.0",
-    "category": "Sales",
-    "website": "https://github.com/Tawasta/sale-workflow",
+    "category": "Sale Workflow",
+    "website": "https://tawasta.fi",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "external_dependencies": {"python": [], "bin": []},
     "depends": ["sale"],
-    "data": ["views/sale_order.xml", "report/sale_order.xml"],
-    "demo": [],
+    "data": ["views/sale_order.xml"],
 }
