@@ -18,9 +18,9 @@ class SaleOrder(models.Model):
         for record in self:
             if record.expected_date:
                 record.week_of_shipment = datetime.date(
-                    self.expected_date.year,
-                    self.expected_date.month,
-                    self.expected_date.day
+                    record.expected_date.year,
+                    record.expected_date.month,
+                    record.expected_date.day
                 ).isocalendar()[1]
             else:
                 record.week_of_shipment = 0
