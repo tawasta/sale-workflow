@@ -14,9 +14,10 @@ class SaleOrder(models.Model):
     )
 
     def compute_week_of_shipment(self):
-        if self.expected_date and self.week_of_shipment == 0:
-            self.week_of_shipment = datetime.date(
-                self.expected_date.year,
-                self.expected_date.month,
-                self.expected_date.day
-            ).isocalendar()[1]
+        if self.expected_date:
+            if self.week_of_shipment == 0:
+                self.week_of_shipment = datetime.date(
+                    self.expected_date.year,
+                    self.expected_date.month,
+                    self.expected_date.day
+                ).isocalendar()[1]
