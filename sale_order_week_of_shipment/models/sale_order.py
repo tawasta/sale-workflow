@@ -24,5 +24,5 @@ class SaleOrder(models.Model):
     )
 
     def temp_compute(self):
-        if self.week_of_shipment == 0:
+        if self.week_of_shipment == 0 and self.expected_date:
             self.week_of_shipment = self.compute_week_of_shipment()
