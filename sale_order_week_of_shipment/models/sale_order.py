@@ -13,7 +13,7 @@ class SaleOrder(models.Model):
         store=True
     )
 
-    @api.depends("week_of_shipment", "expected_date")
+    @api.depends("expected_date")
     def _compute_week_of_shipment(self):
         for record in self:
             if record.expected_date:
