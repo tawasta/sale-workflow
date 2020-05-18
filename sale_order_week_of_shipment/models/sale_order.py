@@ -6,6 +6,14 @@ class SaleOrder(models.Model):
 
     _inherit = "sale.order"
 
+    def compute_week_of_shipment(self):
+        if self.expected_date:
+            datetime.date(
+                self.expected_date.year,
+                self.expected_date.month,
+                self.expected_date.day
+            ).isocalendar()[1]
+
     week_of_shipment = fields.Integer(
         string="Week of shipment",
         readonly=False,
@@ -14,11 +22,3 @@ class SaleOrder(models.Model):
     )
 
     _previous_week_of_shipment_value = fields.Integer()
-
-    def compute_week_of_shipment(self):
-        if self.expected_date:
-            datetime.date(
-                self.expected_date.year,
-                self.expected_date.month,
-                self.expected_date.day
-            ).isocalendar()[1]
