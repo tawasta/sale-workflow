@@ -13,6 +13,8 @@ class SaleOrder(models.Model):
                 self.expected_date.month,
                 self.expected_date.day
             ).isocalendar()[1]
+        else:
+            return 0
 
     week_of_shipment = fields.Integer(
         string="Week of shipment",
