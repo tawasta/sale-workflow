@@ -10,7 +10,8 @@ class SaleOrder(models.Model):
         string="Week of shipment",
         readonly=False,
         default=0,
-        compute="compute_week_of_shipment"
+        compute="compute_week_of_shipment",
+        stored=True
     )
 
     def compute_week_of_shipment(self):
