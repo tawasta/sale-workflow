@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, api
 import datetime
 
 
@@ -6,17 +6,19 @@ class SaleOrder(models.Model):
 
     _inherit = "sale.order"
 
-    def compute_week_of_shipment(self):
-        if self.expected_date:
-            datetime.date(
-                self.expected_date.year,
-                self.expected_date.month,
-                self.expected_date.day
-            ).isocalendar()[1]
-        else:
-            return 0
-
     week_of_shipment = fields.Integer(
         string="Week of shipment",
-        default=compute_week_of_shipment
+        compute="_compute_week_of_shipment",
+        readonly=False,
+        store=True
     )
+
+    @api.depends("week_of_shipment", "date_order")
+    def _compute_week_of_shipment(self):
+        for record in self:
+            if record.date_order:
+                record.week_of_shipment = datetime.date(
+                    self.date_order.year,
+                    self.date_order.month,
+                    self.date_order.day
+                ).isocalendar()[1]
