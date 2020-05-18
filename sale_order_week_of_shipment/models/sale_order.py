@@ -20,7 +20,8 @@ class SaleOrder(models.Model):
         string="Week of shipment",
         default=compute_week_of_shipment,
         compute="temp_compute",
-        stored=True
+        stored=True,
+        readonly=False
     )
 
     def temp_compute(self):
