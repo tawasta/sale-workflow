@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
 
             <field name="partner_shipping_id" position="replace"/>
-            <field name="related_project_id" position="replace" />
+            <!--<field name="related_project_id" position="replace" />-->
 
             <field name="partner_shipping_id" position="after">
                 <field name="project_id"
@@ -18,12 +18,14 @@
                        groups="analytic.group_analytic_accounting"
                 />
 
+            <!--
                 <field name="related_project_id"
                        string="Project"
                        attrs="{'readonly': ['|',('project_id','!=',False),('invoice_count','!=',0),('state','=','sale')],'invisible':[('state','!=','sale')]}"
                        context="{'default_partner_id':partner_invoice_id, 'default_name':name}"
                        groups="analytic.group_analytic_accounting"
                 />
+                -->
             </field>
 
         </field>
