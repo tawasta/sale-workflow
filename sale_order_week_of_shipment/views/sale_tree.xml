@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="view_order_tree" model="ir.ui.view">
+        <field name="name">sale.order.tree.week</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="week_of_shipment" groups="sale.group_sale_order_dates"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

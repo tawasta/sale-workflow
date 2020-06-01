@@ -30,6 +30,6 @@
     "installable": True,
     "external_dependencies": {"python": [], "bin": []},
     "depends": ["sale"],
-    "data": ["views/sale_order.xml", "report/sale_order.xml"],
+    "data": ["views/sale_order.xml", "views/sale_tree.xml", "report/sale_order.xml"],
     "demo": [],
 }
