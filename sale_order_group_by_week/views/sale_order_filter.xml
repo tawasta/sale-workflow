@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="view_sales_order_filter" model="ir.ui.view">
+        <field name="name">sale.order.list.select.week</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
+        <field name="arch" type="xml">
+            <filter context="{'group_by':'date_order'}" position="after">
+                <filter string="Delivery week" name="delivery_week" domain="[]" context="{'group_by':'week_of_shipment'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

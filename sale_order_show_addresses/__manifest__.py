@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale", "base_view_inheritance_extension"],
+    "depends": ["sale"],
     "data": ["views/sale_order.xml"],
 }
