@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-================================================
-Partner address fields as editable on sale order
-================================================
+==========================
+Sale order address details
+==========================
 
-Partner address fields as editable on sale order
+Sale order address details
 
 Configuration
 =============
