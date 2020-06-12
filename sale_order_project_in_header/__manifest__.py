@@ -21,7 +21,7 @@
 {
     "name": "Project in sale order header",
     "summary": "Moves analytic account to SO header and sets it as required",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "category": "Sales",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
@@ -30,6 +30,8 @@
     "installable": True,
     "external_dependencies": {"python": [], "bin": []},
     "depends": ["sale"],
-    "data": ["views/sale_order.xml"],
+    "data": [
+        "views/sale_order.xml"
+    ],
     "demo": [],
 }

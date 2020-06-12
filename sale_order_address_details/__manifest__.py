@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Show Sale Order invoice/delivery address info",
-    "summary": "Show the addresses below the fields",
+    "name": "Sale order address details",
+    "summary": "Sale order address details",
     "category": "Sales",
     "version": "12.0.1.0.0",
     "website": "https://github.com/Tawasta/sale-workflow",

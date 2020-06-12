@@ -24,10 +24,6 @@ class SaleOrder(models.Model):
                 # Don't get a contact if there is no partner
                 continue
 
-            if record.partner_id != record.partner_id.commercial_partner_id:
-                # Force commercial partner as partner
-                record.partner_id = record.partner_id.commercial_partner_id
-
             if record.customer_contact_id.commercial_partner_id == \
                     record.partner_id:
                 # Contact is already set
