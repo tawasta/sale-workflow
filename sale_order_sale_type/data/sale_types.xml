@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="sale_type_1"
+        model="sale.type">
+        <field name="name">Regular</field>
+    </record>
+
+    <record id="sale_type_2"
+        model="sale.type">
+        <field name="name">Claim Handling</field>
+    </record>
+
+    <record id="sale_type_3"
+        model="sale.type">
+        <field name="name">Marketing</field>
+    </record>
+
+    <record id="sale_type_4"
+        model="sale.type">
+        <field name="name">Internal</field>
+    </record>
+
+</odoo>
+<!--
+
+    #_SALE_TYPES = [("regular", _("Regular")),
+                   #("claim", _("Claim Handling")),
+                   #("marketing", _("Marketing")),
+                   #("internal", _("Internal"))]
+                   -->
