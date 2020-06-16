@@ -4,28 +4,25 @@
     <record id="sale_type_1"
         model="sale.type">
         <field name="name">Regular</field>
+        <field name="code">regular</field>
     </record>
 
     <record id="sale_type_2"
         model="sale.type">
         <field name="name">Claim Handling</field>
+        <field name="code">claim_handling</field>
     </record>
 
     <record id="sale_type_3"
         model="sale.type">
         <field name="name">Marketing</field>
+        <field name="code">marketing</field>
     </record>
 
     <record id="sale_type_4"
         model="sale.type">
         <field name="name">Internal</field>
+        <field name="code">internal</field>
     </record>
 
 </odoo>
-<!--
-
-    #_SALE_TYPES = [("regular", _("Regular")),
-                   #("claim", _("Claim Handling")),
-                   #("marketing", _("Marketing")),
-                   #("internal", _("Internal"))]
-                   -->

@@ -7,3 +7,7 @@ class SaleType(models.Model):
     name = fields.Char(
         string="Sale Type",
     )
+
+    code = fields.Char(
+        string="Sale Type Code",
+    )
