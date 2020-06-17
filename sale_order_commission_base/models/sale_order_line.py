@@ -21,5 +21,5 @@ class SaleOrderLine(models.Model):
 
     def _compute_commission(self):
         for line in self:
-            line.commission = line.product_id.lst_price * \
+            line.commission = line.price_unit * \
                 line.product_uom_qty * (1 - (line.discount or 0.0) / 100.0)
