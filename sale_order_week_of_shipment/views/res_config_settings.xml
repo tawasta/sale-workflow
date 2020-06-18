@@ -24,16 +24,15 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-6 o_setting_box" id="week_of_shipment_force_additional_weeks">
+                <div class="col-12 col-lg-6 o_setting_box" id="week_of_shipment_additional_weeks_group">
                     <div class="o_setting_left_pane">
-                        <field name="week_of_shipment_force_additional_weeks"/>
                     </div>
                     <div class="o_setting_right_pane">
-                        <label for="week_of_shipment_force_additional_weeks"/>
+                        <label for="week_of_shipment_additional_weeks_group"/>
                         <div class="text-muted">
-                            Dont let user set the value lower than default(today)
-                            plus additional weeks
+                            Group to apply the additional weeks rules to
                         </div>
+                        <field name="week_of_shipment_additional_weeks_group"/>
                     </div>
                 </div>
 
