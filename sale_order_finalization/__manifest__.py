@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,23 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Sale Order - Week of Shipment",
-    "summary": "Week of shipment field to sale order",
-    "version": "12.0.1.1.0",
+    "name": "Sale Order Finalization",
+    "summary": "Adds a checkbox field for sales in finalization",
+    "version": "12.0.1.0.0",
     "category": "Sales",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "external_dependencies": {"python": [], "bin": []},
     "depends": ["sale"],
-    "data": [
-        "views/sale_order.xml",
-        "report/sale_order.xml",
-        "views/sale_tree.xml",
-        "views/res_config_settings.xml",
-        "views/sale_order_search.xml"
-    ],
-    "demo": [],
+    "data": ["views/sale_order.xml"],
 }

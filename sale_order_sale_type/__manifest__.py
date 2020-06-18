@@ -1,6 +1,6 @@
 ##############################################################################
 #
-#    Author: Tawasta
+#    Author: Oy Tawasta OS Technologies Ltd.
 #    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,23 +19,16 @@
 ##############################################################################
 
 {
-    "name": "Sale Order - Week of Shipment",
-    "summary": "Week of shipment field to sale order",
-    "version": "12.0.1.1.0",
-    "category": "Sales",
-    "website": "https://github.com/Tawasta/sale-workflow",
-    "author": "Tawasta",
-    "license": "AGPL-3",
-    "application": False,
-    "installable": True,
-    "external_dependencies": {"python": [], "bin": []},
-    "depends": ["sale"],
-    "data": [
-        "views/sale_order.xml",
-        "report/sale_order.xml",
-        "views/sale_tree.xml",
-        "views/res_config_settings.xml",
-        "views/sale_order_search.xml"
+    'name': 'Sale Order - Sale Type',
+    'category': 'Sale',
+    'version': '12.0.1.0.0',
+    'author': 'Tawasta',
+    'website': 'https://gitlab.com/tawasta/odoo/secto-design',
+    'depends': ['sale', 'sale_management'],
+    'description': "Add sale type to sale order",
+    'data': [
+        'views/sale_order.xml',
+        'security/ir.model.access.csv',
+        'data/sale_types.xml',
     ],
-    "demo": [],
 }
