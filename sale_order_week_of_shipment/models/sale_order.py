@@ -1,5 +1,5 @@
 from odoo import fields, models, api
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
 
 # Uncomment next line to enable debugging logging
@@ -35,6 +35,19 @@ class SaleOrder(models.Model):
         readonly=False,
     )
 
+    def _get_day_from_week(self, week_number):
+        """Returns friday because friday is the best day"""
+        days_in_week = 7
+        nth_day = week_number * days_in_week - days_in_week
+        current_year = datetime.now().year
+        start_of_year = datetime(current_year, 1, 1)
+        d = start_of_year + timedelta(days=nth_day)
+        increment = 1
+        while d.strftime("%A") != "Friday":
+            d = start_of_year + timedelta(days=nth_day + increment, hours=12)
+            increment = increment + 1
+        return d
+
     @api.depends("week_of_shipment")
     @api.onchange("week_of_shipment")
     def _compute_week_of_shipment(self):
@@ -63,3 +76,4 @@ class SaleOrder(models.Model):
                         and new_week <= current_week + additional_weeks:
                     new_week = current_week + additional_weeks
                 record.week_of_shipment = new_week
+                record.commitment_date = self._get_day_from_week(new_week)
