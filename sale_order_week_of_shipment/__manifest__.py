@@ -21,7 +21,7 @@
 {
     "name": "Sale Order - Week of Shipment",
     "summary": "Week of shipment field to sale order",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Sales",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
@@ -34,6 +34,7 @@
         "views/sale_order.xml",
         "report/sale_order.xml",
         "views/sale_tree.xml",
+        "views/res_config_settings.xml",
         "views/sale_order_search.xml"
     ],
     "demo": [],
