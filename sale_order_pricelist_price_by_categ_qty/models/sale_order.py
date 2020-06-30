@@ -7,7 +7,9 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     def compute_global_discount(self):
-        """Button for calculating unit prices based on pricelist product quantities"""
+        """
+        Button for calculating unit prices based on pricelist product quantities
+        """
         pricelist = self.pricelist_id
         # Create empty recordset for sale order line, this is used in dictionary
         sale_line_model = self.env['sale.order.line']
@@ -21,10 +23,11 @@ class SaleOrder(models.Model):
                 qty_and_line = categ_products.get(
                     product_category, [0, list(sale_line_model)]
                 )
-                # Result is a Python dictionary where keys are product categories
-                # and values are sale order line records
+                # Result is a Python dictionary where keys are product
+                # categories and values are sale order line records
                 categ_products[product_category] = [
-                    qty_and_line[0] + line.product_uom_qty, qty_and_line[1] + [line]
+                    qty_and_line[0] + line.product_uom_qty,
+                    qty_and_line[1] + [line]
                 ]
 
         # items are records within pricelist
@@ -38,8 +41,8 @@ class SaleOrder(models.Model):
                 smallest_qty = 0
                 index = 0
                 item_price = 0
-                # Keep looping until pricelist item with largest appropriate quantity
-                # is fetched
+                # Keep looping until pricelist item with largest appropriate
+                # quantity is fetched
                 while smallest_qty < biggest_qty:
                     # Break the loop when all items have been checked
                     if index == len(items):
@@ -48,17 +51,21 @@ class SaleOrder(models.Model):
 
                     prod_tmpl = item.product_tmpl_id
 
-                    # Get item's price_surcharge-value only if
-                    #     - Product template is used
-                    #     - Quantitity used on item is equal or less than SO line qty
-                    #     - Product template is the same as SO line's product template
+                    # Get item's price_surcharge-value only if:
+                    # Product template is used
+                    # Quantitity used on item is equal or less than SO line qty
+                    # Product template is the same as SO line's product template
                     if (prod_tmpl and prod_tmpl.categ_id == categ and
-                            item.min_quantity <= categ_products.get(categ)[0] and
-                            prod_tmpl == line.product_id.product_tmpl_id):
+                            item.min_quantity <= categ_products.get(categ)[0]
+                            and prod_tmpl == line.product_id.product_tmpl_id):
                         smallest_qty = item.min_quantity
-                        # price_surcharge-field is item's added price and this is
-                        # used to substitute sale order line's unit price
+                        # price_surcharge-field is item's added price and
+                        # it is used to substitute sale order line's unit price
                         item_price = item.price_surcharge
+
+                        # Add attribute extra to pricelist price
+                        if item.applied_on != '0_product_variant':
+                            item_price += line.product_id.price_extra
                     index += 1
                 if item_price:
                     line.price_unit = item_price
