@@ -59,6 +59,10 @@ class SaleOrder(models.Model):
                         # price_surcharge-field is item's added price and this is
                         # used to substitute sale order line's unit price
                         item_price = item.price_surcharge
+
+                        # Add attribute extra to pricelist price
+                        if item.applied_on != '0_product_variant':
+                            item_price += line.product_id.price_extra
                     index += 1
                 if item_price:
                     line.price_unit = item_price
