@@ -4,6 +4,7 @@ from odoo import models
 class SaleOrderPickingReturnWizard(models.TransientModel):
 
     _name = "sale.order.picking.return.wizard"
+    _description = "Sale order picking return wizard"
 
     def action_return_picking(self):
         # Sale order cancel with picking return
