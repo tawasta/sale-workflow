@@ -8,5 +8,5 @@ class SaleOrder(models.Model):
     client_order_ref = fields.Char(
         string='Customer Reference',
         store=True,
-        copied=True,
+        copy=True,
     )
