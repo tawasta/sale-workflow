@@ -2,20 +2,19 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-======================
-Header for Sale Orders
-======================
+=========================================
+Sale order - Duplicate customer reference
+=========================================
 
-* Adds a header/title field to Sale Orders and Sale order report
-* When an invoice is created from an SO, the data is passed to the invoice as well
+When duplicating sale order, also copy customer reference
 
 Installation
 ============
-* Just install the module
+\-
 
 Configuration
 =============
-* No configuration needed
+\-
 
 Usage
 =====
@@ -31,9 +30,7 @@ Credits
 Contributors
 ------------
 
-* Timo Kekäläinen <timo.kekalainen@tawasta.fi>
-* Timo Talvitie <timo.talvitie@tawasta.fi>
-* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Joona Isoaho <joona.isoaho@tawasta.fi>
 
 Maintainer
 ----------
