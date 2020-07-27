@@ -10,6 +10,6 @@ class SaleOrder(models.Model):
         res = super(SaleOrder, self).action_confirm()
 
         for pick in self.picking_ids:
-            pick.write({"comment": self.note or ""})
+            pick.write({"note": self.description or ""})
 
         return res
