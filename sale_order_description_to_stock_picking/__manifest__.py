@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Sale Order note to Stock picking",
-    "summary": "Adds sale order note to stock picking",
+    "name": "Sale Order description to Stock picking",
+    "summary": "Adds sale order description to stock picking",
     "version": "12.0.1.0.0",
     "category": "Sales",
     "website": "https://github.com/Tawasta/sale-workflow",
@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale_stock", "stock_picking_comment"],
+    "depends": ["sale_stock", "sale_order_description"],
     "data": [],
 }
