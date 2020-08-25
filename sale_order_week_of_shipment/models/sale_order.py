@@ -2,8 +2,7 @@ from odoo import fields, models, api
 from datetime import datetime, timedelta
 import logging
 
-# Uncomment next line to enable debugging logging
-# logging.basicConfig(level=100)
+_logger = logging.getLogger(__name__)
 
 
 class SaleOrder(models.Model):
@@ -11,7 +10,18 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     def _compute_commitment_date_from_week(self, week_number):
-        """Return friday because friday is the best day"""
+        """ Return friday because friday is the best day """
+
+        year, week, day = datetime.now().isocalendar()
+        if week_number < week:
+            # If the week number is smaller than current week number,
+            # jump to the next year
+            year += 1
+
+        week_string = "{}-{}-{}".format(year, week_number, 5)
+        calculated_day = datetime.strptime(week_string, "%G-%V-%u")
+        return calculated_day
+
         days_in_week = 7
         nth_day = week_number * days_in_week - days_in_week
         current_year = datetime.now().year
@@ -19,21 +29,21 @@ class SaleOrder(models.Model):
         calculated_day = start_of_year + timedelta(days=nth_day, hours=12)
         increment = 1
         while calculated_day.strftime("%A") != "Friday":
-            calculated_day = start_of_year \
-                + timedelta(days=nth_day + increment, hours=12)
+            calculated_day = start_of_year + timedelta(
+                days=nth_day + increment, hours=12
+            )
             increment = increment + 1
         return calculated_day
 
     def _default_week_of_shipment(self):
         current_week = datetime.today().isocalendar()[1]
-        logging.log(100, "Current week: {0}".format(current_week))
+        _logger.debug("Current week: {0}".format(current_week))
 
         additional_weeks = 0
         if self.company_id.week_of_shipment_additional_weeks:
             additional_weeks = self.company_id.week_of_shipment_additional_weeks
-        logging.log(100, "additional_weeks: {0}".format(additional_weeks))
+        _logger.debug("additional_weeks: {0}".format(additional_weeks))
 
-        new_week = 0
         if additional_weeks > 0:
             new_week = current_week + additional_weeks
         else:
@@ -42,9 +52,7 @@ class SaleOrder(models.Model):
         return new_week
 
     week_of_shipment = fields.Integer(
-        string="Week of shipment",
-        default=_default_week_of_shipment,
-        readonly=False,
+        string="Week of shipment", default=_default_week_of_shipment, readonly=False,
     )
 
     def _ensure_proper_week(self, week):
@@ -59,11 +67,13 @@ class SaleOrder(models.Model):
     @api.onchange("week_of_shipment")
     def _compute_week_of_shipment(self):
         current_week = datetime.today().isocalendar()[1]
-        logging.log(100, "Current week: {0}".format(current_week))
+        _logger.debug("Current week: {0}".format(current_week))
 
         additional_weeks = 0
-        apply_additional_week_rule = self.env.user\
+        apply_additional_week_rule = (
+            self.env.user
             in self.company_id.week_of_shipment_additional_weeks_group.users
+        )
 
         if not self.company_id.week_of_shipment_additional_weeks_group:
             # If no group is set then rules apply to everybody
@@ -72,16 +82,32 @@ class SaleOrder(models.Model):
         if self.company_id.week_of_shipment_additional_weeks:
             additional_weeks = self.company_id.week_of_shipment_additional_weeks
 
-        logging.log(100, "Apply additional week rule: {0}"
-                    .format(apply_additional_week_rule))
+        _logger.debug(
+            "Apply additional week rule: {0}".format(apply_additional_week_rule)
+        )
 
         for record in self:
-            logging.log(100, record.week_of_shipment)
-            if record.week_of_shipment:
-                new_week = self._ensure_proper_week(record.week_of_shipment)
-                if apply_additional_week_rule:
-                    if new_week <= current_week + additional_weeks:
-                        new_week = current_week + additional_weeks
-                record.week_of_shipment = new_week
-                record.commitment_date = \
-                    self._compute_commitment_date_from_week(new_week)
+            _logger.debug(
+                "Requested week of shipment {0}".format(record.week_of_shipment)
+            )
+            if not record.week_of_shipment:
+                continue
+
+            # Requested week
+            new_week = self._ensure_proper_week(record.week_of_shipment)
+            # First possible week
+            possible_week = current_week + additional_weeks
+
+            # Requested commitment date
+            commitment_date = self._compute_commitment_date_from_week(new_week)
+            # First possible commitment date
+            possible_commitment_date = self._compute_commitment_date_from_week(
+                current_week + additional_weeks
+            )
+            # Postpone commitment date, if requested is not possible
+            if commitment_date < possible_commitment_date:
+                commitment_date = possible_commitment_date
+                new_week = possible_week
+
+            record.week_of_shipment = new_week
+            record.commitment_date = commitment_date
