@@ -22,19 +22,6 @@ class SaleOrder(models.Model):
         calculated_day = datetime.strptime(week_string, "%G-%V-%u")
         return calculated_day
 
-        days_in_week = 7
-        nth_day = week_number * days_in_week - days_in_week
-        current_year = datetime.now().year
-        start_of_year = datetime(current_year, 1, 1, 0, 0)
-        calculated_day = start_of_year + timedelta(days=nth_day, hours=12)
-        increment = 1
-        while calculated_day.strftime("%A") != "Friday":
-            calculated_day = start_of_year + timedelta(
-                days=nth_day + increment, hours=12
-            )
-            increment = increment + 1
-        return calculated_day
-
     def _default_week_of_shipment(self):
         current_week = datetime.today().isocalendar()[1]
         _logger.debug("Current week: {0}".format(current_week))
