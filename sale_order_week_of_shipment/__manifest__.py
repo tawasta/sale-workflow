@@ -28,7 +28,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "external_dependencies": {"python": [], "bin": []},
+    "external_dependencies": {"python": ["isoweek"], "bin": []},
     "depends": ["sale"],
     "data": [
         "views/sale_order.xml",
