@@ -1,5 +1,6 @@
 from odoo import fields, models, api
 from datetime import datetime, timedelta
+from isoweek import Week
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -18,22 +19,14 @@ class SaleOrder(models.Model):
             # jump to the next year
             year += 1
 
-        week_string = "{}-{}-{}".format(year, week_number, 5)
-        calculated_day = datetime.strptime(week_string, "%G-%V-%u")
-        return calculated_day
+#         week_string = "{}-{}-{}".format(year, week_number, 5)
+#         calculated_day = datetime.strptime(week_string, "%G-%V-%u")
 
-        days_in_week = 7
-        nth_day = week_number * days_in_week - days_in_week
-        current_year = datetime.now().year
-        start_of_year = datetime(current_year, 1, 1, 0, 0)
-        calculated_day = start_of_year + timedelta(days=nth_day, hours=12)
-        increment = 1
-        while calculated_day.strftime("%A") != "Friday":
-            calculated_day = start_of_year + timedelta(
-                days=nth_day + increment, hours=12
-            )
-            increment = increment + 1
-        return calculated_day
+        # Temporary fix
+        iso_week = Week(year, week_number).day(4)
+        calculated_day_iso = iso_week.strftime('%Y-%m-%d 00:00:00')
+
+        return calculated_day_iso
 
     def _default_week_of_shipment(self):
         current_week = datetime.today().isocalendar()[1]
