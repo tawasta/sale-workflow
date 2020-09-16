@@ -19,12 +19,12 @@ class SaleOrder(models.Model):
             # jump to the next year
             year += 1
 
-#         week_string = "{}-{}-{}".format(year, week_number, 5)
-#         calculated_day = datetime.strptime(week_string, "%G-%V-%u")
+        #         week_string = "{}-{}-{}".format(year, week_number, 5)
+        #         calculated_day = datetime.strptime(week_string, "%G-%V-%u")
 
         # Temporary fix
         iso_week = Week(year, week_number).day(4)
-        calculated_day_iso = iso_week.strftime('%Y-%m-%d 00:00:00')
+        calculated_day_iso = iso_week.strftime("%Y-%m-%d 00:00:00")
 
         return calculated_day_iso
 
@@ -72,7 +72,10 @@ class SaleOrder(models.Model):
             # If no group is set then rules apply to everybody
             apply_additional_week_rule = True
 
-        if self.company_id.week_of_shipment_additional_weeks:
+        if (
+            self.company_id.week_of_shipment_additional_weeks
+            and apply_additional_week_rule
+        ):
             additional_weeks = self.company_id.week_of_shipment_additional_weeks
 
         _logger.debug(
