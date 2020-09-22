@@ -15,4 +15,4 @@ class SaleOrder(models.Model):
                     # They will reset to 0 when "to invoice" compute triggers
                     line.qty_to_invoice = 1
 
-        return super(SaleOrder, self).action_invoice_create(kwargs)
+        return super(SaleOrder, self).action_invoice_create(**kwargs)
