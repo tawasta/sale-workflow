@@ -22,7 +22,7 @@
     "name": "Sale order line notes to invoice",
     "summary": "Move SO line notes to invoice",
     "category": "Sale",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
