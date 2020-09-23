@@ -7,12 +7,12 @@
         <field name="inherit_id" ref="sale_order_project_in_header.view_order_form" />
         <field name="arch" type="xml">
 
-            <field name="related_project_id" position="after">
+            <field name="analytic_account_id" position="after">
                 <field name="stock_location_id"
-                       context="{'default_analytic_account_id':project_id}"
+                       context="{'default_analytic_account_id':analytic_account_id}"
                        groups="analytic.group_analytic_accounting"
                        required="1"
-                       domain="[('analytic_account_id', '=', project_id)]"
+                       domain="[('analytic_account_id', '=', analytic_account_id)]"
                 />
             </field>
 
