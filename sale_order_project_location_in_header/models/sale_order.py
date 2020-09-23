@@ -17,12 +17,17 @@ class SaleOrder(models.Model):
     )
 
     def _default_get_stock_location(self):
-        if self.project_id and self.project_id.default_location_id:
-            self.stock_location_id = self.project_id.default_location_id
+        if self.analytic_account_id and self.analytic_account_id.default_location_id:
+            self.stock_location_id = self.analytic_account_id.default_location_id
 
-    @api.onchange("project_id")
-    @api.depends("project_id")
-    def onchange_project_id_update_stock_location(self):
+    @api.onchange("analytic_account_id")
+    @api.depends("analytic_account_id")
+    def onchange_analytic_account_id_update_stock_location(self):
         for record in self:
-            if record.project_id and record.project_id.default_location_id:
-                record.stock_location_id = record.project_id.default_location_id.id
+            if (
+                record.analytic_account_id
+                and record.analytic_account_id.default_location_id
+            ):
+                record.stock_location_id = (
+                    record.analytic_account_id.default_location_id.id
+                )
