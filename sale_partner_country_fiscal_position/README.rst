@@ -6,14 +6,11 @@
 Determine Partner's Fiscal Position by region
 =============================================
 
-When creating a partner, its selected country determines the fiscal 
-position for that partner. Hence when the selected country is Finland, 
-the Fiscal Position will be 'Subject to VAT'. If the selected country is 
-in Europe, the Fiscal Position will be 'Intra-Community'. If the selected 
-country is outside Europe, then the Fiscal Position will be 'Outside EU'. 
-
-This module has a modified write-method for sale order, which helps 
-setting the Fiscal Position for a Sale Order from Partner. 
+When creating a partner, its selected country determines the fiscal
+position for that partner. Hence when the selected country is Finland,
+the Fiscal Position will be 'Subject to VAT'. If the selected country is
+in Europe, the Fiscal Position will be 'Intra-Community'. If the selected
+country is outside Europe, then the Fiscal Position will be 'Outside EU'.
 
 Configuration
 =============
