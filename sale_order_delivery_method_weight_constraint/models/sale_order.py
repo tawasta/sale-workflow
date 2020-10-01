@@ -11,7 +11,7 @@ class SaleOrder(models.Model):
     min_weight = fields.Float(related="carrier_id.min_weight")
 
     def _get_delivery_methods(self):
-    """This method is used on website sale"""
+        """This method is used on website sale"""
         delivery_methods = super(SaleOrder, self)._get_delivery_methods()
         total_delivery_weight = sum(
             [x.product_id.weight * x.product_uom_qty for

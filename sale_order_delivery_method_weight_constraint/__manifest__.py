@@ -28,7 +28,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["delivery", "sale"],
+    "depends": ["delivery", "sale", "website_sale_delivery"],
     "data": [
         "views/delivery_carrier.xml",
         "views/sale_order.xml"
