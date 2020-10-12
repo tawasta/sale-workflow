@@ -11,20 +11,24 @@ Mandatory Partner Field Check Upon SO Confirmation
 
 Configuration
 =============
-* Set the mandatory customer fields in Sales -> Configuration
+* Set the mandatory customer fields in Sales -> Configuration -> Settings
 
 Usage
 =====
-* Create and confirm a Sale Order as usual. If mandatory fields are empty, 
+* Create and confirm a Sale Order as usual. If mandatory fields are empty,
   an error message is shown
 
 Known issues / Roadmap
 ======================
-* Currently set as uninstallable: the module works, but safety limitations
-  in Odoo core prevent editing the m2m field connections to ir.models.fields
-  so reconfiguring the required fields always raises an exception. The
-  module still works as long as you configure the fields in one go, and
-  if there is need for reconfiguration, you re-install the whole module.
+Timo Talvitie's comment from older version: The module works, but safety
+limitations in Odoo core prevent editing the m2m field connections to
+ir.models.fields so reconfiguring the required fields always raises an
+exception. The module still works as long as you configure the fields in
+one go, and if there is need for reconfiguration, you re-install the whole
+module.
+
+Timo Kekäläinen: An exception did not raise when testing this module, but
+it should uninstalled and fixed if this module causes trouble.
 
 Credits
 =======
@@ -33,6 +37,7 @@ Contributors
 ------------
 
 * Timo Talvitie <timo.talvitie@tawasta.fi>
+* Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 
 Maintainer
 ----------
