@@ -51,8 +51,8 @@ class SaleOrder(models.Model):
     def _ensure_proper_week(self, week):
         if week < 0:
             return 0
-        elif week > 52:
-            return 52
+        elif week > 53:
+            return 53
         else:
             return week
 
