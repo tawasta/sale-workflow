@@ -21,11 +21,18 @@ class SaleOrderLine(models.Model):
             return [('id', 'in', [x.id for x in recs])]
 
     @api.multi
-    @api.depends('analytic_tag_ids')
-    def _compute_analytic_tag_names(self):
+    def cron_compute_tag_names(self):
         lines = self.env['sale.order.line'].search(
                 [('analytic_tag_ids','!=',False)])
         for line in lines:
+            names = [x.name for x in line.analytic_tag_ids]
+            names.sort()
+            line.analytic_tag_name = ', '.join(names)
+
+    @api.multi
+    @api.depends('analytic_tag_ids')
+    def _compute_analytic_tag_names(self):
+        for line in self:
             names = [x.name for x in line.analytic_tag_ids]
             names.sort()
             line.analytic_tag_name = ', '.join(names)
