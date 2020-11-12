@@ -30,7 +30,8 @@
     "installable": True,
     "depends": ["sale_order_line_view"],
     "data": [
+       "data/ir_cron.xml",
        "views/sale_order_line.xml",
-       "views/sale_order_line_search.xml"
+       "views/sale_order_line_search.xml",
     ],
 }

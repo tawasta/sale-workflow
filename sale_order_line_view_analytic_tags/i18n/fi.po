@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-12 07:24+0000\n"
-"PO-Revision-Date: 2020-11-12 09:25+0200\n"
+"POT-Creation-Date: 2020-11-12 13:05+0000\n"
+"PO-Revision-Date: 2020-11-12 15:07+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,13 +19,25 @@ msgstr ""
 
 #. module: sale_order_line_view_analytic_tags
 #: model:ir.model.fields,field_description:sale_order_line_view_analytic_tags.field_sale_order_line__analytic_tag_name
-msgid "Analytic Tag"
-msgstr "Analyyttinen tunniste"
+msgid "Analytic Tag Name"
+msgstr "Analyyttisen tunnisteen nimi"
 
 #. module: sale_order_line_view_analytic_tags
 #: model_terms:ir.ui.view,arch_db:sale_order_line_view_analytic_tags.view_sales_order_line_filter
 msgid "Analytic Tags"
 msgstr "Analyyttiset tunnisteet"
+
+#. module: sale_order_line_view_analytic_tags
+#: model:ir.model,name:sale_order_line_view_analytic_tags.model_sale_order
+msgid "Sale Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_order_line_view_analytic_tags
+#: model:ir.actions.server,name:sale_order_line_view_analytic_tags.ir_cron_compute_line_analytic_tag_names_ir_actions_server
+#: model:ir.cron,cron_name:sale_order_line_view_analytic_tags.ir_cron_compute_line_analytic_tag_names
+#: model:ir.cron,name:sale_order_line_view_analytic_tags.ir_cron_compute_line_analytic_tag_names
+msgid "Sale order line: Compute analytic tags"
+msgstr "Myyntitilausrivit: Laske analyyttiset tunnisteet"
 
 #. module: sale_order_line_view_analytic_tags
 #: model:ir.model,name:sale_order_line_view_analytic_tags.model_sale_order_line

@@ -7,7 +7,8 @@
         <field name="inherit_id" ref="sale_order_line_view.view_order_line_tree"/>
         <field name="arch" type="xml">
             <field name="state" position="after">
-                <field name="analytic_tag_name"/>
+                <field name="analytic_tag_ids" widget="many2many_tags"/>
+                <field name="analytic_tag_name" invisible="1"/>
             </field>
         </field>
     </record>
