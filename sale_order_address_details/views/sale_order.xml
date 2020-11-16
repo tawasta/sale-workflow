@@ -85,7 +85,7 @@
 
                 <label for="partner_shipping_country_id" string=" " class="oe_edit_only" />
                 <div class="o_row mr16 oe_edit_only" id="partner-shipping-country-div">
-                    <field name="partner_invoice_country_id"
+                    <field name="partner_shipping_country_id"
                            readonly="1" />
                 </div>
             </field>
