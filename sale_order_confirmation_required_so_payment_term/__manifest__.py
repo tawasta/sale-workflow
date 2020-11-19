@@ -29,7 +29,7 @@
     "application": False,
     "installable": True,
     "external_dependencies": {"python": [], "bin": []},
-    "depends": ["account"],
+    "depends": ["sale"],
     "data": [],
     "demo": [],
 }
