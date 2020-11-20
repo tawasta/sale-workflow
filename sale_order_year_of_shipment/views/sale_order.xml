@@ -22,4 +22,15 @@
             </field>
         </field>
     </record>
+
+    <record id="view_quotation_tree" model="ir.ui.view">
+        <field name="name">sale.order.quotation.tree.year.of.shipment</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="year_of_shipment"/>
+            </field>
+        </field>
+    </record>
 </odoo>
