@@ -29,5 +29,5 @@
     "application": False,
     "installable": True,
     "depends": ["sale"],
-    "data": ["views/sale_order.xml"],
+    "data": ["report/sale_order_report.xml", "views/sale_order.xml"],
 }
