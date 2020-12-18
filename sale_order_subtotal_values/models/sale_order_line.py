@@ -5,14 +5,9 @@ class SaleOrderLine(models.Model):
 
     _inherit = 'sale.order.line'
 
-    @api.multi
-    def write(self, values):
-        price = self.price_unit * (1 - (self.discount or 0.0) / 100.0)
-        taxes = self.tax_id.compute_all(
-            price, self.order_id.currency_id, self.product_uom_qty,
-            product=self.product_id, partner=self.order_id.partner_shipping_id)
-        values['price_tax'] = sum(t.get('amount', 0.0) for t in
-                                  taxes.get('taxes', []))
-        values['price_total'] = taxes['total_included']
-        values['price_subtotal'] = taxes['total_excluded']
-        return super(SaleOrderLine, self).write(values)
+    @api.depends('product_id', 'purchase_price', 'product_uom_qty', 'price_unit', 'price_subtotal')
+    def _product_margin(self):
+        for line in self:
+            currency = line.order_id.pricelist_id.currency_id
+            price = line.purchase_price
+            line.margin = currency.round(line.price_subtotal - (price * line.product_uom_qty))
