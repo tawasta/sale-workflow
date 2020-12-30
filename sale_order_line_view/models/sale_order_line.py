@@ -11,6 +11,7 @@ class SaleOrderLine(models.Model):
         comodel_name="res.partner",
         related="order_id.partner_id",
         store=True,
+        readonly=True,
     )
 
     destination_country_id = fields.Many2one(
@@ -18,6 +19,7 @@ class SaleOrderLine(models.Model):
         comodel_name="res.country",
         related="order_id.partner_shipping_id.country_id",
         store=True,
+        readonly=True,
     )
 
     product_categ_id = fields.Many2one(
@@ -25,10 +27,9 @@ class SaleOrderLine(models.Model):
         comodel_name="product.category",
         related="product_id.categ_id",
         store=True,
+        readonly=True,
     )
 
     date_order = fields.Datetime(
-        string="Order date",
-        related="order_id.date_order",
-        store=True,
+        string="Order date", related="order_id.date_order", store=True, readonly=True,
     )
