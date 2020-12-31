@@ -1,4 +1,6 @@
-from odoo import models, fields
+from odoo import api
+from odoo import fields
+from odoo import models
 
 
 class SaleOrderLine(models.Model):
@@ -25,7 +27,7 @@ class SaleOrderLine(models.Model):
     product_categ_id = fields.Many2one(
         string="Category",
         comodel_name="product.category",
-        related="product_id.categ_id",
+        compute="_compute_product_categ_id",
         store=True,
         readonly=True,
     )
@@ -33,3 +35,12 @@ class SaleOrderLine(models.Model):
     date_order = fields.Datetime(
         string="Order date", related="order_id.date_order", store=True, readonly=True,
     )
+
+    @api.onchange("product_id")
+    @api.depends("product_id")
+    def _compute_product_categ_id(self):
+        for record in self:
+            if record.product_id:
+                record.product_categ_id = record.product_id.categ_id.id
+            else:
+                record.product_categ_id = False

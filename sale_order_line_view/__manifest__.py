@@ -22,7 +22,7 @@
     "name": "Sale order line view",
     "summary": "Add a readonly SO line view for viewing SO line specific info",
     "category": "Sale",
-    "version": "12.0.1.1.0",
+    "version": "12.0.1.2.0",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
