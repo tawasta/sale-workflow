@@ -24,8 +24,7 @@ class SaleOrder(models.Model):
                 # Don't get a contact if there is no partner
                 continue
 
-            if record.customer_contact_id.commercial_partner_id == \
-                    record.partner_id:
+            if record.customer_contact_id.commercial_partner_id == record.partner_id:
                 # Contact is already set
                 continue
 
@@ -66,7 +65,24 @@ class SaleOrder(models.Model):
         # Handling for when invoicing the invoiceable lines
         self.ensure_one()
         invoice_vals = super(SaleOrder, self)._prepare_invoice()
-        invoice_vals["customer_contact_id"] = (
-            self.customer_contact_id and self.customer_contact_id.id or False
-        )
+
+        if not invoice_vals.get("customer_contact_id"):
+            invoice_vals["customer_contact_id"] = (
+                self.customer_contact_id and self.customer_contact_id.id or False
+            )
+
+        if (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("invoice_force_commercial_partner")
+        ) == "1":
+            partner = self.env["res.partner"].browse([invoice_vals.get("partner_id")])
+
+            if partner and partner.parent_id:
+                # Force using parent as invoice address
+                if not self.customer_contact_id:
+                    invoice_vals["customer_contact_id"] = partner.id
+
+                invoice_vals["partner_id"] = partner.commercial_partner_id.id
+
         return invoice_vals
