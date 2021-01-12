@@ -14,4 +14,5 @@ class SaleAdvancePaymentInv(models.TransientModel):
 
         if order.customer_contact_id:
             invoice.customer_contact_id = order.customer_contact_id.id
+
         return invoice
