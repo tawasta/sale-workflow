@@ -29,7 +29,7 @@
     "application": False,
     "installable": True,
     "external_dependencies": {"python": [], "bin": []},
-    "depends": ["l10n_fi_business_code"],
+    "depends": ["l10n_fi_business_code", "sale"],
     "data": [],
     "demo": [],
 }
