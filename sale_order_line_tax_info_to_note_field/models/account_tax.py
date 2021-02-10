@@ -5,4 +5,4 @@ class AccountTax(models.Model):
 
     _inherit = 'account.tax'
 
-    sale_order_note = fields.Text(string="Note to Sale Order")
+    sale_order_note = fields.Text(string="Note to Sale Order", translate=True)
