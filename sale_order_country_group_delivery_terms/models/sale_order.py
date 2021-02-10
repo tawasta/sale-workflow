@@ -23,8 +23,10 @@ class SaleOrder(models.Model):
             country_groups = [x for x in country_groups if x.delivery_terms]
 
             if country_groups:
-                delivery_terms = country_groups[0].delivery_terms
-                msg = "{}: {}".format(_("Delivery terms"), delivery_terms)
+                delivery_terms = country_groups[0].with_context(
+                    lang=record.partner_id.lang).delivery_terms
+
+                msg = delivery_terms
 
                 if record.note:
                     record.note += "\n%s" % msg
