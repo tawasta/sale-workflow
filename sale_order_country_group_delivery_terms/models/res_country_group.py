@@ -8,4 +8,4 @@ class CountryGroup(models.Model):
 
     sequence = fields.Integer()
     skip_delivery_terms = fields.Boolean(string="Skip Delivery terms")
-    delivery_terms = fields.Char(string="Delivery Terms")
+    delivery_terms = fields.Char(string="Delivery Terms", translate=True)
