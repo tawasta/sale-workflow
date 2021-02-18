@@ -8,7 +8,14 @@ class ResPartner(models.Model):
     @api.model
     def create(self, vals):
         """Creates a partner with a Fiscal Position based on country_id"""
-        if vals.get("country_id") and not vals.get("property_account_position_id"):
+        is_company = (
+            vals.get("parent_id") or vals.get("company_name") or vals.get("is_company")
+        )
+        if (
+            is_company
+            and vals.get("country_id")
+            and not vals.get("property_account_position_id")
+        ):
 
             account_position_with_vat = self.env["ir.model.data"].search(
                 [
