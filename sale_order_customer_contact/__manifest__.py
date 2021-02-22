@@ -19,13 +19,14 @@
 {
     "name": "Customer Contact for Sale Orders",
     "category": "Sales",
-    "version": "12.0.1.3.1",
+    "version": "12.0.1.4.0",
     "installable": True,
     "author": "Tawasta",
     "license": "AGPL-3",
     "website": "https://github.com/Tawasta/sale-workflow",
-    "depends": ["sale"],
+    "depends": ["account", "sale"],
     "data": [
+        "data/config_parameter.xml",
         "report/sale_order_report.xml",
         "views/account_invoice.xml",
         "views/sale_order.xml",

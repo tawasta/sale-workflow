@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["stock_product_qty_available_unreserved"],
+    "depends": ["sale", "stock_product_qty_available_unreserved"],
     "data": ["views/sale_order.xml"],
 }

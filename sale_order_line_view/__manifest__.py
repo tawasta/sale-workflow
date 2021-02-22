@@ -20,14 +20,14 @@
 
 {
     "name": "Sale order line view",
-    "summary": "Add a readonly SO line view for viewing SO line spesific info",
+    "summary": "Add a readonly SO line view for viewing SO line specific info",
     "category": "Sale",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.2.0",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale", "sale_order_line_margin_percent"],
+    "depends": ["sale", "sale_order_line_margin_percent", "uom"],
     "data": ["views/sale_order_line_search.xml", "views/sale_order_line.xml"],
 }
