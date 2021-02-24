@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["product_uom_weight", "sale_stock"],
+    "depends": ["sale_stock"],
     "data": ["views/sale_order_form.xml"],
 }
