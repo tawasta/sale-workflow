@@ -1,0 +1,39 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_order_customer_warning_if_unpaid_late_invoices
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-22 08:05+0000\n"
+"PO-Revision-Date: 2021-02-22 08:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_customer_warning_if_unpaid_late_invoices
+#: code:addons/sale_order_customer_warning_if_unpaid_late_invoices/models/sale_order.py:64
+#, python-format
+msgid "Customer has %s late unpaid invoices."
+msgstr "Asiakkaalla on %s erääntynyttä maksamatonta laskua."
+
+#. module: sale_order_customer_warning_if_unpaid_late_invoices
+#: code:addons/sale_order_customer_warning_if_unpaid_late_invoices/models/sale_order.py:62
+#, python-format
+msgid "Customer has one late unpaid invoice."
+msgstr "Asiakkaalla on yksi erääntynyt maksamaton lasku."
+
+#. module: sale_order_customer_warning_if_unpaid_late_invoices
+#: model:ir.model,name:sale_order_customer_warning_if_unpaid_late_invoices.model_sale_order
+msgid "Sale Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_order_customer_warning_if_unpaid_late_invoices
+#: code:addons/sale_order_customer_warning_if_unpaid_late_invoices/models/sale_order.py:53
+#, python-format
+msgid "Warning for %s"
+msgstr "Huomautus asiakkaasta %s"
