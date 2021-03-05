@@ -21,13 +21,13 @@
 {
     "name": "Set sale order line price by pricelist quantities",
     "summary": "Set sale order line price by pricelist quantities",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.0.2",
     "category": "Sales",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale"],
-    "data": ["views/sale_order.xml"],
+    "depends": ["product", "sale"],
+    "data": ["views/product_category.xml", "views/sale_order.xml"],
 }
