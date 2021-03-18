@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2021 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Fiscal Position Based on Country",
-    "summary": """
-        Automatically selects Partner's Fiscal Position based on Country""",
-    "version": "12.0.1.1.0",
-    "category": "CRM",
+    "name": "Sale order: create pickings manually",
+    "summary": "Allows manually (re)creating pickings from SO",
+    "category": "Sale",
+    "version": "12.0.1.0.0",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["account"],
+    "depends": ["sale_stock"],
+    "data": ["views/sale_order.xml"],
 }
