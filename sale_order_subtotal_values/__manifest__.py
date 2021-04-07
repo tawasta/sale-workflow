@@ -21,7 +21,7 @@
 {
     "name": "Sale Order Subtotal Values",
     "summary": "Recompute Sale Order line subtotal values",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.1.0",
     "category": "Sales",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
