@@ -27,11 +27,16 @@ class SaleOrderLine(models.Model):
     )
 
     product_virtual_available = fields.Float(
-        string="Available",
+        string="Virtual available",
         digits=dp.get_precision("Product Unit of Measure"),
         compute="_compute_product_virtual_available",
     )
 
+    product_warehouse_available = fields.Float(
+        string="Available",
+        digits=dp.get_precision("Product Unit of Measure"),
+        compute="_compute_product_warehouse_available",
+    )
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
@@ -49,6 +54,33 @@ class SaleOrderLine(models.Model):
     def _compute_product_virtual_available(self):
         for record in self:
             record.product_virtual_available = record.product_id.virtual_available
+
+    @api.onchange("product_uom_qty", "product_uom", "product_id")
+    @api.depends("product_uom_qty", "product_uom", "product_id")
+    def _compute_product_warehouse_available(self):
+        Quant = self.env["stock.quant"]
+        for record in self:
+            # TODO: this will only check one sublevel
+            warehouse = record.order_id.warehouse_id
+
+            locations = (
+                warehouse.lot_stock_id.ids
+                + warehouse.lot_stock_id.child_ids.filtered(
+                    lambda r: r.usage in ["internal", "transit"]
+                ).ids
+            )
+            print(locations)
+
+            domain = [
+                ("product_id", "=", record.product_id.id),
+                ("location_id", "in", locations),
+            ]
+
+            quants = Quant.search(domain)
+            available = sum(quants.mapped("quantity")) - sum(
+                quants.mapped("reserved_quantity")
+            )
+            record.product_warehouse_available = available
 
     # 5. Constraints and onchanges
 

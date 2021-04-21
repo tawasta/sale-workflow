@@ -22,7 +22,7 @@
     "name": "Product availability on SO line",
     "summary": "Add product availability to SO line",
     "category": "Sale",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "website": "https://github.com/Tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
