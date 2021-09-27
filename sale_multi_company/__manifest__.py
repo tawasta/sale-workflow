@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Multi Company",
     "summary": "Allows selling multiple company products on a single sale",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -33,5 +33,5 @@
         "sale_management",
         "stock",
     ],
-    "data": ["security/product_security.xml"],
+    "data": ["security/product_security.xml", "views/sale_order.xml"],
 }
