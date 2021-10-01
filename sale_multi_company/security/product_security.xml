@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value eval="[('module', '=', 'product'), ('name', '=', 'product_comp_rule')]"/>
+        </function>
+        <value eval="{'noupdate': False}"/>
+    </function>
+    <record id="product.product_comp_rule" model="ir.rule">
+        <field name="name" >Product multi-company</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="domain_force"> ['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]</field>
+         <field name="active" eval="False"/>
+    </record>
+</odoo>
