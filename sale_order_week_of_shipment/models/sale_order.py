@@ -45,7 +45,7 @@ class SaleOrder(models.Model):
         return new_week
 
     week_of_shipment = fields.Integer(
-        string="Week of shipment", default=_default_week_of_shipment, readonly=False,
+        string="Week of shipment", default=lambda self: self._default_week_of_shipment(), readonly=False,
     )
 
     def _ensure_proper_week(self, week):
