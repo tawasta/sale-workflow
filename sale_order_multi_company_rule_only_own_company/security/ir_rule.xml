@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<record id="sale.sale_order_comp_rule" model="ir.rule">
+        <field name="domain_force">['|',('company_id','=',False),('company_id','=',user.company_id.id)]</field>
+	</record>
+
+	<record id="sale.sale_order_line_comp_rule" model="ir.rule">
+        <field name="domain_force">['|',('company_id','=',False),('company_id','=',user.company_id.id)]</field>
+	</record>
+</odoo>
