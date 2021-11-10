@@ -21,15 +21,13 @@
 {
     "name": "Sale Order Requested Delivery Date",
     "summary": "Adds a new field for storing date of requested delivery",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Sales",
-    "website": "https://github.com/Tawasta/sale-workflow",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "external_dependencies": {"python": [], "bin": []},
     "depends": ["sale"],
     "data": ["views/sale_order.xml"],
-    "demo": [],
 }

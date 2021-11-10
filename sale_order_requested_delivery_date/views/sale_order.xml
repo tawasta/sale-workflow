@@ -5,10 +5,9 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <field name="date_order" position="after">
+            <field name="show_update_pricelist" position="before">
                 <field name="date_delivery_requested"/>
             </field>
         </field>
     </record>
 </odoo>
-
