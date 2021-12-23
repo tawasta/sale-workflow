@@ -9,4 +9,5 @@ class CountryGroup(models.Model):
         string="Sale Order Text",
         help="Text to be added on sales orders going to customers in this "
         + "country group.",
+        translate=True,
     )
