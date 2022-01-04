@@ -22,7 +22,7 @@
     "name": "Sale Stock Availability Unreserved",
     "summary": "Add product unreserved availability to SO line",
     "category": "Sale",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow/",
     "author": "Tawasta",
     "license": "AGPL-3",
