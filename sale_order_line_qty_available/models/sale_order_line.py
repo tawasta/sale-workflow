@@ -38,16 +38,18 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
     # 2. Fields declaration
-    check_available = fields.Boolean(
-        string="Check unreserved available",
+    check_qty_available = fields.Boolean(
+        string="Check qty available",
         help="Do we need to check the availability of this line",
-        compute="_compute_product_check_available",
+        compute="_compute_product_qty_check_available",
+        readonly=1,
     )
 
-    product_qty_available_unreserved = fields.Float(
-        string="Unreserved Available",
+    product_qty_available = fields.Float(
+        string="Available",
         digits=dp.get_precision("Product Unit of Measure"),
-        compute="_compute_product_qty_available_unreserved",
+        compute="_compute_product_qty_available",
+        readonly=1,
     )
 
     # 3. Default methods
@@ -55,20 +57,18 @@ class SaleOrderLine(models.Model):
     # 4. Compute and search fields, in the same order that fields declaration
     @api.onchange("product_id")
     @api.depends("product_id")
-    def _compute_product_check_available(self):
+    def _compute_product_qty_check_available(self):
         for record in self:
             order_open = record.state in ("draft", "sent")
             product_stockable = record.product_id.type == "product"
 
-            record.check_available = order_open and product_stockable
+            record.check_qty_available = order_open and product_stockable
 
     @api.onchange("product_uom_qty", "product_uom", "product_id")
     @api.depends("product_uom_qty", "product_uom", "product_id")
-    def _compute_product_qty_available_unreserved(self):
+    def _compute_product_qty_available(self):
         for record in self:
-            record.product_qty_available_unreserved = (
-                record.product_id.qty_available_unreserved
-            )
+            record.product_qty_available = record.product_id.qty_available
 
     # 5. Constraints and onchanges
 
