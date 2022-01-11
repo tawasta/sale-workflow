@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Sale Stock Availability Unreserved",
-    "summary": "Add product unreserved availability to SO line",
-    "category": "Sale",
-    "version": "14.0.1.0.1",
+    "name": "Sale Order Line Qty Available",
+    "summary": "Add qty_available to sale order line",
+    "version": "14.0.1.0.0",
+    "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow/",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale", "stock_product_qty_available_unreserved"],
+    "depends": ["stock", "sale"],
     "data": ["views/sale_order.xml"],
 }
