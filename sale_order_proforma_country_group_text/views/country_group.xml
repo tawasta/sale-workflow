@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <group name="country_group" position="after">
                 <group name="proforma">
-                    <field name="proforma_text"/>
+                    <field name="proforma_text" groups="base.group_system"/>
                 </group>
             </group>
         </field>
