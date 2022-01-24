@@ -19,7 +19,7 @@
 {
     "name": "Customer Contact for Sale Orders",
     "category": "Sales",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "installable": True,
     "author": "Tawasta",
     "license": "AGPL-3",
@@ -29,6 +29,7 @@
         "data/config_parameter.xml",
         "report/sale_order_report.xml",
         "views/account_invoice.xml",
+        "views/config_settings.xml",
         "views/sale_order.xml",
     ],
 }

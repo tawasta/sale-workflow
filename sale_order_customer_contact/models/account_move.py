@@ -3,7 +3,6 @@ from odoo import api, fields, models
 
 class AccountMove(models.Model):
 
-#     _inherit = "account.invoice"
     _inherit = "account.move"
 
     _FIELD_STATES = {"draft": [("readonly", False)], "open": [("readonly", False)]}
