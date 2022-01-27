@@ -1,0 +1,71 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_week_of_shipment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-27 06:47+0000\n"
+"PO-Revision-Date: 2022-01-27 11:24+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: sale_order_week_of_shipment
+#: model_terms:ir.ui.view,arch_db:sale_order_week_of_shipment.sale_order_customer_order_date_report_saleorder_document
+msgid "<strong>Week of Shipment:</strong>"
+msgstr "<strong>Semaine d'expédition:</strong>"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_config_settings__week_of_shipment_additional_weeks
+msgid "Additional week to default week of shipment date(todays week)"
+msgstr "Les additionnel semaines pour une semaine défaut(semaine de aujourd'hui)"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_company__week_of_shipment_additional_weeks
+msgid "Additional weeks to default week of shipment date(today)"
+msgstr "Les additionnel semaines pour une semaine défaut(aujourd'hui)"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_company__week_of_shipment_additional_weeks_group
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_config_settings__week_of_shipment_additional_weeks_group
+msgid "Apply additional weeks rule to only this group"
+msgstr "Appliquer les semaines additionnel seulement"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model,name:sale_order_week_of_shipment.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model,name:sale_order_week_of_shipment.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
+
+#. module: sale_order_week_of_shipment
+#: model_terms:ir.ui.view,arch_db:sale_order_week_of_shipment.res_config_settings_view_form
+msgid "Group to apply the additional weeks rules to"
+msgstr "Le groupe á appliquer les règles des semaines"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,help:sale_order_week_of_shipment.field_res_config_settings__week_of_shipment_additional_weeks
+#: model_terms:ir.ui.view,arch_db:sale_order_week_of_shipment.res_config_settings_view_form
+msgid "Number of weeks to be added to default value which is todays week"
+msgstr "Le nombre des seimaines á ajouter une valeur par défaut ce que est la semaine de aujourd'hui"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model,name:sale_order_week_of_shipment.model_sale_order
+msgid "Sale Order"
+msgstr "Bon de commande"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_sale_order__week_of_shipment
+#: model_terms:ir.ui.view,arch_db:sale_order_week_of_shipment.view_sales_order_filter
+msgid "Week of shipment"
+msgstr "Semaine d'expédition"
