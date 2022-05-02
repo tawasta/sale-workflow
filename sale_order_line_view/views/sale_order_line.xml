@@ -6,23 +6,29 @@
         <field name="priority" eval="99" />
         <field name="arch" type="xml">
             <tree string="Sales Order Lines" create="false" delete="false">
-                <field name="order_id" />
-                <field name="product_id" />
-                <field name="order_partner_id" />
-                <field name="name" />
-                <field name="state" />
-                <field name="date_order" />
-                <field name="product_uom_qty" string="Qty" />
-                <field name="qty_delivered" />
-                <field name="qty_invoiced" />
-                <field name="qty_to_invoice" />
+                <field name="order_id" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="order_partner_id" optional="show" />
+                <field name="name" optional="show" />
+                <field name="state" optional="show" />
+                <field name="date_order" optional="show" />
+                <field name="product_uom_qty" string="Qty" optional="show" />
+                <field name="qty_delivered" optional="show" />
+                <field name="qty_invoiced" optional="show" />
+                <field name="qty_to_invoice" optional="show" />
                 <field
                     name="product_uom"
                     string="Unit of Measure"
                     groups="uom.group_uom"
+                    optional="show"
                 />
-                <field name="price_subtotal" sum="Total" widget="monetary" />
-                <field name="margin_percent" />
+                <field
+                    name="price_subtotal"
+                    sum="Total"
+                    widget="monetary"
+                    optional="show"
+                />
+                <field name="margin_percent" optional="show" />
             </tree>
         </field>
     </record>
