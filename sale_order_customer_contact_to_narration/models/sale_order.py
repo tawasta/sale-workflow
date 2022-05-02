@@ -1,5 +1,4 @@
-from odoo import models
-from odoo import _
+from odoo import _, models
 
 
 class SaleOrder(models.Model):

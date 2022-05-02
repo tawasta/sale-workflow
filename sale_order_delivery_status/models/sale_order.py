@@ -59,26 +59,26 @@ class SaleOrder(models.Model):
         for order in self:
             if all(
                 [
-                    l.product_id.type == "service" or l.product_uom_qty == 0
-                    for l in order.order_line
+                    line.product_id.type == "service" or line.product_uom_qty == 0
+                    for line in order.order_line
                 ]
             ):
                 # All services or lines with 0 qties, nothing to deliver
                 order.delivery_status = "none"
             elif all(
                 [
-                    l.qty_delivered >= l.product_uom_qty
-                    for l in order.order_line
-                    if l.product_id.type != "service"
+                    line.qty_delivered >= line.product_uom_qty
+                    for line in order.order_line
+                    if line.product_id.type != "service"
                 ]
             ):
                 # All physical products have been delivered
                 order.delivery_status = "done"
             elif all(
                 [
-                    l.qty_delivered == 0
-                    for l in order.order_line
-                    if l.product_id.type != "service"
+                    line.qty_delivered == 0
+                    for line in order.order_line
+                    if line.product_id.type != "service"
                 ]
             ):
                 # No physical products have been delivered

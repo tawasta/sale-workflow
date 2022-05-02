@@ -1,4 +1,4 @@
-#def migrate(cr, version):
+# def migrate(cr, version):
 #    # Update field name
 #    cr.execute(
 #        """
