@@ -47,7 +47,7 @@ class SaleOrder(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
-    def _create_invoices(self, grouped=False, final=False):
+    def _create_invoices(self, grouped=False, final=False, date=None):
         # Force line notes to invoice
         for order in self:
             for line in order.order_line:
@@ -55,6 +55,6 @@ class SaleOrder(models.Model):
                     # Set lines to be invoiced
                     # They will reset to 0 when "to invoice" compute triggers
                     line.qty_to_invoice = 1
-        return super(SaleOrder, self)._create_invoices(grouped, final)
+        return super()._create_invoices(grouped, final, date)
 
     # 8. Business methods
