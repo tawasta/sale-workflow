@@ -7,7 +7,7 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <!-- sale_stock-module has a view that replaces sale-module's <div name="commitment_date_div"> -->
+                <!-- Note that sale_stock-module has a view that replaces sale-module's <div name="commitment_date_div"> -->
                 <xpath expr="//field[@name='commitment_date']/.." position="after">
                     <label for="week_of_shipment" class="o_row"/>
                     <div name="week_of_shipment_div">
