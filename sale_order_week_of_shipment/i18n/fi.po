@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_week_of_shipment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-30 06:54+0000\n"
+"PO-Revision-Date: 2022-05-30 10:09+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fi\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: sale_order_week_of_shipment
+#: model_terms:ir.ui.view,arch_db:sale_order_week_of_shipment.sale_order_customer_order_date_report_saleorder_document
+msgid "<strong>Week of Shipment:</strong>"
+msgstr "<strong>Toimitusviikko:</strong>"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_config_settings__week_of_shipment_additional_weeks
+msgid "Additional week to default week of shipment date(todays week)"
+msgstr "Toimitusviikkoon, joka on kuluva viikko, lisättävä viikko"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_company__week_of_shipment_additional_weeks
+msgid "Additional weeks to default week of shipment date(today)"
+msgstr "Toimitusviikkoon, joka on kuluva viikko, lisättävä viikko"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_company__week_of_shipment_additional_weeks_group
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_config_settings__week_of_shipment_additional_weeks_group
+msgid "Apply additional weeks rule to only this group"
+msgstr "Käytä lisättävien viikkojen sääntöä tähän ryhmään"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model,name:sale_order_week_of_shipment.model_res_company
+msgid "Companies"
+msgstr "Yritykset"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model,name:sale_order_week_of_shipment.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguraatioasetukset"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_company__display_name
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: sale_order_week_of_shipment
+#: model_terms:ir.ui.view,arch_db:sale_order_week_of_shipment.res_config_settings_view_form
+msgid "Group to apply the additional weeks rules to"
+msgstr "Viikkojen lisäystä käytetään tälle ryhmälle"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_company__id
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_config_settings__id
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_sale_order__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_company____last_update
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,help:sale_order_week_of_shipment.field_res_config_settings__week_of_shipment_additional_weeks
+#: model_terms:ir.ui.view,arch_db:sale_order_week_of_shipment.res_config_settings_view_form
+msgid "Number of weeks to be added to default value which is todays week"
+msgstr "Viikkojen lisättävä määrä oletusarvoon, joka on senhetkinen viikko"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model,name:sale_order_week_of_shipment.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_order_week_of_shipment
+#: model:ir.model.fields,field_description:sale_order_week_of_shipment.field_sale_order__week_of_shipment
+#: model_terms:ir.ui.view,arch_db:sale_order_week_of_shipment.view_sales_order_filter
+msgid "Week of shipment"
+msgstr "Viikko"
