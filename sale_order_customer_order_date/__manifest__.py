@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Tawasta
+#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Get Year of shipment from Commitment date",
-    "summary": "Sale Order year from commitment date",
+    "name": "Sale Order Customer Order Date",
+    "summary": "Customer order date field to sale order",
     "version": "14.0.1.0.0",
     "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
@@ -28,6 +28,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale", "sale_stock"],
-    "data": ["report/sale_order_report.xml", "views/sale_order.xml"],
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale_management"],
+    "data": ["views/sale_order.xml", "report/sale_order.xml"],
 }
