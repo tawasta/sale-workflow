@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_pricelist_price_by_categ_qty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-31 09:41+0000\n"
+"PO-Revision-Date: 2022-05-31 16:01+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model_terms:ir.ui.view,arch_db:sale_order_pricelist_price_by_categ_qty.global_discount_button_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: code:addons/sale_order_pricelist_price_by_categ_qty/models/product_category.py:0
+#: model:ir.model.fields,help:sale_order_pricelist_price_by_categ_qty.field_product_category__use_on_discount
+#, python-format
+msgid ""
+"Check this box to use this Product category on Sale Order\n"
+"            line discount"
+msgstr ""
+"Sélectionner cette boîte pour utilise cette catégorie d'article\n"
+"             sur la remise des lignes de bon de commande"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.actions.act_window,name:sale_order_pricelist_price_by_categ_qty.action_global_discount_button
+#: model_terms:ir.ui.view,arch_db:sale_order_pricelist_price_by_categ_qty.global_discount_button_form
+#: model_terms:ir.ui.view,arch_db:sale_order_pricelist_price_by_categ_qty.view_order_form
+msgid "Compute global discount"
+msgstr "Calculer la remise globale"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model_terms:ir.ui.view,arch_db:sale_order_pricelist_price_by_categ_qty.global_discount_button_form
+msgid "Compute global discount for selected orders"
+msgstr "Calculer la remise globale pour les commandes sélectionnés"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order_global_discount__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order_global_discount__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_product_category__display_name
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order__display_name
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order_global_discount__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_product_category__id
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order__id
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order_global_discount__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_product_category____last_update
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order____last_update
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order_global_discount____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order_global_discount__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_sale_order_global_discount__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model,name:sale_order_pricelist_price_by_categ_qty.model_product_category
+msgid "Product Category"
+msgstr "Catégorie d'article"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model,name:sale_order_pricelist_price_by_categ_qty.model_sale_order
+msgid "Sales Order"
+msgstr "Commande"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model.fields,field_description:sale_order_pricelist_price_by_categ_qty.field_product_category__use_on_discount
+msgid "Use on Sale Order line discount"
+msgstr "Utiliser sur la remise des lignes de bon de commande"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model_terms:ir.ui.view,arch_db:sale_order_pricelist_price_by_categ_qty.global_discount_button_form
+msgid "or"
+msgstr "ou"
+
+#. module: sale_order_pricelist_price_by_categ_qty
+#: model:ir.model,name:sale_order_pricelist_price_by_categ_qty.model_sale_order_global_discount
+msgid "sale.order.global.discount"
+msgstr "sale.order.global.discount"
