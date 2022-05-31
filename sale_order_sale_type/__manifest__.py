@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,17 @@
 ##############################################################################
 
 {
-    "name": "Delivery Terms on Sale Order",
-    "summary": "Delivery Terms on Sale Order",
-    "version": "14.0.1.0.0",
-    "category": "Sales",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
-    "author": "Tawasta",
-    "license": "AGPL-3",
-    "application": False,
-    "installable": True,
-    "depends": ["sale_stock"],
-    "data": ["views/sale_order.xml"],
+    'name': 'Sale Order - Sale Type',
+    'summary': 'Sale Type field is added to sales',
+    'version': '14.0.1.0.0',
+    'category': 'Sale',
+    'author': 'Tawasta',
+    'description': "Add sale type to sale order",
+    'website': 'https://gitlab.com/tawasta/odoo/secto-design',
+    'depends': ['sale', 'sale_management'],
+    'data': [
+        'views/sale_order.xml',
+        'security/ir.model.access.csv',
+        'data/sale_types.xml',
+    ],
 }
