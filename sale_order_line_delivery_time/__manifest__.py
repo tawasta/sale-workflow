@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Set sale order line price by pricelist quantities",
-    "summary": "Set sale order line price by pricelist quantities",
+    "name": "Sale Order Line Delivery Time",
+    "summary": "Sale Order Line Delivery Time",
     "version": "14.0.1.0.0",
     "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
@@ -28,11 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["product", "sale"],
-    "data": [
-        "security/ir.model.access.csv",
-        "views/product_category.xml",
-        "views/sale_order.xml",
-        "wizard/sale_order_global_discount_view.xml"
-    ],
+    "depends": ["sale"],
+    "data": ["views/sale_order_line.xml"],
 }
