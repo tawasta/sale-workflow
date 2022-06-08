@@ -23,7 +23,7 @@
     "summary": "Enables confirming multiple sales at once",
     "version": "14.0.1.0.0",
     "category": "Sales",
-    "website": "https://github.com/Tawasta/sale-workflow",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
