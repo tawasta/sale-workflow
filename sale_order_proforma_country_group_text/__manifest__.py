@@ -19,7 +19,7 @@
 ##############################################################################
 
 {
-    "name": "Sale Order - Report text by country group",
+    "name": "PRO-FORMA Report text by country group",
     "summary": "Get report text from country groups setting",
     "version": "14.0.1.0.0",
     "category": "Sales",
@@ -29,5 +29,5 @@
     "application": False,
     "installable": True,
     "depends": ["sale", "sale_management", "l10n_fi_country_groups"],
-    "data": ["views/country_group.xml", "report/sale_order.xml", "views/menu.xml"],
+    "data": ["views/country_group.xml", "report/proforma.xml"],
 }
