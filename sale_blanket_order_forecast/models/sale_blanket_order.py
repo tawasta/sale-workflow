@@ -77,7 +77,9 @@ class SaleBlanketOrder(models.Model):
         for order_line in sale_order.order_line:
             product_id = order_line.product_id.id
             if forecast_lines.get(product_id):
-                order_line.product_uom_qty = forecast_lines[product_id]
+                order_line.product_uom_qty = (
+                    forecast_lines[product_id] if forecast_lines[product_id] > 0 else 0
+                )
 
         # Confirm the SO to create deliveries
         sale_order.action_confirm()
