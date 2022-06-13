@@ -26,7 +26,9 @@ class SaleBlanketOrder(models.Model):
 
         products = {}
         for kit_line in self.kit_ids:
-            products = self._bom_lines_expand(kit_line.kit_id.bom_line_ids, products)
+            products = self._bom_lines_expand(
+                kit_line.kit_id.bom_line_ids, products, kit_line.original_uom_qty
+            )
 
         self.line_ids = False
 
