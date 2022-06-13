@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_blanket_order_form" model="ir.ui.view">
+        <field name="name">sale.blanket.order.kit.expand</field>
+        <field name="model">sale.blanket.order</field>
+        <field eval="100" name="priority"/>
+        <field name="inherit_id" ref="sale_blanket_order.view_blanket_order_form"/>
+        <field name="arch" type="xml">
+
+            <button name="set_to_draft" position="after">
+                <button name="action_kit_compute"
+                        string="Compute kit lines"
+                        class="btn-default"
+                        attrs="{'invisible': [('state', 'not in', ['draft', 'open','done'])]}"
+                        type="object"/>
+            </button>
+
+            <page name="order_lines" position="after">
+                <page name="kits" string="Kits">
+                    <field name="kit_ids" context="{'default_order_id': id}">
+                        <tree editable="bottom">
+                            <field name="kit_id"/>
+                            <field name="original_uom_qty"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+
+        </field>
+    </record>
+</odoo>
