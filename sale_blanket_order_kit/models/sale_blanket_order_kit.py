@@ -17,5 +17,4 @@ class SaleBlanketOrderKit(models.Model):
         "Original quantity",
         required=True,
         default=1,
-        digits="Product Unit of Measure",
     )
