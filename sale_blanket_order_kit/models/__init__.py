@@ -1,2 +1,1 @@
-from . import sale_blanket_order
-from . import sale_blanket_order_kit
+from . import sale_blanket_order, sale_blanket_order_kit

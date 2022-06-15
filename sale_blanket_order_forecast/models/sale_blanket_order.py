@@ -1,8 +1,7 @@
-from odoo import fields
-from odoo import models
-from odoo import _
-from odoo.exceptions import ValidationError
 import logging
+
+from odoo import _, fields, models
+from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -117,7 +116,8 @@ class SaleBlanketOrder(models.Model):
 
         _logger.info(
             _(
-                f"Found {len(sale_orders)} sale orders between {self.validity_date_start} and {self.validity_date}"
+                f"Found {len(sale_orders)} sale orders "
+                f"between {self.validity_date_start} and {self.validity_date}"
             )
         )
 
