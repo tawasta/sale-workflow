@@ -116,7 +116,9 @@ class SaleBlanketOrder(models.Model):
 
         _logger.info(
             _(
-                "Found {} sale orders between {self.validity_date_start} and {}".format(len(sale_orders), self.validity_date)
+                "Found {} sale orders between {} and {}".format(
+                    len(sale_orders), self.validity_date_start, self.validity_date
+                )
             )
         )
 
