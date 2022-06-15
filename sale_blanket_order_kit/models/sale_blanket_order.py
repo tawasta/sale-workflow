@@ -30,18 +30,25 @@ class SaleBlanketOrder(models.Model):
                 kit_line.kit_id.bom_line_ids, products, kit_line.original_uom_qty
             )
 
-        self.line_ids = False
-
+        line_model = self.env["sale.blanket.order.line"]
         for product_id, qty in products.items():
             product = self.env["product.product"].browse([product_id])
-            line_vals = {
-                "order_id": self.id,
-                "product_id": product_id,
-                "original_uom_qty": qty,
-                "product_uom": product.uom_id.id,
-                "price_unit": product.lst_price,
-            }
-            self.env["sale.blanket.order.line"].create(line_vals)
+
+            existing_line = line_model.search(
+                [("order_id", "=", self.id), ("product_id", "=", product_id)], limit=1
+            )
+
+            if existing_line:
+                existing_line.original_uom_qty = qty
+            else:
+                line_vals = {
+                    "order_id": self.id,
+                    "product_id": product_id,
+                    "original_uom_qty": qty,
+                    "product_uom": product.uom_id.id,
+                    "price_unit": product.lst_price,
+                }
+                line_model.create(line_vals)
 
     def _bom_lines_expand(self, bom_lines, products, quantity=1):
         for bom_line in bom_lines:
