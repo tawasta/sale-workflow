@@ -23,7 +23,7 @@
     "summary": "Don't auto-change company when warehouse changes",
     "category": "Sale",
     "version": "14.0.1.0.0",
-    "website": "https://github.com/Tawasta/sale-workflow",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

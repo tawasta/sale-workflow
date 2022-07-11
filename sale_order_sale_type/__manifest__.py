@@ -19,17 +19,17 @@
 ##############################################################################
 
 {
-    'name': 'Sale Order - Sale Type',
-    'summary': 'Sale Type field is added to sales',
-    'version': '14.0.1.0.0',
-    'category': 'Sale',
-    'author': 'Tawasta',
-    'description': "Add sale type to sale order",
-    'website': 'https://gitlab.com/tawasta/odoo/secto-design',
-    'depends': ['sale', 'sale_management'],
-    'data': [
-        'views/sale_order.xml',
-        'security/ir.model.access.csv',
-        'data/sale_types.xml',
+    "name": "Sale Order - Sale Type",
+    "summary": "Sale Type field is added to sales",
+    "version": "14.0.1.0.0",
+    "category": "Sale",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "depends": ["sale", "sale_management"],
+    "data": [
+        "views/sale_order.xml",
+        "security/ir.model.access.csv",
+        "data/sale_types.xml",
     ],
 }

@@ -29,8 +29,5 @@
     "application": False,
     "installable": True,
     "depends": ["sale"],
-    "data": [
-        "security/ir.model.access.csv",
-        "wizard/sale_order_mass_confirm.xml"
-    ],
+    "data": ["security/ir.model.access.csv", "wizard/sale_order_mass_confirm.xml"],
 }

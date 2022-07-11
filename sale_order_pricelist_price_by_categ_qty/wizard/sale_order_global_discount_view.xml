@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="global_discount_button_form" model="ir.ui.view">
         <field name="model">sale.order.global.discount</field>
@@ -7,14 +6,14 @@
             <form string="Compute global discount">
                 <p>Compute global discount for selected orders</p>
                 <footer>
-                    <button string="Compute global discount"
+                    <button
+                        string="Compute global discount"
                         name="compute_global_discount"
                         type="object"
-                        class="oe_highlight"/>
+                        class="oe_highlight"
+                    />
                     or
-                    <button string="Cancel"
-                        class="oe_link"
-                        special="cancel"/>
+                    <button string="Cancel" class="oe_link" special="cancel" />
                 </footer>
             </form>
         </field>
@@ -26,6 +25,6 @@
         <field name="res_model">sale.order.global.discount</field>
         <field name="target">new</field>
         <field name="view_mode">form</field>
-        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" ref="sale.model_sale_order" />
     </record>
 </odoo>
