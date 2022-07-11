@@ -23,7 +23,7 @@
     "summary": "Add a readonly SO line view for viewing SO line specific info",
     "category": "Sale",
     "version": "14.0.1.0.1",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow/",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

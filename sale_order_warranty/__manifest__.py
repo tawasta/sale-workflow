@@ -19,15 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Sale Order Warranty',
-    'summary': 'Sale Order Warranty',
-    'version': '14.0.1.0.0',
-    'category': 'Sale',
-    'website': 'https://tawasta.fi',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': ["sale", "sale_stock"],
-    'data': ["report/sale_order_report.xml", "views/sale_order.xml"],
+    "name": "Sale Order Warranty",
+    "summary": "Sale Order Warranty",
+    "version": "14.0.1.0.0",
+    "category": "Sale",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["sale", "sale_stock"],
+    "data": ["report/sale_order_report.xml", "views/sale_order.xml"],
 }

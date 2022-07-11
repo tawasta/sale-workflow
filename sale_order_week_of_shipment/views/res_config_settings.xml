@@ -1,38 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="res_config_settings_view_form"
-        model="ir.ui.view">
-        <field name="name">res.config.settings.view.form.week.of.shipment.additional.weeks</field>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field
+            name="name">res.config.settings.view.form.week.of.shipment.additional.weeks</field>
         <field name="model">res.config.settings</field>
-        <field name="priority"
-            eval="100"/>
-        <field name="inherit_id"
-            ref="account.res_config_settings_view_form"/>
-        <field name="arch"
-            type="xml">
+        <field name="priority" eval="100" />
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
             <div id="delivery" position="before">
 
-                <div class="col-12 col-lg-6 o_setting_box" id="week_of_shipment_additional_weeks">
+                <div
+                    class="col-12 col-lg-6 o_setting_box"
+                    id="week_of_shipment_additional_weeks">
                     <div class="o_setting_left_pane">
                     </div>
                     <div class="o_setting_right_pane">
-                        <label for="week_of_shipment_additional_weeks"/>
+                        <label for="week_of_shipment_additional_weeks" />
                         <div class="text-muted">
                             Number of weeks to be added to default value which is todays week
                         </div>
-                        <field name="week_of_shipment_additional_weeks"/>
+                        <field name="week_of_shipment_additional_weeks" />
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-6 o_setting_box" id="week_of_shipment_additional_weeks_group">
+                <div
+                    class="col-12 col-lg-6 o_setting_box"
+                    id="week_of_shipment_additional_weeks_group">
                     <div class="o_setting_left_pane">
                     </div>
                     <div class="o_setting_right_pane">
-                        <label for="week_of_shipment_additional_weeks_group"/>
+                        <label for="week_of_shipment_additional_weeks_group" />
                         <div class="text-muted">
                             Group to apply the additional weeks rules to
                         </div>
-                        <field name="week_of_shipment_additional_weeks_group"/>
+                        <field name="week_of_shipment_additional_weeks_group" />
                     </div>
                 </div>
 

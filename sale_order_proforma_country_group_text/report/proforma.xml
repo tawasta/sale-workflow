@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <template id="report_saleorder_document"
+    <template
+        id="report_saleorder_document"
         inherit_id="sale.report_saleorder_document">
         <xpath expr="//p[@t-field='doc.note']" position="before">
-            <t t-foreach="doc.partner_id.country_id.country_group_ids" t-as="country_group">
+            <t
+                t-foreach="doc.partner_id.country_id.country_group_ids"
+                t-as="country_group">
                 <t t-if="env.context.get('proforma', False) or is_pro_forma">
-                <br/>
-                <span t-field="country_group.proforma_text"></span>
+                <br />
+                <span t-field="country_group.proforma_text" />
                 </t>
             </t>
         </xpath>

@@ -23,7 +23,7 @@
     "summary": "Delivery information for Sales",
     "category": "Sales",
     "version": "14.0.1.0.0",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow/",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

@@ -1,13 +1,14 @@
-from datetime import datetime
-from odoo import models
-from timeit import default_timer as timer_ticker
 import logging
+from datetime import datetime
+from timeit import default_timer as timer_ticker
+
+from odoo import models
 
 _logger = logging.getLogger(__name__)
 
 
 class SaleOrder(models.Model):
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     def compute_global_discount(self):
         """
@@ -17,13 +18,12 @@ class SaleOrder(models.Model):
         pricelist = self.pricelist_id
         # Create empty recordset for sale order line and product category.
         # These are to be used in categ_products list
-        sale_line_model = self.env['sale.order.line']
-        product_category_model = self.env['product.category']
+        sale_line_model = self.env["sale.order.line"]
+        product_category_model = self.env["product.category"]
 
         # List is built with zero quantity, and empty SO line and
         # product category recordsets
-        categ_products = [
-            0, list(sale_line_model), list(product_category_model)]
+        categ_products = [0, list(sale_line_model), list(product_category_model)]
 
         # First loop through sale order lines and fetch ordered quantities,
         # sale order line records and product categories
@@ -56,15 +56,18 @@ class SaleOrder(models.Model):
             # sale order line's products' product categories who have been
             # marked with use_on_discount. Filtering is not necessary, code
             # just runs faster with it
-            items = pricelist.mapped('item_ids').sorted(
-                key=lambda t: t.min_quantity).filtered(
-                lambda x: x.product_tmpl_id and
-                    x.product_tmpl_id.categ_id in
-                    categ_products[2])
+            items = (
+                pricelist.mapped("item_ids")
+                .sorted(key=lambda t: t.min_quantity)
+                .filtered(
+                    lambda x: x.product_tmpl_id
+                    and x.product_tmpl_id.categ_id in categ_products[2]
+                )
+            )
             if not items:
                 continue
 
-            biggest_qty = max(items.mapped('min_quantity'))
+            biggest_qty = max(items.mapped("min_quantity"))
             smallest_qty = 0
             index = 0
             item_price = 0
@@ -78,9 +81,9 @@ class SaleOrder(models.Model):
 
                 # Only use items whose time period has not ended and if item has
                 # a starting date, then it needs to be earlier than current date
-                if ((item.date_end and (date_now - item.date_end).days > 0)
-                        or (item.date_start
-                            and (date_now - item.date_start).days < 0)):
+                if (item.date_end and (date_now - item.date_end).days > 0) or (
+                    item.date_start and (date_now - item.date_start).days < 0
+                ):
                     index += 1
                     continue
 
@@ -91,16 +94,19 @@ class SaleOrder(models.Model):
                 #     product categories from sale order line
                 #   - Quantity used on item is equal or less than SO line qty
                 #   - Product template is the same as SO line's product template
-                if (prod_tmpl and prod_tmpl.categ_id in categ_products[2] and
-                        item.min_quantity <= categ_products[0]
-                        and prod_tmpl == line.product_id.product_tmpl_id):
+                if (
+                    prod_tmpl
+                    and prod_tmpl.categ_id in categ_products[2]
+                    and item.min_quantity <= categ_products[0]
+                    and prod_tmpl == line.product_id.product_tmpl_id
+                ):
                     smallest_qty = item.min_quantity
                     # price_surcharge-field is item's added price and
                     # it is used to substitute sale order line's unit price
                     item_price = item.price_surcharge
 
                     # Add attribute extra to pricelist price
-                    if item.applied_on != '0_product_variant':
+                    if item.applied_on != "0_product_variant":
                         item_price += line.product_id.price_extra
                 index += 1
             if item_price:
@@ -109,5 +115,4 @@ class SaleOrder(models.Model):
         end = timer_ticker()
         time_spent = end - start
         # Time taken is useful to know if SO and/or pricelist has many lines
-        _logger.info("Time spent on Compute global discount-method: %ss"
-                     % time_spent)
+        _logger.info("Time spent on Compute global discount-method: %ss" % time_spent)

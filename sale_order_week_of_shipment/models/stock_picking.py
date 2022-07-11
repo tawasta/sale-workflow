@@ -1,15 +1,13 @@
-from odoo import fields, models, api
-from datetime import datetime, date, timedelta
+from datetime import date, datetime, timedelta
+
+from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
 
     _inherit = "sale.order"
 
-    week_of_shipment = fields.Integer(
-        string="Week of shipment",
-        readonly=False
-    )
+    week_of_shipment = fields.Integer(string="Week of shipment", readonly=False)
 
     @api.depends("commitment_date")
     @api.onchange("commitment_date")
@@ -19,7 +17,7 @@ class SaleOrder(models.Model):
                 week_from_date = date(
                     record.commitment_date.year,
                     record.commitment_date.month,
-                    record.commitment_date.day
+                    record.commitment_date.day,
                 ).isocalendar()[1]
                 if week_from_date != record.week_of_shipment:
                     record.week_of_shipment = week_from_date
@@ -33,7 +31,7 @@ class SaleOrder(models.Model):
                 week_from_date = date(
                     record.commitment_date.year,
                     record.commitment_date.month,
-                    record.commitment_date.day
+                    record.commitment_date.day,
                 ).isocalendar()[1]
 
             if record.week_of_shipment > 0 and record.week_of_shipment < 53:
