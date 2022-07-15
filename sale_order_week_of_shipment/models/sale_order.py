@@ -1,5 +1,5 @@
 from odoo import fields, models, api
-from datetime import datetime, timedelta
+from datetime import datetime
 from isoweek import Week
 import logging
 
