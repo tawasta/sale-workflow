@@ -19,15 +19,16 @@
 ##############################################################################
 
 {
-    "name": "Sale Order: Disable Warehouse Onchange",
-    "summary": "Don't auto-change company when warehouse changes",
-    "category": "Sale",
+    "name": "Delivery address can be fetched as company from Customer",
+    "summary": """Enable to automatically set Delivery address
+                even if it is a company""",
     "version": "14.0.1.0.0",
+    "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale_stock"],
+    "depends": ["sale"],
     "data": [],
 }
