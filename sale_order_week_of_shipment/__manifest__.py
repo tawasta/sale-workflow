@@ -21,7 +21,7 @@
 {
     "name": "Sale Order - Week of Shipment",
     "summary": "Week of shipment field to sale order",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
@@ -29,13 +29,13 @@
     "application": False,
     "installable": True,
     "external_dependencies": {"python": ["isoweek"], "bin": []},
-    "depends": ["sale", "sale_stock"],
+    "depends": ["sale", "sale_stock", "stock"],
     "data": [
         "views/sale_order.xml",
+        "views/stock_picking.xml",
         "report/sale_order.xml",
         "views/sale_tree.xml",
         "views/res_config_settings.xml",
         "views/sale_order_search.xml",
     ],
-    "demo": [],
 }

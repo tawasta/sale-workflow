@@ -9,6 +9,7 @@
                 <field
                     name="week_of_shipment"
                     groups="sales_team.group_sale_salesman"
+                    optional="show"
                 />
             </xpath>
         </field>
@@ -23,6 +24,7 @@
                 <field
                     name="week_of_shipment"
                     groups="sales_team.group_sale_salesman"
+                    optional="show"
                 />
             </xpath>
         </field>
