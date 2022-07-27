@@ -1,46 +1,52 @@
-from datetime import date, datetime, timedelta
+##############################################################################
+#
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2022- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
+#
+##############################################################################
 
-from odoo import api, fields, models
+# 1. Standard library imports:
+
+# 2. Known third party imports:
+
+# 3. Odoo imports (openerp):
+from odoo import fields, models
+
+# 4. Imports from Odoo modules:
+
+# 5. Local imports in the relative form:
+
+# 6. Unknown third party imports:
 
 
-class SaleOrder(models.Model):
+class StockPicking(models.Model):
+    # 1. Private attributes
+    _inherit = "stock.picking"
 
-    _inherit = "sale.order"
+    # 2. Fields declaration
+    week_of_shipment = fields.Integer(related="sale_id.week_of_shipment", store=True)
 
-    week_of_shipment = fields.Integer(string="Week of shipment", readonly=False)
+    # 3. Default methods
 
-    @api.depends("commitment_date")
-    @api.onchange("commitment_date")
-    def _compute_week_of_shipment(self):
-        for record in self:
-            if record.commitment_date:
-                week_from_date = date(
-                    record.commitment_date.year,
-                    record.commitment_date.month,
-                    record.commitment_date.day,
-                ).isocalendar()[1]
-                if week_from_date != record.week_of_shipment:
-                    record.week_of_shipment = week_from_date
+    # 4. Compute and search fields, in the same order that fields declaration
 
-    @api.depends("week_of_shipment")
-    @api.onchange("week_of_shipment")
-    def _compute_comitment_date(self):
-        for record in self:
-            week_from_date = 0
-            if record.commitment_date:
-                week_from_date = date(
-                    record.commitment_date.year,
-                    record.commitment_date.month,
-                    record.commitment_date.day,
-                ).isocalendar()[1]
+    # 5. Constraints and onchanges
 
-            if record.week_of_shipment > 0 and record.week_of_shipment < 53:
-                if week_from_date != record.week_of_shipment:
-                    weeks = record.week_of_shipment
-                    days_in_week = 7
-                    nth_day = weeks * days_in_week - days_in_week
-                    current_year = datetime.now().year
-                    start_of_year = datetime(current_year, 1, 1)
-                    record.commitment_date = start_of_year + timedelta(days=nth_day)
-            else:
-                self._compute_week_of_shipment()
+    # 6. CRUD methods
+
+    # 7. Action methods
+
+    # 8. Business methods

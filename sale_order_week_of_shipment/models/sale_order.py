@@ -47,7 +47,6 @@ class SaleOrder(models.Model):
         return new_week
 
     week_of_shipment = fields.Integer(
-        string="Week of shipment",
         default=lambda self: self._default_week_of_shipment(),
         readonly=False,
     )
