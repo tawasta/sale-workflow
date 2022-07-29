@@ -14,6 +14,7 @@ addon | version | maintainers | summary
 [sale_customers_no_default_filter](sale_customers_no_default_filter/) | 14.0.1.0.0 |  | Remove Customers default filter
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale
 [sale_order_address_details](sale_order_address_details/) | 14.0.1.0.0 |  | Sale order address details
+[sale_order_confirmation_required_so_payment_term](sale_order_confirmation_required_so_payment_term/) | 14.0.1.0.0 |  | Prevents SO confirmation if SO has no payment term set
 [sale_order_country_group_text](sale_order_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_customer_contact](sale_order_customer_contact/) | 14.0.1.1.1 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 14.0.1.0.0 |  | Adds contact name to invoice as an extra information
@@ -22,6 +23,7 @@ addon | version | maintainers | summary
 [sale_order_delivery_status](sale_order_delivery_status/) | 14.0.1.0.0 |  | Delivery information for Sales
 [sale_order_description](sale_order_description/) | 14.0.1.0.0 |  | Adds a description (an internal note) to sale order
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 14.0.1.0.0 |  | Adds sale order description to stock picking
+[sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 14.0.1.0.0 |  | When duplicating also copy customer reference
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_header](sale_order_header/) | 14.0.1.0.0 |  | New field for SO header/title
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
@@ -48,6 +50,7 @@ addon | version | maintainers | summary
 [sale_order_year_of_shipment](sale_order_year_of_shipment/) | 14.0.1.0.0 |  | Sale Order year from commitment date
 [sale_payment_acquirer_optional_so_reference](sale_payment_acquirer_optional_so_reference/) | 14.0.1.0.0 |  | Adds an extra option for Sale Order reference
 [sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 14.0.1.0.1 |  | Add product unreserved availability to SO line
+[sale_stock_client_ref_to_picking](sale_stock_client_ref_to_picking/) | 14.0.1.0.0 |  | Move SO customer reference to created stock pickings
 [sale_stock_disable_warehouse_onchange](sale_stock_disable_warehouse_onchange/) | 14.0.1.0.0 |  | Don't auto-change company when warehouse changes
 
 [//]: # (end addons)
