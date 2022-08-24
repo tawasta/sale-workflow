@@ -34,21 +34,12 @@ class SaleOrder(models.Model):
         current_week = datetime.today().isocalendar()[1]
         _logger.debug("Current week: {}".format(current_week))
 
-        additional_weeks = 0
-        if self.company_id.week_of_shipment_additional_weeks:
-            additional_weeks = self.company_id.week_of_shipment_additional_weeks
-        _logger.debug("additional_weeks: {}".format(additional_weeks))
-
-        if additional_weeks > 0:
-            new_week = current_week + additional_weeks
-        else:
-            new_week = current_week
-
-        return new_week
+        return current_week
 
     week_of_shipment = fields.Integer(
         default=lambda self: self._default_week_of_shipment(),
         readonly=False,
+        copy=False,
     )
 
     def _ensure_proper_week(self, week):
