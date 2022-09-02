@@ -5,7 +5,7 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
-            <field name="partner_shipping_id" position="after">
+            <field name="sale_order_template_id" position="before">
                 <field
                     name="customer_contact_id"
                     context="{'default_parent_id': partner_id, 'default_type': 'contact', 'default_is_company': False, 'default_company_type': 'person'}"
