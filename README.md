@@ -34,6 +34,7 @@ addon | version | maintainers | summary
 [sale_order_line_view_analytic_tags](sale_order_line_view_analytic_tags/) | 14.0.1.0.0 |  | Use Analytic tags in search, grouping and tree view
 [sale_order_line_view_team_filter](sale_order_line_view_team_filter/) | 14.0.1.0.0 |  | Use Sales team filter in sale order line tree view
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 14.0.1.0.0 |  | Enables confirming multiple sales at once
+[sale_order_multi_company_rule_only_own_company](sale_order_multi_company_rule_only_own_company/) | 14.0.1.0.0 |  | Shown own company Orders only
 [sale_order_my_orders_no_default_filter](sale_order_my_orders_no_default_filter/) | 14.0.1.0.0 |  | Remove My order-default filter
 [sale_order_note_to_invoice](sale_order_note_to_invoice/) | 14.0.1.0.1 |  | Move SO line notes to invoice
 [sale_order_order_lines_analytic_account_required](sale_order_order_lines_analytic_account_required/) | 14.0.1.0.0 |  | Required Analytic Account for Sale Order Orderlines

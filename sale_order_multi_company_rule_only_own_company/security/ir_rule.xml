@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Sale Order multi-company -->
+    <!-- Toggle noupdate off -->
+    <function
+        name="toggle_noupdate"
+        model="ir.model.data"
+        eval="['ir.rule', ref('sale.sale_order_comp_rule')]"
+    />
+    <record id="sale.sale_order_comp_rule" model="ir.rule">
+        <field
+            name="domain_force"
+        >['|',('company_id','=',False),('company_id','=',user.company_id.id)]</field>
+    </record>
+    <!-- Toggle noupdate on -->
+    <function
+        name="toggle_noupdate"
+        model="ir.model.data"
+        eval="['ir.rule', ref('sale.sale_order_comp_rule')]"
+    />
+
+    <!-- Sales Order Line multi-company -->
+    <!-- Toggle noupdate off -->
+    <function
+        name="toggle_noupdate"
+        model="ir.model.data"
+        eval="['ir.rule', ref('sale.sale_order_line_comp_rule')]"
+    />
+    <record id="sale.sale_order_line_comp_rule" model="ir.rule">
+        <field
+            name="domain_force"
+        >['|',('company_id','=',False),('company_id','=',user.company_id.id)]</field>
+    </record>
+    <!-- Toggle noupdate on -->
+    <function
+        name="toggle_noupdate"
+        model="ir.model.data"
+        eval="['ir.rule', ref('sale.sale_order_line_comp_rule')]"
+    />
+</odoo>
