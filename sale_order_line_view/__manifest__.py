@@ -22,7 +22,7 @@
     "name": "Sale Order Line View",
     "summary": "Add a readonly SO line view for viewing SO line specific info",
     "category": "Sale",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",

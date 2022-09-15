@@ -31,7 +31,7 @@ addon | version | maintainers | summary
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
-[sale_order_line_view](sale_order_line_view/) | 14.0.1.0.1 |  | Add a readonly SO line view for viewing SO line specific info
+[sale_order_line_view](sale_order_line_view/) | 14.0.1.0.2 |  | Add a readonly SO line view for viewing SO line specific info
 [sale_order_line_view_analytic_tags](sale_order_line_view_analytic_tags/) | 14.0.1.0.0 |  | Use Analytic tags in search, grouping and tree view
 [sale_order_line_view_team_filter](sale_order_line_view_team_filter/) | 14.0.1.0.0 |  | Use Sales team filter in sale order line tree view
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 14.0.1.0.0 |  | Enables confirming multiple sales at once
