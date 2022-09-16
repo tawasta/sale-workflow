@@ -31,7 +31,7 @@ addon | version | maintainers | summary
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
-[sale_order_line_view](sale_order_line_view/) | 14.0.1.0.1 |  | Add a readonly SO line view for viewing SO line specific info
+[sale_order_line_view](sale_order_line_view/) | 14.0.1.0.2 |  | Add a readonly SO line view for viewing SO line specific info
 [sale_order_line_view_analytic_tags](sale_order_line_view_analytic_tags/) | 14.0.1.0.0 |  | Use Analytic tags in search, grouping and tree view
 [sale_order_line_view_team_filter](sale_order_line_view_team_filter/) | 14.0.1.0.0 |  | Use Sales team filter in sale order line tree view
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 14.0.1.0.0 |  | Enables confirming multiple sales at once
@@ -39,6 +39,7 @@ addon | version | maintainers | summary
 [sale_order_my_orders_no_default_filter](sale_order_my_orders_no_default_filter/) | 14.0.1.0.0 |  | Remove My order-default filter
 [sale_order_note_to_invoice](sale_order_note_to_invoice/) | 14.0.1.0.1 |  | Move SO line notes to invoice
 [sale_order_order_lines_analytic_account_required](sale_order_order_lines_analytic_account_required/) | 14.0.1.0.0 |  | Required Analytic Account for Sale Order Orderlines
+[sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 14.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 14.0.1.0.0 |  | Set sale order line price by pricelist quantities
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 14.0.1.0.1 |  | Adds a new field for storing date of requested delivery

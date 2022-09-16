@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,17 @@
 ##############################################################################
 
 {
-    "name": "Sale Order Line View",
-    "summary": "Add a readonly SO line view for viewing SO line specific info",
-    "category": "Sale",
-    "version": "14.0.1.0.2",
+    "name": "Sale Order - get delivery method from partner",
+    "summary": "Delivery method is assigned based on partner's delivery method",
+    "version": "14.0.1.0.0",
+    "category": "Sale Workflow",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale", "sale_order_line_margin_percent", "uom"],
-    "data": ["views/sale_order_line_search.xml", "views/sale_order_line.xml"],
+    "depends": [
+        "delivery",
+    ],
+    "data": ["views/sale_order.xml"],
 }
