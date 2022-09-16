@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 14.0.1.0.0 |  | Adds sale order description to stock picking
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 14.0.1.0.0 |  | When duplicating also copy customer reference
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
-[sale_order_header](sale_order_header/) | 14.0.1.0.0 |  | New field for SO header/title
+[sale_order_header](sale_order_header/) | 14.0.1.0.1 |  | New field for SO header/title
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.0 |  | Adds a product configurator on sale order line
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
