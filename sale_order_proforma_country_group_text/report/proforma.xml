@@ -9,7 +9,9 @@
                 t-foreach="doc.partner_id.country_id.country_group_ids"
                 t-as="country_group"
             >
-                <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                <t
+                    t-if="env.context.get('proforma', False) or is_pro_forma and country_group.proforma_text"
+                >
                 <br />
                 <span t-field="country_group.proforma_text" />
                 </t>
