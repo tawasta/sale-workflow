@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-30 12:55+0000\n"
-"PO-Revision-Date: 2022-05-30 15:56+0300\n"
+"POT-Creation-Date: 2022-09-27 09:59+0000\n"
+"PO-Revision-Date: 2022-09-27 13:02+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 #. module: sale_order_customer_order_date
 #: model_terms:ir.ui.view,arch_db:sale_order_customer_order_date.sale_order_customer_order_date_report_saleorder_document
 msgid "<strong>Customer Order Date:</strong>"
-msgstr "<strong>Date de commande:</strong>"
+msgstr "<strong>Date de la commande client:</strong>"
 
 #. module: sale_order_customer_order_date
 #: model:ir.model.fields,field_description:sale_order_customer_order_date.field_sale_order__customer_order_date
 msgid "Customer order date"
-msgstr "Date de commande"
+msgstr "Date de la commande client"
 
 #. module: sale_order_customer_order_date
 #: model:ir.model.fields,field_description:sale_order_customer_order_date.field_sale_order__display_name
