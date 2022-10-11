@@ -30,4 +30,14 @@
             </xpath>
         </field>
     </record>
+
+    <record id="view_order_form_configurator" model="ir.ui.view">
+        <field name="name">sale.order.form.configurator</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_product_configurator.sale_order_view_form" />
+        <field name="priority" eval="99" />
+        <field name="arch" type="xml">
+            <field name="is_configurable_product" position="replace" />
+        </field>
+    </record>
 </odoo>
