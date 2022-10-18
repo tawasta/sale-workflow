@@ -22,7 +22,7 @@
     "version": "14.0.1.0.0",
     "category": "Sale",
     "summary": "Sets advance invoice date due 14 days before order commitment date",
-    "website": "https://gitlab.com/tawasta/odoo",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
