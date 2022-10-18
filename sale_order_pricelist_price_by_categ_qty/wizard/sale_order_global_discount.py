@@ -4,6 +4,7 @@ from odoo import exceptions, models
 class SaleOrderGlobalDiscount(models.TransientModel):
 
     _name = "sale.order.global.discount"
+    _description = "Sale Order Global Discount"
 
     def get_confirmable_states(self):
         return {"draft": "Draft"}

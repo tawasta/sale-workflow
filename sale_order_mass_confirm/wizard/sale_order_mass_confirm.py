@@ -3,6 +3,7 @@ from odoo import _, exceptions, models
 
 class SaleOrderMassConfirm(models.TransientModel):
     _name = "sale.order.mass.confirm"
+    _description = "Sale Order Mass Confirm"
 
     def get_confirmable_states(self):
         return ["draft", "sent"]
