@@ -19,6 +19,7 @@ addon | version | maintainers | summary
 [sale_order_customer_contact](sale_order_customer_contact/) | 14.0.1.1.1 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 14.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_order_date](sale_order_customer_order_date/) | 14.0.1.0.0 |  | Customer order date field to sale order
+[sale_order_customer_reference_header](sale_order_customer_reference_header/) | 14.0.1.0.0 |  | Move Customer refernce to header
 [sale_order_delivery_date_to_invoice](sale_order_delivery_date_to_invoice/) | 14.0.1.0.0 |  | Pre-fill invoice delivery date from Sale Order
 [sale_order_delivery_place](sale_order_delivery_place/) | 14.0.1.0.0 |  | Delivery Terms on Sale Order
 [sale_order_delivery_status](sale_order_delivery_status/) | 14.0.1.0.0 |  | Delivery information for Sales
