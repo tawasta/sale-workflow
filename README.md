@@ -56,6 +56,7 @@ addon | version | maintainers | summary
 [sale_order_warranty](sale_order_warranty/) | 14.0.1.0.0 |  | Sale Order Warranty
 [sale_order_week_of_shipment](sale_order_week_of_shipment/) | 14.0.1.0.1 |  | Week of shipment field to sale order
 [sale_order_year_of_shipment](sale_order_year_of_shipment/) | 14.0.1.0.0 |  | Sale Order year from commitment date
+[sale_partner_default_note](sale_partner_default_note/) | 14.0.1.0.0 |  | Add a default sale note (terms and conditions) for partner
 [sale_payment_acquirer_optional_so_reference](sale_payment_acquirer_optional_so_reference/) | 14.0.1.0.0 |  | Adds an extra option for Sale Order reference
 [sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 14.0.1.0.1 |  | Add product unreserved availability to SO line
 [sale_stock_client_ref_to_picking](sale_stock_client_ref_to_picking/) | 14.0.1.0.0 |  | Move SO customer reference to created stock pickings
