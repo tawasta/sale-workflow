@@ -50,7 +50,7 @@ class SaleBlanketOrder(models.Model):
                 }
                 line_model.create(line_vals)
 
-    def _bom_lines_expand(self, bom_lines, products, quantity=1, recursive=False):
+    def _bom_lines_expand(self, bom_lines, products, quantity=1, recursive=True):
         for bom_line in bom_lines:
             converted_quantity = bom_line.product_uom_id._compute_quantity(
                 quantity, bom_line.bom_id.product_uom_id
