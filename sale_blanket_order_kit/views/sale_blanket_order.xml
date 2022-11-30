@@ -17,7 +17,7 @@
                 />
             </button>
 
-            <page name="order_lines" position="after">
+            <xpath expr="//page[1]" position="after">
                 <page name="kits" string="Kits">
                     <field name="kit_ids" context="{'default_order_id': id}">
                         <tree editable="bottom">
@@ -26,7 +26,7 @@
                         </tree>
                     </field>
                 </page>
-            </page>
+            </xpath>
 
         </field>
     </record>
