@@ -10,7 +10,7 @@
             <button name="set_to_draft" position="after">
                 <button
                     name="action_create_forecast"
-                    string="Create forecast"
+                    string="Compute forecast"
                     class="btn-primary"
                     attrs="{'invisible': ['|',('create_forecast_sales', '=', False),('state', 'not in', ['open','done'])]}"
                     type="object"
@@ -24,6 +24,10 @@
                     attrs="{'invisible': [('create_forecast_sales', '=', False)]}"
                 />
                 <field
+                    name="replacement_policy"
+                    attrs="{'invisible': [('create_forecast_sales', '=', False)]}"
+                />
+                <field
                     name="forecast_sale_order_id"
                     attrs="{'invisible': [('create_forecast_sales', '=', False)]}"
                 />
@@ -32,6 +36,65 @@
             <field name="validity_date" position="before">
                 <field name="validity_date_start" />
             </field>
+
+            <xpath expr="//field[@name='original_uom_qty']" position="after">
+                <field name="create_forecast_sales" invisible="1" />
+                <field
+                    name="realized_uom_qty"
+                    string="Realized Qty"
+                    optional="Show"
+                    decoration-danger="realized_uom_qty > original_uom_qty"
+                />
+            </xpath>
+
+            <xpath expr="//field[@name='original_uom_qty']" position="attributes">
+                <attribute
+                    name="decoration-danger"
+                >realized_uom_qty > original_uom_qty</attribute>
+            </xpath>
+
+            <!-- Hide unnecessary fields from forecast -->
+            <xpath expr="//field[@name='product_uom']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='price_unit']" position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='date_schedule']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='ordered_uom_qty']" position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='invoiced_uom_qty']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='delivered_uom_qty']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='remaining_uom_qty']" position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='taxes_id']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+
+            <xpath
+                expr="//group[@class='oe_subtotal_footer oe_right']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'invisible': [('create_forecast_sales', '=', True)]}</attribute>
+            </xpath>
+
         </field>
     </record>
 </odoo>

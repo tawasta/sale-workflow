@@ -27,6 +27,18 @@ class SaleBlanketOrder(models.Model):
         default="order",
     )
 
+    replacement_policy = fields.Selection(
+        [
+            ("none", "No replacing"),
+            ("category", "Product category"),
+        ],
+        string="Replacement Policy",
+        help="No replacing: Never replace exhausted product.\n"
+        "Product category: After a product forecast is exhausted, "
+        "use other products in the same category.\n",
+        default="none",
+    )
+
     forecast_sale_order_id = fields.Many2one(
         comodel_name="sale.order", string="Forecast sale", readonly=1, copy=False
     )
@@ -75,13 +87,24 @@ class SaleBlanketOrder(models.Model):
         forecast_lines = self._compute_forecast_lines()
         for order_line in sale_order.order_line:
             product_id = order_line.product_id.id
-            if forecast_lines.get(product_id):
+            if forecast_lines.get(product_id) is not None:
                 order_line.product_uom_qty = (
                     forecast_lines[product_id] if forecast_lines[product_id] > 0 else 0
                 )
 
         # Confirm the SO to create deliveries
         sale_order.action_confirm()
+
+        exhausted_lines = self.line_ids.filtered(
+            lambda r: r.original_uom_qty <= r.realized_uom_qty
+        )
+        if exhausted_lines:
+            msg = _(
+                "Forecast computed. Exhausted products: {}".format(
+                    ", ".join(exhausted_lines.mapped("product_id.name"))
+                )
+            )
+            self.message_post(body=msg)
 
     def _compute_forecast_lines(self):
         # Compute forecast lines for the forecast SO
@@ -93,14 +116,33 @@ class SaleBlanketOrder(models.Model):
         sold = self._get_sold_products(sale_order_lines)
 
         forecast_lines = {}
-        for forecast in self.line_ids:
-            product = forecast.product_id
-            qty = forecast.original_uom_qty
+        for line in self.line_ids:
+            product = line.product_id
+            qty = line.original_uom_qty
 
             if sold.get(product.id):
+                line.realized_uom_qty = sold[product.id]
                 qty = qty - sold[product.id]
 
-            forecast_lines[product.id] = qty
+            if qty < 0:
+                # Do a replacement for product that has been exhausted
+                replacement_qty = abs(qty)
+                if self.replacement_policy == "category":
+                    replacement_lines = self.line_ids.filtered(
+                        lambda r: r.product_id.categ_id == product.categ_id
+                        and r.product_id != product
+                    )
+                    total = sum(replacement_lines.mapped("original_uom_qty"))
+                    for rline in replacement_lines:
+                        forecast_lines.setdefault(rline.product_id.id, 0)
+                        forecast_lines[rline.product_id.id] -= (
+                            rline.original_uom_qty / total * replacement_qty
+                        )
+
+                    qty = 0
+
+            forecast_lines.setdefault(product.id, 0)
+            forecast_lines[product.id] += qty
 
         return forecast_lines
 
@@ -147,7 +189,6 @@ class SaleBlanketOrder(models.Model):
                         continue
                     product = move.product_id
                     qty = move.product_uom_qty
-
                     sold.update({product.id: sold.get(product.id, 0) + qty})
             else:
                 raise ValidationError(_("Please select a forecast policy"))

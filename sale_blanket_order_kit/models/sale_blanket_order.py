@@ -24,6 +24,7 @@ class SaleBlanketOrder(models.Model):
         self.ensure_one()
 
         products = {}
+
         for kit_line in self.kit_ids:
             products = self._bom_lines_expand(
                 kit_line.kit_id.bom_line_ids, products, kit_line.original_uom_qty
@@ -49,13 +50,17 @@ class SaleBlanketOrder(models.Model):
                 }
                 line_model.create(line_vals)
 
-    def _bom_lines_expand(self, bom_lines, products, quantity=1):
+    def _bom_lines_expand(self, bom_lines, products, quantity=1, recursive=False):
         for bom_line in bom_lines:
             converted_quantity = bom_line.product_uom_id._compute_quantity(
                 quantity, bom_line.bom_id.product_uom_id
             )
 
-            if bom_line.child_bom_id:
+            if (
+                bom_line.child_bom_id
+                and bom_line.child_bom_id.type == "phantom"
+                and recursive
+            ):
                 products = self._bom_lines_expand(
                     bom_line.child_line_ids,
                     products,
