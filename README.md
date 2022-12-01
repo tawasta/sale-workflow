@@ -55,7 +55,7 @@ addon | version | maintainers | summary
 [sale_order_subtotal_values](sale_order_subtotal_values/) | 14.0.1.0.0 |  | Recompute Sale Order line subtotal values
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 14.0.1.0.0 |  | Add customer reference to sale order tree view
 [sale_order_warehouse_do_not_copy](sale_order_warehouse_do_not_copy/) | 14.0.1.0.0 |  | Do not copy a warehouse when copying a sale order
-[sale_order_warranty](sale_order_warranty/) | 14.0.1.0.0 |  | Sale Order Warranty
+[sale_order_warranty](sale_order_warranty/) | 14.0.1.0.1 |  | Sale Order Warranty
 [sale_order_week_of_shipment](sale_order_week_of_shipment/) | 14.0.1.0.1 |  | Week of shipment field to sale order
 [sale_order_year_of_shipment](sale_order_year_of_shipment/) | 14.0.1.0.0 |  | Sale Order year from commitment date
 [sale_partner_default_note](sale_partner_default_note/) | 14.0.1.0.0 |  | Add a default sale note (terms and conditions) for partner
