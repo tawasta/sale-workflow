@@ -21,7 +21,7 @@
 {
     "name": "Sale Order Warranty",
     "summary": "Sale Order Warranty",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
@@ -29,5 +29,9 @@
     "application": False,
     "installable": True,
     "depends": ["sale", "sale_stock"],
-    "data": ["report/sale_order_report.xml", "views/sale_order.xml"],
+    "data": [
+        "report/sale_order_report.xml",
+        "views/sale_order.xml",
+        "views/stock_picking.xml",
+    ],
 }

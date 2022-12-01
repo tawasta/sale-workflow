@@ -11,6 +11,8 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.0.0 |  | Allows making forecast sale orders from blanket orders
+[sale_blanket_order_kit](sale_blanket_order_kit/) | 14.0.1.0.1 |  | Add kits and expand them as forecast lines
 [sale_customers_no_default_filter](sale_customers_no_default_filter/) | 14.0.1.0.0 |  | Remove Customers default filter
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale
 [sale_order_address_details](sale_order_address_details/) | 14.0.1.0.0 |  | Sale order address details
@@ -53,7 +55,7 @@ addon | version | maintainers | summary
 [sale_order_subtotal_values](sale_order_subtotal_values/) | 14.0.1.0.0 |  | Recompute Sale Order line subtotal values
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 14.0.1.0.0 |  | Add customer reference to sale order tree view
 [sale_order_warehouse_do_not_copy](sale_order_warehouse_do_not_copy/) | 14.0.1.0.0 |  | Do not copy a warehouse when copying a sale order
-[sale_order_warranty](sale_order_warranty/) | 14.0.1.0.0 |  | Sale Order Warranty
+[sale_order_warranty](sale_order_warranty/) | 14.0.1.0.1 |  | Sale Order Warranty
 [sale_order_week_of_shipment](sale_order_week_of_shipment/) | 14.0.1.0.1 |  | Week of shipment field to sale order
 [sale_order_year_of_shipment](sale_order_year_of_shipment/) | 14.0.1.0.0 |  | Sale Order year from commitment date
 [sale_partner_default_note](sale_partner_default_note/) | 14.0.1.0.0 |  | Add a default sale note (terms and conditions) for partner
