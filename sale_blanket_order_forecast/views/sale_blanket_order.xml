@@ -54,8 +54,12 @@
             </xpath>
 
             <!-- Hide unnecessary fields from forecast -->
+            <xpath expr="//button[@class='btn-primary']">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
             <xpath expr="//field[@name='product_uom']" position="attributes">
-                <attribute name="optional">hide</attribute>
+                <attribute name="invisible">1</attribute>
             </xpath>
 
             <xpath expr="//field[@name='price_unit']" position="attributes">
@@ -63,7 +67,7 @@
             </xpath>
 
             <xpath expr="//field[@name='date_schedule']" position="attributes">
-                <attribute name="optional">hide</attribute>
+                <attribute name="invisible">1</attribute>
             </xpath>
 
             <xpath expr="//field[@name='ordered_uom_qty']" position="attributes">
@@ -71,11 +75,11 @@
             </xpath>
 
             <xpath expr="//field[@name='invoiced_uom_qty']" position="attributes">
-                <attribute name="optional">hide</attribute>
+                <attribute name="invisible">1</attribute>
             </xpath>
 
             <xpath expr="//field[@name='delivered_uom_qty']" position="attributes">
-                <attribute name="optional">hide</attribute>
+                <attribute name="invisible">1</attribute>
             </xpath>
 
             <xpath expr="//field[@name='remaining_uom_qty']" position="attributes">
@@ -83,7 +87,7 @@
             </xpath>
 
             <xpath expr="//field[@name='taxes_id']" position="attributes">
-                <attribute name="optional">hide</attribute>
+                <attribute name="invisible">1</attribute>
             </xpath>
 
             <xpath
