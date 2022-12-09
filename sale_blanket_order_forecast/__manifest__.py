@@ -29,5 +29,5 @@
     "application": False,
     "installable": True,
     "depends": ["sale_blanket_order"],
-    "data": ["views/sale_blanket_order.xml"],
+    "data": ["data/ir_cron.xml", "views/sale_blanket_order.xml"],
 }
