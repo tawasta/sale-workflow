@@ -46,7 +46,7 @@ class SaleBlanketOrder(models.Model):
                     "product_id": product_id,
                     "original_uom_qty": qty,
                     "product_uom": product.uom_id.id,
-                    "price_unit": product.lst_price,
+                    "price_unit": product.lst_price or 1,
                 }
                 line_model.create(line_vals)
 
