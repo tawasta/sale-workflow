@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2022- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,20 +18,42 @@
 #
 ##############################################################################
 
-{
-    "name": "Sale Order Warranty",
-    "summary": "Sale Order Warranty",
-    "version": "14.0.1.0.1",
-    "category": "Sale",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
-    "author": "Tawasta",
-    "license": "AGPL-3",
-    "application": False,
-    "installable": True,
-    "depends": ["sale", "sale_stock"],
-    "data": [
-        "report/sale_order_report.xml",
-        "views/sale_order.xml",
-        "views/stock_picking.xml",
-    ],
-}
+# 1. Standard library imports:
+
+# 2. Known third party imports:
+
+# 3. Odoo imports (openerp):
+from odoo import models
+
+# 4. Imports from Odoo modules:
+
+# 5. Local imports in the relative form:
+
+# 6. Unknown third party imports:
+
+
+class SaleOrderLine(models.Model):
+    # 1. Private attributes
+    _inherit = "sale.order.line"
+
+    # 2. Fields declaration
+
+    # 3. Default methods
+
+    # 4. Compute and search fields, in the same order that fields declaration
+
+    # 5. Constraints and onchanges
+
+    # 6. CRUD methods
+
+    # 7. Action methods
+    def action_sale_order_line_copy(self):
+        self.ensure_one()
+
+        self.copy({"order_id": self.order_id.id})
+        return {
+            "type": "ir.actions.client",
+            "tag": "reload",
+        }
+
+    # 8. Business methods

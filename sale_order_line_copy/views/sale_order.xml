@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_order_form_line_copy" model="ir.ui.view">
+        <field name="name">sale.order.form.line.copy</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='order_lines']//tree/field[last()]"
+                position="after"
+            >
+                <button
+                    name="action_sale_order_line_copy"
+                    type="object"
+                    string="Duplicate Order Line"
+                    icon="fa-clone"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

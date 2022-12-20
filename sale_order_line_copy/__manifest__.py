@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2022- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,21 +17,16 @@
 #    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
 #
 ##############################################################################
-
 {
-    "name": "Sale Order Warranty",
-    "summary": "Sale Order Warranty",
-    "version": "14.0.1.0.1",
+    "name": "Sale Order Line Copy",
+    "version": "14.0.1.0.0",
     "category": "Sale",
+    "summary": "Duplicate single order lines on sale order",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale", "sale_stock"],
-    "data": [
-        "report/sale_order_report.xml",
-        "views/sale_order.xml",
-        "views/stock_picking.xml",
-    ],
+    "depends": ["sale"],
+    "data": ["views/sale_order.xml"],
 }
