@@ -16,8 +16,17 @@ class SaleBlanketOrder(models.Model):
         copy=True,
     )
 
+    kit_recompute_clear = fields.Boolean(
+        "Clear lines on recompute",
+        help="Clear all existing order lines on recompute",
+        default=True,
+    )
+
     def action_kit_compute(self):
         for record in self:
+            if record.kit_recompute_clear:
+                record.line_ids = False
+
             record._kit_expand()
 
     def _kit_expand(self):
