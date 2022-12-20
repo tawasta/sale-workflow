@@ -19,6 +19,7 @@
 
             <xpath expr="//page[1]" position="after">
                 <page name="kits" string="Kits">
+                    <group><field name="kit_recompute_clear" /></group>
                     <field name="kit_ids" context="{'default_order_id': id}">
                         <tree editable="bottom">
                             <field name="kit_id" />
