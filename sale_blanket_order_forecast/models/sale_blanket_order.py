@@ -116,6 +116,10 @@ class SaleBlanketOrder(models.Model):
         # Confirm the SO to create deliveries
         sale_order.action_confirm()
 
+        # Unreserve products from pickings
+        for picking in sale_order.picking_ids:
+            picking.do_unreserve()
+
         exhausted_lines = self.line_ids.filtered(
             lambda r: r.original_uom_qty <= r.realized_uom_qty
         )
