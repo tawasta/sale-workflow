@@ -1,6 +1,6 @@
 import logging
 
-from odoo import _, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -51,7 +51,29 @@ class SaleBlanketOrder(models.Model):
         states={"draft": [("readonly", False)]},
     )
 
+    @api.model
+    def expire_orders(self):
+        today = fields.Date.today()
+        expired_orders = self.search(
+            [
+                ("state", "in", ["open", "done"]),
+                ("validity_date", "<=", today),
+            ]
+        )
+
+        for expired in expired_orders:
+            if expired.forecast_sale_order_id.state in ["sale", "sent"]:
+                expired.forecast_sale_order_id.action_cancel()
+
+        return super().expire_orders()
+
+    def cron_create_forecast(self):
+        records = self.search([("state", "=", "open")])
+        for record in records:
+            record.action_create_forecast()
+
     def action_create_forecast(self):
+        self.ensure_one()
         if self.forecast_sale_order_id:
             sale_order = self.forecast_sale_order_id
         else:
@@ -94,6 +116,10 @@ class SaleBlanketOrder(models.Model):
 
         # Confirm the SO to create deliveries
         sale_order.action_confirm()
+
+        # Unreserve products from pickings
+        for picking in sale_order.picking_ids:
+            picking.do_unreserve()
 
         exhausted_lines = self.line_ids.filtered(
             lambda r: r.original_uom_qty <= r.realized_uom_qty

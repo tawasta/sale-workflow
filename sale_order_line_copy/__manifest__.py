@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name": "Sale Order Line Copy",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Sale",
     "summary": "Duplicate single order lines on sale order",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",

@@ -11,8 +11,8 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.0.0 |  | Allows making forecast sale orders from blanket orders
-[sale_blanket_order_kit](sale_blanket_order_kit/) | 14.0.1.0.1 |  | Add kits and expand them as forecast lines
+[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.1.0 |  | Allows making forecast sale orders from blanket orders
+[sale_blanket_order_kit](sale_blanket_order_kit/) | 14.0.1.0.2 |  | Add kits and expand them as forecast lines
 [sale_customers_no_default_filter](sale_customers_no_default_filter/) | 14.0.1.0.0 |  | Remove Customers default filter
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale
 [sale_order_address_details](sale_order_address_details/) | 14.0.1.0.0 |  | Sale order address details
@@ -32,7 +32,7 @@ addon | version | maintainers | summary
 [sale_order_header](sale_order_header/) | 14.0.1.0.1 |  | New field for SO header/title
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 14.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line
-[sale_order_line_copy](sale_order_line_copy/) | 14.0.1.0.0 |  | Duplicate single order lines on sale order
+[sale_order_line_copy](sale_order_line_copy/) | 14.0.1.0.1 |  | Duplicate single order lines on sale order
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
