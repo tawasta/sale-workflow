@@ -5,7 +5,9 @@
 ====================
 Sale Order Line Copy
 ====================
-* Duplicate single order lines on sale order  
+
+* Duplicate single order lines on sale order
+* Sale line sequences are recomputed for easier use
 
 Configuration
 =============
@@ -17,7 +19,8 @@ Usage
 
 Known issues / Roadmap
 ======================
-- Rewrite with JS Widget to avoid unnecessary reload
+(- Rewrite with JS Widget to avoid unnecessary reload)
+Timo: Reloading is not needed anymore
 
 Credits
 =======
@@ -27,6 +30,7 @@ Contributors
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 * Miika Nissi <miika.nissi@tawasta.fi>
+* Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 
 Maintainer
 ----------

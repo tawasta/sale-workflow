@@ -4,26 +4,23 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20221202\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-15 19:33+0000\n"
-"PO-Revision-Date: 2022-12-15 19:33+0000\n"
+"POT-Creation-Date: 2022-12-21 14:00+0000\n"
+"PO-Revision-Date: 2022-12-21 16:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: fi\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #. module: sale_order_line_copy
 #: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line__display_name
 msgid "Display Name"
 msgstr "Näyttönimi"
-
-#. module: sale_order_line_copy
-#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.view_order_form_line_copy
-msgid "Duplicate Order Line"
-msgstr "Monista myyntitilausrivi"
 
 #. module: sale_order_line_copy
 #: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line__id
