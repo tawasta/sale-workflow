@@ -1,4 +1,5 @@
 import logging
+from datetime import timedelta
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
@@ -100,6 +101,9 @@ class SaleBlanketOrder(models.Model):
         if sale_order.state == "sale":
             sale_order.action_cancel()
             sale_order.action_draft()
+
+        # Set SO commitment date
+        sale_order.commitment_date = self.validity_date + timedelta(days=1)
 
         # Tag the SO as BO forecast
         sale_order.is_forecast = True
