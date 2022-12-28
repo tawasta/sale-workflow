@@ -2,12 +2,10 @@
         :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
         :alt: License: AGPL-3
 
-====================
-Sale Order Line Copy
-====================
-
-* Duplicate single order lines on sale order
-* Sale line sequences are recomputed for easier use
+===============================
+Sale Order Invoice Status Color
+===============================
+* Sale order tree view status colors based on invoice state 
 
 Configuration
 =============
@@ -19,8 +17,7 @@ Usage
 
 Known issues / Roadmap
 ======================
-(- Rewrite with JS Widget to avoid unnecessary reload)
-Timo: Reloading is not needed anymore
+\-
 
 Credits
 =======
@@ -28,7 +25,6 @@ Credits
 Contributors
 ------------
 
-* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 * Miika Nissi <miika.nissi@tawasta.fi>
 * Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 

@@ -18,10 +18,10 @@
 #
 ##############################################################################
 {
-    "name": "Sale Order Line Copy",
-    "version": "14.0.1.0.1",
-    "category": "Sale",
-    "summary": "Duplicate single order lines on sale order",
+    "name": "Sale Order Invoice Status Color",
+    "version": "14.0.1.0.0",
+    "category": "Sales",
+    "summary": "Sale order tree view status colors based on invoice state",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
