@@ -1,5 +1,5 @@
 import logging
-from datetime import timedelta
+from datetime import timedelta, datetime
 
 from odoo import api
 from odoo import _, fields, models
@@ -102,7 +102,9 @@ class SaleBlanketOrder(models.Model):
             sale_order.action_draft()
 
         # Set SO commitment date
-        sale_order.commitment_date = self.validity_date + timedelta(days=1)
+        sale_order.commitment_date = datetime.combine(
+            self.validity_date + timedelta(days=1), datetime.min.time()
+        )
 
         # Tag the SO as BO forecast
         sale_order.is_forecast = True
