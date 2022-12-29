@@ -101,6 +101,9 @@ class SaleBlanketOrder(models.Model):
             sale_order.action_cancel()
             sale_order.action_draft()
 
+        # Set SO commitment date
+        sale_order.commitment_date = self.validity_date_start
+
         # Tag the SO as BO forecast
         sale_order.is_forecast = True
         self.forecast_sale_order_id = sale_order.id

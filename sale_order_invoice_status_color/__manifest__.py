@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2022- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,17 +17,16 @@
 #    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
 #
 ##############################################################################
-
 {
-    "name": "Sale blanket order forecast",
-    "summary": "Allows making forecast sale orders from blanket orders",
-    "version": "14.0.1.1.2",
-    "category": "Sale",
+    "name": "Sale Order Invoice Status Color",
+    "version": "14.0.1.0.0",
+    "category": "Sales",
+    "summary": "Sale order tree view status colors based on invoice state",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale_blanket_order"],
-    "data": ["data/ir_cron.xml", "views/sale_blanket_order.xml"],
+    "depends": ["sale"],
+    "data": ["views/sale_order.xml"],
 }

@@ -11,7 +11,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.1.0 |  | Allows making forecast sale orders from blanket orders
+[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.1.2 |  | Allows making forecast sale orders from blanket orders
 [sale_blanket_order_kit](sale_blanket_order_kit/) | 14.0.1.0.2 |  | Add kits and expand them as forecast lines
 [sale_customers_no_default_filter](sale_customers_no_default_filter/) | 14.0.1.0.0 |  | Remove Customers default filter
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale
@@ -30,7 +30,9 @@ addon | version | maintainers | summary
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 14.0.1.0.0 |  | When duplicating also copy customer reference
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_header](sale_order_header/) | 14.0.1.0.1 |  | New field for SO header/title
+[sale_order_header_fiscal_position_warehouse_incoterm](sale_order_header_fiscal_position_warehouse_incoterm/) | 14.0.1.0.0 |  | Move fiscal position, warehouse, and incoterm to so header
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 14.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
+[sale_order_invoice_status_color](sale_order_invoice_status_color/) | 14.0.1.0.0 |  | Sale order tree view status colors based on invoice state
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line
 [sale_order_line_copy](sale_order_line_copy/) | 14.0.1.0.1 |  | Duplicate single order lines on sale order
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
