@@ -47,6 +47,7 @@ addon | version | maintainers | summary
 [sale_order_my_orders_no_default_filter](sale_order_my_orders_no_default_filter/) | 14.0.1.0.0 |  | Remove My order-default filter
 [sale_order_note_to_invoice](sale_order_note_to_invoice/) | 14.0.1.0.1 |  | Move SO line notes to invoice
 [sale_order_order_lines_analytic_account_required](sale_order_order_lines_analytic_account_required/) | 14.0.1.0.0 |  | Required Analytic Account for Sale Order Orderlines
+[sale_order_partner_clause_to_note](sale_order_partner_clause_to_note/) | 14.0.1.0.0 |  | Sale Order - add Sale clause to note field
 [sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 14.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 14.0.1.0.0 |  | Tag from partner category to sale order CRM tag
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 14.0.1.0.0 |  | Set sale order line price by pricelist quantities
