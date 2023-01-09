@@ -29,7 +29,7 @@ addon | version | maintainers | summary
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 14.0.1.0.0 |  | Adds sale order description to stock picking
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 14.0.1.0.0 |  | When duplicating also copy customer reference
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
-[sale_order_header](sale_order_header/) | 14.0.1.0.1 |  | New field for SO header/title
+[sale_order_header](sale_order_header/) | 14.0.1.0.2 |  | New field for SO header/title
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 14.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
 [sale_order_invoice_status_color](sale_order_invoice_status_color/) | 14.0.1.0.0 |  | Sale order tree view status colors based on invoice state
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line

@@ -21,7 +21,7 @@
 {
     "name": "Sale Order Header",
     "summary": "New field for SO header/title",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
@@ -30,6 +30,7 @@
     "installable": True,
     "depends": ["sale"],
     "data": [
+        "report/report_invoice.xml",
         "report/sale_order_report.xml",
         "views/account_invoice.xml",
         "views/sale_order.xml",
