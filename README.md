@@ -30,10 +30,12 @@ addon | version | maintainers | summary
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 14.0.1.0.0 |  | When duplicating also copy customer reference
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_header](sale_order_header/) | 14.0.1.0.2 |  | New field for SO header/title
+[sale_order_header_fiscal_position_warehouse_incoterm](sale_order_header_fiscal_position_warehouse_incoterm/) | 14.0.1.0.0 |  | Move fiscal position, warehouse, and incoterm to so header
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 14.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
 [sale_order_invoice_status_color](sale_order_invoice_status_color/) | 14.0.1.0.0 |  | Sale order tree view status colors based on invoice state
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line
 [sale_order_line_copy](sale_order_line_copy/) | 14.0.1.0.1 |  | Duplicate single order lines on sale order
+[sale_order_line_delivery_date_change_scheduled_date](sale_order_line_delivery_date_change_scheduled_date/) | 14.0.1.0.1 |  | Change Scheduled Date with Delivery Time
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
@@ -45,6 +47,7 @@ addon | version | maintainers | summary
 [sale_order_my_orders_no_default_filter](sale_order_my_orders_no_default_filter/) | 14.0.1.0.0 |  | Remove My order-default filter
 [sale_order_note_to_invoice](sale_order_note_to_invoice/) | 14.0.1.0.1 |  | Move SO line notes to invoice
 [sale_order_order_lines_analytic_account_required](sale_order_order_lines_analytic_account_required/) | 14.0.1.0.0 |  | Required Analytic Account for Sale Order Orderlines
+[sale_order_partner_clause_to_note](sale_order_partner_clause_to_note/) | 14.0.1.0.0 |  | Sale Order - add Sale clause to note field
 [sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 14.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 14.0.1.0.0 |  | Tag from partner category to sale order CRM tag
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 14.0.1.0.0 |  | Set sale order line price by pricelist quantities
