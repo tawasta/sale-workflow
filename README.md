@@ -56,6 +56,7 @@ addon | version | maintainers | summary
 [sale_order_route_in_header](sale_order_route_in_header/) | 14.0.1.0.0 |  | Allows editing route for all SO lines at once
 [sale_order_sale_type](sale_order_sale_type/) | 14.0.1.0.0 |  | Sale Type field is added to sales
 [sale_order_show_addresses](sale_order_show_addresses/) | 14.0.1.0.0 |  | Show the addresses below their fields
+[sale_order_show_purchase_order](sale_order_show_purchase_order/) | 14.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_show_reporting_group](sale_order_show_reporting_group/) | 14.0.1.0.0 |  | Show 'Reporting' group in SO form without belonging to the Technical group
 [sale_order_subtotal_values](sale_order_subtotal_values/) | 14.0.1.0.0 |  | Recompute Sale Order line subtotal values
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 14.0.1.0.0 |  | Add customer reference to sale order tree view
