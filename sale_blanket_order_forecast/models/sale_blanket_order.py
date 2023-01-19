@@ -66,10 +66,15 @@ class SaleBlanketOrder(models.Model):
 
     def _compute_confirmed_sale_order_ids(self):
         for record in self:
+            if record.forecast_policy == 'picking':
+                date_field = "commitment_date"
+            else:
+                date_field = "date_order"
+
             sale_orders = self.env["sale.order"].search(
                 [
-                    ("date_order", ">=", self.validity_date_start),
-                    ("date_order", "<=", self.validity_date),
+                    (date_field, ">=", self.validity_date_start),
+                    (date_field, "<=", self.validity_date),
                     ("is_forecast", "=", False),
                     ("state", "in", ["sale", "done"]),
                 ]
