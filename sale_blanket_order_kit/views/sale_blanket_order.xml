@@ -12,7 +12,6 @@
                     name="action_kit_compute"
                     string="Compute kit lines"
                     class="btn-default"
-                    attrs="{'invisible': [('state', 'not in', ['draft'])]}"
                     type="object"
                 />
             </button>
