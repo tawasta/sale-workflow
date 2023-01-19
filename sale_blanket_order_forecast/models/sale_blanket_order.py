@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime
 
 from odoo import api
 from odoo import _, fields, models
@@ -99,6 +100,11 @@ class SaleBlanketOrder(models.Model):
         if sale_order.state == "sale":
             sale_order.action_cancel()
             sale_order.action_draft()
+
+        # Set SO commitment date
+        sale_order.commitment_date = datetime.combine(
+            self.validity_date_start, datetime.min.time()
+        )
 
         # Tag the SO as BO forecast
         sale_order.is_forecast = True
