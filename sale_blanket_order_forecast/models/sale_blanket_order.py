@@ -66,19 +66,29 @@ class SaleBlanketOrder(models.Model):
 
     def _compute_confirmed_sale_order_ids(self):
         for record in self:
-            if record.forecast_policy == 'picking':
-                date_field = "commitment_date"
-            else:
-                date_field = "date_order"
 
-            sale_orders = self.env["sale.order"].search(
-                [
-                    (date_field, ">=", self.validity_date_start),
-                    (date_field, "<=", self.validity_date),
-                    ("is_forecast", "=", False),
-                    ("state", "in", ["sale", "done"]),
-                ]
-            )
+            if record.forecast_policy == 'picking':
+                # Search by picking date
+                pickings = self.env["stock.picking"].search(
+                    [
+                        ("scheduled_date", ">=", self.validity_date_start),
+                        ("scheduled_date", "<=", self.validity_date),
+                        ("sale_id", "!=", False),
+                        ("state", "not in", ["cancel"]),
+                    ]
+                )
+                sale_orders = pickings.mapped('sale_id')
+            else:
+                # Search by SO date
+                sale_orders = self.env["sale.order"].search(
+                    [
+                        ("date_order", ">=", self.validity_date_start),
+                        ("date_order", "<=", self.validity_date),
+                        ("is_forecast", "=", False),
+                        ("state", "in", ["sale", "done"]),
+                    ]
+                )
+
             record.confirmed_sale_order_ids = sale_orders
             record.confirmed_sale_order_ids_count = len(sale_orders)
 
