@@ -16,6 +16,17 @@ class SaleBlanketOrder(models.Model):
         help="Select this if you want to create Sale orders that act as a forecast",
     )
 
+    confirmed_sale_order_ids = fields.Many2many(
+        string="Confirmed sales",
+        comodel_name='sale.order',
+        compute="_compute_confirmed_sale_order_ids"
+    )
+
+    confirmed_sale_order_ids_count = fields.Integer(
+        string="Confirmed sales count",
+        compute="_compute_confirmed_sale_order_ids"
+    )
+
     forecast_policy = fields.Selection(
         [
             ("order", "Ordered quantities"),
@@ -52,6 +63,20 @@ class SaleBlanketOrder(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
+
+    def _compute_confirmed_sale_order_ids(self):
+        for record in self:
+            sale_orders = self.env["sale.order"].search(
+                [
+                    ("date_order", ">=", self.validity_date_start),
+                    ("date_order", "<=", self.validity_date),
+                    ("is_forecast", "=", False),
+                    ("state", "in", ["sale", "done"]),
+                ]
+            )
+            record.confirmed_sale_order_ids = sale_orders
+            record.confirmed_sale_order_ids_count = len(sale_orders)
+
     @api.model
     def expire_orders(self):
         today = fields.Date.today()
@@ -71,6 +96,16 @@ class SaleBlanketOrder(models.Model):
         records = self.search([('state', '=', 'open')])
         for record in records:
             record.action_create_forecast()
+
+    def action_view_confirmed_sale_orders(self):
+        sale_orders = self.confirmed_sale_order_ids
+        action = self.env.ref('sale.action_orders').read()[0]
+        if len(sale_orders) > 0:
+            action['domain'] = [('id', 'in', sale_orders.ids)]
+            action['context'] = [('id', 'in', sale_orders.ids)]
+        else:
+            action = {'type': 'ir.actions.act_window_close'}
+        return action
 
     def action_create_forecast(self):
         self.ensure_one()
@@ -121,6 +156,9 @@ class SaleBlanketOrder(models.Model):
 
         # Confirm the SO to create deliveries
         sale_order.action_confirm()
+        sale_order.confirmation_date = datetime.combine(
+            self.validity_date_start, datetime.min.time()
+        )
 
         # Unreserve products from pickings
         for picking in sale_order.picking_ids:
@@ -178,14 +216,7 @@ class SaleBlanketOrder(models.Model):
         return forecast_lines
 
     def _get_confirmed_sale_order_lines(self):
-        sale_orders = self.env["sale.order"].search(
-            [
-                ("date_order", ">=", self.validity_date_start),
-                ("date_order", "<=", self.validity_date),
-                ("is_forecast", "=", False),
-                ("state", "in", ["sale", "done"]),
-            ]
-        )
+        sale_orders = self.confirmed_sale_order_ids
 
         _logger.info(
             _(
