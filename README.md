@@ -36,6 +36,7 @@ addon | version | maintainers | summary
 [sale_order_invoice_status_color](sale_order_invoice_status_color/) | 14.0.1.0.0 |  | Sale order tree view status colors based on invoice state
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line
 [sale_order_line_copy](sale_order_line_copy/) | 14.0.1.0.1 |  | Duplicate single order lines on sale order
+[sale_order_line_decription_to_stock_move](sale_order_line_decription_to_stock_move/) | 14.0.1.0.0 |  | SO line description to Stock move
 [sale_order_line_delivery_date_change_scheduled_date](sale_order_line_delivery_date_change_scheduled_date/) | 14.0.1.0.1 |  | Change Scheduled Date with Delivery Time
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
