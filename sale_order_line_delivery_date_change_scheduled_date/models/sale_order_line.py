@@ -7,6 +7,17 @@ class SaleOrderLine(models.Model):
 
     line_delivery_date = fields.Datetime(string="Delivery Date")
 
+    @api.model
+    def create(self, vals):
+        order_id = vals.get("order_id", False)
+        order = self.env["sale.order"].browse(order_id)
+
+        if order:
+            # Fallback to expexted date
+            vals["line_delivery_date"] = order.commitment_date or order.expected_date
+
+        return super().create(vals)
+
     @api.depends(
         "product_id",
         "customer_lead",
