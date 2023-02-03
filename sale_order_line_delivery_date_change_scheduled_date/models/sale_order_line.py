@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from odoo import api, fields, models
 
 
@@ -12,9 +14,17 @@ class SaleOrderLine(models.Model):
         order_id = vals.get("order_id", False)
         order = self.env["sale.order"].browse(order_id)
 
+        lead_time = vals.get("customer_lead", 0)
+
         if order:
             # Fallback to expexted date
-            vals["line_delivery_date"] = order.commitment_date or order.expected_date
+            if order.commitment_date:
+                vals["line_delivery_date"] = order.commitment_date
+                # vals["line_delivery_date"] = order.commitment_date or order.expected_date
+            else:
+                vals["line_delivery_date"] = order.date_order + timedelta(
+                    days=lead_time
+                )
 
         return super().create(vals)
 
