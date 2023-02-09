@@ -21,7 +21,7 @@
 {
     "name": "Change Scheduled Date with Delivery Time",
     "summary": "Change Scheduled Date with Delivery Time",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.3",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
