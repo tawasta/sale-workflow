@@ -40,6 +40,7 @@ addon | version | maintainers | summary
 [sale_order_line_delivery_date_change_scheduled_date](sale_order_line_delivery_date_change_scheduled_date/) | 14.0.1.0.3 |  | Change Scheduled Date with Delivery Time
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
+[sale_order_line_limit](sale_order_line_limit/) | 14.0.1.0.2 |  | Sale Order Line Limit
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
 [sale_order_line_view](sale_order_line_view/) | 14.0.1.0.2 |  | Add a readonly SO line view for viewing SO line specific info
 [sale_order_line_view_analytic_tags](sale_order_line_view_analytic_tags/) | 14.0.1.0.0 |  | Use Analytic tags in search, grouping and tree view
@@ -53,6 +54,7 @@ addon | version | maintainers | summary
 [sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 14.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 14.0.1.0.0 |  | Tag from partner category to sale order CRM tag
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 14.0.1.0.0 |  | Set sale order line price by pricelist quantities
+[sale_order_product_label](sale_order_product_label/) | 14.0.1.0.0 |  | Sale Order Product Label
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 14.0.1.0.1 |  | Adds a new field for storing date of requested delivery
 [sale_order_route_in_header](sale_order_route_in_header/) | 14.0.1.0.0 |  | Allows editing route for all SO lines at once

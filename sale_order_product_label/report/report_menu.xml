@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data>
         <record id="paperformat_product_label" model="report.paperformat">
@@ -19,11 +19,20 @@
             <field name="name">Product label</field>
             <field name="model">sale.order</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="report_name">sale_order_product_label.report_product_label</field>
-            <field name="report_file">sale_order_product_label.report_product_label</field>
-            <field name="print_report_name">'Product label_%s' % (object.client_order_ref or object.name)</field>
-            <field name="paperformat_id" ref="sale_order_product_label.paperformat_product_label"/>
-            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field
+                name="report_name"
+            >sale_order_product_label.report_product_label</field>
+            <field
+                name="report_file"
+            >sale_order_product_label.report_product_label</field>
+            <field
+                name="print_report_name"
+            >'Product label_%s' % (object.client_order_ref or object.name)</field>
+            <field
+                name="paperformat_id"
+                ref="sale_order_product_label.paperformat_product_label"
+            />
+            <field name="binding_model_id" ref="sale.model_sale_order" />
             <field name="binding_type">report</field>
         </record>
     </data>
