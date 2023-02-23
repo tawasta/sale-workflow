@@ -29,5 +29,5 @@
     "application": False,
     "installable": True,
     "depends": ["stock", "web"],
-    "data": ["report/report_menu.xml","report/report_product_label.xml"],
+    "data": ["report/report_menu.xml", "report/report_product_label.xml"],
 }

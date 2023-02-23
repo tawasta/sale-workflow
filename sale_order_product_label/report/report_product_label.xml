@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
         <template id="report_product_label">
@@ -9,15 +9,25 @@
 
                             <div style="width:100%;">
                                 <t t-foreach="o.order_line" t-as="line">
-                                    <div t-attf-style="width:100%; float:left; text-align:center; height: 115px;">
-                                        <div t-attf-style="width:100%; padding-top:10px;">
-                                            <strong><t t-esc="line.product_id.default_code"/></strong>
+                                    <div
+                                        t-attf-style="width:100%; float:left; text-align:center; height: 115px;"
+                                    >
+                                        <div
+                                            t-attf-style="width:100%; padding-top:10px;"
+                                        >
+                                            <strong><t
+                                                    t-esc="line.product_id.default_code"
+                                                /></strong>
                                         </div>
                                         <div t-attf-style="width:100%;">
-                                            <strong><t t-esc="line.product_id.name"/></strong>
+                                            <strong><t
+                                                    t-esc="line.product_id.name"
+                                                /></strong>
                                         </div>
                                         <div t-attf-style="width:100%;">
-                                            <strong><t t-esc="'%.0f' % line.product_uom_qty"/></strong>
+                                            <strong><t
+                                                    t-esc="'%.0f' % line.product_uom_qty"
+                                                /></strong>
                                         </div>
                                     </div>
                                 </t>
