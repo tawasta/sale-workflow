@@ -33,6 +33,7 @@ addon | version | maintainers | summary
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_header](sale_order_header/) | 14.0.1.0.2 |  | New field for SO header/title
 [sale_order_header_fiscal_position_warehouse_incoterm](sale_order_header_fiscal_position_warehouse_incoterm/) | 14.0.1.0.0 |  | Move fiscal position, warehouse, and incoterm to so header
+[sale_order_hide_send_by_email](sale_order_hide_send_by_email/) | 14.0.1.0.0 |  | Hide send by email button in sale order
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 14.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
 [sale_order_invoice_status_color](sale_order_invoice_status_color/) | 14.0.1.0.0 |  | Sale order tree view status colors based on invoice state
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line
