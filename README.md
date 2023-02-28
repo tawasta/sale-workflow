@@ -33,6 +33,7 @@ addon | version | maintainers | summary
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_header](sale_order_header/) | 14.0.1.0.2 |  | New field for SO header/title
 [sale_order_header_fiscal_position_warehouse_incoterm](sale_order_header_fiscal_position_warehouse_incoterm/) | 14.0.1.0.0 |  | Move fiscal position, warehouse, and incoterm to so header
+[sale_order_hide_send_by_email](sale_order_hide_send_by_email/) | 14.0.1.0.0 |  | Hide send by email button in sale order
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 14.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
 [sale_order_invoice_status_color](sale_order_invoice_status_color/) | 14.0.1.0.0 |  | Sale order tree view status colors based on invoice state
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line
@@ -71,6 +72,7 @@ addon | version | maintainers | summary
 [sale_order_year_of_shipment](sale_order_year_of_shipment/) | 14.0.1.0.0 |  | Sale Order year from commitment date
 [sale_partner_default_note](sale_partner_default_note/) | 14.0.1.0.0 |  | Add a default sale note (terms and conditions) for partner
 [sale_payment_acquirer_optional_so_reference](sale_payment_acquirer_optional_so_reference/) | 14.0.1.0.0 |  | Adds an extra option for Sale Order reference
+[sale_quotation_list_customer_order_number](sale_quotation_list_customer_order_number/) | 14.0.1.0.0 |  | Adds customer order number to sale quotation list view
 [sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 14.0.1.0.1 |  | Add product unreserved availability to SO line
 [sale_stock_client_ref_to_picking](sale_stock_client_ref_to_picking/) | 14.0.1.0.0 |  | Move SO customer reference to created stock pickings
 [sale_stock_disable_warehouse_onchange](sale_stock_disable_warehouse_onchange/) | 14.0.1.0.0 |  | Don't auto-change company when warehouse changes
