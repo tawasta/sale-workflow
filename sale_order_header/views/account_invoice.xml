@@ -13,4 +13,15 @@
             </xpath>
         </field>
     </record>
+
+    <record id="view_move_tree_sale_header" model="ir.ui.view">
+        <field name="name">account.move.tree.sale.header</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree" />
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <field name="header_text" optional="hide" />
+            </field>
+        </field>
+    </record>
 </odoo>
