@@ -20,7 +20,7 @@ msgstr ""
 #. module: sale_order_customer_order_date
 #: model_terms:ir.ui.view,arch_db:sale_order_customer_order_date.sale_order_customer_order_date_report_saleorder_document
 msgid "<strong>Customer Order Date:</strong>"
-msgstr "<strong>Kundens beställningsdatum:</strong>"
+msgstr "<strong>Beställningsdatum:</strong>"
 
 #. module: sale_order_customer_order_date
 #: model:ir.model.fields,field_description:sale_order_customer_order_date.field_sale_order__customer_order_date
