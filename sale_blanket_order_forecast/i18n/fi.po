@@ -1,0 +1,196 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_blanket_order_forecast
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20221025\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-03 13:42+0000\n"
+"PO-Revision-Date: 2023-04-03 13:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model,name:sale_blanket_order_forecast.model_sale_blanket_order
+msgid "Blanket Order"
+msgstr ""
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model,name:sale_blanket_order_forecast.model_sale_blanket_order_line
+msgid "Blanket Order Line"
+msgstr ""
+
+#. module: sale_blanket_order_forecast
+#: model:ir.actions.server,name:sale_blanket_order_forecast.ir_cron_blanket_order_forecast_ir_actions_server
+#: model:ir.cron,cron_name:sale_blanket_order_forecast.ir_cron_blanket_order_forecast
+#: model:ir.cron,name:sale_blanket_order_forecast.ir_cron_blanket_order_forecast
+msgid "Blanket order: Update forecast"
+msgstr ""
+
+#. module: sale_blanket_order_forecast
+#: model_terms:ir.ui.view,arch_db:sale_blanket_order_forecast.view_blanket_order_form
+msgid "Compute forecast"
+msgstr "Laske ennuste"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order__create_forecast_sales
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order_line__create_forecast_sales
+msgid "Create forecast Sales"
+msgstr "Luo ennustemyynti"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields.selection,name:sale_blanket_order_forecast.selection__sale_blanket_order__forecast_policy__delivery
+msgid "Delivered quantities"
+msgstr "Toimitetut määrät"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order__display_name
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order_line__display_name
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_order__display_name
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order__forecast_policy
+msgid "Forecast Policy"
+msgstr "Ennustetapa"
+
+#. module: sale_blanket_order_forecast
+#: code:addons/sale_blanket_order_forecast/models/sale_blanket_order.py:0
+#, python-format
+msgid "Forecast computed. Exhausted products: {}"
+msgstr "Ennuste laskettu. Loppuneet tuotteet: {}"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order__forecast_sale_order_id
+msgid "Forecast sale"
+msgstr "Ennustemyynti"
+
+#. module: sale_blanket_order_forecast
+#: model_terms:ir.ui.view,arch_db:sale_blanket_order_forecast.sale_order_view_search_inherit_quotation
+#: model_terms:ir.ui.view,arch_db:sale_blanket_order_forecast.view_picking_internal_search
+msgid "Forecasts"
+msgstr "Ennusteet"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order__id
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order_line__id
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_order__id
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_stock_picking__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_order__is_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_stock_picking__is_forecast
+msgid "Is Forecast"
+msgstr "On ennuste"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order____last_update
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order_line____last_update
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_order____last_update
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_stock_picking____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: sale_blanket_order_forecast
+#: model_terms:ir.ui.view,arch_db:sale_blanket_order_forecast.sale_order_view_search_inherit_quotation
+#: model_terms:ir.ui.view,arch_db:sale_blanket_order_forecast.view_picking_internal_search
+msgid "No forecasts"
+msgstr "Ei ennusteita"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields.selection,name:sale_blanket_order_forecast.selection__sale_blanket_order__replacement_policy__none
+msgid "No replacing"
+msgstr "Ei korvausta"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,help:sale_blanket_order_forecast.field_sale_blanket_order__replacement_policy
+msgid ""
+"No replacing: Never replace exhausted product.\n"
+"Product category: After a product forecast is exhausted, use other products in the same category.\n"
+msgstr ""
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,help:sale_blanket_order_forecast.field_sale_blanket_order__forecast_policy
+msgid ""
+"Ordered Quantity: Forecast using ordered quantities.\n"
+"Delivered Quantity: Forecast using delivered quantities.\n"
+"Picking: Forecast using quantities on pickings (Kits are expanded).\n"
+msgstr ""
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields.selection,name:sale_blanket_order_forecast.selection__sale_blanket_order__forecast_policy__order
+msgid "Ordered quantities"
+msgstr "Tilatut määrät"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields.selection,name:sale_blanket_order_forecast.selection__sale_blanket_order__forecast_policy__picking
+msgid "Picking"
+msgstr "Keräily"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields.selection,name:sale_blanket_order_forecast.selection__sale_blanket_order__replacement_policy__category
+msgid "Product category"
+msgstr "Tuotekategoria"
+
+#. module: sale_blanket_order_forecast
+#: model_terms:ir.ui.view,arch_db:sale_blanket_order_forecast.view_blanket_order_form
+msgid "Realized Qty"
+msgstr "Toteutunut määrä"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order_line__realized_uom_qty
+msgid "Realized qty"
+msgstr "Toteutunut määrä"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,help:sale_blanket_order_forecast.field_sale_blanket_order_line__realized_uom_qty
+msgid "Realized quantity for forecast"
+msgstr "Ennusteen toteutunut määrä"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order__replacement_policy
+msgid "Replacement Policy"
+msgstr "Korvaustapa"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model,name:sale_blanket_order_forecast.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,help:sale_blanket_order_forecast.field_sale_blanket_order__create_forecast_sales
+#: model:ir.model.fields,help:sale_blanket_order_forecast.field_sale_blanket_order_line__create_forecast_sales
+msgid "Select this if you want to create Sale orders that act as a forecast"
+msgstr ""
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order__smart_search
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order_line__smart_search
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_order__smart_search
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_stock_picking__smart_search
+msgid "Smart Search"
+msgstr "Älykäs haku"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model,name:sale_blanket_order_forecast.model_stock_picking
+msgid "Transfer"
+msgstr "Siirto"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order__validity_date
+msgid "Validity end"
+msgstr "Voimassaolo päättyy"
+
+#. module: sale_blanket_order_forecast
+#: model:ir.model.fields,field_description:sale_blanket_order_forecast.field_sale_blanket_order__validity_date_start
+msgid "Validity start"
+msgstr "Voimassaolo alkaa"

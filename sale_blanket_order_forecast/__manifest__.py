@@ -21,13 +21,18 @@
 {
     "name": "Sale blanket order forecast",
     "summary": "Allows making forecast sale orders from blanket orders",
-    "version": "14.0.1.1.2",
+    "version": "14.0.1.1.3",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale_blanket_order"],
-    "data": ["data/ir_cron.xml", "views/sale_blanket_order.xml"],
+    "depends": ["sale_blanket_order", "sale_stock"],
+    "data": [
+        "data/ir_cron.xml",
+        "views/sale_blanket_order.xml",
+        "views/sale_order.xml",
+        "views/stock_picking.xml",
+    ],
 }
