@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_order_line_tree" model="ir.ui.view">
+        <field name="name">sale.order.tree.line.invoice_date</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree" />
+        <field name="arch" type="xml">
+            <field name="qty_invoiced" position="after">
+                <field name="invoice_date" widget="date" />
+            </field>
+        </field>
+    </record>
+</odoo>
