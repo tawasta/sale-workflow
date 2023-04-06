@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="sale.view_order_line_tree" />
         <field name="arch" type="xml">
             <field name="qty_invoiced" position="after">
-                <field name="invoice_date" widget="date"/>
+                <field name="invoice_date" widget="date" />
             </field>
         </field>
     </record>

@@ -36,13 +36,14 @@ addon | version | maintainers | summary
 [sale_order_hide_send_by_email](sale_order_hide_send_by_email/) | 14.0.1.0.0 |  | Hide send by email button in sale order
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 14.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
 [sale_order_invoice_status_color](sale_order_invoice_status_color/) | 14.0.1.0.0 |  | Sale order tree view status colors based on invoice state
-[sale_order_line_commitment_date](sale_order_line_commitment_date/) | 14.0.1.0.0 |  | Add picking date to SO lines and split lines to pickings
+[sale_order_line_commitment_date](sale_order_line_commitment_date/) | 14.0.1.1.0 |  | Add picking date to SO lines and split lines to pickings
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line
 [sale_order_line_copy](sale_order_line_copy/) | 14.0.1.0.1 |  | Duplicate single order lines on sale order
 [sale_order_line_decription_to_stock_move](sale_order_line_decription_to_stock_move/) | 14.0.1.0.0 |  | SO line description to Stock move
 [sale_order_line_delivery_date_change_scheduled_date](sale_order_line_delivery_date_change_scheduled_date/) | 14.0.1.0.3 |  | Change Scheduled Date with Delivery Time
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
+[sale_order_line_invoice_date](sale_order_line_invoice_date/) | 14.0.1.0.0 |  | Sale Order Line Invoice Date
 [sale_order_line_limit](sale_order_line_limit/) | 14.0.1.0.2 |  | Sale Order Line Limit
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
 [sale_order_line_view](sale_order_line_view/) | 14.0.1.0.2 |  | Add a readonly SO line view for viewing SO line specific info

@@ -1,10 +1,12 @@
+from datetime import datetime, time, timedelta
+
 from odoo import fields, models
 
 
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    commitment_date = fields.Datetime("Delivery Date")
+    commitment_date = fields.Date("Delivery Date")
     procurement_group_id = fields.Many2one(
         "procurement.group", "Procurement Group", copy=False
     )
@@ -13,12 +15,12 @@ class SaleOrderLine(models.Model):
         vals = super()._prepare_procurement_values(group_id)
 
         if self.commitment_date:
-            vals.update(
-                {
-                    "date_planned": self.commitment_date,
-                    "date_deadline": self.commitment_date,
-                }
+            commitment_date = datetime.combine(self.commitment_date, time(12))
+            planned = commitment_date - timedelta(
+                days=self.order_id.company_id.security_lead
             )
+
+            vals.update({"date_planned": planned, "date_deadline": commitment_date})
         return vals
 
     def _get_procurement_group(self):
@@ -30,8 +32,6 @@ class SaleOrderLine(models.Model):
         super()._get_procurement_group()
 
         # Try to find order lines with same commitment date
-        # TODO: a tolerance for commitment date similarity.
-        #  We could omit the time and rely on just the date
         order_lines = self.order_id.order_line.filtered(
             lambda l: l.commitment_date == self.commitment_date
             and l.procurement_group_id
