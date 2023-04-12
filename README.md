@@ -11,14 +11,14 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.1.3 |  | Allows making forecast sale orders from blanket orders
+[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.1.4 |  | Allows making forecast sale orders from blanket orders
 [sale_blanket_order_kit](sale_blanket_order_kit/) | 14.0.1.0.2 |  | Add kits and expand them as forecast lines
 [sale_customers_no_default_filter](sale_customers_no_default_filter/) | 14.0.1.0.0 |  | Remove Customers default filter
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale
 [sale_order_address_details](sale_order_address_details/) | 14.0.1.0.0 |  | Sale order address details
 [sale_order_confirmation_required_so_payment_term](sale_order_confirmation_required_so_payment_term/) | 14.0.1.0.0 |  | Prevents SO confirmation if SO has no payment term set
 [sale_order_country_group_text](sale_order_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
-[sale_order_customer_contact](sale_order_customer_contact/) | 14.0.1.1.1 |  | Customer Contact for Sale Orders
+[sale_order_customer_contact](sale_order_customer_contact/) | 14.0.1.1.2 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 14.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_order_date](sale_order_customer_order_date/) | 14.0.1.0.0 |  | Customer order date field to sale order
 [sale_order_customer_order_number](sale_order_customer_order_number/) | 14.0.1.0.0 |  | New field for order number provided by customer

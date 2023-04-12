@@ -17,6 +17,32 @@
                 />
             </button>
 
+            <button name="action_view_sale_orders" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'invisible': [('create_forecast_sales', '=', True)]}</attribute>
+            </button>
+
+            <button name="action_view_sale_orders" position="after">
+                <button
+                    name="action_view_confirmed_sale_orders"
+                    attrs="{'invisible': [('create_forecast_sales', '=', False)]}"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-list-alt"
+                >
+                    <field
+                        name="confirmed_sale_order_ids_count"
+                        widget="statinfo"
+                        string="Sale Orders"
+                    />
+                </button>
+            </button>
+
+            <xpath expr="//field[@name='line_ids']/tree" position="attributes">
+                <attribute name="limit">2000</attribute>
+            </xpath>
+
             <field name="currency_id" position="before">
                 <field name="create_forecast_sales" widget="boolean_toggle" />
                 <field
