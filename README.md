@@ -63,7 +63,7 @@ addon | version | maintainers | summary
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 14.0.1.0.1 |  | Adds a new field for storing date of requested delivery
 [sale_order_route_in_header](sale_order_route_in_header/) | 14.0.1.0.0 |  | Allows editing route for all SO lines at once
-[sale_order_sale_type](sale_order_sale_type/) | 14.0.1.0.0 |  | Sale Type field is added to sales
+[sale_order_sale_type](sale_order_sale_type/) | 14.0.1.0.1 |  | Sale Type field is added to sales
 [sale_order_show_addresses](sale_order_show_addresses/) | 14.0.1.0.0 |  | Show the addresses below their fields
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 14.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_show_reporting_group](sale_order_show_reporting_group/) | 14.0.1.0.0 |  | Show 'Reporting' group in SO form without belonging to the Technical group
