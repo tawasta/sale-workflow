@@ -21,7 +21,7 @@
 {
     "name": "Sale Order - Sale Type",
     "summary": "Sale Type field is added to sales",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Sale",
     "author": "Tawasta",
     "license": "AGPL-3",
