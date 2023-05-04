@@ -11,7 +11,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.1.4 |  | Allows making forecast sale orders from blanket orders
+[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.1.5 |  | Allows making forecast sale orders from blanket orders
 [sale_blanket_order_kit](sale_blanket_order_kit/) | 14.0.1.0.3 |  | Add kits and expand them as forecast lines
 [sale_customers_no_default_filter](sale_customers_no_default_filter/) | 14.0.1.0.0 |  | Remove Customers default filter
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale

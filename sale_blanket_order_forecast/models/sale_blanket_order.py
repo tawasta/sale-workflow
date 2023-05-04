@@ -124,6 +124,10 @@ class SaleBlanketOrder(models.Model):
         if self.forecast_sale_order_id:
             sale_order = self.forecast_sale_order_id
         else:
+            # Reset remaining qty to simulate a situation, where nothing is ordered yet
+            for line in self.line_ids:
+                line.remaining_uom_qty = line.original_uom_qty
+
             # Create a new SO
             bo_values = {}
             bo_wizard = (
