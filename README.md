@@ -45,6 +45,7 @@ addon | version | maintainers | summary
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
 [sale_order_line_invoice_date](sale_order_line_invoice_date/) | 14.0.1.0.0 |  | Sale Order Line Invoice Date
 [sale_order_line_limit](sale_order_line_limit/) | 14.0.1.0.2 |  | Sale Order Line Limit
+[sale_order_line_open_form](sale_order_line_open_form/) | 14.0.1.0.0 |  | Open Form view from sale order's line
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
 [sale_order_line_view](sale_order_line_view/) | 14.0.1.0.2 |  | Add a readonly SO line view for viewing SO line specific info
 [sale_order_line_view_analytic_tags](sale_order_line_view_analytic_tags/) | 14.0.1.0.0 |  | Use Analytic tags in search, grouping and tree view
@@ -63,7 +64,7 @@ addon | version | maintainers | summary
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 14.0.1.0.1 |  | Adds a new field for storing date of requested delivery
 [sale_order_route_in_header](sale_order_route_in_header/) | 14.0.1.0.0 |  | Allows editing route for all SO lines at once
-[sale_order_sale_type](sale_order_sale_type/) | 14.0.1.0.0 |  | Sale Type field is added to sales
+[sale_order_sale_type](sale_order_sale_type/) | 14.0.1.0.1 |  | Sale Type field is added to sales
 [sale_order_show_addresses](sale_order_show_addresses/) | 14.0.1.0.0 |  | Show the addresses below their fields
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 14.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_show_reporting_group](sale_order_show_reporting_group/) | 14.0.1.0.0 |  | Show 'Reporting' group in SO form without belonging to the Technical group

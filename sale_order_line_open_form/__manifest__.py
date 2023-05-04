@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2023 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,17 +19,17 @@
 ##############################################################################
 
 {
-    "name": "Sale Order - Sale Type",
-    "summary": "Sale Type field is added to sales",
-    "version": "14.0.1.0.1",
-    "category": "Sale",
+    "name": "Open Form view from sale order's line",
+    "summary": "Open Form view from sale order's line",
+    "version": "14.0.1.0.0",
+    "category": "Sale Workflow",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
-    "depends": ["sale", "sale_management"],
-    "data": [
-        "views/sale_order.xml",
-        "security/ir.model.access.csv",
-        "data/sale_types.xml",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "sale",
     ],
+    "data": ["views/sale_views.xml"],
 }
