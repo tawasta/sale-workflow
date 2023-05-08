@@ -29,6 +29,9 @@ class SaleBlanketOrder(models.Model):
 
             record._kit_expand()
 
+            msg = _("Recomputed order lines based on the kits")
+            self.message_post(body=msg)
+
     def _kit_expand(self):
         self.ensure_one()
 

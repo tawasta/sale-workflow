@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class SaleBlanketOrderKit(models.Model):
@@ -19,3 +19,28 @@ class SaleBlanketOrderKit(models.Model):
         default=1,
         digits="Product Unit of Measure",
     )
+
+    @api.model
+    def create(self, values):
+        res = super().create(values)
+
+        orders = res.mapped("order_id")
+        orders.action_kit_compute()
+
+        return res
+
+    def write(self, values):
+        res = super().write(values)
+
+        orders = self.mapped("order_id")
+        orders.action_kit_compute()
+
+        return res
+
+    def unlink(self):
+        orders = self.mapped("order_id")
+        res = super().unlink()
+
+        orders.action_kit_compute()
+
+        return res

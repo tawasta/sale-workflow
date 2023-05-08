@@ -36,6 +36,17 @@ class SaleBlanketOrder(models.Model):
         default="order",
     )
 
+    forecast_write_date = fields.Datetime(
+        "Forecast updated",
+        readonly=True,
+        copy=False,
+    )
+    forecast_is_stale = fields.Boolean(
+        "Forecast is stale",
+        help="Forecast should be recomputed",
+        compute="_compute_forecast_is_stale",
+    )
+
     replacement_policy = fields.Selection(
         [
             ("none", "No replacing"),
@@ -87,6 +98,10 @@ class SaleBlanketOrder(models.Model):
 
             record.confirmed_sale_order_ids = sale_orders
             record.confirmed_sale_order_ids_count = len(sale_orders)
+
+    def _compute_forecast_is_stale(self):
+        for record in self:
+            record.forecast_is_stale = record.write_date > record.forecast_write_date
 
     @api.model
     def expire_orders(self):
@@ -174,6 +189,9 @@ class SaleBlanketOrder(models.Model):
         # Unreserve products from pickings
         for picking in sale_order.picking_ids:
             picking.do_unreserve()
+
+        # Update forecast date
+        self.forecast_write_date = fields.Datetime.now()
 
         exhausted_lines = self.line_ids.filtered(
             lambda r: r.original_uom_qty <= r.realized_uom_qty
