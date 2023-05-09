@@ -7,11 +7,11 @@
         <field name="inherit_id" ref="sale_blanket_order.view_blanket_order_form" />
         <field name="arch" type="xml">
 
-            <button name="645" position="attributes">
+            <xpath expr="//header/button[@type='action']" position="attributes">
                 <attribute
                     name="attrs"
                 >{'invisible': ['|', ('state', '!=', 'open'), ('create_forecast_sales', '=', True)]}</attribute>
-            </button>
+            </xpath>
 
             <button name="set_to_draft" position="after">
                 <button
