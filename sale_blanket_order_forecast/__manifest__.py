@@ -21,7 +21,7 @@
 {
     "name": "Sale blanket order forecast",
     "summary": "Allows making forecast sale orders from blanket orders",
-    "version": "14.0.1.1.6",
+    "version": "14.0.1.1.7",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
