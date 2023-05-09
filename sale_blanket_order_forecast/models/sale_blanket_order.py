@@ -101,7 +101,10 @@ class SaleBlanketOrder(models.Model):
 
     def _compute_forecast_is_stale(self):
         for record in self:
-            record.forecast_is_stale = record.write_date > record.forecast_write_date
+            record.forecast_is_stale = (
+                record.forecast_write_date
+                and record.write_date > record.forecast_write_date
+            )
 
     @api.model
     def expire_orders(self):
