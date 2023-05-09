@@ -165,6 +165,10 @@ class SaleBlanketOrder(models.Model):
             sale_order_id = bo_wizard.create_sale_order().get("domain")[0][2][0]
             sale_order = self.env["sale.order"].browse([sale_order_id])
 
+        # Unlock locked sale
+        if sale_order.state == "done":
+            sale_order.action_unlock()
+
         # Return the SO to draft so it can be manipulated
         if sale_order.state == "sale":
             sale_order.action_cancel()
