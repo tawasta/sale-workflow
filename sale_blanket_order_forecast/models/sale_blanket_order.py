@@ -101,13 +101,14 @@ class SaleBlanketOrder(models.Model):
 
     def _compute_forecast_is_stale(self):
         for record in self:
-            stale = True
+            stale = False
 
-            if (
-                record.forecast_write_date
-                and record.write_date > record.forecast_write_date
-            ):
-                stale = False
+            if not record.forecast_write_date:
+                # Forecast has never been computed
+                stale = True
+            elif record.write_date > record.forecast_write_date:
+                # Forecast is not computed after BO changes
+                stale = True
 
             record.forecast_is_stale = stale
 
@@ -171,6 +172,10 @@ class SaleBlanketOrder(models.Model):
             sale_order = self.env["sale.order"].browse([sale_order_id])
 
         # Unlock locked sale
+        if sale_order.state == "cancel":
+            sale_order.action_draft()
+
+        # Reopen cancelled sale
         if sale_order.state == "done":
             sale_order.action_unlock()
 
