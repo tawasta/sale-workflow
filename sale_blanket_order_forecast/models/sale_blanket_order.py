@@ -171,6 +171,10 @@ class SaleBlanketOrder(models.Model):
             sale_order = self.env["sale.order"].browse([sale_order_id])
 
         # Unlock locked sale
+        if sale_order.state == "cancel":
+            sale_order.action_draft()
+
+        # Reopen cancelled sale
         if sale_order.state == "done":
             sale_order.action_unlock()
 
