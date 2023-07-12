@@ -17,6 +17,10 @@ class MailTemplate(models.Model):
         email template"""
         mail = super().generate_email(res_ids, fields)
 
+        # This is used to avoid an error with other emails
+        if isinstance(res_ids, int):
+            res_ids = [res_ids]
+
         # self._classify_per_lang(res_ids).items() returns for example
         # dict_items([('en_US', (mail.template(11,), [29]))])
         for _lang, (template, template_res_ids) in self._classify_per_lang(
