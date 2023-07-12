@@ -21,7 +21,7 @@
 {
     "name": "Send sale, invoice and pickings from sale",
     "summary": "Sales - Send sale, invoice and pickings prints if possible",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Sale Workflow",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
