@@ -63,6 +63,7 @@ addon | version | maintainers | summary
 [sale_order_partner_contact_only](sale_order_partner_contact_only/) | 14.0.1.0.0 |  | Don't show other address types in SO partner select
 [sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 14.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 14.0.1.0.0 |  | Tag from partner category to sale order CRM tag
+[sale_order_pricelist_no_copy](sale_order_pricelist_no_copy/) | 14.0.1.0.0 |  | Do not copy pricelist when copying sale order
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 14.0.1.0.0 |  | Set sale order line price by pricelist quantities
 [sale_order_product_label](sale_order_product_label/) | 14.0.1.0.0 |  | Sale Order Product Label
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
