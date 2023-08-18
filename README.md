@@ -17,6 +17,7 @@ addon | version | maintainers | summary
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale
 [sale_order_address_details](sale_order_address_details/) | 14.0.1.0.0 |  | Sale order address details
 [sale_order_carrier_in_list](sale_order_carrier_in_list/) | 14.0.1.0.0 |  | Add carrier to list view
+[sale_order_confirmation_required_businessid](sale_order_confirmation_required_businessid/) | 14.0.1.0.0 |  | Prevents SO confirmation if customer has no business ID
 [sale_order_confirmation_required_so_payment_term](sale_order_confirmation_required_so_payment_term/) | 14.0.1.0.0 |  | Prevents SO confirmation if SO has no payment term set
 [sale_order_country_group_text](sale_order_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_customer_contact](sale_order_customer_contact/) | 14.0.1.1.2 |  | Customer Contact for Sale Orders
