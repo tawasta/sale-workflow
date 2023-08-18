@@ -49,6 +49,7 @@ addon | version | maintainers | summary
 [sale_order_line_limit](sale_order_line_limit/) | 14.0.1.0.2 |  | Sale Order Line Limit
 [sale_order_line_open_form](sale_order_line_open_form/) | 14.0.1.0.0 |  | Open Form view from sale order's line
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
+[sale_order_line_stock_pickings](sale_order_line_stock_pickings/) | 14.0.1.0.0 |  | Show deliveries (stock pickings) on sale order lines
 [sale_order_line_view](sale_order_line_view/) | 14.0.1.0.2 |  | Add a readonly SO line view for viewing SO line specific info
 [sale_order_line_view_analytic_tags](sale_order_line_view_analytic_tags/) | 14.0.1.0.0 |  | Use Analytic tags in search, grouping and tree view
 [sale_order_line_view_team_filter](sale_order_line_view_team_filter/) | 14.0.1.0.0 |  | Use Sales team filter in sale order line tree view
