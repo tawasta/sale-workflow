@@ -85,6 +85,7 @@ addon | version | maintainers | summary
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 14.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_show_reporting_group](sale_order_show_reporting_group/) | 14.0.1.0.0 |  | Show 'Reporting' group in SO form without belonging to the Technical group
 [sale_order_subtotal_values](sale_order_subtotal_values/) | 14.0.1.0.0 |  | Recompute Sale Order line subtotal values
+[sale_order_tax_required](sale_order_tax_required/) | 14.0.1.0.0 |  | Tax is required on all Sale Order lines
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 14.0.1.0.0 |  | Add customer reference to sale order tree view
 [sale_order_tree_untaxed](sale_order_tree_untaxed/) | 14.0.1.0.0 |  | Show untaxed amount in sale order tree
 [sale_order_warehouse_do_not_copy](sale_order_warehouse_do_not_copy/) | 14.0.1.0.0 |  | Do not copy a warehouse when copying a sale order
