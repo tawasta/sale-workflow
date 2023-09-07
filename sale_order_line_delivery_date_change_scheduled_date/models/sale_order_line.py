@@ -42,8 +42,7 @@ class SaleOrderLine(models.Model):
     def _compute_qty_at_date(self):
         res = super()._compute_qty_at_date()
         for line in self:
-            if line.line_delivery_date:
-                line.scheduled_date = line.line_delivery_date
+            line.scheduled_date = line.line_delivery_date
 
         return res
 
