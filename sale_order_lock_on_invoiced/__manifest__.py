@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,21 +19,21 @@
 ##############################################################################
 
 {
-    "name": "Change Scheduled Date with Delivery Time",
-    "summary": "Change Scheduled Date with Delivery Time",
-    "version": "14.0.1.0.4",
+    "name": "Lock sale order when it is invoiced",
+    "summary": "Lock sale order after it state is fully invoiced",
+    "version": "14.0.1.0.0",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
+    },
     "depends": [
-        "account",
-        "sale_stock",
+        "sale",
     ],
-    "data": [
-        "views/account_move.xml",
-        "views/sale_order_line.xml",
-    ],
+    "data": [],
 }

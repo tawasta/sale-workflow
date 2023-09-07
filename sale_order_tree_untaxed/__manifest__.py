@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,21 +19,19 @@
 ##############################################################################
 
 {
-    "name": "Change Scheduled Date with Delivery Time",
-    "summary": "Change Scheduled Date with Delivery Time",
-    "version": "14.0.1.0.4",
+    "name": "Untaxed amount in sale order tree",
+    "summary": "Show untaxed amount in sale order tree",
     "category": "Sale",
+    "version": "14.0.1.0.0",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": [
-        "account",
-        "sale_stock",
+        "sale",
     ],
     "data": [
-        "views/account_move.xml",
-        "views/sale_order_line.xml",
+        "views/sale_order_tree.xml",
     ],
 }

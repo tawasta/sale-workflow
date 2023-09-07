@@ -13,12 +13,19 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.1.12 |  | Allows making forecast sale orders from blanket orders
 [sale_blanket_order_kit](sale_blanket_order_kit/) | 14.0.1.1.0 |  | Add kits and expand them as forecast lines
+[sale_customer_default_my](sale_customer_default_my/) | 14.0.1.0.0 |  | Show my customers by default on Customer list view
 [sale_customers_no_default_filter](sale_customers_no_default_filter/) | 14.0.1.0.0 |  | Remove Customers default filter
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale
 [sale_order_address_details](sale_order_address_details/) | 14.0.1.0.0 |  | Sale order address details
+[sale_order_carrier_in_list](sale_order_carrier_in_list/) | 14.0.1.0.0 |  | Add carrier to list view
+[sale_order_compute_weight](sale_order_compute_weight/) | 14.0.1.0.0 |  | Add weight on sale order and sale order lines
+[sale_order_confirmation_required_businessid](sale_order_confirmation_required_businessid/) | 14.0.1.0.0 |  | Prevents SO confirmation if customer has no business ID
+[sale_order_confirmation_required_client_order_ref](sale_order_confirmation_required_client_order_ref/) | 14.0.1.0.0 |  | Prevents SO confirmation if customer reference is not set
+[sale_order_confirmation_required_payment_term](sale_order_confirmation_required_payment_term/) | 14.0.1.0.0 |  | Prevents SO confirmation if customer has no payment terms set
 [sale_order_confirmation_required_so_payment_term](sale_order_confirmation_required_so_payment_term/) | 14.0.1.0.0 |  | Prevents SO confirmation if SO has no payment term set
 [sale_order_country_group_text](sale_order_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_customer_contact](sale_order_customer_contact/) | 14.0.1.1.2 |  | Customer Contact for Sale Orders
+[sale_order_customer_contact_show_address](sale_order_customer_contact_show_address/) | 14.0.1.0.0 |  | Show the contact address below the field
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 14.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_order_date](sale_order_customer_order_date/) | 14.0.1.0.0 |  | Customer order date field to sale order
 [sale_order_customer_order_number](sale_order_customer_order_number/) | 14.0.1.0.0 |  | New field for order number provided by customer
@@ -29,6 +36,7 @@ addon | version | maintainers | summary
 [sale_order_delivery_term](sale_order_delivery_term/) | 14.0.1.0.0 |  | Sale Order Delivery term
 [sale_order_description](sale_order_description/) | 14.0.1.0.0 |  | Adds a description (an internal note) to sale order
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 14.0.1.0.0 |  | Adds sale order description to stock picking
+[sale_order_disposable_shipping_address](sale_order_disposable_shipping_address/) | 14.0.1.0.0 |  | Sale order shipping addresses can be deactivated after use
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 14.0.1.0.0 |  | When duplicating also copy customer reference
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_header](sale_order_header/) | 14.0.1.0.2 |  | New field for SO header/title
@@ -41,16 +49,18 @@ addon | version | maintainers | summary
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line
 [sale_order_line_copy](sale_order_line_copy/) | 14.0.1.0.1 |  | Duplicate single order lines on sale order
 [sale_order_line_decription_to_stock_move](sale_order_line_decription_to_stock_move/) | 14.0.1.0.0 |  | SO line description to Stock move
-[sale_order_line_delivery_date_change_scheduled_date](sale_order_line_delivery_date_change_scheduled_date/) | 14.0.1.0.3 |  | Change Scheduled Date with Delivery Time
+[sale_order_line_delivery_date_change_scheduled_date](sale_order_line_delivery_date_change_scheduled_date/) | 14.0.1.0.4 |  | Change Scheduled Date with Delivery Time
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
 [sale_order_line_invoice_date](sale_order_line_invoice_date/) | 14.0.1.0.0 |  | Sale Order Line Invoice Date
 [sale_order_line_limit](sale_order_line_limit/) | 14.0.1.0.2 |  | Sale Order Line Limit
 [sale_order_line_open_form](sale_order_line_open_form/) | 14.0.1.0.0 |  | Open Form view from sale order's line
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
+[sale_order_line_stock_pickings](sale_order_line_stock_pickings/) | 14.0.1.0.0 |  | Show deliveries (stock pickings) on sale order lines
 [sale_order_line_view](sale_order_line_view/) | 14.0.1.0.2 |  | Add a readonly SO line view for viewing SO line specific info
 [sale_order_line_view_analytic_tags](sale_order_line_view_analytic_tags/) | 14.0.1.0.0 |  | Use Analytic tags in search, grouping and tree view
 [sale_order_line_view_team_filter](sale_order_line_view_team_filter/) | 14.0.1.0.0 |  | Use Sales team filter in sale order line tree view
+[sale_order_lock_on_invoiced](sale_order_lock_on_invoiced/) | 14.0.1.0.0 |  | Lock sale order after it state is fully invoiced
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 14.0.1.0.0 |  | Enables confirming multiple sales at once
 [sale_order_multi_company_rule_only_own_company](sale_order_multi_company_rule_only_own_company/) | 14.0.1.0.0 |  | Shown own company Orders only
 [sale_order_my_orders_no_default_filter](sale_order_my_orders_no_default_filter/) | 14.0.1.0.0 |  | Remove My order-default filter
@@ -61,7 +71,10 @@ addon | version | maintainers | summary
 [sale_order_partner_clause_to_note](sale_order_partner_clause_to_note/) | 14.0.1.0.0 |  | Sale Order - add Sale clause to note field
 [sale_order_partner_contact_only](sale_order_partner_contact_only/) | 14.0.1.0.0 |  | Don't show other address types in SO partner select
 [sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 14.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
+[sale_order_partner_onchange_suggest_partner_itself](sale_order_partner_onchange_suggest_partner_itself/) | 14.0.1.0.0 |  | Suggest customer itself instead of its sub-addresses
+[sale_order_partner_strict_with_partner_itself](sale_order_partner_strict_with_partner_itself/) | 14.0.1.0.0 |  | Allow customer itself or correct type and parent for address
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 14.0.1.0.0 |  | Tag from partner category to sale order CRM tag
+[sale_order_pricelist_no_copy](sale_order_pricelist_no_copy/) | 14.0.1.0.0 |  | Do not copy pricelist when copying sale order
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 14.0.1.0.0 |  | Set sale order line price by pricelist quantities
 [sale_order_product_label](sale_order_product_label/) | 14.0.1.0.0 |  | Sale Order Product Label
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
@@ -73,7 +86,9 @@ addon | version | maintainers | summary
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 14.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_show_reporting_group](sale_order_show_reporting_group/) | 14.0.1.0.0 |  | Show 'Reporting' group in SO form without belonging to the Technical group
 [sale_order_subtotal_values](sale_order_subtotal_values/) | 14.0.1.0.0 |  | Recompute Sale Order line subtotal values
+[sale_order_tax_required](sale_order_tax_required/) | 14.0.1.0.0 |  | Tax is required on all Sale Order lines
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 14.0.1.0.0 |  | Add customer reference to sale order tree view
+[sale_order_tree_untaxed](sale_order_tree_untaxed/) | 14.0.1.0.0 |  | Show untaxed amount in sale order tree
 [sale_order_warehouse_do_not_copy](sale_order_warehouse_do_not_copy/) | 14.0.1.0.0 |  | Do not copy a warehouse when copying a sale order
 [sale_order_warranty](sale_order_warranty/) | 14.0.1.0.1 |  | Sale Order Warranty
 [sale_order_week_of_shipment](sale_order_week_of_shipment/) | 14.0.1.0.1 |  | Week of shipment field to sale order

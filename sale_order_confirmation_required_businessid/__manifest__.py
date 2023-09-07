@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,21 +19,17 @@
 ##############################################################################
 
 {
-    "name": "Change Scheduled Date with Delivery Time",
-    "summary": "Change Scheduled Date with Delivery Time",
-    "version": "14.0.1.0.4",
-    "category": "Sale",
+    "name": "Sale Confirmation Check: Customer Business ID",
+    "summary": "Prevents SO confirmation if customer has no business ID",
+    "version": "14.0.1.0.0",
+    "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "account",
-        "sale_stock",
-    ],
-    "data": [
-        "views/account_move.xml",
-        "views/sale_order_line.xml",
-    ],
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["l10n_fi_business_code", "sale"],
+    "data": [],
+    "demo": [],
 }
