@@ -62,6 +62,7 @@ addon | version | maintainers | summary
 [sale_order_line_view_analytic_tags](sale_order_line_view_analytic_tags/) | 14.0.1.0.0 |  | Use Analytic tags in search, grouping and tree view
 [sale_order_line_view_team_filter](sale_order_line_view_team_filter/) | 14.0.1.0.0 |  | Use Sales team filter in sale order line tree view
 [sale_order_lock_on_invoiced](sale_order_lock_on_invoiced/) | 14.0.1.0.0 |  | Lock sale order after it state is fully invoiced
+[sale_order_mass_cancel](sale_order_mass_cancel/) | 14.0.1.0.0 |  | Enables cancelling multiple sales at once
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 14.0.1.0.0 |  | Enables confirming multiple sales at once
 [sale_order_multi_company_rule_only_own_company](sale_order_multi_company_rule_only_own_company/) | 14.0.1.0.0 |  | Shown own company Orders only
 [sale_order_my_orders_no_default_filter](sale_order_my_orders_no_default_filter/) | 14.0.1.0.0 |  | Remove My order-default filter
