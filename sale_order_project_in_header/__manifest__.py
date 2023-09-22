@@ -23,15 +23,13 @@
     "summary": "Moves analytic account to SO header and sets it as required",
     "version": "14.0.1.0.1",
     "category": "Sales",
-    "website": "https://github.com/Tawasta/sale-workflow",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "external_dependencies": {"python": [], "bin": []},
     "depends": ["sale"],
-    "data": [
-        "views/sale_order.xml"
-    ],
+    "data": ["views/sale_order.xml"],
     "demo": [],
 }

@@ -73,6 +73,7 @@ addon | version | maintainers | summary
 [sale_order_partner_clause_to_note](sale_order_partner_clause_to_note/) | 14.0.1.0.0 |  | Sale Order - add Sale clause to note field
 [sale_order_partner_contact_only](sale_order_partner_contact_only/) | 14.0.1.0.0 |  | Don't show other address types in SO partner select
 [sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 14.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
+[sale_order_partner_disable_onchange](sale_order_partner_disable_onchange/) | 14.0.1.0.0 |  | Disable partner (customer) onchange on sale
 [sale_order_partner_onchange_suggest_partner_itself](sale_order_partner_onchange_suggest_partner_itself/) | 14.0.1.0.0 |  | Suggest customer itself instead of its sub-addresses
 [sale_order_partner_strict_with_partner_itself](sale_order_partner_strict_with_partner_itself/) | 14.0.1.0.0 |  | Allow customer itself or correct type and parent for address
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 14.0.1.0.0 |  | Tag from partner category to sale order CRM tag
@@ -80,6 +81,7 @@ addon | version | maintainers | summary
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 14.0.1.0.0 |  | Set sale order line price by pricelist quantities
 [sale_order_product_label](sale_order_product_label/) | 14.0.1.0.0 |  | Sale Order Product Label
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
+[sale_order_project_in_header](sale_order_project_in_header/) | 14.0.1.0.1 |  | Moves analytic account to SO header and sets it as required
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 14.0.1.0.1 |  | Adds a new field for storing date of requested delivery
 [sale_order_route_in_header](sale_order_route_in_header/) | 14.0.1.0.0 |  | Allows editing route for all SO lines at once
 [sale_order_sale_type](sale_order_sale_type/) | 14.0.1.0.1 |  | Sale Type field is added to sales
@@ -91,6 +93,7 @@ addon | version | maintainers | summary
 [sale_order_tax_required](sale_order_tax_required/) | 14.0.1.0.0 |  | Tax is required on all Sale Order lines
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 14.0.1.0.0 |  | Add customer reference to sale order tree view
 [sale_order_tree_untaxed](sale_order_tree_untaxed/) | 14.0.1.0.0 |  | Show untaxed amount in sale order tree
+[sale_order_unlock](sale_order_unlock/) | 14.0.1.0.0 |  | Allows unlocking locked sale orders for managers
 [sale_order_warehouse_do_not_copy](sale_order_warehouse_do_not_copy/) | 14.0.1.0.0 |  | Do not copy a warehouse when copying a sale order
 [sale_order_warranty](sale_order_warranty/) | 14.0.1.0.1 |  | Sale Order Warranty
 [sale_order_week_of_shipment](sale_order_week_of_shipment/) | 14.0.1.0.1 |  | Week of shipment field to sale order
