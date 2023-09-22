@@ -1,19 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="view_order_form" model="ir.ui.view">
         <field name="name">view.order.analytic.account.form</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
-            <field name="analytic_account_id" position="replace" />
+            <field name="analytic_account_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
 
             <field name="partner_shipping_id" position="after">
-                <field name="analytic_account_id"
+                <field
+                    name="analytic_account_id"
                     context="{'default_partner_id':partner_invoice_id, 'default_name':name}"
                     attrs="{'readonly': [('invoice_count','!=',0),('state','=','sale')]}"
                     groups="analytic.group_analytic_accounting"
-                    force_save="1"/>
+                    force_save="1"
+                />
 
             </field>
         </field>

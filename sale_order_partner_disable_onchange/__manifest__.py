@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Unlock locked sale order",
-    "summary": "Allows unlocking locked sale orders for managers",
+    "name": "Disable partner (customer) onchange on sale",
+    "summary": "Disable partner (customer) onchange on sale",
     "category": "Sale",
     "version": "14.0.1.0.0",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
@@ -29,5 +29,5 @@
     "application": False,
     "installable": True,
     "depends": ["sale"],
-    "data": ["views/sale_order.xml"],
+    "data": [],
 }
