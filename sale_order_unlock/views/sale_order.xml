@@ -1,0 +1,21 @@
+<odoo>
+
+    <record id="view_sales_order_auto_done_setting" model="ir.ui.view">
+        <field name="name">Sale order unlock</field>
+        <field name="inherit_id" ref="sale.view_sales_order_auto_done_setting"/>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+
+            <button name="action_done" position="after">
+                <button string="Unlock"
+                        name="action_unlock"
+                        groups="sales_team.group_sale_manager"
+                        type="object"
+                        attrs="{'invisible': [('state', '!=', 'done')]}"
+                />
+            </button>
+
+        </field>
+    </record>
+
+</odoo>
