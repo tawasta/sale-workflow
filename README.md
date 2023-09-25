@@ -67,7 +67,7 @@ addon | version | maintainers | summary
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 14.0.1.0.0 |  | Enables confirming multiple sales at once
 [sale_order_multi_company_rule_only_own_company](sale_order_multi_company_rule_only_own_company/) | 14.0.1.0.0 |  | Shown own company Orders only
 [sale_order_my_orders_no_default_filter](sale_order_my_orders_no_default_filter/) | 14.0.1.0.0 |  | Remove My order-default filter
-[sale_order_name_salesperson_notice_period_to_note](sale_order_name_salesperson_notice_period_to_note/) | 14.0.1.0.0 |  | Add sale order name to sale order note on order confirm
+[sale_order_name_salesperson_notice_period_to_note](sale_order_name_salesperson_notice_period_to_note/) | 14.0.1.0.1 |  | Add sale order name to sale order note on order confirm
 [sale_order_no_autofollow](sale_order_no_autofollow/) | 14.0.1.0.1 |  | Don't set customer as a SO follower automatically
 [sale_order_note_by_comment_to_picking](sale_order_note_by_comment_to_picking/) | 14.0.1.0.1 |  | 'Note by' comment to picking of a salesperson
 [sale_order_note_to_invoice](sale_order_note_to_invoice/) | 14.0.1.0.1 |  | Move SO line notes to invoice

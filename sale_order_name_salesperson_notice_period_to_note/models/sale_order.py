@@ -36,3 +36,26 @@ class SaleOrder(models.Model):
                 else:
                     order.note = salesperson
         return res
+
+    def action_cancel(self):
+        res = super(SaleOrder, self).action_cancel()
+
+        if self.note:
+            note_lines = self.note.split("\n")
+
+            words_to_remove = [
+                _("Salesperson:"),
+                _("Notice period:"),
+                _("Our reference:"),
+            ]
+
+            note_lines = [
+                line
+                for line in note_lines
+                if not any(word in line for word in words_to_remove)
+            ]
+
+            note_lines = "\n".join(note_lines)
+
+            self.note = note_lines
+        return res
