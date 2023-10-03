@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,20 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Sale blanket order forecast",
-    "summary": "Allows making forecast sale orders from blanket orders",
-    "version": "14.0.1.1.13",
+    "name": "Unlock locked sale order",
+    "summary": "Allows unlocking locked sale orders for managers",
     "category": "Sale",
+    "version": "14.0.1.0.0",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale_blanket_order", "sale_stock"],
-    "data": [
-        "data/ir_cron.xml",
-        "views/sale_blanket_order.xml",
-        "views/sale_order.xml",
-        "views/stock_picking.xml",
-    ],
+    "depends": ["sale"],
+    "data": ["views/sale_order.xml"],
 }
