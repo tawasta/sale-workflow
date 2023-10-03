@@ -203,6 +203,11 @@ class SaleBlanketOrder(models.Model):
         # Confirm the SO to create deliveries
         sale_order.action_confirm()
 
+        # Remove cancelled deliveries
+        for picking in sale_order.picking_ids:
+            if picking.state == "cancel":
+                picking.unlink()
+
         # Unreserve products from pickings
         for picking in sale_order.picking_ids:
             picking.do_unreserve()
