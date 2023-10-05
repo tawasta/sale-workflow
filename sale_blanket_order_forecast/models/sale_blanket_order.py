@@ -221,8 +221,9 @@ class SaleBlanketOrder(models.Model):
 
         # Unreserve products from pickings
         for picking in sale_order.picking_ids:
-            _logger.info(_("Unreserving products for {}").format(picking.name))
-            picking.do_unreserve()
+            if picking.state in ["waiting", "ready"]:
+                _logger.info(_("Unreserving products for {}").format(picking.name))
+                picking.do_unreserve()
 
         # Update forecast date
         self.forecast_write_date = fields.Datetime.now()
