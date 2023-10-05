@@ -145,6 +145,7 @@ class SaleBlanketOrder(models.Model):
 
     def action_create_forecast(self):
         self.ensure_one()
+        _logger.info(_("Creating forecast for {}").format(self.name))
         if self.forecast_sale_order_id:
             sale_order = self.forecast_sale_order_id
         else:
@@ -171,16 +172,21 @@ class SaleBlanketOrder(models.Model):
             sale_order_id = bo_wizard.create_sale_order().get("domain")[0][2][0]
             sale_order = self.env["sale.order"].browse([sale_order_id])
 
+        _logger.info(_("Using sale order {}").format(sale_order.name))
+
         # Unlock locked sale
         if sale_order.state == "cancel":
+            _logger.info(_("Cancelling sale order {}").format(sale_order.name))
             sale_order.action_draft()
 
         # Reopen cancelled sale
         if sale_order.state == "done":
+            _logger.info(_("Unlocking sale order {}").format(sale_order.name))
             sale_order.action_unlock()
 
         # Return the SO to draft so it can be manipulated
         if sale_order.state == "sale":
+            _logger.info(_("Setting sale order {} as draft").format(sale_order.name))
             sale_order.action_cancel()
             sale_order.action_draft()
 
@@ -192,6 +198,9 @@ class SaleBlanketOrder(models.Model):
         self.forecast_sale_order_id = sale_order.id
 
         # Recreate SO lines
+        _logger.info(
+            _("Creating forecast lines for sale order {}").format(sale_order.name)
+        )
         forecast_lines = self._compute_forecast_lines()
         for order_line in sale_order.order_line:
             product_id = order_line.product_id.id
@@ -201,6 +210,7 @@ class SaleBlanketOrder(models.Model):
                 )
 
         # Confirm the SO to create deliveries
+        _logger.info(_("Confirming sale order {}").format(sale_order.name))
         sale_order.action_confirm()
 
         # Remove cancelled deliveries
@@ -211,6 +221,7 @@ class SaleBlanketOrder(models.Model):
 
         # Unreserve products from pickings
         for picking in sale_order.picking_ids:
+            _logger.info(_("Unreserving products for {}").format(picking.name))
             picking.do_unreserve()
 
         # Update forecast date
