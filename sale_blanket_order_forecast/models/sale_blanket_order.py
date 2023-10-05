@@ -205,8 +205,9 @@ class SaleBlanketOrder(models.Model):
 
         # Remove cancelled deliveries
         for picking in sale_order.picking_ids:
-            if picking.state == "cancel":
-                picking.unlink()
+            if picking.state == "cancel" and picking.is_forecast:
+                pass
+                # picking.unlink()
 
         # Unreserve products from pickings
         for picking in sale_order.picking_ids:
