@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Move Customer reference to header",
-    "summary": "Move Customer reference to header",
+    "name": "Move Commitment Date to header",
+    "summary": "Move Commitment Date to header",
     "version": "14.0.1.0.0",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
@@ -28,8 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "sale",
-    ],
+    "depends": ["sale_stock"],
     "data": ["views/sale_order.xml"],
 }
