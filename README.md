@@ -18,6 +18,7 @@ addon | version | maintainers | summary
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale
 [sale_order_address_details](sale_order_address_details/) | 14.0.1.0.0 |  | Sale order address details
 [sale_order_carrier_in_list](sale_order_carrier_in_list/) | 14.0.1.0.0 |  | Add carrier to list view
+[sale_order_commitment_date_header](sale_order_commitment_date_header/) | 14.0.1.0.0 |  | Move Commitment Date to header
 [sale_order_compute_weight](sale_order_compute_weight/) | 14.0.1.0.0 |  | Add weight on sale order and sale order lines
 [sale_order_confirmation_required_businessid](sale_order_confirmation_required_businessid/) | 14.0.1.0.0 |  | Prevents SO confirmation if customer has no business ID
 [sale_order_confirmation_required_client_order_ref](sale_order_confirmation_required_client_order_ref/) | 14.0.1.0.0 |  | Prevents SO confirmation if customer reference is not set
@@ -29,7 +30,7 @@ addon | version | maintainers | summary
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 14.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_order_date](sale_order_customer_order_date/) | 14.0.1.0.0 |  | Customer order date field to sale order
 [sale_order_customer_order_number](sale_order_customer_order_number/) | 14.0.1.0.0 |  | New field for order number provided by customer
-[sale_order_customer_reference_header](sale_order_customer_reference_header/) | 14.0.1.0.0 |  | Move Customer refernce to header
+[sale_order_customer_reference_header](sale_order_customer_reference_header/) | 14.0.1.0.0 |  | Move Customer reference to header
 [sale_order_default_parent](sale_order_default_parent/) | 14.0.1.0.0 |  | Default parent for new invoice and shipping addresses on SO
 [sale_order_delivery_date_to_invoice](sale_order_delivery_date_to_invoice/) | 14.0.1.0.0 |  | Pre-fill invoice delivery date from Sale Order
 [sale_order_delivery_place](sale_order_delivery_place/) | 14.0.1.0.0 |  | Delivery Terms on Sale Order
