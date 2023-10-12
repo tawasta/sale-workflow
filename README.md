@@ -101,6 +101,7 @@ addon | version | maintainers | summary
 [sale_order_tax_required](sale_order_tax_required/) | 14.0.1.0.0 |  | Tax is required on all Sale Order lines
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 14.0.1.0.0 |  | Add customer reference to sale order tree view
 [sale_order_tree_untaxed](sale_order_tree_untaxed/) | 14.0.1.0.0 |  | Show untaxed amount in sale order tree
+[sale_order_tree_view_quotations_only](sale_order_tree_view_quotations_only/) | 14.0.1.0.0 |  | Sale Quotations tree view - Show only quotations
 [sale_order_unlock](sale_order_unlock/) | 14.0.1.0.0 |  | Allows unlocking locked sale orders for managers
 [sale_order_warehouse_do_not_copy](sale_order_warehouse_do_not_copy/) | 14.0.1.0.0 |  | Do not copy a warehouse when copying a sale order
 [sale_order_warranty](sale_order_warranty/) | 14.0.1.0.1 |  | Sale Order Warranty
