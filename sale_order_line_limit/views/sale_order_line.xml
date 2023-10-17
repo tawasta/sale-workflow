@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='order_line']/tree" position="attributes">
-                <attribute name="limit">80</attribute>
+                <attribute name="limit">200</attribute>
             </xpath>
         </field>
     </record>

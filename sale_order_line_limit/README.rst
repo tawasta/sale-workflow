@@ -5,15 +5,15 @@
 =====================
 Sale Order Line Limit
 =====================
-* Sale Order Line Limit
+* Increase the amount of Sale Order Lines shown in Sale Order view from Odoo's default to 200
 
 Configuration
 =============
-\-
+* No configuration needed
 
 Usage
 =====
-\-
+* Add SO lines to a Sale Order as usual, and the pager will appear only after 200 lines have been added.
 
 Known issues / Roadmap
 ======================
@@ -26,6 +26,7 @@ Contributors
 ------------
 
 * Valtteri Lattu <valtteri.lattu@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------
