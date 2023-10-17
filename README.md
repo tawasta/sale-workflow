@@ -56,7 +56,7 @@ addon | version | maintainers | summary
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_description_without_product](sale_order_line_description_without_product/) | 14.0.1.0.0 |  | Remove product and product code from default description
 [sale_order_line_invoice_date](sale_order_line_invoice_date/) | 14.0.1.0.0 |  | Sale Order Line Invoice Date
-[sale_order_line_limit](sale_order_line_limit/) | 14.0.1.0.2 |  | Sale Order Line Limit
+[sale_order_line_limit](sale_order_line_limit/) | 14.0.1.0.3 |  | Sale Order Line Limit
 [sale_order_line_open_form](sale_order_line_open_form/) | 14.0.1.0.0 |  | Open Form view from sale order's line
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 14.0.1.0.0 |  | Add qty_available to sale order line
 [sale_order_line_stock_pickings](sale_order_line_stock_pickings/) | 14.0.1.0.0 |  | Show deliveries (stock pickings) on sale order lines
