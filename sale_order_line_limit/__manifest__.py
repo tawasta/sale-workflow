@@ -22,7 +22,7 @@
     "name": "Sale Order Line Limit",
     "summary": "Sale Order Line Limit",
     "category": "Sale",
-    "version": "14.0.1.0.2",
+    "version": "14.0.1.0.3",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
