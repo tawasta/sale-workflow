@@ -86,7 +86,7 @@ addon | version | maintainers | summary
 [sale_order_product_label](sale_order_product_label/) | 14.0.1.0.0 |  | Sale Order Product Label
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_project_in_header](sale_order_project_in_header/) | 14.0.1.0.1 |  | Moves analytic account to SO header and sets it as required
-[sale_order_promised_delivery_range](sale_order_promised_delivery_range/) | 14.0.1.0.0 |  | Adds new fields for storing date range of promised delivery
+[sale_order_promised_delivery_range](sale_order_promised_delivery_range/) | 14.0.1.0.1 |  | Adds new fields for storing date range of promised delivery
 [sale_order_promised_delivery_range_in_list](sale_order_promised_delivery_range_in_list/) | 14.0.1.0.0 |  | Makes the sale order list show promised delivery range
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 14.0.1.0.1 |  | Adds a new field for storing date of requested delivery
 [sale_order_route_in_header](sale_order_route_in_header/) | 14.0.1.0.0 |  | Allows editing route for all SO lines at once

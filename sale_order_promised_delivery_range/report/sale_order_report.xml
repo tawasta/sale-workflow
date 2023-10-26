@@ -17,9 +17,9 @@
                         t-set="promised_start"
                         t-value="doc.date_delivery_promised_start"
                     />
-                    <span class="m-0" t-esc="promised_start" />
+                    <span class="m-0" t-field="doc.date_delivery_promised_start" />
                     <t t-if="promised_end and promised_start != promised_end">
-                        <span /> - <span t-esc="promised_end" />
+                        <span /> - <span t-field="doc.date_delivery_promised_end" />
                     </t>
                 </p>
             </div>
