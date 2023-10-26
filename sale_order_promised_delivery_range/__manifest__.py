@@ -21,7 +21,7 @@
 {
     "name": "Sale Order Promised Delivery Date Range",
     "summary": "Adds new fields for storing date range of promised delivery",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
