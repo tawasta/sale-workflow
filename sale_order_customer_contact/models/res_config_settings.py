@@ -8,5 +8,5 @@ class ResConfigSettings(models.TransientModel):
         string="Force commercial partner on invoices",
         help="When creating invoice from SO, always use commercial partner",
         config_parameter="invoice_force_commercial_partner",
-        default=True,
+        default=False,
     )
