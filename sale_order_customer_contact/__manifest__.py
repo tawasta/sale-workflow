@@ -19,7 +19,7 @@
 {
     "name": "Customer Contact for Sale Orders",
     "category": "Sales",
-    "version": "14.0.1.1.2",
+    "version": "14.0.1.1.3",
     "installable": True,
     "author": "Tawasta",
     "license": "AGPL-3",
