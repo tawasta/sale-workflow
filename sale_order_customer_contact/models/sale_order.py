@@ -74,7 +74,11 @@ class SaleOrder(models.Model):
             .get_param("invoice_force_commercial_partner")
         ):
 
-            if self.partner_invoice_id != self.partner_invoice_id.commercial_partner_id:
+            if (
+                self.partner_invoice_id.type != "invoice"
+                and self.partner_invoice_id
+                != self.partner_invoice_id.commercial_partner_id
+            ):
                 # Force using commercial partner as invoice address
                 if not self.customer_contact_id:
                     invoice_vals["customer_contact_id"] = self.partner_invoice_id.id
