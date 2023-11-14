@@ -18,6 +18,14 @@ class SaleOrder(models.Model):
                 else:
                     order.note = reference
 
+            if order.user_id:
+                salesperson = _("Salesperson: %s") % order.user_id.name
+
+                if order.note:
+                    order.note = salesperson + "\n" + order.note
+                else:
+                    order.note = salesperson
+
             notice_period_days = (
                 self.partner_id.notice_period or self.company_id.notice_period
             )
@@ -27,14 +35,6 @@ class SaleOrder(models.Model):
                 order.note = notice_period + "\n" + order.note
             else:
                 order.note = notice_period
-
-            if order.user_id:
-                salesperson = _("Salesperson: %s") % order.user_id.name
-
-                if order.note:
-                    order.note = salesperson + "\n" + order.note
-                else:
-                    order.note = salesperson
         return res
 
     def action_cancel(self):
