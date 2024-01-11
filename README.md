@@ -11,6 +11,6 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_order_customer_contact](sale_order_customer_contact/) | 17.0.1.0.0 |  | Customer Contact for Sale Orders
+[sale_order_customer_contact](sale_order_customer_contact/) | 17.0.1.0.1 |  | Customer Contact for Sale Orders
 
 [//]: # (end addons)

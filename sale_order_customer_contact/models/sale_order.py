@@ -5,16 +5,8 @@ class SaleOrder(models.Model):
 
     _inherit = "sale.order"
 
-    _FIELD_STATES = {
-        "draft": [("readonly", False)],
-        "sent": [("readonly", False)],
-        "manual": [("readonly", False)],
-    }
-
     # TODO: change the field name to partner_contact_id when migrating
-    customer_contact_id = fields.Many2one(
-        "res.partner", "Contact", states=_FIELD_STATES
-    )
+    customer_contact_id = fields.Many2one("res.partner", "Contact")
 
     @api.onchange("partner_id")
     def onchange_partner(self):
