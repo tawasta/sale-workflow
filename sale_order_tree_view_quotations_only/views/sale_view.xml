@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
-    <record model="ir.actions.act_window" id="sale.action_quotations_with_onboarding">
-        <field name="domain">[('state','in',('draft','cancel'))]</field>
-    </record>
-</odoo>
