@@ -71,6 +71,15 @@ class SaleBlanketOrder(models.Model):
         states={"draft": [("readonly", False)]},
     )
 
+    def _compute_state(self):
+        super()._compute_state()
+
+        # Force forecasts to stay open
+        # They shouldn't be set to done when lines are "exhausted"
+        for record in self:
+            if record.create_forecast_sales and record.state == "done":
+                record.state = "open"
+
     def _compute_confirmed_sale_order_ids(self):
         for record in self:
 
@@ -208,6 +217,8 @@ class SaleBlanketOrder(models.Model):
                 order_line.product_uom_qty = (
                     forecast_lines[product_id] if forecast_lines[product_id] > 0 else 0
                 )
+            else:
+                order_line.product_uom_qty = 0
 
         # Confirm the SO to create deliveries
         _logger.info(_("Confirming sale order {}").format(sale_order.name))
@@ -216,8 +227,8 @@ class SaleBlanketOrder(models.Model):
         # Remove cancelled deliveries
         for picking in sale_order.picking_ids:
             if picking.state == "cancel" and picking.is_forecast:
-                pass
-                # picking.unlink()
+                desc = "Remove obsolete picking forecast {}".format(picking.name)
+                picking.with_delay(description=desc).unlink()
 
         # Unreserve products from pickings
         for picking in sale_order.picking_ids:
