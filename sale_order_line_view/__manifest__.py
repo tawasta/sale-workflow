@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale", "sale_order_line_margin_percent", "uom"],
+    "depends": ["sale", "sale_margin", "uom"],
     "data": ["views/sale_order_line_search.xml", "views/sale_order_line.xml"],
 }
