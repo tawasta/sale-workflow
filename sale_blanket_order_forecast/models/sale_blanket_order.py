@@ -233,7 +233,7 @@ class SaleBlanketOrder(models.Model):
 
         # Unreserve products from pickings
         for picking in sale_order.picking_ids:
-            if picking.state in ["waiting", "ready"]:
+            if picking.state in ["confirmed", "assigned"]:
                 _logger.info(_("Unreserving products for {}").format(picking.name))
                 picking.do_unreserve()
 
