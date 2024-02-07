@@ -21,7 +21,7 @@
 {
     "name": "Sale Confirmation Check: Customer Reference",
     "summary": "Prevents SO confirmation if customer reference is not set",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
