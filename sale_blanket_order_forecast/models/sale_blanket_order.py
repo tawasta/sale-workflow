@@ -227,8 +227,9 @@ class SaleBlanketOrder(models.Model):
         # Remove cancelled deliveries
         for picking in sale_order.picking_ids:
             if picking.state == "cancel" and picking.is_forecast:
-                desc = "Remove obsolete picking forecast {}".format(picking.name)
-                picking.with_delay(description=desc).remove_picking()
+                # desc = "Remove obsolete picking forecast {}".format(picking.name)
+                # picking.with_delay(description=desc).remove_picking()
+                pass
 
         # Unreserve products from pickings
         for picking in sale_order.picking_ids:
