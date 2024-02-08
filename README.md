@@ -20,9 +20,9 @@ addon | version | maintainers | summary
 [sale_order_carrier_in_list](sale_order_carrier_in_list/) | 14.0.1.0.0 |  | Add carrier to list view
 [sale_order_commitment_date_header](sale_order_commitment_date_header/) | 14.0.1.0.0 |  | Move Commitment Date to header
 [sale_order_compute_weight](sale_order_compute_weight/) | 14.0.1.0.0 |  | Add weight on sale order and sale order lines
-[sale_order_confirmation_required_businessid](sale_order_confirmation_required_businessid/) | 14.0.1.0.0 |  | Prevents SO confirmation if customer has no business ID
-[sale_order_confirmation_required_client_order_ref](sale_order_confirmation_required_client_order_ref/) | 14.0.1.0.0 |  | Prevents SO confirmation if customer reference is not set
-[sale_order_confirmation_required_payment_term](sale_order_confirmation_required_payment_term/) | 14.0.1.0.0 |  | Prevents SO confirmation if customer has no payment terms set
+[sale_order_confirmation_required_businessid](sale_order_confirmation_required_businessid/) | 14.0.1.1.0 |  | Prevents SO confirmation if customer has no business ID
+[sale_order_confirmation_required_client_order_ref](sale_order_confirmation_required_client_order_ref/) | 14.0.1.1.0 |  | Prevents SO confirmation if customer reference is not set
+[sale_order_confirmation_required_payment_term](sale_order_confirmation_required_payment_term/) | 14.0.1.1.0 |  | Prevents SO confirmation if customer has no payment terms set
 [sale_order_confirmation_required_so_payment_term](sale_order_confirmation_required_so_payment_term/) | 14.0.1.0.0 |  | Prevents SO confirmation if SO has no payment term set
 [sale_order_country_group_text](sale_order_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_customer_contact](sale_order_customer_contact/) | 14.0.1.1.4 |  | Customer Contact for Sale Orders

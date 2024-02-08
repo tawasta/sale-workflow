@@ -8,6 +8,8 @@ Sale Confirmation Check: Customer Business ID
 
 * Prevents SO confirmation if customer has no business ID
 * The check is omitted if the customer is not a company
+* Note: the check is also not done for SOs that originated from website,
+  to avoid errors in fields that are not shown to customers in frontend
 
 Configuration
 =============
