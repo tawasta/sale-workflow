@@ -21,7 +21,7 @@
 {
     "name": "Sale Confirmation Check: Customer Business ID",
     "summary": "Prevents SO confirmation if customer has no business ID",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",

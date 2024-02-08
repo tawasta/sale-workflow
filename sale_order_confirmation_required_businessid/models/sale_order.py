@@ -6,9 +6,15 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     def action_confirm(self):
+
         for sale in self:
+
+            # Ignore orders autoconfirmed from website
+            from_website = hasattr(sale, "website_id") and sale.website_id
+
             if (
-                sale.partner_id.company_type == "company"
+                not from_website
+                and sale.partner_id.company_type == "company"
                 and not sale.partner_id.business_code
             ):
                 msg = (
