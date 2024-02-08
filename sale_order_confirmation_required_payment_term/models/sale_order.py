@@ -7,19 +7,19 @@ class SaleOrder(models.Model):
 
     def action_confirm(self):
 
-        # Don't enforce the check on autoconfirmed website sales
-        from_website = self._context.get("website_id", False)
+        for sale in self:
 
-        if not from_website:
-            for sale in self:
-                if not sale.partner_id.property_payment_term_id:
-                    msg = (
-                        _(
-                            "Please fill in the customer payment terms for the "
-                            "customer %s."
-                        )
-                        % sale.partner_id.name
+            # Ignore orders autoconfirmed from website
+            from_website = hasattr(sale, "website_id") and sale.website_id
+
+            if not from_website and not sale.partner_id.property_payment_term_id:
+                msg = (
+                    _(
+                        "Please fill in the customer payment terms for the "
+                        "customer %s."
                     )
-                    raise exceptions.UserError(msg)
+                    % sale.partner_id.name
+                )
+                raise exceptions.UserError(msg)
 
         return super(SaleOrder, self).action_confirm()
