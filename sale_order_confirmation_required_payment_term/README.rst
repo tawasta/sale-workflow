@@ -7,7 +7,9 @@ Sale Confirmation Check: Customer Payment term
 ==============================================
 
 * Prevents SO confirmation if customer has no customer payment term set
-
+* Note: the check is not done for SOs that originated from website,
+  to avoid errors in fields that are not shown to customers in frontend
+  
 Configuration
 =============
 \-

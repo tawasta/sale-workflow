@@ -1,4 +1,8 @@
+import logging
+
 from odoo import _, exceptions, models
+
+_logger = logging.getLogger(__name__)
 
 
 class SaleOrder(models.Model):
@@ -8,12 +12,14 @@ class SaleOrder(models.Model):
     def action_confirm(self):
 
         # Don't enforce the check on autoconfirmed website sales
-        from_website = self._context.get("website_id", False)
 
-        if not from_website:
-            for sale in self:
-                if not sale.client_order_ref:
-                    msg = _("Please fill in the customer reference.")
-                    raise exceptions.UserError(msg)
+        for sale in self:
+
+            # Ignore orders autoconfirmed from website
+            from_website = hasattr(sale, "website_id") and sale.website_id
+
+            if not from_website and not sale.client_order_ref:
+                msg = _("Please fill in the customer reference.")
+                raise exceptions.UserError(msg)
 
         return super(SaleOrder, self).action_confirm()

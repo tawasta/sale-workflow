@@ -7,6 +7,8 @@ Sale Confirmation Check: Customer Reference
 ===========================================
 
 * Prevents SO confirmation if customer reference is not set
+* Note: the check is not done for SOs that originated from website,
+  to avoid errors in fields that are not shown to customers in frontend
 
 Configuration
 =============
