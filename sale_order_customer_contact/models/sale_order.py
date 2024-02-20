@@ -2,7 +2,6 @@ from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     customer_contact_id = fields.Many2one("res.partner", "Contact")
@@ -64,7 +63,6 @@ class SaleOrder(models.Model):
             .sudo()
             .get_param("invoice_force_commercial_partner")
         ):
-
             if (
                 self.partner_invoice_id.type != "invoice"
                 and self.partner_invoice_id
