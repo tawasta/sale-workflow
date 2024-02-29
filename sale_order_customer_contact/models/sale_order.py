@@ -2,10 +2,8 @@ from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
-    # TODO: change the field name to partner_contact_id when migrating
     customer_contact_id = fields.Many2one("res.partner", "Contact")
 
     @api.onchange("partner_id")
@@ -65,7 +63,6 @@ class SaleOrder(models.Model):
             .sudo()
             .get_param("invoice_force_commercial_partner")
         ):
-
             if (
                 self.partner_invoice_id.type != "invoice"
                 and self.partner_invoice_id
