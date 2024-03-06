@@ -7,7 +7,7 @@
     <field name="inherit_id" ref="membership_product.product_template_only_form_view" />
     <field name="arch" type="xml">
         <field name="membership_date_to" position="after">
-            <field name="attachment_ids" />
+            <field name="membership_attachment_ids" />
         </field>
     </field>
 </record>

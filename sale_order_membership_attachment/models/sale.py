@@ -12,7 +12,7 @@ class SaleOrder(models.Model):
         new_attachments = []
         for line in self.order_line:
             if line.product_id.membership:
-                for attachment in line.product_id.attachment_ids:
+                for attachment in line.product_id.membership_attachment_ids:
                     if attachment.checksum not in existing_checksums:
                         new_attachment = attachment.copy({
                             'res_model': 'sale.order',
