@@ -1,5 +1,6 @@
 from odoo import fields, models
 
+
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
@@ -8,5 +9,5 @@ class ProductTemplate(models.Model):
         relation="product_template_membership_attachment_rel",  # Uniikki relation-taulun nimi
         column1="product_template_id",
         column2="attachment_id",
-        string="Membership Attachments"
+        string="Membership Attachments",
     )

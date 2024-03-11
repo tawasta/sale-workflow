@@ -66,6 +66,7 @@ addon | version | maintainers | summary
 [sale_order_lock_on_invoiced](sale_order_lock_on_invoiced/) | 14.0.1.0.0 |  | Lock sale order after it state is fully invoiced
 [sale_order_mass_cancel](sale_order_mass_cancel/) | 14.0.1.0.0 |  | Enables cancelling multiple sales at once
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 14.0.1.0.0 |  | Enables confirming multiple sales at once
+[sale_order_membership_attachment](sale_order_membership_attachment/) | 14.0.1.0.0 |  | Sale order membership attachment
 [sale_order_multi_company_rule_only_own_company](sale_order_multi_company_rule_only_own_company/) | 14.0.1.0.0 |  | Shown own company Orders only
 [sale_order_my_orders_no_default_filter](sale_order_my_orders_no_default_filter/) | 14.0.1.0.0 |  | Remove My order-default filter
 [sale_order_name_salesperson_notice_period_to_note](sale_order_name_salesperson_notice_period_to_note/) | 14.0.1.0.2 |  | Add sale order name to sale order note on order confirm
