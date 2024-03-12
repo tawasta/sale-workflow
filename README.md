@@ -41,6 +41,7 @@ addon | version | maintainers | summary
 [sale_order_disposable_shipping_address](sale_order_disposable_shipping_address/) | 14.0.1.0.0 |  | Sale order shipping addresses can be deactivated after use
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 14.0.1.0.0 |  | When duplicating also copy customer reference
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
+[sale_order_excel_import](sale_order_excel_import/) | 14.0.1.0.0 |  | Import Sale orders with excel file
 [sale_order_handler](sale_order_handler/) | 14.0.1.0.0 |  | Handler on SO, invoice and picking
 [sale_order_header](sale_order_header/) | 14.0.1.0.2 |  | New field for SO header/title
 [sale_order_header_fiscal_position_warehouse_incoterm](sale_order_header_fiscal_position_warehouse_incoterm/) | 14.0.1.0.0 |  | Move fiscal position, warehouse, and incoterm to so header
