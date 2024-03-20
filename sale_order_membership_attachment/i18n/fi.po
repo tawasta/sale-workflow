@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_membership_attachment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20230925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-20 13:54+0000\n"
+"PO-Revision-Date: 2024-03-20 13:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_membership_attachment
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_mail_compose_message__display_name
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_product_template__display_name
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: sale_order_membership_attachment
+#: model:ir.model,name:sale_order_membership_attachment.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Sähköpostin ohjattu koostaminen"
+
+#. module: sale_order_membership_attachment
+#: code:addons/sale_order_membership_attachment/models/sale.py:0
+#, python-format
+msgid "Fetched membership product attachment '%s' from Product to Sale Order"
+msgstr "Haettiin jäsenyystuotteen liitetiedosto '%s' tuotteelta myyntitilaukselle."
+
+#. module: sale_order_membership_attachment
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_mail_compose_message__id
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_product_template__id
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_sale_order__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: sale_order_membership_attachment
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_mail_compose_message____last_update
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_product_template____last_update
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: sale_order_membership_attachment
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_product_product__membership_attachment_ids
+#: model:ir.model.fields,field_description:sale_order_membership_attachment.field_product_template__membership_attachment_ids
+msgid "Membership Product Attachments"
+msgstr "Jäsenyystuotteen liitteet"
+
+#. module: sale_order_membership_attachment
+#: model:ir.model,name:sale_order_membership_attachment.model_product_template
+msgid "Product Template"
+msgstr "Tuotemalli"
+
+#. module: sale_order_membership_attachment
+#: model:ir.model,name:sale_order_membership_attachment.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
