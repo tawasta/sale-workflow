@@ -6,8 +6,8 @@ class ProductTemplate(models.Model):
 
     membership_attachment_ids = fields.Many2many(
         comodel_name="ir.attachment",
-        relation="product_template_membership_attachment_rel",  # Uniikki relation-taulun nimi
+        relation="product_template_membership_attachment_rel",
         column1="product_template_id",
         column2="attachment_id",
-        string="Membership Attachments",
+        string="Membership Product Attachments",
     )

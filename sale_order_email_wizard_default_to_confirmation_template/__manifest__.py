@@ -19,9 +19,9 @@
 ##############################################################################
 
 {
-    "name": "Sale Order: Membership Product Attachments in Emails",
-    "summary": "Enables sending product attachments with order confirmation email wizard",
-    "version": "14.0.1.1.0",
+    "name": "Sale Order: Suggest Order Confirmation Template as Default",
+    "summary": "Sale Order Email Wizard suggests the confirmation template also for quotations",
+    "version": "14.0.1.0.0",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
@@ -29,7 +29,7 @@
     "application": False,
     "installable": True,
     "external_dependencies": {"python": [], "bin": []},
-    "depends": ["sale", "membership_product", "mail_attach_existing_attachment"],
-    "data": ["views/product_template.xml"],
+    "depends": ["sale"],
+    "data": [],
     "demo": [],
 }
