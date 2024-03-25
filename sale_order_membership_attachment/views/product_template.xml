@@ -9,14 +9,7 @@
         />
         <field name="arch" type="xml">
             <field name="membership_date_to" position="after">
-                <field name="membership_attachment_ids">
-                    <tree>
-                        <field name="name" />
-                        <field name="file_size" />
-                        <field name="create_uid" />
-                        <field name="create_date" />
-                    </tree>
-                </field>
+                <field name="membership_attachment_ids" widget="many2many_binary" />
             </field>
         </field>
     </record>

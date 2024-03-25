@@ -21,7 +21,7 @@
 {
     "name": "Sale Order: Membership Product Attachments in Emails",
     "summary": "Enables sending product attachments with order confirmation email wizard",
-    "version": "14.0.1.1.0",
+    "version": "14.0.1.1.1",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
