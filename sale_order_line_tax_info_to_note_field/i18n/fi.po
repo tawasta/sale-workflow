@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_line_tax_info_to_note_field
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240216\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-09 05:41+0000\n"
+"PO-Revision-Date: 2024-04-09 05:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_line_tax_info_to_note_field
+#: model:ir.model.fields,help:sale_order_line_tax_info_to_note_field.field_account_tax__sale_order_note
+msgid ""
+"Gets copied to Sale Order notes field, when this tax is used on a Sale Order"
+" line"
+msgstr "Kopioituu myyntitilauksen muistiinpanoihin, kun tätä verokantaa käytetään myyntitilauksella."
+
+#. module: sale_order_line_tax_info_to_note_field
+#: model:ir.model.fields,field_description:sale_order_line_tax_info_to_note_field.field_account_tax__sale_order_note
+msgid "Note to Sale Order"
+msgstr "Myyntitilauksen lisätieto"
+
+#. module: sale_order_line_tax_info_to_note_field
+#: model:ir.model,name:sale_order_line_tax_info_to_note_field.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_order_line_tax_info_to_note_field
+#: model:ir.model,name:sale_order_line_tax_info_to_note_field.model_account_tax
+msgid "Tax"
+msgstr "Vero"
