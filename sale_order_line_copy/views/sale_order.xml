@@ -15,6 +15,17 @@
                     icon="fa-clone"
                 />
             </xpath>
+
+            <!-- Switch to use the new widget that appends the duplication button also to
+            section lines -->
+            <xpath
+                expr="//field[@name='order_line']//tree//field[@name='name']"
+                position="attributes"
+            >
+                <attribute name="widget">sale_order_line_section_name</attribute>
+            </xpath>
+
+
         </field>
     </record>
 </odoo>
