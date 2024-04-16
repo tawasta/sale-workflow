@@ -4,35 +4,83 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0-20230925\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-21 14:00+0000\n"
-"PO-Revision-Date: 2022-12-21 16:06+0200\n"
+"POT-Creation-Date: 2024-04-16 10:38+0000\n"
+"PO-Revision-Date: 2024-04-16 10:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: fi\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #. module: sale_order_line_copy
+#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Sale Order Line Copying</span>"
+msgstr "<span class=\"o_form_label\">Myyntitilausrivien kopiointi</span>"
+
+#. module: sale_order_line_copy
+#: model:ir.model,name:sale_order_line_copy.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguraatioasetukset"
+
+#. module: sale_order_line_copy
+#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.res_config_settings_view_form
+msgid ""
+"Configure where individual Sale Order Line gets placed after copying it"
+msgstr ""
+"Konfiguroi, mihin kohtaan yksittäinen myyntitilausrivi asetetaan kopioinnin jälkeen"
+
+#. module: sale_order_line_copy
+#: code:addons/sale_order_line_copy/models/sale_order_line.py:0
+#, python-format
+msgid "Copy"
+msgstr "Kopioi"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields.selection,name:sale_order_line_copy.selection__res_config_settings__sale_order_line_copy_mode__directly_after
+msgid "Directly after the Original"
+msgstr "Heti alkuperäisen rivin jälkeen"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line__display_name
 msgid "Display Name"
 msgstr "Näyttönimi"
 
 #. module: sale_order_line_copy
+#: model:ir.model.fields.selection,name:sale_order_line_copy.selection__res_config_settings__sale_order_line_copy_mode__end_of_order
+msgid "End of Sale Order"
+msgstr "Myyntitilauksen loppuun"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_res_config_settings__id
 #: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line__id
 msgid "ID"
 msgstr "Tunniste (ID)"
 
 #. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_res_config_settings____last_update
 #: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line____last_update
 msgid "Last Modified on"
 msgstr "Viimeksi muokattu"
 
 #. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_res_config_settings__sale_order_line_copy_mode
+msgid "Sale Order Line Positioning after Copying"
+msgstr "Myyntitilausrivin sijainti kopioinnin jälkeen"
+
+#. module: sale_order_line_copy
 #: model:ir.model,name:sale_order_line_copy.model_sale_order_line
 msgid "Sales Order Line"
 msgstr "Myyntitilausrivi"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,help:sale_order_line_copy.field_res_config_settings__sale_order_line_copy_mode
+msgid ""
+"Where the copied individual SO lines gets placed. Note: Sections always get "
+"placed at the end of Sale Order."
+msgstr ""
+"Minne kopioitu yksittäinen myyntitilausrivi asetetaan. Huom: osiot/väliotsikot "
+"kopioidaan aina myyntitilauksen loppuun."
