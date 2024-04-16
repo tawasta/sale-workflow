@@ -52,7 +52,7 @@ addon | version | maintainers | summary
 [sale_order_line_amount_to_invoice](sale_order_line_amount_to_invoice/) | 14.0.1.0.0 |  | Sale order line tree - Untaxed Amount To Invoice
 [sale_order_line_commitment_date](sale_order_line_commitment_date/) | 14.0.1.1.0 |  | Add picking date to SO lines and split lines to pickings
 [sale_order_line_configurator](sale_order_line_configurator/) | 14.0.1.0.1 |  | Adds a product configurator on sale order line
-[sale_order_line_copy](sale_order_line_copy/) | 14.0.1.1.0 |  | Duplicate single order lines or sections on sale order
+[sale_order_line_copy](sale_order_line_copy/) | 14.0.1.2.0 |  | Duplicate single order lines or sections on sale order
 [sale_order_line_decription_to_stock_move](sale_order_line_decription_to_stock_move/) | 14.0.1.0.0 |  | SO line description to Stock move
 [sale_order_line_delivery_date_change_scheduled_date](sale_order_line_delivery_date_change_scheduled_date/) | 14.0.1.0.4 |  | Change Scheduled Date with Delivery Time
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 14.0.1.0.0 |  | Sale Order Line Delivery Time

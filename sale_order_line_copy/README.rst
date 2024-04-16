@@ -7,12 +7,13 @@ Sale Order: Line and Section Copying
 ====================================
 
 * Duplicate single order lines or sections on sale order
-* For single SO lines the sequences are recomputed for easier use
 * Duplicated sections always get positioned at the end of the order
+* Duplicates single SO lines get positioned either at the end of the order (default
+  functionality), or directly after the line being copied, depending on configuration
 
 Configuration
 =============
-* No configuration needed
+* If you wish to change the single SO line positioning after copy, edit the Settings -> Sales -> "Sale Order Line Positioning after Copying" setting
 
 Usage
 =====

@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name": "Sale Order: Line and Section Copying",
-    "version": "14.0.1.1.0",
+    "version": "14.0.1.2.0",
     "category": "Sale",
     "summary": "Duplicate single order lines or sections on sale order",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
@@ -28,5 +28,9 @@
     "application": False,
     "installable": True,
     "depends": ["sale"],
-    "data": ["views/sale_order.xml", "views/assets.xml"],
+    "data": [
+        "views/sale_order.xml",
+        "views/res_config_settings.xml",
+        "views/assets.xml",
+    ],
 }
