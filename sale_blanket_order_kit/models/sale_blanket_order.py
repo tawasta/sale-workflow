@@ -31,13 +31,20 @@ class SaleBlanketOrder(models.Model):
     )
 
     def cron_kit_recompute(self):
-        records = self.search([("kit_recompute_automatically", "=", True)])
-        records.action_kit_compute()
+        records = self.search(
+            [
+                ("kit_recompute_automatically", "=", True),
+            ]
+        )
+        for record in records:
+            if record.kit_ids:
+                # Only recompute if kits are set to prevent clearing other BO:s
+                record.action_kit_compute()
 
     def action_kit_compute(self):
         for record in self:
             if record.kit_recompute_clear:
-                record.line_ids = False
+                record.line_ids.unlink()
 
             record._kit_expand()
 
