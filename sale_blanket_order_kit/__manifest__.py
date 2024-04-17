@@ -21,7 +21,7 @@
 {
     "name": "Sale blanket order kits",
     "summary": "Add kits and expand them as forecast lines",
-    "version": "14.0.1.2.0",
+    "version": "14.0.1.2.1",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
