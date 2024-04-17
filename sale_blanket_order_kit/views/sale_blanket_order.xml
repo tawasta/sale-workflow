@@ -19,7 +19,10 @@
 
             <page name="order_lines" position="after">
                 <page name="kits" string="Kits">
-                    <group><field name="kit_recompute_clear" /></group>
+                    <group>
+                        <field name="kit_recompute_clear" />
+                        <field name="kit_recompute_automatically" />
+                    </group>
                     <field name="kit_ids" context="{'default_order_id': id}">
                         <tree editable="bottom">
                             <field name="kit_id" />

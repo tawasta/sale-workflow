@@ -18,9 +18,21 @@ class SaleBlanketOrder(models.Model):
 
     kit_recompute_clear = fields.Boolean(
         "Clear lines on recompute",
-        help="Clear all existing order lines on recompute",
+        help="Clear all existing order lines on kit recompute",
         default=True,
     )
+
+    # Allow disabling automated recompute for BO:s that are
+    # modified manually
+    kit_recompute_automatically = fields.Boolean(
+        "Automatic kit recompute",
+        help="Recompute order lines from kits automatically",
+        default=True,
+    )
+
+    def cron_kit_recompute(self):
+        records = self.search([("kit_recompute_automatically", "=", True)])
+        records.action_kit_compute()
 
     def action_kit_compute(self):
         for record in self:
