@@ -1,10 +1,13 @@
 odoo.define("sale_order_line_copy.fields_form", function (require) {
     "use strict";
 
+    var core = require("web.core");
     var FieldRegistry = require("web.field_registry");
-    var FieldChar = require("web.basic_fields").FieldChar;
+    var FieldText = require("web.basic_fields").FieldText;
 
-    var SaleOrderLineSectionName = FieldChar.extend({
+    var _t = core._t;
+
+    var SaleOrderLineSectionName = FieldText.extend({
         // --------------------------------------------------------------------------
         // Widget API
         // --------------------------------------------------------------------------
@@ -19,13 +22,15 @@ odoo.define("sale_order_line_copy.fields_form", function (require) {
         _renderReadonly: function () {
             var def = this._super.apply(this, arguments);
 
+            var buttonTitle = _t("Duplicate");
+
             if (this.record.data.display_type === "line_section") {
                 this.$el.addClass("col");
                 var $inputGroup = $('<div class="input-group">');
                 this.$el = $inputGroup.append(this.$el);
                 var $button = $(
                     `<div class="input-group-append">\
-                        <button type="button" title="Duplicate" class="btn o_icon_button">\
+                        <button type="button" title="${buttonTitle}" class="btn o_icon_button">\
                             <i class="fa fa-fw o_button_icon fa-clone"/>\
                         </button>\
                     </div>`

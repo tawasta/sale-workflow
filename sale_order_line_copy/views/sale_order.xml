@@ -11,6 +11,7 @@
             >
                 <button
                     name="action_sale_order_line_copy"
+                    title="Duplicate"
                     type="object"
                     icon="fa-clone"
                 />
