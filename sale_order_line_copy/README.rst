@@ -21,7 +21,7 @@ Usage
 
 Known issues / Roadmap
 ======================
-* None
+* Section copying requires that the SO has been saved first.
 
 Credits
 =======
