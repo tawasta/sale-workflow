@@ -37,6 +37,7 @@ addon | version | maintainers | summary
 [sale_order_delivery_status](sale_order_delivery_status/) | 14.0.1.0.0 |  | Delivery information for Sales
 [sale_order_delivery_term](sale_order_delivery_term/) | 14.0.1.0.0 |  | Sale Order Delivery term
 [sale_order_description](sale_order_description/) | 14.0.1.0.0 |  | Adds a description (an internal note) to sale order
+[sale_order_description_to_invoice](sale_order_description_to_invoice/) | 14.0.1.0.0 |  | Moves the SO description to invoice description
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 14.0.1.0.0 |  | Adds sale order description to stock picking
 [sale_order_disposable_shipping_address](sale_order_disposable_shipping_address/) | 14.0.1.0.0 |  | Sale order shipping addresses can be deactivated after use
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 14.0.1.0.0 |  | When duplicating also copy customer reference
