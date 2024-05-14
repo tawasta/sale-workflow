@@ -7,6 +7,10 @@ Disable partner (customer) onchange on sale for Delivery address
 ================================================================
 
 * Changing a customer on sale order is not going to change delivery addresses
+  when triggered via backend.
+* When handling a website order during checkout, triggering happens
+  as usual, to avoid issues with unregistered users not getting a 
+  delivery address set.
 
 Configuration
 =============
@@ -27,6 +31,7 @@ Contributors
 ------------
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------

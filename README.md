@@ -82,7 +82,7 @@ addon | version | maintainers | summary
 [sale_order_partner_contact_only](sale_order_partner_contact_only/) | 14.0.1.0.0 |  | Don't show other address types in SO partner select
 [sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 14.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_partner_disable_onchange](sale_order_partner_disable_onchange/) | 14.0.1.0.0 |  | Disable partner (customer) onchange on sale
-[sale_order_partner_disable_onchange_for_delivery_address](sale_order_partner_disable_onchange_for_delivery_address/) | 14.0.1.0.0 |  | Disable partner (customer) onchange on sale for Delivery address
+[sale_order_partner_disable_onchange_for_delivery_address](sale_order_partner_disable_onchange_for_delivery_address/) | 14.0.1.0.1 |  | Disable partner (customer) onchange on sale for Delivery address
 [sale_order_partner_onchange_suggest_partner_itself](sale_order_partner_onchange_suggest_partner_itself/) | 14.0.1.0.0 |  | Suggest customer itself instead of its sub-addresses
 [sale_order_partner_strict_with_partner_itself](sale_order_partner_strict_with_partner_itself/) | 14.0.1.0.0 |  | Allow customer itself or correct type and parent for address
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 14.0.1.0.0 |  | Tag from partner category to sale order CRM tag
