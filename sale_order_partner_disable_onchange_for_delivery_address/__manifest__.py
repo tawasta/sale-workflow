@@ -22,7 +22,7 @@
     "name": "Disable partner (customer) onchange on sale for Delivery address",
     "summary": "Disable partner (customer) onchange on sale for Delivery address",
     "category": "Sale",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",

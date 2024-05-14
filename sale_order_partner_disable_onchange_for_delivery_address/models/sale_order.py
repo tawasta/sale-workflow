@@ -14,4 +14,7 @@ class SaleOrder(models.Model):
 
         super(SaleOrder, self).onchange_partner_id()
 
-        self.update(values)
+        # Do not override when dealing with a website order, to avoid interfering
+        # with unregistered users' orders' shipping addresses during checkout
+        if not self.env.context.get("website_id"):
+            self.update(values)
