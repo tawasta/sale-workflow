@@ -21,7 +21,7 @@
 {
     "name": "Sale Order: Tax Info on SO Note",
     "summary": "Writes Sale Order Lines' tax info to SO's Note field",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
