@@ -5,4 +5,6 @@ class PaymentAcquirer(models.Model):
 
     _inherit = "payment.acquirer"
 
-    so_reference_type = fields.Selection(selection_add=[("null", "None")])
+    so_reference_type = fields.Selection(
+        selection_add=[("null", "Do not create a reference")]
+    )
