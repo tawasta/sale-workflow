@@ -6,7 +6,7 @@
 Optional sale order reference from Payment Acquirer
 ===================================================
 
-* Adds an extra option for Sale Order reference
+Adds an option to not create a payment reference for SO
 
 Configuration
 =============

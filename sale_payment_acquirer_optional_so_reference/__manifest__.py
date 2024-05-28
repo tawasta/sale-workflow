@@ -20,7 +20,7 @@
 
 {
     "name": "Optional sale order reference from Payment Acquirer",
-    "summary": "Adds an extra option for Sale Order reference",
+    "summary": "Adds an option to not create a payment reference for SO",
     "version": "14.0.1.0.0",
     "category": "Sale Workflow",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
