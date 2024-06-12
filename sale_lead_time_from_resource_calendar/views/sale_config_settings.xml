@@ -21,22 +21,6 @@
                         <field name="sale_lead_time_resource_calendar_id" />
                     </div>
                 </div>
-    <!---
-                <div
-                    class="col-12 col-lg-6 o_setting_box"
-                    id="sale_lead_time_from_resource_calendar_setting"
-                >
-                    <div class="o_setting_left_pane">
-                        <field name="sale_lead_time_resource_calendar_id" />
-                    </div>
-                    <div class="o_setting_right_pane">
-                        <label for="sale_lead_time_resource_calendar_id" />
-                        <div class="text-muted">
-                            If set, Sale Order Lines' lead times take into account e.g. weekends and holidays that are defined in the resource calendar.
-                        </div>
-                    </div>
-                </div>
-         -->
             </xpath>
         </field>
     </record>
