@@ -15,6 +15,7 @@ addon | version | maintainers | summary
 [sale_blanket_order_kit](sale_blanket_order_kit/) | 14.0.1.2.1 |  | Add kits and expand them as forecast lines
 [sale_customer_default_my](sale_customer_default_my/) | 14.0.1.0.0 |  | Show my customers by default on Customer list view
 [sale_customers_no_default_filter](sale_customers_no_default_filter/) | 14.0.1.0.0 |  | Remove Customers default filter
+[sale_lead_time_from_resource_calendar](sale_lead_time_from_resource_calendar/) | 14.0.1.0.0 |  | Takes into account weekends and global time off in lead time calculation
 [sale_multi_company](sale_multi_company/) | 14.0.1.2.0 |  | Allows selling multiple company products on a single sale
 [sale_order_address_details](sale_order_address_details/) | 14.0.1.0.0 |  | Sale order address details
 [sale_order_carrier_in_list](sale_order_carrier_in_list/) | 14.0.1.0.0 |  | Add carrier to list view
@@ -115,7 +116,7 @@ addon | version | maintainers | summary
 [sale_order_week_of_shipment](sale_order_week_of_shipment/) | 14.0.1.0.1 |  | Week of shipment field to sale order
 [sale_order_year_of_shipment](sale_order_year_of_shipment/) | 14.0.1.0.0 |  | Sale Order year from commitment date
 [sale_partner_default_note](sale_partner_default_note/) | 14.0.1.0.0 |  | Add a default sale note (terms and conditions) for partner
-[sale_payment_acquirer_optional_so_reference](sale_payment_acquirer_optional_so_reference/) | 14.0.1.0.0 |  | Adds an extra option for Sale Order reference
+[sale_payment_acquirer_optional_so_reference](sale_payment_acquirer_optional_so_reference/) | 14.0.1.0.0 |  | Adds an option to not create a payment reference for SO
 [sale_quotation_list_customer_order_number](sale_quotation_list_customer_order_number/) | 14.0.1.0.0 |  | Adds customer order number to sale quotation list view
 [sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 14.0.1.0.1 |  | Add product unreserved availability to SO line
 [sale_stock_client_ref_to_picking](sale_stock_client_ref_to_picking/) | 14.0.1.0.0 |  | Move SO customer reference to created stock pickings

@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2024 Oy Tawasta OS Technologies Ltd. (https://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,17 @@
 ##############################################################################
 
 {
-    "name": "Optional sale order reference from Payment Acquirer",
-    "summary": "Adds an option to not create a payment reference for SO",
+    "name": "Sale: Lead Time Based on Resource Calendar",
+    "summary": "Takes into account weekends and global time off in lead time calculation",
     "version": "14.0.1.0.0",
-    "category": "Sale Workflow",
+    "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale"],
-    "data": [],
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["sale_stock", "resource"],
+    "data": ["views/sale_config_settings.xml"],
+    "demo": [],
 }

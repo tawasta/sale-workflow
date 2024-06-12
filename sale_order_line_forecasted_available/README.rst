@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===================================================
-Optional sale order reference from Payment Acquirer
-===================================================
+====================================
+Sale Order Line Forecasted Available
+====================================
 
-Adds an option to not create a payment reference for SO
+* Add virtual_available field to sale order line
 
 Configuration
 =============
@@ -25,7 +25,6 @@ Credits
 
 Contributors
 ------------
-
 * Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 
 Maintainer
