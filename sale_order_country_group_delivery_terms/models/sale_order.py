@@ -12,7 +12,7 @@ class SaleOrder(models.Model):
 
     def _add_delivery_term(self):
         for order in self:
-            note_lines = html2plaintext(order.note).split("\n")
+            note_lines = order.note and html2plaintext(order.note).split("\n") or []
 
             delivery_info = (
                 self.env["res.country.group"]
