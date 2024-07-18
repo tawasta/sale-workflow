@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Tawasta
+#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,19 @@
 ##############################################################################
 
 {
-    "name": "Sale Order: Delivery Term by Country Group",
-    "summary": "Add note from country groups to SO when confirming the sale",
-    "version": "17.0.1.0.2",
-    "category": "Sale",
+    "name": "Website Sale Multi Company",
+    "summary": "Allows selling multiple company products on a single sale",
+    "version": "17.0.1.0.0",
+    "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale", "sale_stock"],
-    "data": ["views/country_group.xml"],
+    "depends": [
+        "product",
+        "sale_management",
+        "stock",
+    ],
+    "data": ["security/product_security.xml", "views/sale_order.xml"],
 }

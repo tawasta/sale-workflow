@@ -11,7 +11,8 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_order_country_group_delivery_terms](sale_order_country_group_delivery_terms/) | 17.0.1.0.1 |  | Add note from country groups to SO when confirming the sale
+[sale_multi_company_products](sale_multi_company_products/) | 17.0.1.0.0 |  | Allows selling multiple company products on a single sale
+[sale_order_country_group_delivery_terms](sale_order_country_group_delivery_terms/) | 17.0.1.0.2 |  | Add note from country groups to SO when confirming the sale
 [sale_order_customer_contact](sale_order_customer_contact/) | 17.0.1.0.1 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 17.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_force_note_line_to_be_invoiced](sale_order_force_note_line_to_be_invoiced/) | 17.0.1.0 |  | Move SO line notes to invoice
