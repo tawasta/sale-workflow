@@ -57,7 +57,11 @@ class SaleOrderLine(models.Model):
                 tax_names = self.tax_id.mapped("name")
 
                 taxes = self.env["account.tax"].search(
-                    [("company_id", "=", company.id), ("name", "in", tax_names)]
+                    [
+                        ("company_id", "=", company.id),
+                        ("name", "in", tax_names),
+                        ("type_tax_use", "=", "sale"),
+                    ]
                 )
                 if taxes:
                     res["tax_ids"] = [(6, 0, taxes.ids)]
