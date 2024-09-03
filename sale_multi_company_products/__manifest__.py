@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Multi Company",
     "summary": "Allows selling multiple company products on a single sale",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.2",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
