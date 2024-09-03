@@ -21,22 +21,26 @@ class SaleOrder(models.Model):
             lines = order._get_invoiceable_lines()
 
             companies = lines.mapped("product_id.company_id")
-            if len(companies) <= 1:
+            if len(companies) == 1 and companies == self.company_id:
                 # No custom processing for one company
                 return super()._create_invoices(grouped, final, date)
 
+            moves = self.env["account.move"]
             for company in companies:
                 # Set a temporary company values
                 order = order.with_company(company.id).with_context(
                     default_company_id=company.id
                 )
                 order.current_invoice_company_id = company.id
-                moves = super()._create_invoices(grouped, final, date)
+                moves += super()._create_invoices(grouped, final, date)
 
             # Set the correct company and unset the temporary company
             order.current_invoice_company_id = False
 
-            return moves
+        # Only return user company moves to prevent access error
+        moves = moves.filtered(lambda r: r.company_id == self.env.user.company_id)
+
+        return moves
 
     def _get_invoiceable_lines(self, final=False):
         lines = super()._get_invoiceable_lines(final)
