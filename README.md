@@ -68,7 +68,7 @@ addon | version | maintainers | summary
 [sale_order_line_view](sale_order_line_view/) | 14.0.1.0.2 |  | Add a readonly SO line view for viewing SO line specific info
 [sale_order_line_view_analytic_tags](sale_order_line_view_analytic_tags/) | 14.0.1.0.0 |  | Use Analytic tags in search, grouping and tree view
 [sale_order_line_view_team_filter](sale_order_line_view_team_filter/) | 14.0.1.0.0 |  | Use Sales team filter in sale order line tree view
-[sale_order_lock_on_invoiced](sale_order_lock_on_invoiced/) | 14.0.1.0.0 |  | Lock sale order after it state is fully invoiced
+[sale_order_lock_on_invoiced](sale_order_lock_on_invoiced/) | 14.0.1.1.0 |  | Lock sale order after it state is fully invoiced
 [sale_order_margin_manual_cost](sale_order_margin_manual_cost/) | 14.0.1.0.0 |  | Disable automated cost update from SO lines
 [sale_order_mass_cancel](sale_order_mass_cancel/) | 14.0.1.0.0 |  | Enables cancelling multiple sales at once
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 14.0.1.0.0 |  | Enables confirming multiple sales at once
