@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_line_qty_available
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240126\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-13 06:01+0000\n"
+"PO-Revision-Date: 2024-09-13 09:01+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: sale_order_line_qty_available
+#: model:ir.model.fields,field_description:sale_order_line_qty_available.field_sale_order_line__product_qty_available
+msgid "Available"
+msgstr "Saatavilla"
+
+#. module: sale_order_line_qty_available
+#: model:ir.model.fields,field_description:sale_order_line_qty_available.field_sale_order_line__check_qty_available
+msgid "Check qty available"
+msgstr "Tarkista saatavuusmäärä"
+
+#. module: sale_order_line_qty_available
+#: model:ir.model.fields,help:sale_order_line_qty_available.field_sale_order_line__check_qty_available
+msgid "Do we need to check the availability of this line"
+msgstr "Tarvitseeko tämän rivin saatavuus tarkistaa"
+
+#. module: sale_order_line_qty_available
+#: model:ir.model,name:sale_order_line_qty_available.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Myyntitilausrivi"
