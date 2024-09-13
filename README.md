@@ -23,5 +23,6 @@ addon | version | maintainers | summary
 [sale_order_project_in_header](sale_order_project_in_header/) | 17.0.1.0.0 |  | Moves analytic account to SO header
 [sale_order_project_location_in_header](sale_order_project_location_in_header/) | 17.0.1.0.0 |  | Adds analytic account stock location to SO header
 [sale_order_promised_delivery_range](sale_order_promised_delivery_range/) | 17.0.1.0.0 |  | Adds new fields for storing date range of promised delivery
+[sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 17.0.1.0.0 |  | Add product unreserved availability to SO line
 
 [//]: # (end addons)
