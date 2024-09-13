@@ -21,7 +21,7 @@
 {
     "name": "Lock sale order when it is invoiced",
     "summary": "Lock sale order after it state is fully invoiced",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
