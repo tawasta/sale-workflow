@@ -45,8 +45,15 @@ class SaleOrderLine(models.Model):
             if res.get("account_id"):
                 # Fetch a matching account
                 # TODO: add an option to use the default account from product (for this company)
-                account = self.env["account.account"].search(
-                    [("company_id", "=", company.id), ("code", "=", res["account_id"])]
+                account = (
+                    self.env["account.account"]
+                    .sudo()
+                    .search(
+                        [
+                            ("company_id", "=", company.id),
+                            ("code", "=", res["account_id"]),
+                        ]
+                    )
                 )
 
                 if account:
@@ -56,14 +63,17 @@ class SaleOrderLine(models.Model):
                 # Change taxes
                 tax_names = self.tax_id.mapped("name")
 
-                taxes = self.env["account.tax"].search(
-                    [
-                        ("company_id", "=", company.id),
-                        ("name", "in", tax_names),
-                        ("type_tax_use", "=", "sale"),
-                    ]
+                taxes = (
+                    self.env["account.tax"]
+                    .sudo()
+                    .search(
+                        [
+                            ("company_id", "=", company.id),
+                            ("name", "in", tax_names),
+                            ("type_tax_use", "=", "sale"),
+                        ]
+                    )
                 )
                 if taxes:
                     res["tax_ids"] = [(6, 0, taxes.ids)]
-
         return res
