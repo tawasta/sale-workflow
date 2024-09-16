@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+    <xpath expr="//h2" position="after">
+        <div t-if="o.header_text">
+            <p t-field="o.header_text" />
+        </div>
+    </xpath>
+  </template>
+</odoo>
