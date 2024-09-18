@@ -5,7 +5,11 @@
         inherit_id="sale.report_saleorder_document"
     >
         <xpath expr="//div[@id='informations']" position="after">
-            <div t-if="doc.header_text" id="header-text">
+            <t
+                t-set="show_sale_header"
+                t-value="request.env['ir.config_parameter'].sudo().get_param('sale.show_sale_header')"
+            />
+            <div t-if="doc.header_text and show_sale_header" id="header-text">
                 <h4 t-field="doc.header_text" />
                 <br />
             </div>
