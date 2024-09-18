@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2023 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,21 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Sale Order – Header text field",
-    "summary": "New field for SO header/title",
+    "name": "Sale Order Line Picking date",
+    "summary": "Add picking date to SO lines and split lines to pickings",
+    "category": "Sale",
     "version": "17.0.1.0.0",
-    "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale"],
-    "data": [
-        "report/report_invoice.xml",
-        "report/sale_order_report.xml",
-        "views/account_invoice.xml",
-        "views/res_config_settings_views.xml",
-        "views/sale_order.xml",
-    ],
+    "depends": ["sale_stock"],
+    "data": ["views/sale_order.xml"],
 }
