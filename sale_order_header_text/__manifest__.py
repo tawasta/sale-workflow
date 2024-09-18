@@ -33,6 +33,7 @@
         "report/report_invoice.xml",
         "report/sale_order_report.xml",
         "views/account_invoice.xml",
+        "views/res_config_settings_views.xml",
         "views/sale_order.xml",
     ],
 }
