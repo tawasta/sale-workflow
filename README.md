@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 [sale_order_line_forecasted_available](sale_order_line_forecasted_available/) | 17.0.1.0.0 |  | Add virtual_available field to sale order line
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 17.0.1.0.0 |  | Add qty_available to sale order line
 [sale_order_line_tax_info_to_note_field](sale_order_line_tax_info_to_note_field/) | 17.0.1.0.1 |  | Writes Sale Order Lines' tax info to SO's Note field
+[sale_order_product_pricelist](sale_order_product_pricelist/) | 17.0.1.0.0 |  | If product has a pricelist, use it for SO lines
 [sale_order_project_in_header](sale_order_project_in_header/) | 17.0.1.0.0 |  | Moves analytic account to SO header
 [sale_order_project_location_in_header](sale_order_project_location_in_header/) | 17.0.1.0.0 |  | Adds analytic account stock location to SO header
 [sale_order_promised_delivery_range](sale_order_promised_delivery_range/) | 17.0.1.0.0 |  | Adds new fields for storing date range of promised delivery
