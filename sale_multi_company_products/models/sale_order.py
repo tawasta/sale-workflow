@@ -31,6 +31,10 @@ class SaleOrder(models.Model):
                 order = order.with_company(company.id).with_context(
                     default_company_id=company.id
                 )
+                if order.partner_id.company_id:
+                    # Partner can't belong to a company
+                    order.partner_id.company_id = False
+
                 order.current_invoice_company_id = company.id
                 moves += super()._create_invoices(grouped, final, date)
 
