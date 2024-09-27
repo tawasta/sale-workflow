@@ -15,7 +15,7 @@ class SaleOrderLine(models.Model):
 
         first_line = self.order_id.order_line and self.order_id.order_line[0]
         for line in self:
-            if line != first_line and pricelist_id:
+            if first_line and line != first_line and pricelist_id:
                 if pricelist_id == line.order_id.pricelist_id:
                     # If order is already using this pricelist, do nothing
                     continue
@@ -26,6 +26,5 @@ class SaleOrderLine(models.Model):
                     uom=line.product_uom,
                     date=line.order_id.date_order,
                 )
-            first_line = False
 
         return res
