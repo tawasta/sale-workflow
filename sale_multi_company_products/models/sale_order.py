@@ -35,6 +35,14 @@ class SaleOrder(models.Model):
                     # Partner can't belong to a company
                     order.partner_id.company_id = False
 
+                if order.partner_invoice_id.company_id:
+                    # Invoice partner can't belong to a company
+                    order.partner_invoice_id.company_id = False
+
+                if order.partner_shipping_id.company_id:
+                    # Shipping partner can't belong to a company
+                    order.partner_shipping_id.company_id = False
+
                 order.current_invoice_company_id = company.id
                 moves += super()._create_invoices(grouped, final, date)
 
