@@ -26,3 +26,5 @@ class SaleOrder(models.Model):
                         )
                     )
                     record.partner_id.property_product_pricelist = pricelist_id
+
+        return super().action_confirm()
