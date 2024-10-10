@@ -21,7 +21,7 @@
 {
     "name": "Use a product-spesific pricelist in Sale Orders",
     "summary": "If product has a pricelist, use it for SO lines",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sales",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
