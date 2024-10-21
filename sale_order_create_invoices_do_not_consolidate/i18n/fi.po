@@ -1,0 +1,51 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_create_invoices_without_grouping
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-21 06:26+0000\n"
+"PO-Revision-Date: 2024-10-21 09:28+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: sale_order_create_invoices_without_grouping
+#: model:ir.model.fields,field_description:sale_order_create_invoices_without_grouping.field_sale_advance_payment_inv__display_name
+#: model:ir.model.fields,field_description:sale_order_create_invoices_without_grouping.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: sale_order_create_invoices_without_grouping
+#: model:ir.model.fields,field_description:sale_order_create_invoices_without_grouping.field_sale_advance_payment_inv__no_consolidate
+msgid "Do not consolidate invoices"
+msgstr "Älä yhdistä laskuja"
+
+#. module: sale_order_create_invoices_without_grouping
+#: model:ir.model.fields,field_description:sale_order_create_invoices_without_grouping.field_sale_advance_payment_inv__id
+#: model:ir.model.fields,field_description:sale_order_create_invoices_without_grouping.field_sale_order__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_order_create_invoices_without_grouping
+#: model:ir.model.fields,field_description:sale_order_create_invoices_without_grouping.field_sale_advance_payment_inv____last_update
+#: model:ir.model.fields,field_description:sale_order_create_invoices_without_grouping.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: sale_order_create_invoices_without_grouping
+#: model:ir.model,name:sale_order_create_invoices_without_grouping.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Myynnin ennakkolasku"
+
+#. module: sale_order_create_invoices_without_grouping
+#: model:ir.model,name:sale_order_create_invoices_without_grouping.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
