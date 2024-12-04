@@ -90,6 +90,7 @@ class SaleBlanketOrder(models.Model):
                         ("scheduled_date", ">=", self.validity_date_start),
                         ("scheduled_date", "<=", self.validity_date),
                         ("sale_id", "!=", False),
+                        ("company_id", "=", self.company_id.id),
                         ("state", "not in", ["cancel"]),
                     ]
                 )
