@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 [sale_order_line_delivery_date_split_picking](sale_order_line_delivery_date_split_picking/) | 17.0.1.0.0 |  | Add picking date to SO lines and split lines to pickings
 [sale_order_line_forecasted_available](sale_order_line_forecasted_available/) | 17.0.1.0.0 |  | Add virtual_available field to sale order line
 [sale_order_line_product_internal_reference](sale_order_line_product_internal_reference/) | 17.0.1.0.0 |  | Product internal reference is shown on form lines
+[sale_order_line_product_name](sale_order_line_product_name/) | 17.0.1.0.0 |  | Product name -field is shown on form lines
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 17.0.1.0.0 |  | Add qty_available to sale order line
 [sale_order_line_tax_info_to_note_field](sale_order_line_tax_info_to_note_field/) | 17.0.1.0.1 |  | Writes Sale Order Lines' tax info to SO's Note field
 [sale_order_product_pricelist](sale_order_product_pricelist/) | 17.0.1.0.1 |  | If product has a pricelist, use it for SO lines
