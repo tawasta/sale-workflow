@@ -4,11 +4,7 @@ from odoo import api, fields, models
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    _FIELD_STATES = {"draft": [("readonly", False)], "open": [("readonly", False)]}
-
-    customer_contact_id = fields.Many2one(
-        "res.partner", "Contact", states=_FIELD_STATES
-    )
+    customer_contact_id = fields.Many2one("res.partner", "Contact")
 
     @api.onchange("partner_id")
     def onchange_partner(self):
