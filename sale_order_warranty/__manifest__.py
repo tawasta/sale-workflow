@@ -1,6 +1,7 @@
 ##############################################################################
 #
-#    Copyright 2017 Tawasta OS Technologies
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -9,27 +10,33 @@
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
 #
 ##############################################################################
+
 {
-    "name": "Customer Contact for Sale Orders",
-    "category": "Sales",
-    "version": "17.0.1.0.2",
-    "installable": True,
+    "name": "Sale Order Warranty",
+    "summary": "Sale Order Warranty",
+    "version": "17.0.1.0.0",
+    "category": "Sale",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
-    "depends": ["account", "sale"],
+    "application": False,
+    "installable": True,
+    "depends": [
+        "product_warranty",
+        "sale",
+        "sale_stock",
+    ],
     "data": [
-        "data/config_parameter.xml",
         "report/sale_order_report.xml",
-        "views/account_invoice.xml",
-        "views/config_settings.xml",
+        "views/product_template.xml",
         "views/sale_order.xml",
+        "views/stock_picking.xml",
     ],
 }
