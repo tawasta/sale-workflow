@@ -20,6 +20,7 @@ addon | version | maintainers | summary
 [sale_order_description_to_invoice](sale_order_description_to_invoice/) | 17.0.1.0.0 |  | Moves the SO description to invoice description when creating an invoice
 [sale_order_force_note_line_to_be_invoiced](sale_order_force_note_line_to_be_invoiced/) | 17.0.1.0 |  | Move SO line notes to invoice
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title
+[sale_order_line_copy](sale_order_line_copy/) | 17.0.1.0.0 |  | Duplicate single order lines or sections on sale order
 [sale_order_line_decription_to_stock_move](sale_order_line_decription_to_stock_move/) | 17.0.1.0.0 |  | Description -field info of SO line is moved to stock.move Description
 [sale_order_line_delivery_date_split_picking](sale_order_line_delivery_date_split_picking/) | 17.0.1.0.0 |  | Add picking date to SO lines and split lines to pickings
 [sale_order_line_forecasted_available](sale_order_line_forecasted_available/) | 17.0.1.0.0 |  | Add virtual_available field to sale order line
