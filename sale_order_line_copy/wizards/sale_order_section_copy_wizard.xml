@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_sale_order_section_duplicate_wizard_form" model="ir.ui.view">
+        <field name="name">sale.order.section.duplicate.wizard.form</field>
+        <field name="model">sale_order_line_copy.section_duplicate_wizard</field>
+        <field name="arch" type="xml">
+            <form string="Duplicate a Section">
+
+                <p class="text-muted">
+                    Selected section and its contents will be duplicated and placed at the end of the Sale Order.
+                </p>
+                <group>
+                    <field name="sale_order_id" invisible="1" />
+                    <field name="section_line_id" options="{'no_create': True}" />
+                </group>
+                <footer>
+                    <button
+                        string="Duplicate"
+                        type="object"
+                        name="action_duplicate_section"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

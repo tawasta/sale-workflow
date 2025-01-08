@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.sale.order.line.copy</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10" />
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+
+            <setting id="proforma_configuration" position="after">
+
+                <setting
+                    id="no_edit_order"
+                    help="Configure where individual Sale Order Line gets placed after copying it"
+                >
+                    <field name="sale_order_line_copy_mode" />
+                </setting>
+
+            </setting>
+        </field>
+    </record>
+</odoo>
