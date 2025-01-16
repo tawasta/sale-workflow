@@ -27,6 +27,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale"],
+    "depends": ["sale_management"],
     "data": [],
 }

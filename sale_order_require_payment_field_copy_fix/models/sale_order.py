@@ -11,7 +11,13 @@ class SaleOrder(models.Model):
         if default is None:
             default = {}
 
-        # Force recalculation with the same logic as in core _compute_require_payment()
-        default.update({"require_payment": self.company_id.portal_confirmation_pay})
+        # Force recalculation with the same logic as in sale and sale_maangement
+        # core _compute_require_payment()
+        if self.sale_order_template_id:
+            default.update(
+                {"require_payment": self.sale_order_template_id.require_payment}
+            )
+        else:
+            default.update({"require_payment": self.company_id.portal_confirmation_pay})
 
         return super().copy(default)
