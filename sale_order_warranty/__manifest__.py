@@ -21,7 +21,7 @@
 {
     "name": "Sale Order Warranty",
     "summary": "Sale Order Warranty",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Tawasta",
