@@ -4,11 +4,12 @@
         id="report_saleorder_document"
         inherit_id="sale.report_saleorder_document"
     >
+        <!-- col-2 is on purpose used instead of col-3. This works better with long texts -->
         <xpath expr="//div[@t-if='doc.client_order_ref']" position="after">
             <div
                 t-if="doc.delivery_term_id"
                 name="delivery-term-id"
-                class="col-auto mw-100 mb-2"
+                class="col-auto col-2 mw-100 mb-2"
             >
                 <strong>Delivery terms:</strong>
                 <p class="m-0" t-field="doc.delivery_term_id" />
