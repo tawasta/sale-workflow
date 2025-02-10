@@ -12,7 +12,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [sale_multi_company_products](sale_multi_company_products/) | 17.0.1.0.2 |  | Allows selling multiple company products on a single sale
-[sale_order_additional_note](sale_order_additional_note/) | 17.0.1.0.0 |  | Adds Html-type field to Sale Order, which is shown on its PDF print
+[sale_order_additional_note](sale_order_additional_note/) | 17.0.1.0.1 |  | Adds Html-type field to Sale Order, which is shown on its PDF print
 [sale_order_country_group_delivery_terms](sale_order_country_group_delivery_terms/) | 17.0.1.0.2 |  | Add note from country groups to SO when confirming the sale
 [sale_order_customer_contact](sale_order_customer_contact/) | 17.0.1.0.2 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 17.0.1.0.0 |  | Adds contact name to invoice as an extra information
