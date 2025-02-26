@@ -18,6 +18,7 @@ addon | version | maintainers | summary
 [sale_order_customer_contact](sale_order_customer_contact/) | 17.0.1.0.2 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 17.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_is_company](sale_order_customer_is_company/) | 17.0.1.0.0 |  | Select only customers that are companies to sale orders
+[sale_order_delivery_place](sale_order_delivery_place/) | 17.0.1.0.0 |  | Delivery Terms on Sale Order
 [sale_order_delivery_term](sale_order_delivery_term/) | 17.0.1.0.1 |  | Sale Order Delivery term
 [sale_order_description](sale_order_description/) | 17.0.1.0.0 |  | Adds a description (an internal note) to sale order
 [sale_order_description_to_invoice](sale_order_description_to_invoice/) | 17.0.1.0.0 |  | Moves the SO description to invoice description when creating an invoice
