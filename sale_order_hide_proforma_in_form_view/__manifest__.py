@@ -21,7 +21,7 @@
 {
     "name": "Hide PRO-FORMA button in Sale Order form view",
     "summary": "Hides PRO-FORMA button in Sale Order form view",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sale",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Futural",
