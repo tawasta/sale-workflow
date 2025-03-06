@@ -23,7 +23,7 @@
     "summary": "Add product unreserved availability to SO line",
     "category": "Sale",
     "version": "17.0.1.0.0",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,

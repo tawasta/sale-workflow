@@ -23,7 +23,7 @@
     "summary": "Allows selling multiple company products on a single sale",
     "version": "17.0.1.0.2",
     "category": "Website",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,

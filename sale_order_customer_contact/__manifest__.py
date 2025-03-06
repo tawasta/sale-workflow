@@ -23,7 +23,7 @@
     "installable": True,
     "author": "Futural",
     "license": "AGPL-3",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "depends": ["account", "sale"],
     "data": [
         "data/config_parameter.xml",

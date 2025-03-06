@@ -23,7 +23,7 @@
     "summary": "Moves analytic account to SO header",
     "version": "17.0.1.0.0",
     "category": "Sales",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,

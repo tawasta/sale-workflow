@@ -23,7 +23,7 @@
     "summary": "Add virtual_available field to sale order line",
     "version": "17.0.1.0.0",
     "category": "Sales",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,

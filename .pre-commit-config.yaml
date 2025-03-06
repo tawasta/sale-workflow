@@ -47,13 +47,13 @@ repos:
       # update the NOT INSTALLABLE ADDONS section above
       - id: oca-update-pre-commit-excluded-addons
       - id: oca-fix-manifest-website
-        args: ["https://gitlab.com/tawasta/odoo/sale-workflow"]
+        args: ["https://github.com/tawasta/sale-workflow"]
       - id: oca-gen-addon-readme
         args:
           - --addons-dir=.
           - --branch=17.0
           - --org-name=Tawasta
-          - --repo-name=server-tools
+          - --repo-name=sale-workflow
           - --if-source-changed
           - --keep-source-digest
           - --convert-fragments-to-markdown
