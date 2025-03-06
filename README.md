@@ -29,6 +29,7 @@ addon | version | maintainers | summary
 [sale_order_project_location_in_header](sale_order_project_location_in_header/) | 17.0.1.0.0 |  | Adds analytic account stock location to SO header
 [sale_order_promised_delivery_range](sale_order_promised_delivery_range/) | 17.0.1.0.0 |  | Adds new fields for storing date range of promised delivery
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 17.0.1.0.0 |  | Adds a new field for storing date of requested delivery
+[sale_order_template_disable_note_auto_reload](sale_order_template_disable_note_auto_reload/) | 17.0.1.0.0 |  | Don't auto-reload SO template note when changing a partner
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 17.0.1.0.0 |  | Add customer reference to sale order tree view
 [sale_payment_acquirer_optional_so_reference](sale_payment_acquirer_optional_so_reference/) | 17.0.1.0.0 |  | Adds an option to not create a payment reference for SO
 [sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 17.0.1.0.0 |  | Add product unreserved availability to SO line
