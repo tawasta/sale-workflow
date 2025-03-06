@@ -1,0 +1,141 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_line_copy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20241118\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-08 07:48+0000\n"
+"PO-Revision-Date: 2025-01-08 07:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_line_copy
+#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.view_sale_order_section_duplicate_wizard_form
+msgid "Cancel"
+msgstr "Peruuta"
+
+#. module: sale_order_line_copy
+#: model:ir.model,name:sale_order_line_copy.model_res_config_settings
+msgid "Config Settings"
+msgstr "Asetukset"
+
+#. module: sale_order_line_copy
+#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.res_config_settings_view_form
+msgid ""
+"Configure where individual Sale Order Line gets placed after copying it"
+msgstr ""
+"Konfiguroi, mihin kohtaan yksittäinen myyntitilausrivi asetetaan kopioinnin "
+"jälkeen"
+
+#. module: sale_order_line_copy
+#. odoo-python
+#: code:addons/sale_order_line_copy/models/sale_order_line.py:0
+#, python-format
+msgid "Copy"
+msgstr "Kopio"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line_copy_section_duplicate_wizard__create_uid
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line_copy_section_duplicate_wizard__create_date
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields.selection,name:sale_order_line_copy.selection__res_config_settings__sale_order_line_copy_mode__directly_after
+msgid "Directly after the Original"
+msgstr "Heti alkuperäisen rivin jälkeen"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line_copy_section_duplicate_wizard__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: sale_order_line_copy
+#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.view_order_form_line_copy
+#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.view_sale_order_section_duplicate_wizard_form
+msgid "Duplicate"
+msgstr "Kopioi"
+
+#. module: sale_order_line_copy
+#: model:ir.model,name:sale_order_line_copy.model_sale_order_line_copy_section_duplicate_wizard
+msgid "Duplicate Sale Order Section Wizard"
+msgstr "Myyntitilauksen osion kopiointi"
+
+#. module: sale_order_line_copy
+#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.view_order_form_line_copy
+#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.view_sale_order_section_duplicate_wizard_form
+msgid "Duplicate a Section"
+msgstr "Kopioi osio"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields.selection,name:sale_order_line_copy.selection__res_config_settings__sale_order_line_copy_mode__end_of_order
+msgid "End of Sale Order"
+msgstr "Myyntitilauksen loppuun"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line_copy_section_duplicate_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line_copy_section_duplicate_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line_copy_section_duplicate_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line_copy_section_duplicate_wizard__sale_order_id
+msgid "Sale Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_res_config_settings__sale_order_line_copy_mode
+msgid "Sale Order Line Positioning after Copying"
+msgstr "Myyntitilausrivin sijainti kopioinnin jälkeen"
+
+#. module: sale_order_line_copy
+#: model:ir.model,name:sale_order_line_copy.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_order_line_copy
+#: model:ir.model,name:sale_order_line_copy.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Myyntitilausrivi"
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,field_description:sale_order_line_copy.field_sale_order_line_copy_section_duplicate_wizard__section_line_id
+msgid "Section to Duplicate"
+msgstr "Kopioitava osio"
+
+#. module: sale_order_line_copy
+#: model_terms:ir.ui.view,arch_db:sale_order_line_copy.view_sale_order_section_duplicate_wizard_form
+msgid ""
+"Selected section and its contents will be duplicated and placed at the end "
+"of the Sale Order."
+msgstr ""
+"Valittu osio ja sen sisältämät rivit kopioidaan ja sijoitetaan "
+"myyntitilauksen loppuun."
+
+#. module: sale_order_line_copy
+#: model:ir.model.fields,help:sale_order_line_copy.field_res_config_settings__sale_order_line_copy_mode
+msgid ""
+"Where the copied individual SO lines gets placed. Note: Sections always get "
+"placed at the end of Sale Order."
+msgstr ""
+"Minne kopioitu yksittäinen myyntitilausrivi asetetaan. Huom: "
+"osiot/väliotsikot kopioidaan aina myyntitilauksen loppuun."

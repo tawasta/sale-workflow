@@ -1,6 +1,7 @@
 ##############################################################################
 #
-#    Copyright 2017 Tawasta OS Technologies
+#    Author: Futural Oy
+#    Copyright 2024 Futural Oy (https://futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -9,27 +10,28 @@
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
 #
 ##############################################################################
+
 {
-    "name": "Customer Contact for Sale Orders",
-    "category": "Sales",
-    "version": "17.0.1.0.2",
-    "installable": True,
+    "name": "Sale order form – Show Product internal reference",
+    "summary": "Product internal reference is shown on form lines",
+    "version": "17.0.1.0.0",
+    "category": "Sale",
+    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
-    "website": "https://github.com/tawasta/sale-workflow",
-    "depends": ["account", "sale"],
+    "application": False,
+    "installable": True,
+    "depends": [
+        "sale",
+    ],
     "data": [
-        "data/config_parameter.xml",
-        "report/sale_order_report.xml",
-        "views/account_invoice.xml",
-        "views/config_settings.xml",
         "views/sale_order.xml",
     ],
 }
