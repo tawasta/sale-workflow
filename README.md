@@ -37,6 +37,7 @@ addon | version | maintainers | summary
 [sale_order_line_tax_info_to_note_field](sale_order_line_tax_info_to_note_field/) | 17.0.1.0.1 |  | Writes Sale Order Lines' tax info to SO's Note field
 [sale_order_margin_manual_cost](sale_order_margin_manual_cost/) | 17.0.1.0.0 |  | Disable automated cost update from SO lines
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 17.0.1.0.0 |  | Enables confirming multiple sales at once
+[sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 17.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 17.0.1.0.0 |  | Tag from partner category to sale order CRM tag
 [sale_order_product_pricelist](sale_order_product_pricelist/) | 17.0.1.0.1 |  | If product has a pricelist, use it for SO lines
 [sale_order_project_in_header](sale_order_project_in_header/) | 17.0.1.0.0 |  | Moves analytic account to SO header
