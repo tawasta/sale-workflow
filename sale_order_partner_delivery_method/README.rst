@@ -27,6 +27,7 @@ Contributors
 ------------
 
 * Timo Kekäläinen <timo.kekalainen@tawasta.fi>
+* Valtteri Lattu <valtteri.lattu@futural.fi>
 
 Maintainer
 ----------
