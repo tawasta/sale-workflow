@@ -23,7 +23,7 @@
     "summary": "Adds Html-type field to Sale Order, which is shown on its PDF print",
     "version": "17.0.1.0.1",
     "category": "Sale",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,

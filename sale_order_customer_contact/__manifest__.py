@@ -21,9 +21,9 @@
     "category": "Sales",
     "version": "17.0.1.0.2",
     "installable": True,
-    "author": "Tawasta",
+    "author": "Futural",
     "license": "AGPL-3",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "depends": ["account", "sale"],
     "data": [
         "data/config_parameter.xml",
