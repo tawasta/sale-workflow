@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class CountryGroup(models.Model):
-
     _inherit = "res.country.group"
 
     sale_order_text = fields.Text(
