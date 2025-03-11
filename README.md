@@ -1,5 +1,5 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Pipeline Status](https://gitlab.com/tawasta/odoo/sale-workflow/badges/17.0-dev/pipeline.svg)](https://gitlab.com/tawasta/odoo/sale-workflow/-/pipelines/)
+[![Pre-commit Status](https://github.com/tawasta/sale-workflow/actions/workflows/pre-commit.yml/badge.svg?branch=17.0)](https://github.com/tawasta/sale-workflow/actions/workflows/pre-commit.yml?query=branch%3A17.0)
 
 Sale Workflow
 =============
@@ -48,6 +48,7 @@ addon | version | maintainers | summary
 [sale_order_require_payment_field_copy_fix](sale_order_require_payment_field_copy_fix/) | 17.0.1.0.0 |  | Recalculate the 'Online payment' field value when duplicating SO
 [sale_order_sale_type](sale_order_sale_type/) | 17.0.1.0.0 |  | Sale Type field is added to sales
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 17.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
+[sale_order_template_disable_note_auto_reload](sale_order_template_disable_note_auto_reload/) | 17.0.1.0.0 |  | Don't auto-reload SO template note when changing a partner
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 17.0.1.0.0 |  | Add customer reference to sale order tree view
 [sale_order_tree_view_quotations_only](sale_order_tree_view_quotations_only/) | 17.0.1.0.0 |  | Sale Quotations tree view - Show only quotations
 [sale_order_warranty](sale_order_warranty/) | 17.0.1.0.1 |  | Sale Order Warranty
