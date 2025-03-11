@@ -18,10 +18,12 @@ addon | version | maintainers | summary
 [sale_order_customer_contact](sale_order_customer_contact/) | 17.0.1.0.2 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 17.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_is_company](sale_order_customer_is_company/) | 17.0.1.0.0 |  | Select only customers that are companies to sale orders
+[sale_order_customer_order_date](sale_order_customer_order_date/) | 17.0.1.0.0 |  | Customer order date field to sale order
 [sale_order_delivery_place](sale_order_delivery_place/) | 17.0.1.0.0 |  | Delivery Terms on Sale Order
 [sale_order_delivery_term](sale_order_delivery_term/) | 17.0.1.0.1 |  | Sale Order Delivery term
 [sale_order_description](sale_order_description/) | 17.0.1.0.0 |  | Adds a description (an internal note) to sale order
 [sale_order_description_to_invoice](sale_order_description_to_invoice/) | 17.0.1.0.0 |  | Moves the SO description to invoice description when creating an invoice
+[sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 17.0.1.0.0 |  | When duplicating also copy customer reference
 [sale_order_force_note_line_to_be_invoiced](sale_order_force_note_line_to_be_invoiced/) | 17.0.1.0 |  | Move SO line notes to invoice
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title
 [sale_order_hide_proforma_in_form_view](sale_order_hide_proforma_in_form_view/) | 17.0.1.0.1 |  | Hides PRO-FORMA button in Sale Order form view
@@ -48,6 +50,7 @@ addon | version | maintainers | summary
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 17.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 17.0.1.0.0 |  | Add customer reference to sale order tree view
 [sale_order_tree_view_quotations_only](sale_order_tree_view_quotations_only/) | 17.0.1.0.0 |  | Sale Quotations tree view - Show only quotations
+[sale_order_warehouse_do_not_copy](sale_order_warehouse_do_not_copy/) | 17.0.1.0.0 |  | Do not copy a warehouse when copying a sale order
 [sale_order_warranty](sale_order_warranty/) | 17.0.1.0.1 |  | Sale Order Warranty
 [sale_order_week_of_shipment](sale_order_week_of_shipment/) | 17.0.1.0.0 |  | Week of shipment field to sale order
 [sale_order_year_of_shipment](sale_order_year_of_shipment/) | 17.0.1.0.0 |  | Sale Order year from commitment date
