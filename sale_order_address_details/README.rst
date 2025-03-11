@@ -2,12 +2,13 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=============================================
-Show Sale Order Invoice/Delivery Address Info
-=============================================
+==========================
+Sale order address details
+==========================
 
-* Show the invoicing and delivery addresses below their fields in the
-  sale order form
+Adds related fields to Customer, Invoice Address and
+Delivery Address on sale order. Those fields are Street,
+Street 2, ZIP, City and Country respectively.
 
 Configuration
 =============
@@ -27,8 +28,7 @@ Credits
 Contributors
 ------------
 
-* Timo Talvitie <timo.talvitie@tawasta.fi>
-* Miika Nissi <miika.nissi@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 * Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 
 Maintainer
