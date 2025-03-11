@@ -13,8 +13,10 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [sale_multi_company_products](sale_multi_company_products/) | 17.0.1.0.2 |  | Allows selling multiple company products on a single sale
 [sale_order_additional_note](sale_order_additional_note/) | 17.0.1.0.1 |  | Adds Html-type field to Sale Order, which is shown on its PDF print
+[sale_order_address_details](sale_order_address_details/) | 17.0.1.0.0 |  | Sale order address details
 [sale_order_analytic_distribution_required_upon_invoice](sale_order_analytic_distribution_required_upon_invoice/) | 17.0.1.0.0 |  | Creating an invoice from SO is not possible if analytic distributions are not set on lines
 [sale_order_country_group_delivery_terms](sale_order_country_group_delivery_terms/) | 17.0.1.0.2 |  | Add note from country groups to SO when confirming the sale
+[sale_order_country_group_text](sale_order_country_group_text/) | 17.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_customer_contact](sale_order_customer_contact/) | 17.0.1.0.2 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 17.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_is_company](sale_order_customer_is_company/) | 17.0.1.0.0 |  | Select only customers that are companies to sale orders
@@ -49,6 +51,7 @@ addon | version | maintainers | summary
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 17.0.1.0.0 |  | Adds a new field for storing date of requested delivery
 [sale_order_require_payment_field_copy_fix](sale_order_require_payment_field_copy_fix/) | 17.0.1.0.0 |  | Recalculate the 'Online payment' field value when duplicating SO
 [sale_order_sale_type](sale_order_sale_type/) | 17.0.1.0.0 |  | Sale Type field is added to sales
+[sale_order_show_addresses](sale_order_show_addresses/) | 17.0.1.0.0 |  | Show the addresses below their fields
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 17.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_template_disable_note_auto_reload](sale_order_template_disable_note_auto_reload/) | 17.0.1.0.0 |  | Don't auto-reload SO template note when changing a partner
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 17.0.1.0.0 |  | Add customer reference to sale order tree view
