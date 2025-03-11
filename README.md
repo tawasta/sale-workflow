@@ -49,6 +49,7 @@ addon | version | maintainers | summary
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 17.0.1.0.0 |  | Adds a new field for storing date of requested delivery
 [sale_order_require_payment_field_copy_fix](sale_order_require_payment_field_copy_fix/) | 17.0.1.0.0 |  | Recalculate the 'Online payment' field value when duplicating SO
 [sale_order_sale_type](sale_order_sale_type/) | 17.0.1.0.0 |  | Sale Type field is added to sales
+[sale_order_show_addresses](sale_order_show_addresses/) | 17.0.1.0.0 |  | Show the addresses below their fields
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 17.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_template_disable_note_auto_reload](sale_order_template_disable_note_auto_reload/) | 17.0.1.0.0 |  | Don't auto-reload SO template note when changing a partner
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 17.0.1.0.0 |  | Add customer reference to sale order tree view
