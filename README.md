@@ -1,5 +1,5 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Pipeline Status](https://gitlab.com/tawasta/odoo/sale-workflow/badges/17.0-dev/pipeline.svg)](https://gitlab.com/tawasta/odoo/sale-workflow/-/pipelines/)
+[![Pre-commit Status](https://github.com/tawasta/sale-workflow/actions/workflows/pre-commit.yml/badge.svg?branch=17.0)](https://github.com/tawasta/sale-workflow/actions/workflows/pre-commit.yml?query=branch%3A17.0)
 
 Sale Workflow
 =============
@@ -29,6 +29,7 @@ addon | version | maintainers | summary
 [sale_order_line_copy_purchase_price](sale_order_line_copy_purchase_price/) | 17.0.1.0.0 |  | Enable to copy Cost-field (purchase_price) when copying a SO line
 [sale_order_line_decription_to_stock_move](sale_order_line_decription_to_stock_move/) | 17.0.1.0.0 |  | Description -field info of SO line is moved to stock.move Description
 [sale_order_line_delivery_date_split_picking](sale_order_line_delivery_date_split_picking/) | 17.0.1.0.0 |  | Add picking date to SO lines and split lines to pickings
+[sale_order_line_delivery_time](sale_order_line_delivery_time/) | 17.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_forecasted_available](sale_order_line_forecasted_available/) | 17.0.1.0.0 |  | Add virtual_available field to sale order line
 [sale_order_line_limit](sale_order_line_limit/) | 17.0.1.0.0 |  | Increase number of SO lines shown before needing to use pager
 [sale_order_line_product_internal_reference](sale_order_line_product_internal_reference/) | 17.0.1.0.0 |  | Product internal reference is shown on form lines
@@ -37,6 +38,7 @@ addon | version | maintainers | summary
 [sale_order_line_tax_info_to_note_field](sale_order_line_tax_info_to_note_field/) | 17.0.1.0.1 |  | Writes Sale Order Lines' tax info to SO's Note field
 [sale_order_margin_manual_cost](sale_order_margin_manual_cost/) | 17.0.1.0.0 |  | Disable automated cost update from SO lines
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 17.0.1.0.0 |  | Enables confirming multiple sales at once
+[sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 17.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 17.0.1.0.0 |  | Tag from partner category to sale order CRM tag
 [sale_order_product_pricelist](sale_order_product_pricelist/) | 17.0.1.0.1 |  | If product has a pricelist, use it for SO lines
 [sale_order_project_in_header](sale_order_project_in_header/) | 17.0.1.0.0 |  | Moves analytic account to SO header
@@ -46,6 +48,7 @@ addon | version | maintainers | summary
 [sale_order_require_payment_field_copy_fix](sale_order_require_payment_field_copy_fix/) | 17.0.1.0.0 |  | Recalculate the 'Online payment' field value when duplicating SO
 [sale_order_sale_type](sale_order_sale_type/) | 17.0.1.0.0 |  | Sale Type field is added to sales
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 17.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
+[sale_order_template_disable_note_auto_reload](sale_order_template_disable_note_auto_reload/) | 17.0.1.0.0 |  | Don't auto-reload SO template note when changing a partner
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 17.0.1.0.0 |  | Add customer reference to sale order tree view
 [sale_order_tree_view_quotations_only](sale_order_tree_view_quotations_only/) | 17.0.1.0.0 |  | Sale Quotations tree view - Show only quotations
 [sale_order_warranty](sale_order_warranty/) | 17.0.1.0.1 |  | Sale Order Warranty

@@ -23,7 +23,7 @@
     "summary": "Enable to copy Cost-field (purchase_price) when copying a SO line",
     "version": "17.0.1.0.0",
     "category": "Sale Workflow",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,

@@ -23,7 +23,7 @@
     "summary": "Select only customers that are companies to sale orders",
     "version": "17.0.1.0.0",
     "category": "Sale",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
