@@ -63,5 +63,6 @@ addon | version | maintainers | summary
 [sale_order_year_of_shipment](sale_order_year_of_shipment/) | 17.0.1.0.0 |  | Sale Order year from commitment date
 [sale_payment_acquirer_optional_so_reference](sale_payment_acquirer_optional_so_reference/) | 17.0.1.0.0 |  | Adds an option to not create a payment reference for SO
 [sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 17.0.1.0.0 |  | Add product unreserved availability to SO line
+[sale_stock_client_ref_to_picking](sale_stock_client_ref_to_picking/) | 17.0.1.0.0 |  | Move SO customer reference to created stock pickings
 
 [//]: # (end addons)
