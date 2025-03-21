@@ -21,12 +21,14 @@ addon | version | maintainers | summary
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 17.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_is_company](sale_order_customer_is_company/) | 17.0.1.0.0 |  | Select only customers that are companies to sale orders
 [sale_order_customer_order_date](sale_order_customer_order_date/) | 17.0.1.0.0 |  | Customer order date field to sale order
+[sale_order_delivery_date_to_invoice](sale_order_delivery_date_to_invoice/) | 17.0.1.0.0 |  | Pre-fill invoice delivery date from Sale Order
 [sale_order_delivery_place](sale_order_delivery_place/) | 17.0.1.0.0 |  | Delivery Terms on Sale Order
 [sale_order_delivery_term](sale_order_delivery_term/) | 17.0.1.0.1 |  | Sale Order Delivery term
 [sale_order_description](sale_order_description/) | 17.0.1.0.0 |  | Adds a description (an internal note) to sale order
 [sale_order_description_to_invoice](sale_order_description_to_invoice/) | 17.0.1.0.0 |  | Moves the SO description to invoice description when creating an invoice
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 17.0.1.0.0 |  | Adds sale order description to stock picking
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 17.0.1.0.0 |  | When duplicating also copy customer reference
+[sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 17.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_force_note_line_to_be_invoiced](sale_order_force_note_line_to_be_invoiced/) | 17.0.1.0 |  | Move SO line notes to invoice
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title
 [sale_order_hide_proforma_in_form_view](sale_order_hide_proforma_in_form_view/) | 17.0.1.0.1 |  | Hides PRO-FORMA button in Sale Order form view
@@ -47,12 +49,14 @@ addon | version | maintainers | summary
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 17.0.1.0.0 |  | Tag from partner category to sale order CRM tag
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 17.0.1.0.0 |  | Set sale order line price by pricelist quantities
 [sale_order_product_pricelist](sale_order_product_pricelist/) | 17.0.1.0.1 |  | If product has a pricelist, use it for SO lines
+[sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 17.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_project_in_header](sale_order_project_in_header/) | 17.0.1.0.0 |  | Moves analytic account to SO header
 [sale_order_project_location_in_header](sale_order_project_location_in_header/) | 17.0.1.0.0 |  | Adds analytic account stock location to SO header
 [sale_order_promised_delivery_range](sale_order_promised_delivery_range/) | 17.0.1.0.0 |  | Adds new fields for storing date range of promised delivery
 [sale_order_requested_delivery_date](sale_order_requested_delivery_date/) | 17.0.1.0.0 |  | Adds a new field for storing date of requested delivery
 [sale_order_require_payment_field_copy_fix](sale_order_require_payment_field_copy_fix/) | 17.0.1.0.0 |  | Recalculate the 'Online payment' field value when duplicating SO
 [sale_order_sale_type](sale_order_sale_type/) | 17.0.1.0.0 |  | Sale Type field is added to sales
+[sale_order_search_multi_value](sale_order_search_multi_value/) | 17.0.1.0.0 |  | Search sale orders with a list of sale order names
 [sale_order_show_addresses](sale_order_show_addresses/) | 17.0.1.0.0 |  | Show the addresses below their fields
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 17.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_template_disable_note_auto_reload](sale_order_template_disable_note_auto_reload/) | 17.0.1.0.0 |  | Don't auto-reload SO template note when changing a partner
