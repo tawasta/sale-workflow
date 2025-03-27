@@ -21,6 +21,8 @@ msgid ""
 "If checked, adds this tag to CRM tag when creating sale order for category "
 "Partner."
 msgstr ""
+"Om kryssrutan är markerad, läggs denna tagg till CRM-taggar vid skapande av en försäljningsorder för "
+"kategorin Partner."
 
 #. module: sale_order_partner_tag_to_crm_tag
 #: model:ir.model,name:sale_order_partner_tag_to_crm_tag.model_res_partner_category

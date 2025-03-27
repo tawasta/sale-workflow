@@ -90,3 +90,13 @@ class SaleOrder(models.Model):
                 invoice_vals["fiscal_position_id"] = fiscal_position.id
 
         return invoice_vals
+
+    def _get_reward_line_values(self, reward, coupon, **kwargs):
+        res = super()._get_reward_line_values(reward, coupon, **kwargs)
+
+        for line in res:
+            # The company will default to incorrect company,
+            # if product company differs from order company
+            line["company_id"] = self.company_id.id
+
+        return res
