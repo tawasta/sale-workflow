@@ -28,7 +28,7 @@ addon | version | maintainers | summary
 [sale_order_description_to_invoice](sale_order_description_to_invoice/) | 17.0.1.0.0 |  | Moves the SO description to invoice description when creating an invoice
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 17.0.1.0.0 |  | Adds sale order description to stock picking
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 17.0.1.0.0 |  | When duplicating also copy customer reference
-[sale_order_edit_order_name_in_quotation](sale_order_edit_order_name_in_quotation/) | 17.0.1.0.0 |  | Enable to edit Sale Order name in Quotation state
+[sale_order_edit_order_name_in_quotation](sale_order_edit_order_name_in_quotation/) | 17.0.2.0.0 |  | Enable to edit Sale Order name in Quotation state
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 17.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_force_note_line_to_be_invoiced](sale_order_force_note_line_to_be_invoiced/) | 17.0.1.0 |  | Move SO line notes to invoice
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title

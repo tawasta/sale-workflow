@@ -11,6 +11,8 @@ are in quotation status. The name information flows to pickings and invoices, an
 this is a wanted behaviour. But always ask from an Odoo installation user if this
 is always wanted!
 
+Choosing an already existing sale order name is prevented with onchange.
+
 Configuration
 =============
 No special configuration is required

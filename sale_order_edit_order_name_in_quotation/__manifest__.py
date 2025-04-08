@@ -21,7 +21,7 @@
 {
     "name": "Enable to edit Sale Order name in Quotation state",
     "summary": "Enable to edit Sale Order name in Quotation state",
-    "version": "17.0.1.0.0",
+    "version": "17.0.2.0.0",
     "category": "Sale Workflow",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
