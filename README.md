@@ -28,10 +28,12 @@ addon | version | maintainers | summary
 [sale_order_description_to_invoice](sale_order_description_to_invoice/) | 17.0.1.0.0 |  | Moves the SO description to invoice description when creating an invoice
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 17.0.1.0.0 |  | Adds sale order description to stock picking
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 17.0.1.0.0 |  | When duplicating also copy customer reference
+[sale_order_edit_order_name_in_quotation](sale_order_edit_order_name_in_quotation/) | 17.0.2.0.0 |  | Enable to edit Sale Order name in Quotation state
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 17.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_force_note_line_to_be_invoiced](sale_order_force_note_line_to_be_invoiced/) | 17.0.1.0 |  | Move SO line notes to invoice
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title
 [sale_order_hide_proforma_in_form_view](sale_order_hide_proforma_in_form_view/) | 17.0.1.0.1 |  | Hides PRO-FORMA button in Sale Order form view
+[sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 17.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
 [sale_order_line_copy](sale_order_line_copy/) | 17.0.1.0.0 |  | Duplicate single order lines or sections on sale order
 [sale_order_line_copy_purchase_price](sale_order_line_copy_purchase_price/) | 17.0.1.0.0 |  | Enable to copy Cost-field (purchase_price) when copying a SO line
 [sale_order_line_decription_to_stock_move](sale_order_line_decription_to_stock_move/) | 17.0.1.0.0 |  | Description -field info of SO line is moved to stock.move Description
@@ -69,5 +71,6 @@ addon | version | maintainers | summary
 [sale_payment_acquirer_optional_so_reference](sale_payment_acquirer_optional_so_reference/) | 17.0.1.0.0 |  | Adds an option to not create a payment reference for SO
 [sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 17.0.1.0.0 |  | Add product unreserved availability to SO line
 [sale_stock_client_ref_to_picking](sale_stock_client_ref_to_picking/) | 17.0.1.0.0 |  | Move SO customer reference to created stock pickings
+[sale_stock_disable_warehouse_onchange](sale_stock_disable_warehouse_onchange/) | 17.0.1.0.0 |  | Don't auto-change company when warehouse changes
 
 [//]: # (end addons)
