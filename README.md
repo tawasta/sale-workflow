@@ -20,7 +20,7 @@ addon | version | maintainers | summary
 [sale_order_customer_contact](sale_order_customer_contact/) | 17.0.1.0.2 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 17.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_is_company](sale_order_customer_is_company/) | 17.0.1.0.0 |  | Select only customers that are companies to sale orders
-[sale_order_customer_order_date](sale_order_customer_order_date/) | 17.0.1.0.0 |  | Customer order date field to sale order
+[sale_order_customer_order_date](sale_order_customer_order_date/) | 17.0.1.0.1 |  | Customer order date field to sale order
 [sale_order_delivery_date_to_invoice](sale_order_delivery_date_to_invoice/) | 17.0.1.0.0 |  | Pre-fill invoice delivery date from Sale Order
 [sale_order_delivery_place](sale_order_delivery_place/) | 17.0.1.0.0 |  | Delivery Terms on Sale Order
 [sale_order_delivery_term](sale_order_delivery_term/) | 17.0.1.0.1 |  | Sale Order Delivery term
@@ -67,8 +67,8 @@ addon | version | maintainers | summary
 [sale_order_tree_view_quotations_only](sale_order_tree_view_quotations_only/) | 17.0.1.0.0 |  | Sale Quotations tree view - Show only quotations
 [sale_order_warehouse_do_not_copy](sale_order_warehouse_do_not_copy/) | 17.0.1.0.0 |  | Do not copy a warehouse when copying a sale order
 [sale_order_warranty](sale_order_warranty/) | 17.0.1.0.1 |  | Sale Order Warranty
-[sale_order_week_of_shipment](sale_order_week_of_shipment/) | 17.0.1.0.0 |  | Week of shipment field to sale order
-[sale_order_year_of_shipment](sale_order_year_of_shipment/) | 17.0.1.0.0 |  | Sale Order year from commitment date
+[sale_order_week_of_shipment](sale_order_week_of_shipment/) | 17.0.1.0.1 |  | Week of shipment field to sale order
+[sale_order_year_of_shipment](sale_order_year_of_shipment/) | 17.0.1.0.1 |  | Sale Order year from commitment date
 [sale_payment_acquirer_optional_so_reference](sale_payment_acquirer_optional_so_reference/) | 17.0.1.0.0 |  | Adds an option to not create a payment reference for SO
 [sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 17.0.1.0.0 |  | Add product unreserved availability to SO line
 [sale_stock_client_ref_to_picking](sale_stock_client_ref_to_picking/) | 17.0.1.0.0 |  | Move SO customer reference to created stock pickings
