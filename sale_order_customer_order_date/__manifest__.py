@@ -21,7 +21,7 @@
 {
     "name": "Sale Order Customer Order Date",
     "summary": "Customer order date field to sale order",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sales",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",

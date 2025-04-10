@@ -6,7 +6,7 @@
     >
         <xpath expr="//div[@id='informations']" position="inside">
             <t t-if="doc.year_of_shipment and doc.year_of_shipment != 0">
-                <div t-if="doc.year_of_shipment" class="col-auto mw-100 mb-2">
+                <div t-if="doc.year_of_shipment" class="col-auto mw-100 mb-2 col-3">
                     <strong>Year of Shipment:</strong>
                     <p class="m-0" t-field="doc.year_of_shipment" />
                 </div>
