@@ -21,7 +21,7 @@
 {
     "name": "Get Year of shipment from Commitment date",
     "summary": "Sale Order year from commitment date",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sales",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
