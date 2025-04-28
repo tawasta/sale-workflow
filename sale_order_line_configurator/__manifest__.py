@@ -32,7 +32,10 @@
     "data": [
         #"views/assets_backend.xml",
         "wizard/sale_product_configurator_view_form.xml",
-        "views/sale_order.xml"],
+        "views/sale_order.xml",
+        "security/sale_order_line_configurator_security.xml",
+        "security/ir.model.access.csv"
+        ],
     "assets": {
         "web.assets_backend": [
             "sale_order_line_configurator/static/src/js/list_renderer.js",
