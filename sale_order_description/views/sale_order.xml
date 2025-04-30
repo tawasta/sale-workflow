@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <notebook position="inside">
                 <!-- Add a description page to the notebook -->
-                <page string='Description'>
+                <page string='Description' name="page_description">
                     <field name='description' placeholder='Add internal notes...' />
                 </page>
             </notebook>
