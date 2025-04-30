@@ -24,7 +24,7 @@ addon | version | maintainers | summary
 [sale_order_delivery_date_to_invoice](sale_order_delivery_date_to_invoice/) | 17.0.1.0.0 |  | Pre-fill invoice delivery date from Sale Order
 [sale_order_delivery_place](sale_order_delivery_place/) | 17.0.1.0.0 |  | Delivery Terms on Sale Order
 [sale_order_delivery_term](sale_order_delivery_term/) | 17.0.1.0.1 |  | Sale Order Delivery term
-[sale_order_description](sale_order_description/) | 17.0.1.0.0 |  | Adds a description (an internal note) to sale order
+[sale_order_description](sale_order_description/) | 17.0.1.0.1 |  | Adds a description (an internal note) to sale order
 [sale_order_description_to_invoice](sale_order_description_to_invoice/) | 17.0.1.0.0 |  | Moves the SO description to invoice description when creating an invoice
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 17.0.1.0.0 |  | Adds sale order description to stock picking
 [sale_order_do_not_show_cancel_wizard](sale_order_do_not_show_cancel_wizard/) | 17.0.1.0.0 |  | Do not show Cancel wizard when cancelling a sale order

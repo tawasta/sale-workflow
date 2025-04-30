@@ -14,12 +14,12 @@ Installation
 
 Configuration
 =============
-\-
+* None needed
 
 Usage
 =====
-Go to a sale order to see the new added field in the
-lower portion of the sale order form.
+* Go to a sale order to see the new added field in the
+  notebook as a new page.
 
 Known issues / Roadmap
 ======================
