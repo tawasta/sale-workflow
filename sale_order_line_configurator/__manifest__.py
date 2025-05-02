@@ -23,22 +23,13 @@
     "summary": "Adds a product configurator on sale order line",
     "version": "17.0.1.0.1",
     "category": "Sale Workflow",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": ["sale_product_configurator", "web"],
     "data": [
-        #"views/assets_backend.xml",
-        "wizard/sale_product_configurator_view_form.xml",
         "views/sale_order.xml",
-        "security/sale_order_line_configurator_security.xml",
-        "security/ir.model.access.csv"
-        ],
-    "assets": {
-        "web.assets_backend": [
-            "sale_order_line_configurator/static/src/js/list_renderer.js",
-        ],
-    },
+    ],
 }
