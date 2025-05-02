@@ -16,3 +16,5 @@ class SaleProductConfigurator(models.TransientModel):
         'product.attribute.custom.value', 'product_configurator_custom_attribute_value_rel', string="Custom Values")
     product_no_variant_attribute_value_ids = fields.Many2many(
         'product.template.attribute.value', 'product_configurator_no_variant_attribute_value_rel', string="Extra Values")
+
+    sale_order_line = fields.Many2many('sale.order.line')

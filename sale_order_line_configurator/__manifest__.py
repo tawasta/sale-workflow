@@ -21,7 +21,7 @@
 {
     "name": "Sale Order line configurator",
     "summary": "Adds a product configurator on sale order line",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sale Workflow",
     "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
     "author": "Futural",

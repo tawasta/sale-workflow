@@ -6,6 +6,19 @@ import { ListRenderer } from "@web/views/list/list_renderer";
 import { evaluateExpr } from "@web/core/py_js/py";
 import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
+import { Many2OneField, many2OneField } from "@web/views/fields/many2one/many2one_field";
+
+patch(Many2OneField.prototype, {
+    setup() {
+        super.setup();
+        this.rpc = useService("rpc");
+        this.action = useService("action");
+    },
+
+    add(params) {
+        console.log("TEST MANY");
+    };
+});
 
 patch(ListRenderer.prototype, {
     setup() {
@@ -29,7 +42,11 @@ patch(ListRenderer.prototype, {
             console.log("Context string:", contextString);
             const is_configuration = evaluateExpr(contextString);
             console.log("Is Conf:", is_configuration);
-            if (is_configuration) {
+
+            const contextParse = evaluateExpr(contextString);
+            const open_conf = contextParse?.open_product_configurator ?? false;
+
+            if (open_conf) {
                 // Käyttäjä painoi cofigure product nappia
                 console.log("OPEN PROD CONF");
                 const pricelistId = this._getPricelistId();
@@ -92,13 +109,13 @@ patch(ListRenderer.prototype, {
 
     _productsToRecords: function (products) {
         var records = [];
-    
+
         products.forEach(function (product) {
             var record = {
                 default_product_id: product.product_id,
                 default_product_uom_qty: product.quantity,
             };
-    
+
             if (product.no_variant_attribute_values) {
                 var default_product_no_variant_attribute_values = [];
                 product.no_variant_attribute_values.forEach(function (attribute_value) {
@@ -110,7 +127,7 @@ patch(ListRenderer.prototype, {
                 record.default_product_no_variant_attribute_value_ids =
                     default_product_no_variant_attribute_values;
             }
-    
+
             if (product.product_custom_attribute_values) {
                 var default_custom_attribute_values = [];
                 product.product_custom_attribute_values.forEach(function (attribute_value) {
@@ -129,7 +146,7 @@ patch(ListRenderer.prototype, {
 
             records.push(record);
         });
-    
+
         return records;
     },
 });

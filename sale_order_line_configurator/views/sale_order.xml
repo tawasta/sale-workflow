@@ -17,7 +17,7 @@
                 />
             </xpath>
 
-            <xpath 
+            <xpath
                 expr="//control//button[@name='action_add_from_catalog']"
                 position="attributes"
             >
