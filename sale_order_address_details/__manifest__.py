@@ -22,7 +22,7 @@
     "name": "Sale order address details",
     "summary": "Sale order address details",
     "category": "Sales",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.2",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",

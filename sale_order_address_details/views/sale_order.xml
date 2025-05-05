@@ -6,11 +6,17 @@
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <field name="partner_id" position="after">
-                <label for="partner_street" string=" " class="oe_edit_only" />
+                <label
+                    for="partner_street"
+                    string=" "
+                    class="oe_edit_only"
+                    invisible="not partner_id"
+                />
                 <div
                     class="oe_edit_only o_row"
                     id="partner-street-div"
                     style="padding-right: 35px; margin-top: -10px;"
+                    invisible="not partner_id"
                 >
                     <field
                         name="partner_street"
@@ -24,11 +30,17 @@
                     />
                 </div>
 
-                <label for="partner_zip" string=" " class="oe_edit_only" />
+                <label
+                    for="partner_zip"
+                    string=" "
+                    class="oe_edit_only"
+                    invisible="not partner_id"
+                />
                 <span
                     class="o_row oe_edit_only"
                     id="partner-zip-div"
                     style="padding-right: 35px; margin-top: -20px;"
+                    invisible="not partner_id"
                 >
                     <field
                         name="partner_zip"
@@ -42,7 +54,10 @@
                     />
                 </span>
 
-                <div style="padding-right: 35px; margin-top: -10px; display: none;">
+                <div
+                    style="padding-right: 35px; margin-top: -10px; display: none;"
+                    invisible="not partner_id"
+                >
                     <label
                         for="partner_country_id"
                         string=" "
@@ -55,6 +70,7 @@
                     class="o_row oe_edit_only"
                     id="partner-country-div"
                     style="padding-right: 0px; margin-top: -30px; width: 105% !important;"
+                    invisible="not partner_id"
                 >
                     <field name="partner_country_id" readonly="not partner_id" />
                 </span>
