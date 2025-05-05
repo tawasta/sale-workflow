@@ -13,7 +13,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [sale_multi_company_products](sale_multi_company_products/) | 17.0.1.1.0 |  | Allows selling multiple company products on a single sale
 [sale_order_additional_note](sale_order_additional_note/) | 17.0.1.0.1 |  | Adds Html-type field to Sale Order, which is shown on its PDF print
-[sale_order_address_details](sale_order_address_details/) | 17.0.1.0.1 |  | Sale order address details
+[sale_order_address_details](sale_order_address_details/) | 17.0.1.0.2 |  | Sale order address details
 [sale_order_analytic_distribution_required_upon_invoice](sale_order_analytic_distribution_required_upon_invoice/) | 17.0.1.0.0 |  | Creating an invoice from SO is not possible if analytic distributions are not set on lines
 [sale_order_country_group_delivery_terms](sale_order_country_group_delivery_terms/) | 17.0.1.0.2 |  | Add note from country groups to SO when confirming the sale
 [sale_order_country_group_text](sale_order_country_group_text/) | 17.0.1.0.0 |  | Get report text from country groups setting
