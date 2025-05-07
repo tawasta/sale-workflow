@@ -13,7 +13,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [sale_multi_company_products](sale_multi_company_products/) | 17.0.1.1.0 |  | Allows selling multiple company products on a single sale
 [sale_order_additional_note](sale_order_additional_note/) | 17.0.1.0.1 |  | Adds Html-type field to Sale Order, which is shown on its PDF print
-[sale_order_address_details](sale_order_address_details/) | 17.0.1.0.1 |  | Sale order address details
+[sale_order_address_details](sale_order_address_details/) | 17.0.1.0.2 |  | Sale order address details
 [sale_order_analytic_distribution_required_upon_invoice](sale_order_analytic_distribution_required_upon_invoice/) | 17.0.1.0.0 |  | Creating an invoice from SO is not possible if analytic distributions are not set on lines
 [sale_order_country_group_delivery_terms](sale_order_country_group_delivery_terms/) | 17.0.1.0.2 |  | Add note from country groups to SO when confirming the sale
 [sale_order_country_group_text](sale_order_country_group_text/) | 17.0.1.0.0 |  | Get report text from country groups setting
@@ -35,6 +35,7 @@ addon | version | maintainers | summary
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title
 [sale_order_hide_proforma_in_form_view](sale_order_hide_proforma_in_form_view/) | 17.0.1.0.1 |  | Hides PRO-FORMA button in Sale Order form view
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 17.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
+[sale_order_line_configurator](sale_order_line_configurator/) | 17.0.1.0.2 |  | Adds a product configurator on sale order line
 [sale_order_line_copy](sale_order_line_copy/) | 17.0.1.0.0 |  | Duplicate single order lines or sections on sale order
 [sale_order_line_copy_purchase_price](sale_order_line_copy_purchase_price/) | 17.0.1.0.0 |  | Enable to copy Cost-field (purchase_price) when copying a SO line
 [sale_order_line_decription_to_stock_move](sale_order_line_decription_to_stock_move/) | 17.0.1.0.0 |  | Description -field info of SO line is moved to stock.move Description
@@ -48,6 +49,7 @@ addon | version | maintainers | summary
 [sale_order_line_tax_info_to_note_field](sale_order_line_tax_info_to_note_field/) | 17.0.1.0.1 |  | Writes Sale Order Lines' tax info to SO's Note field
 [sale_order_margin_manual_cost](sale_order_margin_manual_cost/) | 17.0.1.0.0 |  | Disable automated cost update from SO lines
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 17.0.1.0.0 |  | Enables confirming multiple sales at once
+[sale_order_onchange_commitment_date_is_expected_date](sale_order_onchange_commitment_date_is_expected_date/) | 17.0.1.0.0 |  | Commitment date is the same as Expected when changing Expected date
 [sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 17.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 17.0.1.0.0 |  | Tag from partner category to sale order CRM tag
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 17.0.1.0.0 |  | Set sale order line price by pricelist quantities
