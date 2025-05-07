@@ -21,7 +21,7 @@
 {
     "name": "Sale Order line configurator",
     "summary": "Adds a product configurator on sale order line",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.2",
     "category": "Sale Workflow",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
