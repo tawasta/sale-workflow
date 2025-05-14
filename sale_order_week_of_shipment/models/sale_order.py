@@ -45,7 +45,7 @@ class SaleOrder(models.Model):
             return week
 
     @api.depends("week_of_shipment")
-    @api.onchange("week_of_shipment")
+    @api.onchange("week_of_shipment", "expected_date")
     def _compute_week_of_shipment(self):
         current_week = datetime.today().isocalendar()[1]
         _logger.debug("Current week: {}".format(current_week))
