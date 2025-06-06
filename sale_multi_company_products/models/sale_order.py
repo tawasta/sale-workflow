@@ -1,4 +1,11 @@
-from odoo import fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError, ValidationError
+from odoo.fields import Command
+from odoo.osv import expression
+from odoo.tools.float_utils import float_is_zero, float_round
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 class SaleOrder(models.Model):
@@ -100,3 +107,100 @@ class SaleOrder(models.Model):
             line["company_id"] = self.company_id.id
 
         return res
+
+    def _get_trigger_domain(self):
+        """
+        Returns the base domain that all triggers have to comply to.
+        """
+        self.ensure_one()
+        today = fields.Date.context_today(self)
+        return [('active', '=', True), ('program_id.sale_ok', '=', True),
+                *self.env['loyalty.program']._check_company_domain([self.company_id.id, self.company_id.parent_id.id]),
+                '|', ('program_id.pricelist_ids', '=', False),
+                     ('program_id.pricelist_ids', 'in', [self.pricelist_id.id]),
+                '|', ('program_id.date_from', '=', False), ('program_id.date_from', '<=', today),
+                '|', ('program_id.date_to', '=', False), ('program_id.date_to', '>=', today)]
+
+
+
+    def _try_apply_code(self, code):
+        self.ensure_one()
+
+        _logger.info("Trying to apply code '%s' for Sale Order %s (company %s)", code, self.name, self.company_id.name)
+
+        base_domain = self._get_trigger_domain()
+        domain = expression.AND([base_domain, [('mode', '=', 'with_code'), ('code', '=', code)]])
+        rule = self.env['loyalty.rule'].search(domain)
+        program = rule.program_id
+        coupon = False
+
+        _logger.info("Found loyalty.rule %s for code '%s'", rule, code)
+
+        if rule in self.code_enabled_rule_ids:
+            _logger.warning("Promo code '%s' already applied to order %s", code, self.name)
+            return {'error': _('This promo code is already applied.')}
+
+        # No trigger was found from the code, try to find a coupon
+        if not program:
+            coupon = self.env['loyalty.card'].search([('code', '=', code)])
+            if not coupon:
+                _logger.warning("No coupon found for code '%s'", code)
+                return {'error': _('This code is invalid (%s).', code), 'not_found': True}
+
+            # Tässä lisätään yritystarkistus: alennuskoodin ohjelman yritys ja tuotteen yritys pitää täsmätä
+            coupon_program_company = coupon.program_id.company_id
+            product_companies = self.order_line.mapped('product_id.company_id')
+            _logger.info("Coupon program company: %s, Order product companies: %s", coupon_program_company, product_companies)
+
+            if coupon_program_company not in product_companies:
+                _logger.error("Coupon program company '%s' does not match any product company in the order %s",
+                              coupon_program_company, self.name)
+                return {'error': _('This promo code is not valid for products in your cart.'), 'not_found': True}
+
+            if not coupon.program_id.active or not coupon.program_id.reward_ids or not coupon.program_id.filtered_domain(self._get_program_domain()):
+                _logger.warning("Coupon program inactive or no rewards or domain mismatch for code '%s'", code)
+                return {'error': _('This code is invalid (%s).', code), 'not_found': True}
+
+            elif coupon.expiration_date and coupon.expiration_date < fields.Date.today():
+                _logger.warning("Coupon expired for code '%s'", code)
+                return {'error': _('This coupon is expired.')}
+
+            elif coupon.points < min(coupon.program_id.reward_ids.mapped('required_points')):
+                _logger.warning("Coupon already used for code '%s'", code)
+                return {'error': _('This coupon has already been used.')}
+
+            program = coupon.program_id
+
+        if not program or not program.active:
+            _logger.warning("Program not found or inactive for code '%s'", code)
+            return {'error': _('This code is invalid (%s).', code), 'not_found': True}
+
+        elif program.limit_usage and program.total_order_count >= program.max_usage:
+            _logger.warning("Program usage limit reached for code '%s'", code)
+            return {'error': _('This code is expired (%s).', code)}
+
+        if rule:
+            self.code_enabled_rule_ids |= rule
+
+        program_is_applied = program in self._get_points_programs()
+
+        if coupon:
+            self.applied_coupon_ids += coupon
+
+        if program_is_applied:
+            _logger.info("Program already applied for code '%s', updating rewards", code)
+            self._update_programs_and_rewards()
+        elif program.applies_on != 'future' or not coupon:
+            _logger.info("Trying to apply program '%s' for code '%s'", program.name, code)
+            apply_result = self._try_apply_program(program, coupon)
+            if 'error' in apply_result and (not program.is_nominative or (program.is_nominative and not coupon)):
+                if rule:
+                    self.code_enabled_rule_ids -= rule
+                if coupon and not apply_result.get('already_applied', False):
+                    self.applied_coupon_ids -= coupon
+                _logger.error("Failed to apply program for code '%s': %s", code, apply_result['error'])
+                return apply_result
+            coupon = apply_result.get('coupon', self.env['loyalty.card'])
+
+        _logger.info("Code '%s' applied successfully to order %s", code, self.name)
+        return self._get_claimable_rewards(forced_coupons=coupon)
