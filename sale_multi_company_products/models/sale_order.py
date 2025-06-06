@@ -119,49 +119,38 @@ class SaleOrder(models.Model):
         program = rule.program_id
         coupon = False
 
-        _logger.info("Found loyalty.rule %s for code '%s'", rule, code)
-
         if rule in self.code_enabled_rule_ids:
-            _logger.warning("Promo code '%s' already applied to order %s", code, self.name)
             return {'error': _('This promo code is already applied.')}
 
         if not program:
             coupon = self.env['loyalty.card'].search([('code', '=', code)])
             if not coupon:
-                _logger.warning("No coupon found for code '%s'", code)
                 return {'error': _('This code is invalid (%s).', code), 'not_found': True}
 
             program = coupon.program_id
-            coupon_program_company = coupon.program_id.company_id
+            coupon_program_company = program.company_id
             product_companies = self.order_line.mapped('product_id.company_id')
-
-            _logger.info("Coupon program company: %s, Order product companies: %s", coupon_program_company, product_companies)
 
             matching_lines = self.order_line.filtered(lambda l: l.product_id.company_id == coupon_program_company)
 
             if not matching_lines:
-                _logger.warning("No lines in the cart match coupon program company (%s), but bypassing company mismatch due to multi-company configuration.", coupon_program_company.name)
+                _logger.info("No matching lines for coupon's company (%s), but allowing due to multi-company setup", coupon_program_company.name)
             else:
-                _logger.info("Matching lines found: %s", matching_lines.mapped("product_id.name"))
+                _logger.info("Matching lines found for coupon: %s", matching_lines.mapped("product_id.name"))
 
             if not program.active or not program.reward_ids or not program.filtered_domain(self._get_program_domain()):
-                _logger.warning("Coupon program inactive or no rewards or domain mismatch for code '%s'", code)
                 return {'error': _('This code is invalid (%s).', code), 'not_found': True}
 
-            elif coupon.expiration_date and coupon.expiration_date < fields.Date.today():
-                _logger.warning("Coupon expired for code '%s'", code)
+            if coupon.expiration_date and coupon.expiration_date < fields.Date.today():
                 return {'error': _('This coupon is expired.')}
 
-            elif coupon.points < min(coupon.program_id.reward_ids.mapped('required_points')):
-                _logger.warning("Coupon already used for code '%s'", code)
+            if coupon.points < min(program.reward_ids.mapped('required_points')):
                 return {'error': _('This coupon has already been used.')}
 
         if not program or not program.active:
-            _logger.warning("Program not found or inactive for code '%s'", code)
             return {'error': _('This code is invalid (%s).', code), 'not_found': True}
 
-        elif program.limit_usage and program.total_order_count >= program.max_usage:
-            _logger.warning("Program usage limit reached for code '%s'", code)
+        if program.limit_usage and program.total_order_count >= program.max_usage:
             return {'error': _('This code is expired (%s).', code)}
 
         if rule:
@@ -169,24 +158,24 @@ class SaleOrder(models.Model):
 
         program_is_applied = program in self._get_points_programs()
 
-        if coupon:
-            self.applied_coupon_ids += coupon
-
         if program_is_applied:
-            _logger.info("Program already applied for code '%s', updating rewards", code)
+            _logger.info("Program '%s' already applied, refreshing rewards", program.name)
             self._update_programs_and_rewards()
         elif program.applies_on != 'future' or not coupon:
-            _logger.info("Trying to apply program '%s' for code '%s'", program.name, code)
+            _logger.info("Applying program '%s' for code '%s'", program.name, code)
             apply_result = self._try_apply_program(program, coupon)
+
             if 'error' in apply_result and (not program.is_nominative or (program.is_nominative and not coupon)):
                 if rule:
                     self.code_enabled_rule_ids -= rule
-                if coupon and not apply_result.get('already_applied', False):
-                    self.applied_coupon_ids -= coupon
-                _logger.error("Failed to apply program for code '%s': %s", code, apply_result['error'])
+                _logger.warning("Program application failed for code '%s': %s", code, apply_result['error'])
                 return apply_result
-            coupon = apply_result.get('coupon', self.env['loyalty.card'])
 
-        _logger.info("Code '%s' applied successfully to order %s", code, self.name)
+            coupon = apply_result.get('coupon', self.env['loyalty.card'])
+            if coupon and not apply_result.get('already_applied', False):
+                self.applied_coupon_ids += coupon
+
+        _logger.info("Code '%s' successfully applied to order %s", code, self.name)
         return self._get_claimable_rewards(forced_coupons=coupon)
+
 
