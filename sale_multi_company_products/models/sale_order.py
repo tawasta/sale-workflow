@@ -108,6 +108,18 @@ class SaleOrder(models.Model):
 
         return res
 
+    def _get_program_domain(self):
+        """
+        Returns the base domain that all programs have to comply to.
+        """
+        self.ensure_one()
+        today = fields.Date.context_today(self)
+        return [('active', '=', True), ('sale_ok', '=', True),
+                *self.env['loyalty.program']._check_company_domain([self.company_id.id, self.company_id.parent_id.id]),
+                '|', ('pricelist_ids', '=', False), ('pricelist_ids', 'in', [self.pricelist_id.id]),
+                '|', ('date_from', '=', False), ('date_from', '<=', today),
+                '|', ('date_to', '=', False), ('date_to', '>=', today)]
+
     def _get_trigger_domain(self):
         """
         Returns the base domain that all triggers have to comply to.
@@ -140,22 +152,24 @@ class SaleOrder(models.Model):
             _logger.warning("Promo code '%s' already applied to order %s", code, self.name)
             return {'error': _('This promo code is already applied.')}
 
-        # No trigger was found from the code, try to find a coupon
         if not program:
             coupon = self.env['loyalty.card'].search([('code', '=', code)])
             if not coupon:
                 _logger.warning("No coupon found for code '%s'", code)
                 return {'error': _('This code is invalid (%s).', code), 'not_found': True}
 
-            # Tässä lisätään yritystarkistus: alennuskoodin ohjelman yritys ja tuotteen yritys pitää täsmätä
             coupon_program_company = coupon.program_id.company_id
             product_companies = self.order_line.mapped('product_id.company_id')
+
             _logger.info("Coupon program company: %s, Order product companies: %s", coupon_program_company, product_companies)
 
-            if coupon_program_company not in product_companies:
-                _logger.error("Coupon program company '%s' does not match any product company in the order %s",
-                              coupon_program_company, self.name)
+            # AIEMPI ESTO POISTETTU: SALLI ERI ORDER.COMPANY JA COUPON.COMPANY, JOS TUOTTEET VASTAA
+            matching_lines = self.order_line.filtered(lambda l: l.product_id.company_id == coupon_program_company)
+            if not matching_lines:
+                _logger.error("No matching product company lines for coupon program company '%s' in order %s", coupon_program_company, self.name)
                 return {'error': _('This promo code is not valid for products in your cart.'), 'not_found': True}
+            else:
+                _logger.info("Matching lines found: %s", matching_lines.mapped("product_id.name"))
 
             if not coupon.program_id.active or not coupon.program_id.reward_ids or not coupon.program_id.filtered_domain(self._get_program_domain()):
                 _logger.warning("Coupon program inactive or no rewards or domain mismatch for code '%s'", code)
@@ -204,3 +218,4 @@ class SaleOrder(models.Model):
 
         _logger.info("Code '%s' applied successfully to order %s", code, self.name)
         return self._get_claimable_rewards(forced_coupons=coupon)
+
