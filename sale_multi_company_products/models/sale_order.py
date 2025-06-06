@@ -149,7 +149,16 @@ class SaleOrder(models.Model):
                 '|', ('program_id.date_from', '=', False), ('program_id.date_from', '<=', today),
                 '|', ('program_id.date_to', '=', False), ('program_id.date_to', '>=', today)]
 
+    def _filter_claimable_rewards_by_company(self, rewards):
+        allowed_company_ids = [self.company_id.id]
+        if self.company_id.parent_id:
+            allowed_company_ids.append(self.company_id.parent_id.id)
+        product_company_ids = self.order_line.mapped('product_id.company_id.id')
+        allowed_company_ids += product_company_ids
+        allowed_company_ids = list(set(filter(None, allowed_company_ids)))
 
+        # Suodata rewards, joilla on ohjelma, joka kuuluu allowed_company_ids
+        return rewards.filtered(lambda r: r.program_id.company_id.id in allowed_company_ids)
 
     def _try_apply_code(self, code):
         """
@@ -220,7 +229,9 @@ class SaleOrder(models.Model):
                 return apply_result
             coupon = apply_result.get('coupon', self.env['loyalty.card'])
 
-        return self._get_claimable_rewards(forced_coupons=coupon)
+        result = self._get_claimable_rewards(forced_coupons=coupon)
+        result = self._filter_claimable_rewards_by_company(result)
+        return result
 
 
 
