@@ -111,11 +111,19 @@ class SaleOrder(models.Model):
     def _get_program_domain(self):
         """
         Returns the base domain that all programs have to comply to.
+        Now expanded to include products' companies as well for multi-company promo codes.
         """
         self.ensure_one()
         today = fields.Date.context_today(self)
+
+        # Haetaan tilauksen tuotteiden yritykset
+        product_company_ids = self.order_line.mapped('product_id.company_id.id')
+
+        # Sallitaan yritykset: tilauksen yritys + sen emoyritys + tuotteiden yritykset
+        allowed_company_ids = list(set([self.company_id.id, self.company_id.parent_id.id] + product_company_ids))
+
         return [('active', '=', True), ('sale_ok', '=', True),
-                *self.env['loyalty.program']._check_company_domain([self.company_id.id, self.company_id.parent_id.id]),
+                *self.env['loyalty.program']._check_company_domain(allowed_company_ids),
                 '|', ('pricelist_ids', '=', False), ('pricelist_ids', 'in', [self.pricelist_id.id]),
                 '|', ('date_from', '=', False), ('date_from', '<=', today),
                 '|', ('date_to', '=', False), ('date_to', '>=', today)]
@@ -123,22 +131,23 @@ class SaleOrder(models.Model):
     def _get_trigger_domain(self):
         """
         Returns the base domain that all triggers have to comply to.
+        Now expanded to include products' companies as well for multi-company promo codes.
         """
         self.ensure_one()
         today = fields.Date.context_today(self)
+
+        product_company_ids = self.order_line.mapped('product_id.company_id.id')
+        allowed_company_ids = list(set([self.company_id.id, self.company_id.parent_id.id] + product_company_ids))
+
         return [('active', '=', True), ('program_id.sale_ok', '=', True),
-                *self.env['loyalty.program']._check_company_domain([self.company_id.id, self.company_id.parent_id.id]),
+                *self.env['loyalty.program']._check_company_domain(allowed_company_ids),
                 '|', ('program_id.pricelist_ids', '=', False),
                      ('program_id.pricelist_ids', 'in', [self.pricelist_id.id]),
                 '|', ('program_id.date_from', '=', False), ('program_id.date_from', '<=', today),
                 '|', ('program_id.date_to', '=', False), ('program_id.date_to', '>=', today)]
 
-
-
     def _try_apply_code(self, code):
         self.ensure_one()
-
-        _logger.info("Trying to apply code '%s' for Sale Order %s (company %s)", code, self.name, self.company_id.name)
 
         base_domain = self._get_trigger_domain()
         domain = expression.AND([base_domain, [('mode', '=', 'with_code'), ('code', '=', code)]])
@@ -146,51 +155,29 @@ class SaleOrder(models.Model):
         program = rule.program_id
         coupon = False
 
-        _logger.info("Found loyalty.rule %s for code '%s'", rule, code)
-
         if rule in self.code_enabled_rule_ids:
-            _logger.warning("Promo code '%s' already applied to order %s", code, self.name)
             return {'error': _('This promo code is already applied.')}
 
+        # Ei löytynyt triggeriä -> etsitään kuponki
         if not program:
             coupon = self.env['loyalty.card'].search([('code', '=', code)])
-            if not coupon:
-                _logger.warning("No coupon found for code '%s'", code)
+            if not coupon or\
+                not coupon.program_id.active or\
+                not coupon.program_id.reward_ids or\
+                not coupon.program_id.filtered_domain(self._get_program_domain()):
                 return {'error': _('This code is invalid (%s).', code), 'not_found': True}
-
-            program = coupon.program_id
-            coupon_program_company = coupon.program_id.company_id
-            product_companies = self.order_line.mapped('product_id.company_id')
-
-            _logger.info("Coupon program company: %s, Order product companies: %s", coupon_program_company, product_companies)
-
-            matching_lines = self.order_line.filtered(lambda l: l.product_id.company_id == coupon_program_company)
-
-            if not matching_lines:
-                _logger.warning("No lines in the cart match coupon program company (%s), but bypassing company mismatch due to multi-company configuration.", coupon_program_company.name)
-            else:
-                _logger.info("Matching lines found: %s", matching_lines.mapped("product_id.name"))
-
-            if not program.active or not program.reward_ids or not program.filtered_domain(self._get_program_domain()):
-                _logger.warning("Coupon program inactive or no rewards or domain mismatch for code '%s'", code)
-                return {'error': _('This code is invalid (%s).', code), 'not_found': True}
-
             elif coupon.expiration_date and coupon.expiration_date < fields.Date.today():
-                _logger.warning("Coupon expired for code '%s'", code)
                 return {'error': _('This coupon is expired.')}
-
             elif coupon.points < min(coupon.program_id.reward_ids.mapped('required_points')):
-                _logger.warning("Coupon already used for code '%s'", code)
                 return {'error': _('This coupon has already been used.')}
+            program = coupon.program_id
 
         if not program or not program.active:
-            _logger.warning("Program not found or inactive for code '%s'", code)
             return {'error': _('This code is invalid (%s).', code), 'not_found': True}
-
-        elif program.limit_usage and program.total_order_count >= program.max_usage:
-            _logger.warning("Program usage limit reached for code '%s'", code)
+        elif (program.limit_usage and program.total_order_count >= program.max_usage):
             return {'error': _('This code is expired (%s).', code)}
 
+        # Lisätään rule, jos löytyy
         if rule:
             self.code_enabled_rule_ids |= rule
 
@@ -199,22 +186,26 @@ class SaleOrder(models.Model):
         if coupon:
             self.applied_coupon_ids += coupon
 
+        # Tarkistetaan, onko ostoskorissa tuotteita, jotka kuuluvat ohjelman yritykseen
+        matching_lines = self.order_line.filtered(lambda l: l.product_id.company_id == program.company_id)
+        if not matching_lines:
+            # Ei tuotteita ohjelman yrityksestä, mutta sallitaan moniyritysbypass
+            # Voit halutessasi lisätä tähän loggausta tai erityiskäsittelyn
+            pass
+
         if program_is_applied:
-            _logger.info("Program already applied for code '%s', updating rewards", code)
             self._update_programs_and_rewards()
         elif program.applies_on != 'future' or not coupon:
-            _logger.info("Trying to apply program '%s' for code '%s'", program.name, code)
             apply_result = self._try_apply_program(program, coupon)
             if 'error' in apply_result and (not program.is_nominative or (program.is_nominative and not coupon)):
                 if rule:
                     self.code_enabled_rule_ids -= rule
                 if coupon and not apply_result.get('already_applied', False):
                     self.applied_coupon_ids -= coupon
-                _logger.error("Failed to apply program for code '%s': %s", code, apply_result['error'])
                 return apply_result
             coupon = apply_result.get('coupon', self.env['loyalty.card'])
 
-        _logger.info("Code '%s' applied successfully to order %s", code, self.name)
         return self._get_claimable_rewards(forced_coupons=coupon)
+
 
 
