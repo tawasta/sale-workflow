@@ -33,6 +33,7 @@
         "sale_loyalty",
         "sale_management",
         "stock",
+        "website_sale_loyalty"
     ],
     "data": ["security/product_security.xml", "views/sale_order.xml"],
 }
