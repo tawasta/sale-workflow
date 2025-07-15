@@ -23,7 +23,7 @@
     "summary": "Import Sale orders with excel file",
     "version": "14.0.1.0.0",
     "category": "Sale Management",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

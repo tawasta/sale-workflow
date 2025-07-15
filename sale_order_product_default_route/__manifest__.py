@@ -19,19 +19,19 @@
 ##############################################################################
 
 {
-    'name': 'Get default Route from product to Sale order line',
-    'summary': 'Use default route set on a product to add it to Sale Order line',
-    'version': '14.0.1.0.0',
-    'category': 'Sale Workflow',
-    'website': 'https://tawasta.fi',
-    'author': 'Futural',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'sale_stock',
+    "name": "Get default Route from product to Sale order line",
+    "summary": "Use default route set on a product to add it to Sale Order line",
+    "version": "14.0.1.0.0",
+    "category": "Sale Workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
+    "author": "Futural",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "sale_stock",
     ],
-    'data': [
-        'views/stock_route.xml',
+    "data": [
+        "views/stock_route.xml",
     ],
 }

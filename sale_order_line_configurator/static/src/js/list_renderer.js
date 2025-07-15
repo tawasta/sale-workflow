@@ -20,7 +20,8 @@ odoo.define("sale_order_line_configurator.list_renderer", function (require) {
                         model: "ir.model.data",
                         method: "xmlid_to_res_id",
                         kwargs: {
-                            xmlid: "sale_product_configurator.sale_product_configurator_view_form",
+                            xmlid:
+                                "sale_product_configurator.sale_product_configurator_view_form",
                         },
                     }).then(function (res_id) {
                         self.do_action(
@@ -78,37 +79,32 @@ odoo.define("sale_order_line_configurator.list_renderer", function (require) {
 
                 if (product.no_variant_attribute_values) {
                     var default_product_no_variant_attribute_values = [];
-                    _.each(
-                        product.no_variant_attribute_values,
-                        function (attribute_value) {
-                            default_product_no_variant_attribute_values.push([
-                                4,
-                                parseInt(attribute_value.value),
-                            ]);
-                        }
-                    );
-                    record.default_product_no_variant_attribute_value_ids =
-                        default_product_no_variant_attribute_values;
+                    _.each(product.no_variant_attribute_values, function (
+                        attribute_value
+                    ) {
+                        default_product_no_variant_attribute_values.push([
+                            4,
+                            parseInt(attribute_value.value),
+                        ]);
+                    });
+                    record.default_product_no_variant_attribute_value_ids = default_product_no_variant_attribute_values;
                 }
 
                 if (product.product_custom_attribute_values) {
                     var default_custom_attribute_values = [];
-                    _.each(
-                        product.product_custom_attribute_values,
-                        function (attribute_value) {
-                            default_custom_attribute_values.push([
-                                0,
-                                0,
-                                {
-                                    attribute_value_id:
-                                        attribute_value.attribute_value_id,
-                                    custom_value: attribute_value.custom_value,
-                                },
-                            ]);
-                        }
-                    );
-                    record.default_product_custom_attribute_value_ids =
-                        default_custom_attribute_values;
+                    _.each(product.product_custom_attribute_values, function (
+                        attribute_value
+                    ) {
+                        default_custom_attribute_values.push([
+                            0,
+                            0,
+                            {
+                                attribute_value_id: attribute_value.attribute_value_id,
+                                custom_value: attribute_value.custom_value,
+                            },
+                        ]);
+                    });
+                    record.default_product_custom_attribute_value_ids = default_custom_attribute_values;
                 }
 
                 records.push(record);

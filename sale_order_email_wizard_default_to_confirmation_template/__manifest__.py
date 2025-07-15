@@ -23,7 +23,7 @@
     "summary": "Sale Order Email Wizard suggests the confirmation template also for quotations",
     "version": "14.0.1.0.0",
     "category": "Sale",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
