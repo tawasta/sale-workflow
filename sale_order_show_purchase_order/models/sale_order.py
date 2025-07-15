@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     def _get_purchase_ids(self):

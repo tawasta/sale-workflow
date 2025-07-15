@@ -1,10 +1,8 @@
 from odoo import api, fields, models
-
 from odoo.addons import decimal_precision as dp
 
 
 class SaleOrderLine(models.Model):
-
     _inherit = "sale.order.line"
 
     weight = fields.Float(

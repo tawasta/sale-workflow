@@ -25,7 +25,7 @@
     "category": "Sale",
     "author": "Tawasta",
     "license": "AGPL-3",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "depends": ["sale", "sale_management"],
     "data": [
         "views/sale_order.xml",

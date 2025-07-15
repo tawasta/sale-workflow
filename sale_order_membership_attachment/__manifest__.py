@@ -23,7 +23,7 @@
     "summary": "Enables sending product attachments with order confirmation email wizard",
     "version": "14.0.1.1.1",
     "category": "Sale",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

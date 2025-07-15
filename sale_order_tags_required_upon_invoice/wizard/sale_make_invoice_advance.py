@@ -2,7 +2,6 @@ from odoo import _, exceptions, models
 
 
 class SaleAdvancePaymentInv(models.TransientModel):
-
     _inherit = "sale.advance.payment.inv"
 
     def create_invoices(self):

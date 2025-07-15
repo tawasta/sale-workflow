@@ -22,7 +22,7 @@
     "version": "14.0.1.2.1",
     "category": "Sale",
     "summary": "Duplicate single order lines or sections on sale order",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

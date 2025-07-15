@@ -23,7 +23,7 @@
     "summary": "Lock sale order after it state is fully invoiced",
     "version": "14.0.1.1.0",
     "category": "Sale",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

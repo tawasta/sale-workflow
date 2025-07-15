@@ -2,7 +2,6 @@ from odoo import _, models
 
 
 class SaleOrderLine(models.Model):
-
     _inherit = "sale.order.line"
 
     def action_sale_order_line_copy(self):

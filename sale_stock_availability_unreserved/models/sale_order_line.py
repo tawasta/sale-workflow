@@ -23,7 +23,6 @@
 
 # 3. Odoo imports (openerp):
 from odoo import api, fields, models
-
 from odoo.addons import decimal_precision as dp
 
 # 4. Imports from Odoo modules:
@@ -34,7 +33,6 @@ from odoo.addons import decimal_precision as dp
 
 
 class SaleOrderLine(models.Model):
-
     # 1. Private attributes
     _inherit = "sale.order.line"
 

@@ -2,7 +2,6 @@ from odoo import api, models
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     @api.onchange("partner_id")
@@ -13,7 +12,6 @@ class SaleOrder(models.Model):
         sale_clause = partner.sale_clause
 
         if partner and sale_clause and sale_clause.used_for == "sale":
-
             if self.note:
                 self.note += "{}{}".format("\n", sale_clause.clause)
             else:
@@ -26,7 +24,6 @@ class SaleOrder(models.Model):
         partner = self.env["res.partner"].search([("id", "=", partner_id)])
 
         if partner and partner.sale_clause and partner.sale_clause.used_for == "sale":
-
             if vals.get("note"):
                 vals["note"] += "{}{}".format("\n", partner.sale_clause.clause)
             else:

@@ -23,7 +23,7 @@
     "summary": "Default parent for new invoice and shipping addresses on SO",
     "category": "Sale",
     "version": "14.0.1.0.0",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

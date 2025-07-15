@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class SaleAdvancePaymentInv(models.TransientModel):
-
     _inherit = "sale.advance.payment.inv"
 
     no_consolidate = fields.Boolean(string="Do not consolidate invoices", default=False)

@@ -23,7 +23,7 @@
     "summary": "Adds an option to not create a payment reference for SO",
     "version": "14.0.1.0.0",
     "category": "Sale Workflow",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

@@ -22,7 +22,7 @@
     "version": "14.0.1.0.0",
     "category": "Sales",
     "summary": "Move fiscal position, warehouse, and incoterm to so header",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

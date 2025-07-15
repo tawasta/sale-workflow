@@ -23,7 +23,7 @@
     "summary": "Add sale order name to sale order note on order confirm",
     "category": "Sale",
     "version": "14.0.1.0.2",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

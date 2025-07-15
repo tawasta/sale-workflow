@@ -2,7 +2,6 @@ from odoo import exceptions, models
 
 
 class SaleOrderGlobalDiscount(models.TransientModel):
-
     _name = "sale.order.global.discount"
     _description = "Sale Order Global Discount"
 
