@@ -2,7 +2,6 @@ import logging
 from datetime import datetime
 
 from isoweek import Week
-
 from odoo import api, fields, models
 
 _logger = logging.getLogger(__name__)
