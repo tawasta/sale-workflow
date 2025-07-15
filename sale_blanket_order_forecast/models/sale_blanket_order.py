@@ -82,7 +82,6 @@ class SaleBlanketOrder(models.Model):
 
     def _compute_confirmed_sale_order_ids(self):
         for record in self:
-
             if record.forecast_policy == "picking":
                 # Search by picking date
                 pickings = self.env["stock.picking"].search(

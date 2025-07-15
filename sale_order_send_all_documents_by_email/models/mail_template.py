@@ -8,7 +8,6 @@ _logger = logging.getLogger(__name__)
 
 
 class MailTemplate(models.Model):
-
     _inherit = "mail.template"
 
     def generate_email(self, res_ids, fields):
@@ -26,10 +25,8 @@ class MailTemplate(models.Model):
         for _lang, (template, template_res_ids) in self._classify_per_lang(
             res_ids
         ).items():
-
             # Hardcoded condition to check if the used template is "Sales Order: Send by email"
             if template.id == self.env.ref("sale.mail_template_sale_confirmation").id:
-
                 # Get template actions
                 sale_template = self.env.ref("sale.action_report_saleorder")
                 stock_template = self.env.ref(

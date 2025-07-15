@@ -9,7 +9,6 @@ class SaleOrderMassConfirm(models.TransientModel):
         return ["draft", "sent"]
 
     def confirm(self):
-
         sale_orders = self.env["sale.order"].browse(self._context.get("active_ids"))
 
         allowed_states = self.get_confirmable_states()

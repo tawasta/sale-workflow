@@ -92,6 +92,7 @@ addon | version | maintainers | summary
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 14.0.1.0.0 |  | Tag from partner category to sale order CRM tag
 [sale_order_pricelist_no_copy](sale_order_pricelist_no_copy/) | 14.0.1.0.0 |  | Do not copy pricelist when copying sale order
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 14.0.1.0.0 |  | Set sale order line price by pricelist quantities
+[sale_order_product_default_route](sale_order_product_default_route/) | 14.0.1.0.0 |  | Use default route set on a product to add it to Sale Order line
 [sale_order_product_label](sale_order_product_label/) | 14.0.1.0.0 |  | Sale Order Product Label
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 14.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_project_in_header](sale_order_project_in_header/) | 14.0.1.0.1 |  | Moves analytic account to SO header and sets it as required

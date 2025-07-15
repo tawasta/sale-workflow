@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class ResCompany(models.Model):
-
     _inherit = "res.company"
 
     week_of_shipment_additional_weeks = fields.Integer(

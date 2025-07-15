@@ -23,7 +23,7 @@
     "summary": "New field for SO header/title",
     "version": "14.0.1.0.2",
     "category": "Sales",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

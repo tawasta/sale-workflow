@@ -2,14 +2,12 @@ import logging
 from datetime import datetime
 
 from isoweek import Week
-
 from odoo import api, fields, models
 
 _logger = logging.getLogger(__name__)
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     def _compute_commitment_date_from_week(self, week_number):

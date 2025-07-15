@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class ResCompany(models.Model):
-
     _inherit = "res.company"
 
     sale_lead_time_resource_calendar_id = fields.Many2one(

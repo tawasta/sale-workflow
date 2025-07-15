@@ -23,7 +23,7 @@
     "summary": "Sales - Send sale, invoice and pickings prints if possible",
     "version": "14.0.1.0.1",
     "category": "Sale Workflow",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

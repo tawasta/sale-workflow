@@ -23,7 +23,7 @@
     "summary": "Tax is required on all Sale Order lines",
     "category": "Sales",
     "version": "14.0.1.0.0",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

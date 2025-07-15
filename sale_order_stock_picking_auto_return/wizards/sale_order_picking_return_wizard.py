@@ -2,7 +2,6 @@ from odoo import models
 
 
 class SaleOrderPickingReturnWizard(models.TransientModel):
-
     _name = "sale.order.picking.return.wizard"
     _description = "Sale order picking return wizard"
 

@@ -3,7 +3,6 @@ from odoo.exceptions import AccessError
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     def action_unlock(self):

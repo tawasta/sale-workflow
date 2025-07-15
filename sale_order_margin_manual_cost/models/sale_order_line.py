@@ -2,7 +2,6 @@ from odoo import api, models
 
 
 class SaleOrderLine(models.Model):
-
     _inherit = "sale.order.line"
 
     @api.depends("product_id", "company_id", "currency_id", "product_uom")

@@ -5,7 +5,6 @@ from odoo.tools.safe_eval import safe_eval
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     search_multi = fields.Char(

@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     partner_shipping_id_keep = fields.Boolean(

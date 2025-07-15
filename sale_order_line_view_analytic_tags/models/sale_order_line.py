@@ -2,7 +2,6 @@ from odoo import api, fields, models
 
 
 class SaleOrderLine(models.Model):
-
     _inherit = "sale.order.line"
 
     # Set store to True so that the grouping works. Else Odoo gives an error

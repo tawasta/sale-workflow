@@ -23,7 +23,7 @@
     "summary": "Add picking date to SO lines and split lines to pickings",
     "category": "Sale",
     "version": "14.0.1.1.0",
-    "website": "https://gitlab.com/tawasta/odoo/sale-workflow",
+    "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

@@ -6,7 +6,6 @@ _logger = logging.getLogger(__name__)
 
 
 class MailComposeMessage(models.TransientModel):
-
     _inherit = "mail.compose.message"
 
     @api.model
