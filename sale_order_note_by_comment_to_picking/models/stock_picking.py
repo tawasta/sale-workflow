@@ -2,7 +2,6 @@ from odoo import _, api, models
 
 
 class StockPicking(models.Model):
-
     _inherit = "stock.picking"
 
     @api.model
@@ -26,9 +25,7 @@ class StockPicking(models.Model):
                 <div style="color: green;">
                 This transfer has been created from: {}
                 </div>
-                """.format(
-                sale_id.sudo().user_id.name, ref
-            )
+                """.format(sale_id.sudo().user_id.name, ref)
 
             picking.message_post(
                 message_type="comment",

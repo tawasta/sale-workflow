@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class SaleOrderLine(models.Model):
-
     _inherit = "sale.order.line"
 
     delivery_info = fields.Text(string="Deliveries", compute="_compute_delivery_info")
@@ -19,7 +18,6 @@ class SaleOrderLine(models.Model):
             ).sorted(key=lambda r: r.picking_id.date_done)
 
             for move in moves:
-
                 qty = move.product_uom._compute_quantity(
                     move.product_uom_qty, record.product_uom
                 )

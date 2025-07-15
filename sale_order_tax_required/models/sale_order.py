@@ -3,11 +3,9 @@ from odoo.exceptions import UserError
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     def action_confirm(self):
-
         errors = []
         error_template = _("Order has a line with product '%s' with no taxes")
         for line in self.mapped("order_line").filtered(lambda x: not x.display_type):

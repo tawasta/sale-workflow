@@ -2,7 +2,6 @@ from odoo import models
 
 
 class ResPartner(models.Model):
-
     _inherit = "res.partner"
 
     def create_stock_location(self):

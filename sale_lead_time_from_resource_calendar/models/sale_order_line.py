@@ -6,7 +6,6 @@ _logger = logging.getLogger(__name__)
 
 
 class SaleOrderLine(models.Model):
-
     _inherit = "sale.order.line"
 
     @api.onchange("product_id")
@@ -17,7 +16,6 @@ class SaleOrderLine(models.Model):
         """
 
         if self.order_id.company_id.sale_lead_time_resource_calendar_id:
-
             today = fields.Datetime.now().replace(hour=23, minute=59, second=59)
 
             # - compute_leaves=True takes into account any global holidays in the

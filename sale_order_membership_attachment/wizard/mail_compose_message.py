@@ -2,7 +2,6 @@ from odoo import api, models
 
 
 class MailComposeMessage(models.TransientModel):
-
     _inherit = "mail.compose.message"
 
     def _is_attachment_autoselection_enabled(self):
@@ -37,7 +36,6 @@ class MailComposeMessage(models.TransientModel):
             and res["can_attach_attachment"]
             and self._is_attachment_autoselection_enabled()
         ):
-
             # The OCA module already lists all of the sale order's attachments in the
             # wizard, but this autochecks the selection boxes for all of them
             sale_order_attachment_ids = self.env["ir.attachment"].search(

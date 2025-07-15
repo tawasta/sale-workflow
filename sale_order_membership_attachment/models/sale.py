@@ -2,7 +2,6 @@ from odoo import _, models
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     def action_confirm(self):
@@ -20,7 +19,6 @@ class SaleOrder(models.Model):
         """
 
         for sale_order in self:
-
             existing_attachments = self.env["ir.attachment"].search(
                 [("res_model", "=", "sale.order"), ("res_id", "=", sale_order.id)]
             )

@@ -2,7 +2,6 @@ from odoo import models
 
 
 class PaymentTransaction(models.Model):
-
     _inherit = "payment.transaction"
 
     def _compute_sale_order_reference(self, order):

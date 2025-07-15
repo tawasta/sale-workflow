@@ -33,7 +33,6 @@ from odoo.addons import decimal_precision as dp
 
 
 class SaleOrderLine(models.Model):
-
     # 1. Private attributes
     _inherit = "sale.order.line"
 

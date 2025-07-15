@@ -2,7 +2,6 @@ from odoo import _, fields, models
 
 
 class SaleOrder(models.Model):
-
     _inherit = "sale.order"
 
     def _prepare_invoice(self):
@@ -13,7 +12,6 @@ class SaleOrder(models.Model):
             self.customer_order_number
             and self.company_id.customer_order_number_to_invoice
         ):
-
             if not invoice_vals["narration"]:
                 invoice_vals["narration"] = ""
             invoice_vals["narration"] += "\n{}: {}".format(
