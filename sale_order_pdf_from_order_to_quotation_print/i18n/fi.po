@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_pdf_from_order_to_quotation_print
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20250131\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-21 10:18+0000\n"
+"PO-Revision-Date: 2025-07-21 13:21+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: sale_order_pdf_from_order_to_quotation_print
+#. odoo-python
+#: code:addons/sale_order_pdf_from_order_to_quotation_print/models/sale_order.py:0
+#, python-format
+msgid "Only PDF documents can be attached inside a quote."
+msgstr "Vain PDF-dokumentteja voidaan liittää tarjouksen sisälle."
+
+#. module: sale_order_pdf_from_order_to_quotation_print
+#: model:ir.model.fields,field_description:sale_order_pdf_from_order_to_quotation_print.field_sale_order__sale_footer_document_id
+msgid "PDF footer document"
+msgstr "PDF alatunnisteen tiedosto"
+
+#. module: sale_order_pdf_from_order_to_quotation_print
+#: model:ir.model.fields,field_description:sale_order_pdf_from_order_to_quotation_print.field_sale_order__sale_header_document_id
+msgid "PDF header document"
+msgstr "PDF ylätunnisteen tiedosto"
+
+#. module: sale_order_pdf_from_order_to_quotation_print
+#: model:ir.model,name:sale_order_pdf_from_order_to_quotation_print.model_ir_actions_report
+msgid "Report Action"
+msgstr "Raporttin"
+
+#. module: sale_order_pdf_from_order_to_quotation_print
+#: model:ir.model,name:sale_order_pdf_from_order_to_quotation_print.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
