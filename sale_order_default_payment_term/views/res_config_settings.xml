@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.form.sale.default.payment.term</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <setting id="order_warnings" position="before">
+                <setting
+                    id="settings_default_sale_payment_term"
+                    help="Set the default payment term for sales in case if a partner has no payment term"
+                >
+                    <field name="sale_default_payment_term" />
+                </setting>
+            </setting>
+        </field>
+    </record>
+</odoo>
