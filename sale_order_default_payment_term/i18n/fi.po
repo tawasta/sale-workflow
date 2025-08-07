@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_default_payment_term
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20250131\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-06 13:07+0000\n"
+"PO-Revision-Date: 2025-08-06 16:09+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: sale_order_default_payment_term
+#: model:ir.model,name:sale_order_default_payment_term.model_res_company
+msgid "Companies"
+msgstr "Yritykset"
+
+#. module: sale_order_default_payment_term
+#: model:ir.model.fields,field_description:sale_order_default_payment_term.field_res_company__sale_default_payment_term
+#: model:ir.model.fields,field_description:sale_order_default_payment_term.field_res_config_settings__sale_default_payment_term
+msgid "Default Payment term"
+msgstr "Oletusmaksuehto"
+
+#. module: sale_order_default_payment_term
+#: model:ir.model,name:sale_order_default_payment_term.model_res_config_settings
+msgid "Procurement purchase grouping settings"
+msgstr "Asetukset"
+
+#. module: sale_order_default_payment_term
+#: model:ir.model,name:sale_order_default_payment_term.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_order_default_payment_term
+#: model_terms:ir.ui.view,arch_db:sale_order_default_payment_term.res_config_settings_view_form
+msgid ""
+"Set the default payment term for sales in case if a partner has no payment "
+"term"
+msgstr ""
+"Aseta oletusmaksuehto myynneille, jos asiakkaalla ei ole omaa maksuehtoa"
