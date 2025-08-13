@@ -93,7 +93,9 @@ class SaleBlanketOrder(models.Model):
                         ("state", "not in", ["cancel"]),
                     ]
                 )
-                sale_orders = pickings.mapped("sale_id")
+                sale_orders = pickings.sudo().mapped("sale_id").filtered(
+                    lambda s: s.company_id == self.company_id
+                )
             else:
                 # Search by SO date
                 sale_orders = self.env["sale.order"].search(
