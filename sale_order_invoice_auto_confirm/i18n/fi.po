@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0-20250725\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-26 10:14+0000\n"
-"PO-Revision-Date: 2025-08-26 13:25+0300\n"
+"POT-Creation-Date: 2025-08-26 10:43+0000\n"
+"PO-Revision-Date: 2025-08-26 13:46+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -21,12 +21,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:sale_order_invoice_auto_confirm.view_order_form_auto_confirm
 msgid ""
 "<span class=\"fa fa-bolt me-2 text-primary\" title=\"Lightning bolt\"/>\n"
-"                    <strong>Auto-confirm enabled:</strong>  \n"
+"                    <strong>Auto-confirm enabled:</strong>\n"
 "                    All products in this sale are marked as <em>auto-"
-"invoicable</em>.  \n"
+"invoicable</em>.\n"
 "                    The invoice will be confirmed automatically after creation."
 msgstr ""
-"<span j=\"0/\">\n"
+"<span class=\"fa fa-bolt me-2 text-primary\" title=\"Lightning bolt\"/>\r\n"
 "                    <strong>Automaattinen vahvistus käytössä:</strong>  \n"
 "                    Kaikki tämän tilauksen tuotteet on merkitty "
 "<em>automaattisesti laskutettaviksi</em>.  \n"
@@ -34,18 +34,8 @@ msgstr ""
 
 #. module: sale_order_invoice_auto_confirm
 #: model:ir.model.fields,field_description:sale_order_invoice_auto_confirm.field_sale_order__auto_confirm_invoice
-#, fuzzy
 msgid "Auto Confirm Invoices"
 msgstr "Vahvista laskut automaattisesti"
-
-#. module: sale_order_invoice_auto_confirm
-#: model:ir.model.fields,help:sale_order_invoice_auto_confirm.field_sale_order__auto_confirm_invoice
-msgid ""
-"If checked, invoices containing only products with this flag will be auto-"
-"confirmed."
-msgstr ""
-"Laskut, jotka sisältävät vain tällaisia tuotteita, vahvistetaan "
-"automaattisesti."
 
 #. module: sale_order_invoice_auto_confirm
 #: model:ir.model.fields,help:sale_order_invoice_auto_confirm.field_product_product__auto_confirm_sale_invoice
@@ -60,7 +50,6 @@ msgstr ""
 #. module: sale_order_invoice_auto_confirm
 #: model:ir.model.fields,field_description:sale_order_invoice_auto_confirm.field_product_product__auto_confirm_sale_invoice
 #: model:ir.model.fields,field_description:sale_order_invoice_auto_confirm.field_product_template__auto_confirm_sale_invoice
-#, fuzzy
 msgid "Invoice Auto Confirm"
 msgstr "Laskun automaattinen vahvistus"
 
@@ -72,7 +61,7 @@ msgstr "Tuote"
 #. module: sale_order_invoice_auto_confirm
 #: model:ir.model,name:sale_order_invoice_auto_confirm.model_sale_advance_payment_inv
 msgid "Sales Advance Payment Invoice"
-msgstr "Myyntilaskun luonti"
+msgstr "Myynnin ennakkolasku"
 
 #. module: sale_order_invoice_auto_confirm
 #: model:ir.model,name:sale_order_invoice_auto_confirm.model_sale_order
