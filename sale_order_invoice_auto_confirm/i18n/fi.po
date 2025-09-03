@@ -1,0 +1,79 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_invoice_auto_confirm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20250725\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-26 10:43+0000\n"
+"PO-Revision-Date: 2025-08-26 13:46+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.7\n"
+
+#. module: sale_order_invoice_auto_confirm
+#: model_terms:ir.ui.view,arch_db:sale_order_invoice_auto_confirm.view_order_form_auto_confirm
+msgid ""
+"<span class=\"fa fa-bolt me-2 text-primary\" title=\"Lightning bolt\"/>\n"
+"                    <strong>Auto-confirm enabled:</strong>\n"
+"                    All products in this sale are marked as <em>auto-"
+"invoicable</em>.\n"
+"                    The invoice will be confirmed automatically after creation."
+msgstr ""
+"<span class=\"fa fa-bolt me-2 text-primary\" title=\"Lightning bolt\"/>\r\n"
+"                    <strong>Automaattinen vahvistus käytössä:</strong>  \n"
+"                    Kaikki tämän tilauksen tuotteet on merkitty "
+"<em>automaattisesti laskutettaviksi</em>.  \n"
+"                    Lasku vahvistetaan automaattisesti luomisen jälkeen.</span>"
+
+#. module: sale_order_invoice_auto_confirm
+#: model:ir.model.fields,field_description:sale_order_invoice_auto_confirm.field_sale_order__auto_confirm_invoice
+msgid "Auto Confirm Invoices"
+msgstr "Vahvista laskut automaattisesti"
+
+#. module: sale_order_invoice_auto_confirm
+#: model:ir.model.fields,help:sale_order_invoice_auto_confirm.field_product_product__auto_confirm_sale_invoice
+#: model:ir.model.fields,help:sale_order_invoice_auto_confirm.field_product_template__auto_confirm_sale_invoice
+msgid ""
+"If checked, sale invoices containing only products with this flag will be auto-"
+"confirmed."
+msgstr ""
+"Myyntilaskut, jotka sisältävät vain tällaisia tuotteita, vahvistetaan "
+"automaattisesti."
+
+#. module: sale_order_invoice_auto_confirm
+#: model:ir.model.fields,field_description:sale_order_invoice_auto_confirm.field_product_product__auto_confirm_sale_invoice
+#: model:ir.model.fields,field_description:sale_order_invoice_auto_confirm.field_product_template__auto_confirm_sale_invoice
+msgid "Invoice Auto Confirm"
+msgstr "Laskun automaattinen vahvistus"
+
+#. module: sale_order_invoice_auto_confirm
+#: model:ir.model,name:sale_order_invoice_auto_confirm.model_product_template
+msgid "Product"
+msgstr "Tuote"
+
+#. module: sale_order_invoice_auto_confirm
+#: model:ir.model,name:sale_order_invoice_auto_confirm.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Myynnin ennakkolasku"
+
+#. module: sale_order_invoice_auto_confirm
+#: model:ir.model,name:sale_order_invoice_auto_confirm.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_order_invoice_auto_confirm
+#. odoo-python
+#: code:addons/sale_order_invoice_auto_confirm/wizards/sale_advance_payment_inv.py:0
+#, python-format
+msgid ""
+"💡 This invoice was auto-confirmed because all products allow auto-confirm."
+msgstr ""
+"💡 Tämä lasku vahvistettiin automaattisesti, koska kaikki tuotteet sallivat "
+"sen."
