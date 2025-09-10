@@ -1,6 +1,4 @@
-# models/sale_advance_payment_inv.py
-
-from odoo import models, api, _
+from odoo import models, _
 
 
 class SaleAdvancePaymentInv(models.TransientModel):
