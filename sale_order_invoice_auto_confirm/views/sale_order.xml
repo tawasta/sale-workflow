@@ -5,8 +5,15 @@
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
 
+            <field name="show_update_fpos" position="after">
+                <field
+                    name="auto_confirm_invoice"
+                    readonly="0"
+                    widget="boolean_toggle"
+                />
+            </field>
+
             <xpath expr="//header" position="after">
-                <field name="auto_confirm_invoice" invisible="1" />
                 <div
                     class="o_alert alert alert-info mt-2 mb-3"
                     role="alert"
@@ -17,6 +24,15 @@
                     <strong>Auto-confirm enabled:</strong>
                     All products in this sale are marked as <em>auto-invoicable</em>.
                     The invoice will be confirmed automatically after creation.
+
+                    <!-- disable button -->
+                    <button
+                        name="action_disable_auto_confirm"
+                        type="object"
+                        string="Disable"
+                        class="btn btn-sm btn-danger ms-2"
+                        confirm="Are you sure you want to disable auto-confirm for this sale order?"
+                    />
                 </div>
             </xpath>
         </field>
