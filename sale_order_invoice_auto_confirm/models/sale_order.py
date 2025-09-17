@@ -7,6 +7,7 @@ class SaleOrder(models.Model):
     auto_confirm_invoice = fields.Boolean(
         string="Auto Confirm Invoices",
         compute="_compute_auto_confirm_invoice",
+        store=True,
     )
 
     @api.depends("order_line.product_id")
@@ -16,6 +17,9 @@ class SaleOrder(models.Model):
             order.auto_confirm_invoice = bool(lines) and all(
                 line.product_id.auto_confirm_sale_invoice for line in lines
             )
+
+    def action_disable_auto_confirm(self):
+        self.write({"auto_confirm_invoice": False})
 
     def _create_invoices(self, grouped=False, final=False, date=None):
         invoices = super()._create_invoices(grouped=grouped, final=final, date=date)
