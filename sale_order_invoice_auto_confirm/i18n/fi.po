@@ -28,9 +28,9 @@ msgid ""
 msgstr ""
 "<span class=\"fa fa-bolt me-2 text-primary\" title=\"Lightning bolt\"/>&#13;\n"
 "                    <strong>Automaattinen vahvistus käytössä:</strong>  \n"
-"                    Kaikki tämän tilauksen tuotteet on merkitty "
-"<em>automaattisesti laskutettaviksi</em>.  \n"
-"                    Lasku vahvistetaan automaattisesti luomisen jälkeen."
+"                    Tilauksen tuotteet ovat "
+"<em>automaattisesti laskutettavia</em>.  \n"
+"                    Luotu lasku vahvistetaan automaattisesti."
 
 #. module: sale_order_invoice_auto_confirm
 #: model_terms:ir.ui.view,arch_db:sale_order_invoice_auto_confirm.view_order_form_auto_confirm
