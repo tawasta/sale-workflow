@@ -21,7 +21,7 @@
 {
     "name": "Delete purchase lines when a sale order is cancelled",
     "summary": "Cancelling a sale order deletes its related purchase lines",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.1.0",
     "category": "Sale Workflow",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
