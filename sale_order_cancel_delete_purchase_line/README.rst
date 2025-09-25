@@ -12,7 +12,8 @@ It is advicable, but not required, to use purchase_order_merge_by_sale_order
 module to have purchases linked to a specific sale order. Then deleted purchase
 lines only affects one sale order.
 
-Purchase lines are deleted only if a purchase order is in RFQ or Cancel -state.
+Purchase lines are deleted no matter in what state a purchase order is.
+Purchase orders are also set to draft by first cancelling them.
 
 Configuration
 =============
