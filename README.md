@@ -15,6 +15,7 @@ addon | version | maintainers | summary
 [sale_order_additional_note](sale_order_additional_note/) | 17.0.1.0.1 |  | Adds Html-type field to Sale Order, which is shown on its PDF print
 [sale_order_address_details](sale_order_address_details/) | 17.0.1.0.2 |  | Sale order address details
 [sale_order_analytic_distribution_required_upon_invoice](sale_order_analytic_distribution_required_upon_invoice/) | 17.0.1.0.0 |  | Creating an invoice from SO is not possible if analytic distributions are not set on lines
+[sale_order_cancel_delete_purchase_line](sale_order_cancel_delete_purchase_line/) | 17.0.1.0.0 |  | Cancelling a sale order deletes its related purchase lines
 [sale_order_client_order_ref_form_header](sale_order_client_order_ref_form_header/) | 17.0.1.0.0 |  | Reposition reference field on SO form
 [sale_order_country_group_delivery_terms](sale_order_country_group_delivery_terms/) | 17.0.1.0.2 |  | Add note from country groups to SO when confirming the sale
 [sale_order_country_group_text](sale_order_country_group_text/) | 17.0.1.0.0 |  | Get report text from country groups setting
@@ -39,7 +40,7 @@ addon | version | maintainers | summary
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title
 [sale_order_hide_proforma_in_form_view](sale_order_hide_proforma_in_form_view/) | 17.0.1.0.1 |  | Hides PRO-FORMA button in Sale Order form view
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 17.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
-[sale_order_invoice_auto_confirm](sale_order_invoice_auto_confirm/) | 17.0.1.0.0 |  | Confirm SO invoices if all products are set to be auto-confirmed
+[sale_order_invoice_auto_confirm](sale_order_invoice_auto_confirm/) | 17.0.1.1.1 |  | Confirm SO invoices if all products are set to be auto-confirmed
 [sale_order_line_configurator](sale_order_line_configurator/) | 17.0.1.0.2 |  | Adds a product configurator on sale order line
 [sale_order_line_copy](sale_order_line_copy/) | 17.0.1.0.0 |  | Duplicate single order lines or sections on sale order
 [sale_order_line_copy_purchase_price](sale_order_line_copy_purchase_price/) | 17.0.1.0.0 |  | Enable to copy Cost-field (purchase_price) when copying a SO line

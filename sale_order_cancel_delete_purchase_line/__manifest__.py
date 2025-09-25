@@ -19,28 +19,17 @@
 ##############################################################################
 
 {
-    "name": "Sale order invoice auto confirm",
-    "summary": "Confirm SO invoices if all products are set to be auto-confirmed",
-    "version": "17.0.1.1.1",
-    "category": "Accounting",
+    "name": "Delete purchase lines when a sale order is cancelled",
+    "summary": "Cancelling a sale order deletes its related purchase lines",
+    "version": "17.0.1.0.0",
+    "category": "Sale Workflow",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "auto_install": True,
-    "external_dependencies": {
-        "python": [],
-        "bin": [],
-    },
     "depends": [
-        "product",
-        "sale",
+        "sale_purchase",
     ],
-    "data": [
-        "views/product_template.xml",
-        "views/sale_order.xml",
-    ],
-    "assets": {},
-    "demo": [],
+    "data": [],
 }
