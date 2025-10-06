@@ -22,7 +22,7 @@
     "name": "Delivery address can be fetched as company from Customer",
     "summary": """Enable to automatically set Delivery address
                 even if it is a company""",
-    "version": "17.0.1.1.0",
+    "version": "17.0.1.2.0",
     "category": "Sales",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
