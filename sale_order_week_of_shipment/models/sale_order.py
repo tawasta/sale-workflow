@@ -90,8 +90,13 @@ class SaleOrder(models.Model):
             )
             # Postpone commitment date, if requested is not possible
             if commitment_date < possible_commitment_date:
+                later_year = datetime.strptime(
+                    possible_commitment_date, "%Y-%m-%d %H:%M:%S"
+                ).year
+                later_week = Week(later_year, possible_week).week
+
                 commitment_date = possible_commitment_date
-                new_week = possible_week
+                new_week = later_week
 
             record.week_of_shipment = new_week
             record.commitment_date = commitment_date
