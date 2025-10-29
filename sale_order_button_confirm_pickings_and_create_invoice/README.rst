@@ -22,7 +22,7 @@ Select a sale and use to "Confirm Sale, invoice and picking" button
 Known issues / Roadmap
 ======================
 Add here information of some possible problems of automatic processes.
-One this is for sure possible that a picking cannot be always validated
+One thing for sure is possible that a picking cannot be always validated
 if there is not enough products in stock. Perhaps a created invoice
 can miss some information, preventing its validation?
 
