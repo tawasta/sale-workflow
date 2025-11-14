@@ -1,4 +1,5 @@
 from odoo import api, models
+from odoo.exceptions import UserError
 
 
 class SaleOrderLine(models.Model):
@@ -23,6 +24,9 @@ class SaleOrderLine(models.Model):
             if product_id:
                 product = self.env["product.product"].browse(product_id)
                 route_id = product.route_ids.filtered(lambda x: x.use_on_sale_line)
+
+                if route_id and len(route_id.ids) > 1:
+                    raise UserError(_("Product %s has more than one default route", product.display_name))
 
                 if route_id:
                     values["route_id"] = route_id.id
