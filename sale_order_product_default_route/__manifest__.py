@@ -21,7 +21,7 @@
 {
     "name": "Get default Route from product to Sale order line",
     "summary": "Use default route set on a product to add it to Sale Order line",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Sale Workflow",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",
