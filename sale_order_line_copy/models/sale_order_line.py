@@ -1,5 +1,6 @@
-from odoo import _, models
 import logging
+
+from odoo import _, models
 
 _logger = logging.getLogger(__name__)
 
@@ -69,7 +70,7 @@ class SaleOrderLine(models.Model):
         self.copy(
             {
                 "order_id": self.order_id.id,
-                "name": "%s (%s)" % (self.name, _("Copy")),
+                "name": f"{self.name} ({_('Copy')})",
                 "sequence": sequence_to_use,
             }
         )

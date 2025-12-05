@@ -9,6 +9,6 @@ class SaleOrder(models.Model):
     def _prepare_invoice(self):
         # Handling for when invoicing the invoiceable lines
         self.ensure_one()
-        invoice_vals = super(SaleOrder, self)._prepare_invoice()
+        invoice_vals = super()._prepare_invoice()
         invoice_vals["header_text"] = self.header_text
         return invoice_vals

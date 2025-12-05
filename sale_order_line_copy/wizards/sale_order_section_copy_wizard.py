@@ -1,5 +1,6 @@
-from odoo import _, models, fields, api
 import logging
+
+from odoo import api, fields, models
 
 _logger = logging.getLogger(__name__)
 
@@ -13,7 +14,8 @@ class SaleOrderSectionDuplicateWizard(models.TransientModel):
     section_line_id = fields.Many2one(
         "sale.order.line",
         string="Section to Duplicate",
-        domain="[('order_id', '=', sale_order_id), ('display_type', '=', 'line_section')]",
+        domain="[('order_id', '=', sale_order_id),"
+        "('display_type', '=', 'line_section')]",
         required=True,
     )
 

@@ -50,9 +50,7 @@ class SaleAdvancePaymentInv(models.TransientModel):
 
     # 7. Action methods
     def _prepare_invoice_values(self, order, so_line):
-        invoice_vals = super(SaleAdvancePaymentInv, self)._prepare_invoice_values(
-            order, so_line
-        )
+        invoice_vals = super()._prepare_invoice_values(order, so_line)
         if order.commitment_date:
             invoice_vals["invoice_date_due"] = order.commitment_date - timedelta(
                 days=14

@@ -15,7 +15,7 @@ class SaleOrderLine(models.Model):
             if self.order_id.warranty:
                 self.order_id.warranty += "{}{}".format("\n", warranty_clause)
             else:
-                self.order_id.warranty += "{}".format(warranty_clause)
+                self.order_id.warranty += f"{warranty_clause}"
 
         return res
 

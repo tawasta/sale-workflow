@@ -20,11 +20,11 @@
 
 {
     "name": "Analytic distribution is required in SO lines when invoicing an order",
-    "summary": "Creating an invoice from SO is not possible if analytic distributions are not set on lines",
+    "summary": "Creating an invoice from SO requires analytic distribution in lines",
     "version": "17.0.1.0.0",
     "category": "Sale Management",
     "website": "https://github.com/tawasta/sale-workflow",
-    "author": "Tawasta",
+    "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,

@@ -51,7 +51,7 @@ class SaleOrder(models.Model):
     # 8. Business methods
     def _prepare_invoice(self):
         # Add delivery date to values
-        invoice_vals = super(SaleOrder, self)._prepare_invoice()
+        invoice_vals = super()._prepare_invoice()
 
         date_delivered = False
         if self.effective_date:

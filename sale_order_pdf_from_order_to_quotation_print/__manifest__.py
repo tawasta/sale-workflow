@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Insert PDF attachment to a sale order to include it in its PDF Quote print",
-    "summary": "Insert PDF attachment to a sale order to include it in its PDF Quote print",
+    "name": "Insert PDF attachment to a SO to include it in its PDF Quote print",
+    "summary": "Insert PDF attachment to a SO to include it in its PDF Quote print",
     "version": "17.0.1.0.0",
     "category": "Sales",
     "website": "https://github.com/tawasta/sale-workflow",

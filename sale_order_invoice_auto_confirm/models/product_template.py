@@ -6,6 +6,7 @@ class ProductTemplate(models.Model):
 
     auto_confirm_sale_invoice = fields.Boolean(
         string="Invoice Auto Confirm",
-        help="If checked, sale invoices containing only products with this flag will be auto-confirmed.",
+        help="If checked, sale invoices "
+        "containing only products with this flag will be auto-confirmed.",
         default=False,
     )

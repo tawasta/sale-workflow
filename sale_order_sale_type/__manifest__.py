@@ -23,7 +23,7 @@
     "summary": "Sale Type field is added to sales",
     "version": "17.0.1.0.0",
     "category": "Sale",
-    "author": "Tawasta",
+    "author": "Futural",
     "license": "AGPL-3",
     "website": "https://github.com/tawasta/sale-workflow",
     "depends": ["sale", "sale_management"],

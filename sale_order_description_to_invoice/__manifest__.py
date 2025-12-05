@@ -20,7 +20,7 @@
 
 {
     "name": "Sale Order Description to invoice",
-    "summary": "Moves the SO description to invoice description when creating an invoice",
+    "summary": "Moves the SO description to invoice description",
     "version": "17.0.1.0.0",
     "category": "Sales",
     "website": "https://github.com/tawasta/sale-workflow",
