@@ -1,4 +1,4 @@
-from odoo import api, models
+from odoo import models
 from odoo.tools import html2plaintext
 
 
@@ -6,7 +6,7 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     def action_confirm(self):
-        res = super(SaleOrder, self).action_confirm()
+        res = super().action_confirm()
 
         for order in self:
             note_lines = html2plaintext(order.note).split("\n")

@@ -1,4 +1,4 @@
-from odoo import _, api, models
+from odoo import models
 from odoo.tools import html2plaintext
 
 
@@ -8,7 +8,7 @@ class SaleOrder(models.Model):
     def action_confirm(self):
         self._add_delivery_term()
 
-        return super(SaleOrder, self).action_confirm()
+        return super().action_confirm()
 
     def _add_delivery_term(self):
         for order in self:

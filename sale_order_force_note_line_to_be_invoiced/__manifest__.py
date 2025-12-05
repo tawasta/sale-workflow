@@ -22,7 +22,7 @@
     "name": "Sale Order Force Note Line to be Invoiced",
     "summary": "Move SO line notes to invoice",
     "category": "Sale",
-    "version": "17.0.1.0",
+    "version": "17.0.1.0.0",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",

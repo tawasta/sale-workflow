@@ -23,7 +23,7 @@
     "category": "Sale",
     "summary": "Duplicate single order lines or sections on sale order",
     "website": "https://github.com/tawasta/sale-workflow",
-    "author": "Tawasta",
+    "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,

@@ -44,7 +44,8 @@ class SaleOrderLine(models.Model):
 
             if res.get("account_id"):
                 # Fetch a matching account
-                # TODO: add an option to use the default account from product (for this company)
+                # TODO: add an option to use the default account from product
+                # (for this company)
                 account = (
                     self.env["account.account"]
                     .sudo()

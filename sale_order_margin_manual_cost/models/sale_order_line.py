@@ -19,6 +19,8 @@ class SaleOrderLine(models.Model):
 
             if uom_match and cur_match and line.purchase_price != 0:
                 # Don't update the price
-                pass
+                res = False
             else:
-                super(SaleOrderLine, line)._compute_purchase_price()
+                res = super(SaleOrderLine, line)._compute_purchase_price()
+
+        return res
