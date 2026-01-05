@@ -8,4 +8,6 @@ class StockPicking(models.Model):
 
     def remove_picking(self):
         # Helper for delayed jobs
-        self.unlink()
+        for picking in self:
+            if picking.exists():
+                picking.unlink()
