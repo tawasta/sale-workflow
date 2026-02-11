@@ -72,8 +72,8 @@ class SaleOrder(models.Model):
                 if not self.customer_contact_id:
                     invoice_vals["customer_contact_id"] = self.partner_invoice_id.id
 
-                invoice_vals[
-                    "partner_id"
-                ] = self.partner_invoice_id.commercial_partner_id.id
+                invoice_vals["partner_id"] = (
+                    self.partner_invoice_id.commercial_partner_id.id
+                )
 
         return invoice_vals
