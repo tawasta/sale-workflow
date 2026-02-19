@@ -50,6 +50,7 @@ addon | version | maintainers | summary
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 17.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_forecasted_available](sale_order_line_forecasted_available/) | 17.0.1.0.0 |  | Add virtual_available field to sale order line
 [sale_order_line_limit](sale_order_line_limit/) | 17.0.1.0.0 |  | Increase number of SO lines shown before needing to use pager
+[sale_order_line_no_description_update](sale_order_line_no_description_update/) | 17.0.1.0.0 |  | Prevents automatic regeneration of sales order line descriptions from the product or its variants.
 [sale_order_line_product_internal_reference](sale_order_line_product_internal_reference/) | 17.0.1.0.0 |  | Product internal reference is shown on form lines
 [sale_order_line_product_name](sale_order_line_product_name/) | 17.0.1.0.0 |  | Product name -field is shown on form lines
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 17.0.1.0.0 |  | Add qty_available to sale order line
