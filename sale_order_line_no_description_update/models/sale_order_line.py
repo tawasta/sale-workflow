@@ -1,18 +1,17 @@
-# -*- coding: utf-8 -*-
-from odoo import api, models, fields
+from odoo import api, models
 
 
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    @api.depends('product_id')
+    @api.depends("product_id")
     def _compute_name(self):
         """
-        Don't auto-generate description from product/variants.
-        Keep whatever is already in `name` (user/manual/custom code).
+        Do not auto-generate the description from the product or variants.
+        Keep whatever is already stored in `name`.
         """
         # IMPORTANT: do not call super()
-        for line in self:
-            # Do not overwrite existing name; do nothing.
-            # If you want to force empty on new lines too, keep it as-is.
+        for _ in self:
+            # Intentionally do nothing to prevent Odoo from
+            # overwriting the existing description.
             pass

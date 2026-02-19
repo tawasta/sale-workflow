@@ -20,14 +20,15 @@
 
 {
     "name": "Sale: Do not auto-update Sales Order Line description",
-    "summary": "Prevents automatic regeneration of sales order line descriptions from the product/variants.",
+    "summary": (
+        "Prevents automatic regeneration of sales order line "
+        "descriptions from the product or its variants."
+    ),
     "version": "17.0.1.0.0",
     "category": "Sale",
     "author": "Futural",
     "license": "AGPL-3",
     "website": "https://github.com/tawasta/sale-workflow",
     "depends": ["sale", "sale_management"],
-    "data": [
-
-    ],
+    "data": [],
 }
