@@ -11,7 +11,11 @@ class SaleOrderLine(models.Model):
         Keep whatever is already stored in `name`.
         """
         # IMPORTANT: do not call super()
-        for _ in self:
-            # Intentionally do nothing to prevent Odoo from
-            # overwriting the existing description.
-            pass
+        for line in self:
+            # If empty, set a dash to avoid issues with the name field
+            # being entirely empty.
+            #
+            # If not empty, intentionally do nothing to prevent Odoo from
+            # overwriting the existing (manually written) description.
+            if not line.name:
+                line.name = "-"

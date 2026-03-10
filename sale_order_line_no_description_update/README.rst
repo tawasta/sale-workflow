@@ -5,10 +5,13 @@
 =======================================
 Sale: never auto-update SOL description
 =======================================
-This module prevents Odoo from automatically regenerating the sales order line
-description (field ``name``) when the product is set or changed. The existing
-value in ``name`` is kept as-is, allowing manual or custom descriptions to
-remain untouched.
+* This module prevents Odoo from automatically regenerating the sales order line
+  description (field ``name``) when the product is set or changed. The existing
+  value in ``name`` is kept as-is, allowing manual or custom descriptions to
+  remain untouched.
+* However, if the description field would be empty, a "-" character will be used,
+  to avoid issues with other modules' functionalities that expect the description
+  field to never be empty.
 
 Installation
 ============
@@ -38,12 +41,13 @@ Credits
 Contributors
 ------------
 * Valtteri Lattu <valtteri.lattu@futural.fi>
+* Timo Talvitie <timo.talvitie@futural.fi>
 
 Maintainer
 ----------
 
-.. image:: http://tawasta.fi/templates/tawastrap/images/logo.png
-   :alt: Oy Tawasta OS Technologies Ltd.
-   :target: http://tawasta.fi/
+.. image:: https://futural.fi/templates/tawastrap/images/logo.png
+   :alt: Futural Oy
+   :target: https://futural.fi/
 
-This module is maintained by Oy Tawasta OS Technologies Ltd.
+This module is maintained by Futural Oy
