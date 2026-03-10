@@ -23,7 +23,7 @@
     "category": "Sale",
     "summary": "Recalculate the 'Online payment' field value when duplicating SO",
     "website": "https://github.com/tawasta/sale-workflow",
-    "author": "Tawasta",
+    "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,

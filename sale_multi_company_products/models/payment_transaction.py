@@ -1,5 +1,4 @@
-from odoo import fields, models
-from odoo import Command
+from odoo import Command, models
 
 
 class PaymentTransaction(models.Model):

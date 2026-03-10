@@ -9,8 +9,10 @@ class SaleOrderLine(models.Model):
         res = super().create(vals)
 
         product_pricelist = res.product_id and res.product_id.pricelist_id
-        # grant_pricelist = product_pricelist and res.order_id.pricelist_id != product_pricelist
-        # Granting a pricelist is disabled, as it would allow getting all items with the selected pricelist
+        # grant_pricelist = product_pricelist and
+        # res.order_id.pricelist_id != product_pricelist
+        # Granting a pricelist is disabled,
+        # as it would allow getting all items with the selected pricelist
         grant_pricelist = False
 
         if grant_pricelist:

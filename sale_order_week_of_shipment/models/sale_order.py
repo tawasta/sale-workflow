@@ -1,5 +1,6 @@
 import logging
 from datetime import datetime
+
 from isoweek import Week
 
 from odoo import api, fields, models
@@ -26,7 +27,7 @@ class SaleOrder(models.Model):
 
     def _default_week_of_shipment(self):
         current_week = datetime.today().isocalendar()[1]
-        _logger.debug("Current week: {}".format(current_week))
+        _logger.debug(f"Current week: {current_week}")
 
         return current_week
 
@@ -48,7 +49,7 @@ class SaleOrder(models.Model):
     @api.onchange("week_of_shipment", "expected_date")
     def _compute_week_of_shipment(self):
         current_week = datetime.today().isocalendar()[1]
-        _logger.debug("Current week: {}".format(current_week))
+        _logger.debug(f"Current week: {current_week}")
 
         additional_weeks = 0
         apply_additional_week_rule = (
@@ -66,14 +67,10 @@ class SaleOrder(models.Model):
         ):
             additional_weeks = self.company_id.week_of_shipment_additional_weeks
 
-        _logger.debug(
-            "Apply additional week rule: {}".format(apply_additional_week_rule)
-        )
+        _logger.debug(f"Apply additional week rule: {apply_additional_week_rule}")
 
         for record in self:
-            _logger.debug(
-                "Requested week of shipment {}".format(record.week_of_shipment)
-            )
+            _logger.debug(f"Requested week of shipment {record.week_of_shipment}")
             if not record.week_of_shipment:
                 continue
 

@@ -1,4 +1,4 @@
-from odoo import models, _
+from odoo import _, models
 
 
 class SaleAdvancePaymentInv(models.TransientModel):
@@ -24,7 +24,8 @@ class SaleAdvancePaymentInv(models.TransientModel):
                 invoice.action_post()
                 invoice.message_post(
                     body=_(
-                        "💡 This invoice was auto-confirmed because all products allow auto-confirm."
+                        "💡 This invoice was auto-confirmed "
+                        "because all products allow auto-confirm."
                     )
                 )
         return res

@@ -14,7 +14,7 @@ addon | version | maintainers | summary
 [sale_multi_company_products](sale_multi_company_products/) | 17.0.1.1.0 |  | Allows selling multiple company products on a single sale
 [sale_order_additional_note](sale_order_additional_note/) | 17.0.1.0.1 |  | Adds Html-type field to Sale Order, which is shown on its PDF print
 [sale_order_address_details](sale_order_address_details/) | 17.0.1.0.2 |  | Sale order address details
-[sale_order_analytic_distribution_required_upon_invoice](sale_order_analytic_distribution_required_upon_invoice/) | 17.0.1.0.0 |  | Creating an invoice from SO is not possible if analytic distributions are not set on lines
+[sale_order_analytic_distribution_required_upon_invoice](sale_order_analytic_distribution_required_upon_invoice/) | 17.0.1.0.0 |  | Creating an invoice from SO requires analytic distribution in lines
 [sale_order_button_confirm_pickings_and_create_invoice](sale_order_button_confirm_pickings_and_create_invoice/) | 17.0.1.0.0 |  | Add a button to confirm sale, invoice and picking
 [sale_order_cancel_delete_purchase_line](sale_order_cancel_delete_purchase_line/) | 17.0.1.1.0 |  | Cancelling a sale order deletes its related purchase lines
 [sale_order_client_order_ref_form_header](sale_order_client_order_ref_form_header/) | 17.0.1.0.0 |  | Reposition reference field on SO form
@@ -29,14 +29,14 @@ addon | version | maintainers | summary
 [sale_order_delivery_place](sale_order_delivery_place/) | 17.0.1.0.0 |  | Delivery Terms on Sale Order
 [sale_order_delivery_term](sale_order_delivery_term/) | 17.0.1.0.1 |  | Sale Order Delivery term
 [sale_order_description](sale_order_description/) | 17.0.1.0.1 |  | Adds a description (an internal note) to sale order
-[sale_order_description_to_invoice](sale_order_description_to_invoice/) | 17.0.1.0.0 |  | Moves the SO description to invoice description when creating an invoice
+[sale_order_description_to_invoice](sale_order_description_to_invoice/) | 17.0.1.0.0 |  | Moves the SO description to invoice description
 [sale_order_description_to_stock_picking](sale_order_description_to_stock_picking/) | 17.0.1.0.0 |  | Adds sale order description to stock picking
 [sale_order_do_not_show_cancel_wizard](sale_order_do_not_show_cancel_wizard/) | 17.0.1.0.0 |  | Do not show Cancel wizard when cancelling a sale order
 [sale_order_duplicate_customer_reference](sale_order_duplicate_customer_reference/) | 17.0.1.0.0 |  | When duplicating also copy customer reference
 [sale_order_edit_order_name_in_quotation](sale_order_edit_order_name_in_quotation/) | 17.0.2.0.0 |  | Enable to edit Sale Order name in Quotation state
 [sale_order_edit_order_name_in_quotation_limit_name](sale_order_edit_order_name_in_quotation_limit_name/) | 17.0.1.0.0 |  | Puts the limit to sale order names to 13 characters
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 17.0.1.2.0 |  | Enable to automatically set Delivery address even if it is a company
-[sale_order_force_note_line_to_be_invoiced](sale_order_force_note_line_to_be_invoiced/) | 17.0.1.0 |  | Move SO line notes to invoice
+[sale_order_force_note_line_to_be_invoiced](sale_order_force_note_line_to_be_invoiced/) | 17.0.1.0.0 |  | Move SO line notes to invoice
 [sale_order_header_analytic_account_ignored_on_invoice](sale_order_header_analytic_account_ignored_on_invoice/) | 17.0.1.0.0 |  | Disable adding analytic account info from SO header to invoice lines
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title
 [sale_order_hide_proforma_in_form_view](sale_order_hide_proforma_in_form_view/) | 17.0.1.0.1 |  | Hides PRO-FORMA button in Sale Order form view
@@ -50,6 +50,7 @@ addon | version | maintainers | summary
 [sale_order_line_delivery_time](sale_order_line_delivery_time/) | 17.0.1.0.0 |  | Sale Order Line Delivery Time
 [sale_order_line_forecasted_available](sale_order_line_forecasted_available/) | 17.0.1.0.0 |  | Add virtual_available field to sale order line
 [sale_order_line_limit](sale_order_line_limit/) | 17.0.1.0.0 |  | Increase number of SO lines shown before needing to use pager
+[sale_order_line_no_description_update](sale_order_line_no_description_update/) | 17.0.1.0.0 |  | Prevents automatic regeneration of sales order line descriptions from the product or its variants.
 [sale_order_line_product_internal_reference](sale_order_line_product_internal_reference/) | 17.0.1.0.0 |  | Product internal reference is shown on form lines
 [sale_order_line_product_name](sale_order_line_product_name/) | 17.0.1.0.0 |  | Product name -field is shown on form lines
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 17.0.1.0.0 |  | Add qty_available to sale order line
@@ -60,7 +61,7 @@ addon | version | maintainers | summary
 [sale_order_onchange_commitment_date_is_expected_date](sale_order_onchange_commitment_date_is_expected_date/) | 17.0.1.0.0 |  | Commitment date is the same as Expected when changing Expected date
 [sale_order_partner_delivery_method](sale_order_partner_delivery_method/) | 17.0.1.0.0 |  | Delivery method is assigned based on partner's delivery method
 [sale_order_partner_tag_to_crm_tag](sale_order_partner_tag_to_crm_tag/) | 17.0.1.0.0 |  | Tag from partner category to sale order CRM tag
-[sale_order_pdf_from_order_to_quotation_print](sale_order_pdf_from_order_to_quotation_print/) | 17.0.1.0.0 |  | Insert PDF attachment to a sale order to include it in its PDF Quote print
+[sale_order_pdf_from_order_to_quotation_print](sale_order_pdf_from_order_to_quotation_print/) | 17.0.1.0.0 |  | Insert PDF attachment to a SO to include it in its PDF Quote print
 [sale_order_pricelist_price_by_categ_qty](sale_order_pricelist_price_by_categ_qty/) | 17.0.1.0.0 |  | Set sale order line price by pricelist quantities
 [sale_order_product_pricelist](sale_order_product_pricelist/) | 17.0.1.0.1 |  | If product has a pricelist, use it for SO lines
 [sale_order_proforma_country_group_text](sale_order_proforma_country_group_text/) | 17.0.1.0.0 |  | Get report text from country groups setting

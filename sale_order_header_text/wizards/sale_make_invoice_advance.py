@@ -6,9 +6,7 @@ class SaleAdvancePaymentInv(models.TransientModel):
 
     def _create_invoice(self, order, so_line, amount):
         # Handling for when invoicing a down payment
-        invoice = super(SaleAdvancePaymentInv, self)._create_invoice(
-            order, so_line, amount
-        )
+        invoice = super()._create_invoice(order, so_line, amount)
 
         if order.header_text:
             invoice.header_text = order.header_text

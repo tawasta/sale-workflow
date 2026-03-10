@@ -9,7 +9,7 @@ class SaleOrder(models.Model):
         invoice_vals = super()._prepare_invoice()
 
         if self.customer_contact_id:
-            narration = _("Customer contact: {}".format(self.customer_contact_id.name))
+            narration = _(f"Customer contact: {self.customer_contact_id.name}")
             if invoice_vals.get("narration"):
                 narration = f"{invoice_vals['narration']}\n{narration}"
             invoice_vals["narration"] = narration

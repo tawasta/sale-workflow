@@ -1,5 +1,4 @@
-from odoo import api
-from odoo import models
+from odoo import api, models
 from odoo.exceptions import UserError
 
 
@@ -9,7 +8,9 @@ class AccountMoveSend(models.TransientModel):
     @api.depends("move_ids")
     def _compute_company_id(self):
         try:
-            super()._compute_company_id()
+            res = super()._compute_company_id()
         except UserError:
             # Override "You can only send from the same company"-error
+            res = False
             pass
+        return res

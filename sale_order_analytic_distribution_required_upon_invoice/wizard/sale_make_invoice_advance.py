@@ -19,7 +19,8 @@ class SaleAdvancePaymentInv(models.TransientModel):
                     if not line.analytic_distribution:
                         msg = (
                             _(
-                                "The line with a product %s requires an analytic distribution"
+                                "The line with a product %s "
+                                "requires an analytic distribution"
                             )
                             % line.product_id.name
                         )

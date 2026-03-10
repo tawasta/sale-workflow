@@ -1,4 +1,4 @@
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 
 
 class SaleOrder(models.Model):
@@ -34,7 +34,8 @@ class SaleOrder(models.Model):
                 invoice.action_post()
                 invoice.message_post(
                     body=_(
-                        "💡 This invoice was auto-confirmed because all products allow auto-confirm."
+                        "💡 This invoice was auto-confirmed "
+                        "because all products allow auto-confirm."
                     )
                 )
 
