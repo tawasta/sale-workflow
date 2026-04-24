@@ -36,6 +36,7 @@ addon | version | maintainers | summary
 [sale_order_edit_order_name_in_quotation](sale_order_edit_order_name_in_quotation/) | 17.0.2.0.0 |  | Enable to edit Sale Order name in Quotation state
 [sale_order_edit_order_name_in_quotation_limit_name](sale_order_edit_order_name_in_quotation_limit_name/) | 17.0.1.0.0 |  | Puts the limit to sale order names to 13 characters
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 17.0.1.2.0 |  | Enable to automatically set Delivery address even if it is a company
+[sale_order_force_delivery_address_as_customer](sale_order_force_delivery_address_as_customer/) | 17.0.1.0.0 |  | Force to always use Customer as the Delivery Address on Sale Orders
 [sale_order_force_note_line_to_be_invoiced](sale_order_force_note_line_to_be_invoiced/) | 17.0.1.0.0 |  | Move SO line notes to invoice
 [sale_order_header_analytic_account_ignored_on_invoice](sale_order_header_analytic_account_ignored_on_invoice/) | 17.0.1.0.0 |  | Disable adding analytic account info from SO header to invoice lines
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title
