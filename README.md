@@ -20,6 +20,7 @@ addon | version | maintainers | summary
 [sale_order_client_order_ref_form_header](sale_order_client_order_ref_form_header/) | 17.0.1.0.0 |  | Reposition reference field on SO form
 [sale_order_country_group_delivery_terms](sale_order_country_group_delivery_terms/) | 17.0.1.0.2 |  | Add note from country groups to SO when confirming the sale
 [sale_order_country_group_text](sale_order_country_group_text/) | 17.0.1.0.0 |  | Get report text from country groups setting
+[sale_order_create_regular_invoice_and_bypass_wizard](sale_order_create_regular_invoice_and_bypass_wizard/) | 17.0.1.0.0 |  | Bypass the invoice type selection (regular vs downpayment)
 [sale_order_customer_contact](sale_order_customer_contact/) | 17.0.1.0.2 |  | Customer Contact for Sale Orders
 [sale_order_customer_contact_to_narration](sale_order_customer_contact_to_narration/) | 17.0.1.0.0 |  | Adds contact name to invoice as an extra information
 [sale_order_customer_is_company](sale_order_customer_is_company/) | 17.0.1.0.0 |  | Select only customers that are companies to sale orders

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_order_form_quick_invoice" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.bypass.invoice.wizard</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+
+
+            <button id="create_invoice" position="after">
+                <button
+                    name="action_create_regular_invoice"
+                    id="create_regular_invoice"
+                    string="Create Regular Invoice"
+                    type="object"
+                    class="btn-primary"
+                    invisible="invoice_status != 'to invoice'"
+                    groups="sales_team.group_sale_salesman"
+                />
+            </button>
+
+            <!-- Note: in core form there are two "Create Invoice"
+                buttons sharing the same name -->
+            <button id="create_invoice" position="attributes">
+                <attribute
+                    name="invisible"
+                    add="hide_standard_create_invoice_button"
+                    separator=" or "
+                />
+            </button>
+            <button id="create_invoice_percentage" position="attributes">
+                <attribute
+                    name="invisible"
+                    add="hide_standard_create_invoice_button"
+                    separator=" or "
+                />
+            </button>
+
+            <field name="locked" position="after">
+                <field name="hide_standard_create_invoice_button" invisible="1" />
+            </field>
+
+        </field>
+    </record>
+
+</odoo>
