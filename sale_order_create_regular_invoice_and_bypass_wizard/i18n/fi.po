@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_create_regular_invoice_and_bypass_wizard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20250428\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-12 12:30+0000\n"
+"PO-Revision-Date: 2026-05-12 12:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#: model:ir.model,name:sale_order_create_regular_invoice_and_bypass_wizard.model_res_company
+msgid "Companies"
+msgstr "Yritykset"
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#: model:ir.model,name:sale_order_create_regular_invoice_and_bypass_wizard.model_res_config_settings
+msgid "Config Settings"
+msgstr "Asetukset"
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#: model_terms:ir.ui.view,arch_db:sale_order_create_regular_invoice_and_bypass_wizard.view_order_form_quick_invoice
+msgid "Create Regular Invoice"
+msgstr "Luo tavallinen lasku"
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#: model:ir.model.fields,field_description:sale_order_create_regular_invoice_and_bypass_wizard.field_res_config_settings__hide_standard_create_invoice_button
+#: model_terms:ir.ui.view,arch_db:sale_order_create_regular_invoice_and_bypass_wizard.res_config_settings_view_form_sale_quick_invoice
+msgid "Hide standard 'Create Invoice' button"
+msgstr "Piilota 'Luo lasku' -vakiopainike"
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#: model:ir.model.fields,field_description:sale_order_create_regular_invoice_and_bypass_wizard.field_res_company__hide_standard_create_invoice_button
+#: model:ir.model.fields,field_description:sale_order_create_regular_invoice_and_bypass_wizard.field_sale_order__hide_standard_create_invoice_button
+msgid "Hide standard 'Create Invoice' button on sale orders"
+msgstr "Piilota 'Luo lasku' -vakiopainike myyntitilaukselta"
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#: model_terms:ir.ui.view,arch_db:sale_order_create_regular_invoice_and_bypass_wizard.res_config_settings_view_form_sale_quick_invoice
+msgid ""
+"Hide the standard 'Create Invoice' button on sale orders, leaving only the "
+"'Create Regular Invoice' one-click button."
+msgstr ""
+"Piilottaa 'Luo lasku' -vakiopainikkeen, jättäen näkyviin ainoastaan "
+"'Luo tavallinen lasku' -pikapainikkeen."
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#: model:ir.model.fields,help:sale_order_create_regular_invoice_and_bypass_wizard.field_res_config_settings__hide_standard_create_invoice_button
+msgid ""
+"If enabled, the standard Odoo 'Create Invoice' button (which opens the down-"
+"payment / regular invoice wizard) is hidden from the sale order form. Only "
+"the 'Create Regular Invoice' button remains."
+msgstr ""
+"Jos käytössä, Odoon vakiolaskunluontipainike (joka avaa valintanäkymän "
+"ennakko- tai tavallisen laskun valintaa varten) piilotetaan kokonaan, ja "
+"ainoastaan tavallisen laskun luontipainike näytetään." 
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#: model_terms:ir.ui.view,arch_db:sale_order_create_regular_invoice_and_bypass_wizard.res_config_settings_view_form_sale_quick_invoice
+msgid "Invoice Creation Wizard"
+msgstr "Laskun luonti"
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#: model:ir.model,name:sale_order_create_regular_invoice_and_bypass_wizard.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
+
+#. module: sale_order_create_regular_invoice_and_bypass_wizard
+#. odoo-python
+#: code:addons/sale_order_create_regular_invoice_and_bypass_wizard/models/sale_order.py:0
+#, python-format
+msgid "There is nothing to invoice on this sale order."
+msgstr "Myyntitilauksella ei ole laskutettavaa"
