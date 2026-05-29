@@ -1,4 +1,11 @@
-from odoo import fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError, ValidationError
+from odoo.fields import Command
+from odoo.osv import expression
+from odoo.tools.float_utils import float_is_zero, float_round
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 class SaleOrder(models.Model):
@@ -100,3 +107,121 @@ class SaleOrder(models.Model):
             line["company_id"] = self.company_id.id
 
         return res
+
+    def _get_program_domain(self):
+        self.ensure_one()
+        today = fields.Date.context_today(self)
+        allowed_company_ids = [self.company_id.id]
+        if self.company_id.parent_id:
+            allowed_company_ids.append(self.company_id.parent_id.id)
+
+        # Lisää myös tuotteiden yritykset mukaan
+        product_company_ids = self.order_line.mapped('product_id.company_id.id')
+        allowed_company_ids += product_company_ids
+
+        # Poista duplikaatit ja None-arvot
+        allowed_company_ids = list(set(filter(None, allowed_company_ids)))
+
+        return [('active', '=', True), ('sale_ok', '=', True),
+                *self.env['loyalty.program']._check_company_domain(allowed_company_ids),
+                '|', ('pricelist_ids', '=', False), ('pricelist_ids', 'in', [self.pricelist_id.id]),
+                '|', ('date_from', '=', False), ('date_from', '<=', today),
+                '|', ('date_to', '=', False), ('date_to', '>=', today)]
+
+
+    def _get_trigger_domain(self):
+        self.ensure_one()
+        today = fields.Date.context_today(self)
+        allowed_company_ids = [self.company_id.id]
+        if self.company_id.parent_id:
+            allowed_company_ids.append(self.company_id.parent_id.id)
+
+        # Lisää myös tuotteiden yritykset mukaan
+        product_company_ids = self.order_line.mapped('product_id.company_id.id')
+        allowed_company_ids += product_company_ids
+
+        allowed_company_ids = list(set(filter(None, allowed_company_ids)))
+
+        return [('active', '=', True), ('program_id.sale_ok', '=', True),
+                *self.env['loyalty.program']._check_company_domain(allowed_company_ids),
+                '|', ('program_id.pricelist_ids', '=', False),
+                     ('program_id.pricelist_ids', 'in', [self.pricelist_id.id]),
+                '|', ('program_id.date_from', '=', False), ('program_id.date_from', '<=', today),
+                '|', ('program_id.date_to', '=', False), ('program_id.date_to', '>=', today)]
+
+
+
+    def _try_apply_code(self, code):
+        """
+        Tries to apply a promotional code to the sales order.
+        It can be either from a coupon or a program rule.
+
+        Returns a dict with the following possible keys:
+         - 'not_found': Populated with True if the code did not yield any result.
+         - 'error': Any error message that could occur.
+         OR The result of `_get_claimable_rewards` with the found or newly created coupon,
+         it will be empty if the coupon was consumed completely.
+        """
+        self.ensure_one()
+
+        base_domain = self._get_trigger_domain()
+        domain = expression.AND([base_domain, [('mode', '=', 'with_code'), ('code', '=', code)]])
+        rule = self.env['loyalty.rule'].search(domain, limit=1)  # hae yksi sääntö koodilla
+        program = rule.program_id if rule else False
+        coupon = False
+
+        if rule and rule in self.code_enabled_rule_ids:
+            return {'error': _('This promo code is already applied.')}
+
+        # Jos sääntöä ei löytynyt, yritä etsiä kuponki
+        if not program:
+            coupon = self.env['loyalty.card'].search([('code', '=', code)], limit=1)
+            if not coupon:
+                return {'error': _('This code is invalid (%s).', code), 'not_found': True}
+
+            program = coupon.program_id
+            # Validointi, että ohjelma on aktiivinen ja oikea
+            if not program or not program.active:
+                return {'error': _('This code is invalid (%s).', code), 'not_found': True}
+
+            # Tarkistetaan, että kuponkiohjelma löytyy myös tämän myyntitilauksen domainilta
+            if not coupon.program_id.reward_ids or not coupon.program_id.filtered_domain(self._get_program_domain()):
+                return {'error': _('This code is invalid (%s).', code), 'not_found': True}
+
+            # Tarkistetaan kuponki vanhentuminen ja käyttöoikeus
+            if coupon.expiration_date and coupon.expiration_date < fields.Date.today():
+                return {'error': _('This coupon is expired.')}
+            if coupon.points < min(coupon.program_id.reward_ids.mapped('required_points')):
+                return {'error': _('This coupon has already been used.')}
+
+        # Tarkistetaan ohjelman käyttörajat (max usage jne)
+        if program.limit_usage and program.total_order_count >= program.max_usage:
+            return {'error': _('This code is expired (%s).', code)}
+
+        # Lisätään sääntö käyttöön, jos löytyi
+        if rule:
+            self.code_enabled_rule_ids |= rule
+
+        program_is_applied = program in self._get_points_programs()
+
+        if coupon:
+            self.applied_coupon_ids += coupon
+
+        if program_is_applied:
+            # Päivitetään pisteet ja palkinnot, kun ohjelma on jo käytössä
+            self._update_programs_and_rewards()
+        elif program.applies_on != 'future' or not coupon:
+            apply_result = self._try_apply_program(program, coupon)
+            if 'error' in apply_result and (not program.is_nominative or (program.is_nominative and not coupon)):
+                if rule:
+                    self.code_enabled_rule_ids -= rule
+                if coupon and not apply_result.get('already_applied', False):
+                    self.applied_coupon_ids -= coupon
+                return apply_result
+            coupon = apply_result.get('coupon', self.env['loyalty.card'])
+
+        return self._get_claimable_rewards(forced_coupons=coupon)
+
+
+
+
