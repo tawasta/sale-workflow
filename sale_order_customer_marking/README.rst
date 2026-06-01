@@ -22,7 +22,9 @@ Usage
 
 Known issues / Roadmap
 ======================
-\-
+* The positioning of the fields makes better sense if you also install 
+  `sale_order_client_order_ref_form_header`, then both the Customer
+  Reference and Customer Marking get positioned under Payment Terms.
 
 Credits
 =======
