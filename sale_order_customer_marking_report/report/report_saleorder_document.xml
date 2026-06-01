@@ -4,14 +4,17 @@
         id="report_saleorder_document_customer_marking"
         inherit_id="sale.report_saleorder_document"
     >
-        <xpath expr="//div[@id='informations']/div[span[@t-field='doc.user_id']]" position="after">
+        <xpath
+            expr="//div[@id='informations']/div[span[@t-field='doc.user_id']]"
+            position="after"
+        >
             <div
                 t-if="doc.customer_marking"
                 class="col-auto col-3 mw-100 mb-2"
                 name="informations_customer_marking"
             >
-                <strong>Customer Marking:</strong><br/>
-                <span class="m-0" t-field="doc.customer_marking"/>
+                <strong>Customer Marking:</strong><br />
+                <span class="m-0" t-field="doc.customer_marking" />
             </div>
         </xpath>
     </template>
