@@ -18,6 +18,7 @@ addon | version | maintainers | summary
 [sale_order_button_confirm_pickings_and_create_invoice](sale_order_button_confirm_pickings_and_create_invoice/) | 17.0.1.0.0 |  | Add a button to confirm sale, invoice and picking
 [sale_order_cancel_delete_purchase_line](sale_order_cancel_delete_purchase_line/) | 17.0.1.1.0 |  | Cancelling a sale order deletes its related purchase lines
 [sale_order_client_order_ref_form_header](sale_order_client_order_ref_form_header/) | 17.0.1.0.0 |  | Reposition reference field on SO form
+[sale_order_commitment_date_header](sale_order_commitment_date_header/) | 17.0.1.0.0 |  | Reposition Delivery Date field on SO form
 [sale_order_country_group_delivery_terms](sale_order_country_group_delivery_terms/) | 17.0.1.0.2 |  | Add note from country groups to SO when confirming the sale
 [sale_order_country_group_text](sale_order_country_group_text/) | 17.0.1.0.0 |  | Get report text from country groups setting
 [sale_order_create_regular_invoice_and_bypass_wizard](sale_order_create_regular_invoice_and_bypass_wizard/) | 17.0.1.0.0 |  | Bypass the invoice type selection (regular vs downpayment)

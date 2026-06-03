@@ -2,15 +2,12 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==================================
-Sale Order: Customer Marking Field
-==================================
+=============================================
+Sale Order: Show Delivery Date in Form Header
+=============================================
 
-* Adds a freetext field to SO, to supplement the existing Customer Reference
-
-Installation
-============
-\-
+* Reposition Delivery Date (i.e. `commitment_date`) field on 
+  Sale Order form
 
 Configuration
 =============
@@ -18,19 +15,20 @@ Configuration
 
 Usage
 =====
-\-
+* Just open sale order form, Delivery Date now shows at the top section
+  instead of inside notebook
 
 Known issues / Roadmap
 ======================
-* The positioning of the fields makes better sense if you also install 
-  `sale_order_client_order_ref_form_header`, then both the Customer
-  Reference and Customer Marking get positioned under Payment Terms.
+\-
 
 Credits
 =======
 
 Contributors
 ------------
+
+* Timo Kekäläinen <timo.kekalainen@futural.fi>
 * Timo Talvitie <timo.talvitie@futural.fi>
 
 Maintainer
