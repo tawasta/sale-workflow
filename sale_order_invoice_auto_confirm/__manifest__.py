@@ -21,7 +21,7 @@
 {
     "name": "Sale order invoice auto confirm",
     "summary": "Confirm SO invoices if all products are set to be auto-confirmed",
-    "version": "17.0.1.1.1",
+    "version": "17.0.1.1.2",
     "category": "Accounting",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",

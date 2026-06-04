@@ -20,7 +20,7 @@ class SaleAdvancePaymentInv(models.TransientModel):
                 line.product_id.auto_confirm_sale_invoice for line in lines
             )
 
-            if auto_confirm_invoice:
+            if auto_confirm_invoice and invoice.state == "draft":
                 invoice.action_post()
                 invoice.message_post(
                     body=_(
