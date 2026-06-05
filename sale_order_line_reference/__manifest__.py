@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Futural Oy
-#    Copyright 2025 Futural Oy (https://futural.fi)
+#    Copyright 2026 Futural Oy (https://futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,28 +19,17 @@
 ##############################################################################
 
 {
-    "name": "Sale order invoice auto confirm",
-    "summary": "Confirm SO invoices if all products are set to be auto-confirmed",
-    "version": "17.0.1.1.2",
-    "category": "Accounting",
+    "name": "Sale Order Line – Reference information",
+    "summary": "Reference information of a sale order line",
+    "version": "17.0.1.0.0",
+    "category": "Sale",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "auto_install": True,
-    "external_dependencies": {
-        "python": [],
-        "bin": [],
-    },
     "depends": [
-        "product",
         "sale",
     ],
-    "data": [
-        "views/product_template.xml",
-        "views/sale_order.xml",
-    ],
-    "assets": {},
-    "demo": [],
+    "data": ["views/sale_order_view.xml"],
 }

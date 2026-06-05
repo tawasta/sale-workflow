@@ -46,7 +46,7 @@ addon | version | maintainers | summary
 [sale_order_header_text](sale_order_header_text/) | 17.0.1.0.0 |  | New field for SO header/title
 [sale_order_hide_proforma_in_form_view](sale_order_hide_proforma_in_form_view/) | 17.0.1.0.1 |  | Hides PRO-FORMA button in Sale Order form view
 [sale_order_invoice_advance_invoice_date_due](sale_order_invoice_advance_invoice_date_due/) | 17.0.1.0.0 |  | Sets advance invoice date due 14 days before order commitment date
-[sale_order_invoice_auto_confirm](sale_order_invoice_auto_confirm/) | 17.0.1.1.1 |  | Confirm SO invoices if all products are set to be auto-confirmed
+[sale_order_invoice_auto_confirm](sale_order_invoice_auto_confirm/) | 17.0.1.1.2 |  | Confirm SO invoices if all products are set to be auto-confirmed
 [sale_order_line_configurator](sale_order_line_configurator/) | 17.0.1.0.2 |  | Adds a product configurator on sale order line
 [sale_order_line_copy](sale_order_line_copy/) | 17.0.1.0.0 |  | Duplicate single order lines or sections on sale order
 [sale_order_line_copy_purchase_price](sale_order_line_copy_purchase_price/) | 17.0.1.0.0 |  | Enable to copy Cost-field (purchase_price) when copying a SO line
@@ -59,6 +59,7 @@ addon | version | maintainers | summary
 [sale_order_line_product_internal_reference](sale_order_line_product_internal_reference/) | 17.0.1.0.0 |  | Product internal reference is shown on form lines
 [sale_order_line_product_name](sale_order_line_product_name/) | 17.0.1.0.0 |  | Product name -field is shown on form lines
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 17.0.1.0.0 |  | Add qty_available to sale order line
+[sale_order_line_reference](sale_order_line_reference/) | 17.0.1.0.0 |  | Reference information of a sale order line
 [sale_order_line_tax_info_to_note_field](sale_order_line_tax_info_to_note_field/) | 17.0.1.0.1 |  | Writes Sale Order Lines' tax info to SO's Note field
 [sale_order_margin_manual_cost](sale_order_margin_manual_cost/) | 17.0.1.0.0 |  | Disable automated cost update from SO lines
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 17.0.1.0.0 |  | Enables confirming multiple sales at once
