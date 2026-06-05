@@ -59,6 +59,7 @@ addon | version | maintainers | summary
 [sale_order_line_product_internal_reference](sale_order_line_product_internal_reference/) | 17.0.1.0.0 |  | Product internal reference is shown on form lines
 [sale_order_line_product_name](sale_order_line_product_name/) | 17.0.1.0.0 |  | Product name -field is shown on form lines
 [sale_order_line_qty_available](sale_order_line_qty_available/) | 17.0.1.0.0 |  | Add qty_available to sale order line
+[sale_order_line_reference](sale_order_line_reference/) | 17.0.1.0.0 |  | Reference information of a sale order line
 [sale_order_line_tax_info_to_note_field](sale_order_line_tax_info_to_note_field/) | 17.0.1.0.1 |  | Writes Sale Order Lines' tax info to SO's Note field
 [sale_order_margin_manual_cost](sale_order_margin_manual_cost/) | 17.0.1.0.0 |  | Disable automated cost update from SO lines
 [sale_order_mass_confirm](sale_order_mass_confirm/) | 17.0.1.0.0 |  | Enables confirming multiple sales at once
