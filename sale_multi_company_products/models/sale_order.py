@@ -20,7 +20,7 @@ class SaleOrder(models.Model):
         for order in self:
             lines = order._get_invoiceable_lines()
 
-            companies = lines.mapped("product_id.company_id")
+            companies = lines.mapped("product_id.variant_company_id")
             if len(companies) == 1 and companies == self.company_id:
                 # No custom processing for one company
                 return super()._create_invoices(grouped, final, date)
@@ -59,7 +59,8 @@ class SaleOrder(models.Model):
 
         if self.current_invoice_company_id:
             lines = lines.filtered(
-                lambda r: r.product_id.company_id == self.current_invoice_company_id
+                lambda r: r.product_id.variant_company_id
+                == self.current_invoice_company_id
             )
 
         return lines

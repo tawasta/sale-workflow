@@ -1,5 +1,12 @@
 from odoo import api, fields, models
 
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
+
+    product_id = fields.Many2one(
+        check_company=False,
+    )
+
 
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
@@ -15,10 +22,10 @@ class SaleOrderLine(models.Model):
         for record in self:
             if (
                 record.product_id
-                and record.product_id.company_id
-                and record.product_id.company_id != record.company_id
+                and record.product_id.variant_company_id
+                and record.product_id.variant_company_id != record.company_id
             ):
-                record.company_id = record.product_id.company_id.id
+                record.company_id = record.product_id.variant_company_id.id
 
         return res
 
@@ -28,10 +35,10 @@ class SaleOrderLine(models.Model):
         for record in self:
             if (
                 record.product_id
-                and record.product_id.company_id
-                and record.product_id.company_id != record.company_id
+                and record.product_id.variant_company_id
+                and record.product_id.variant_company_id != record.company_id
             ):
-                record.company_id = record.product_id.company_id.id
+                record.company_id = record.product_id.variant_company_id.id
 
         return res
 
