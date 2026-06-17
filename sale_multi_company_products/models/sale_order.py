@@ -1,4 +1,4 @@
-from odoo import fields, models, _
+from odoo import _, fields, models
 from odoo.exceptions import UserError
 
 
@@ -7,7 +7,10 @@ class SaleOrder(models.Model):
 
     current_invoice_company_id = fields.Many2one(
         string="Current company to invoice",
-        help="Technical field used while splitting invoices by product variant company.",
+        help=(
+            "Technical field used while splitting invoices by product "
+            "variant company."
+        ),
         comodel_name="res.company",
         readonly=True,
         copy=False,
@@ -18,21 +21,29 @@ class SaleOrder(models.Model):
 
     def _get_variant_company_invoiceable_lines(self, final=False):
         self.ensure_one()
-        return super(SaleOrder, self)._get_invoiceable_lines(final=final).filtered(
-            lambda line: (
-                not line.display_type
-                and line.product_id
-                and line.product_id.variant_company_id
+        return (
+            super()
+            ._get_invoiceable_lines(final=final)
+            .filtered(
+                lambda line: (
+                    not line.display_type
+                    and line.product_id
+                    and line.product_id.variant_company_id
+                )
             )
         )
 
     def _get_neutral_invoiceable_lines(self, final=False):
         self.ensure_one()
-        return super(SaleOrder, self)._get_invoiceable_lines(final=final).filtered(
-            lambda line: (
-                line.display_type
-                or not line.product_id
-                or not line.product_id.variant_company_id
+        return (
+            super()
+            ._get_invoiceable_lines(final=final)
+            .filtered(
+                lambda line: (
+                    line.display_type
+                    or not line.product_id
+                    or not line.product_id.variant_company_id
+                )
             )
         )
 
@@ -46,7 +57,8 @@ class SaleOrder(models.Model):
             lambda line: (
                 not line.display_type
                 and line.product_id
-                and line.product_id.variant_company_id == self.current_invoice_company_id
+                and line.product_id.variant_company_id
+                == self.current_invoice_company_id
             )
         )
 
@@ -99,31 +111,41 @@ class SaleOrder(models.Model):
         self.ensure_one()
 
         if self.fiscal_position_id:
-            fiscal_position = self.env["account.fiscal.position"].sudo().search(
-                [
-                    ("company_id", "=", company.id),
-                    ("name", "=", self.fiscal_position_id.name),
-                ],
-                limit=1,
+            fiscal_position = (
+                self.env["account.fiscal.position"]
+                .sudo()
+                .search(
+                    [
+                        ("company_id", "=", company.id),
+                        ("name", "=", self.fiscal_position_id.name),
+                    ],
+                    limit=1,
+                )
             )
             if fiscal_position:
                 return fiscal_position
 
-        return self.env["account.fiscal.position"].with_company(company)._get_fiscal_position(
-            self.partner_invoice_id
+        return (
+            self.env["account.fiscal.position"]
+            .with_company(company)
+            ._get_fiscal_position(self.partner_invoice_id)
         )
 
     def _get_split_partner_bank(self, company):
         self.ensure_one()
 
-        return self.env["res.partner.bank"].sudo().search(
-            [
-                ("partner_id", "=", company.partner_id.id),
-                "|",
-                ("company_id", "=", company.id),
-                ("company_id", "=", False),
-            ],
-            limit=1,
+        return (
+            self.env["res.partner.bank"]
+            .sudo()
+            .search(
+                [
+                    ("partner_id", "=", company.partner_id.id),
+                    "|",
+                    ("company_id", "=", company.id),
+                    ("company_id", "=", False),
+                ],
+                limit=1,
+            )
         )
 
     def _prepare_invoice(self):
@@ -185,7 +207,9 @@ class SaleOrder(models.Model):
                         date=date,
                     )
 
-                    wrong_moves = moves.filtered(lambda move: move.company_id != company)
+                    wrong_moves = moves.filtered(
+                        lambda move, company=company: move.company_id != company
+                    )
                     if wrong_moves:
                         raise UserError(
                             _("Invoice company mismatch while invoicing sale order %s.")

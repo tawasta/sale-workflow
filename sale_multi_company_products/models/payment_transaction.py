@@ -9,14 +9,13 @@ class PaymentTransaction(models.Model):
 
         for tx in self.sudo().filtered(lambda tx: tx.sale_order_ids):
             invoices = tx.sale_order_ids.invoice_ids.filtered(
-                lambda move: move.move_type == "out_invoice"
-                and move.state != "cancel"
+                lambda move: move.move_type == "out_invoice" and move.state != "cancel"
             )
 
             missing = invoices - tx.invoice_ids
             if missing:
-                tx.write({
-                    "invoice_ids": [Command.link(invoice.id) for invoice in missing]
-                })
+                tx.write(
+                    {"invoice_ids": [Command.link(invoice.id) for invoice in missing]}
+                )
 
         return res

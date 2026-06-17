@@ -1,4 +1,4 @@
-from odoo import models, _
+from odoo import _, models
 from odoo.exceptions import UserError
 
 
@@ -28,18 +28,26 @@ class SaleOrderLine(models.Model):
 
         if not account:
             raise UserError(
-                _("No income account found for product '%s' in company '%s'.")
-                % (product.display_name, company.display_name)
+                _(
+                    "No income account found for product '%(product)s' "
+                    "in company '%(company)s'."
+                )
+                % {
+                    "product": product.display_name,
+                    "company": company.display_name,
+                }
             )
 
         taxes = product.taxes_id.filtered(lambda tax: tax.company_id == company)
         if fiscal_position:
             taxes = fiscal_position.map_tax(taxes)
 
-        res.update({
-            "company_id": company.id,
-            "account_id": account.id,
-            "tax_ids": [(6, 0, taxes.ids)],
-        })
+        res.update(
+            {
+                "company_id": company.id,
+                "account_id": account.id,
+                "tax_ids": [(6, 0, taxes.ids)],
+            }
+        )
 
         return res
