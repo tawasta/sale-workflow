@@ -7,12 +7,16 @@ class PaymentTransaction(models.Model):
     def _invoice_sale_orders(self):
         res = super()._invoice_sale_orders()
 
-        for tx in self.filtered(lambda tx: tx.sale_order_ids):
-            tx = tx.with_company(tx.company_id)
-            for sale_order in tx.sale_order_ids:
-                for invoice in sale_order.invoice_ids.ids:
-                    if invoice not in tx.invoice_ids.ids:
-                        # Link missing invoices to transaction
-                        tx.invoice_ids = [Command.link(invoice)]
+        for tx in self.sudo().filtered(lambda tx: tx.sale_order_ids):
+            invoices = tx.sale_order_ids.invoice_ids.filtered(
+                lambda move: move.move_type == "out_invoice"
+                and move.state != "cancel"
+            )
+
+            missing = invoices - tx.invoice_ids
+            if missing:
+                tx.write({
+                    "invoice_ids": [Command.link(invoice.id) for invoice in missing]
+                })
 
         return res
