@@ -14,44 +14,71 @@ class SaleOrder(models.Model):
     )
 
     def _check_order_line_company_id(self):
-        # Tämä on pakollinen tässä arkkitehtuurissa:
-        # sale.order kuuluu verkkokauppayhtiölle, mutta tuotteet voivat kuulua eri variant_company_id-yhtiöille.
         return
+
+    def _get_variant_company_invoiceable_lines(self, final=False):
+        self.ensure_one()
+        return super(SaleOrder, self)._get_invoiceable_lines(final=final).filtered(
+            lambda line: (
+                not line.display_type
+                and line.product_id
+                and line.product_id.variant_company_id
+            )
+        )
+
+    def _get_neutral_invoiceable_lines(self, final=False):
+        self.ensure_one()
+        return super(SaleOrder, self)._get_invoiceable_lines(final=final).filtered(
+            lambda line: (
+                line.display_type
+                or not line.product_id
+                or not line.product_id.variant_company_id
+            )
+        )
 
     def _get_invoiceable_lines(self, final=False):
         lines = super()._get_invoiceable_lines(final=final)
 
-        if self.current_invoice_company_id:
-            lines = lines.filtered(
-                lambda line: (
-                    line.display_type
-                    or line.product_id.variant_company_id == self.current_invoice_company_id
-                )
+        if not self.current_invoice_company_id:
+            return lines
+
+        variant_lines = lines.filtered(
+            lambda line: (
+                not line.display_type
+                and line.product_id
+                and line.product_id.variant_company_id == self.current_invoice_company_id
             )
-
-        return lines
-
-    def _get_split_base_invoiceable_lines(self, final=False):
-        self.ensure_one()
-        return super(SaleOrder, self)._get_invoiceable_lines(final=final).filtered(
-            lambda line: not line.display_type
         )
+
+        neutral_lines = lines.filtered(
+            lambda line: (
+                line.display_type
+                or not line.product_id
+                or not line.product_id.variant_company_id
+            )
+        )
+
+        companies = self._get_variant_company_invoiceable_lines(final=final).mapped(
+            "product_id.variant_company_id"
+        )
+        first_company = companies[:1]
+
+        if self.current_invoice_company_id == first_company:
+            return variant_lines | neutral_lines
+
+        return variant_lines
 
     def _get_split_invoice_companies(self, final=False):
         self.ensure_one()
 
-        lines = self._get_split_base_invoiceable_lines(final=final)
-
-        missing_company_lines = lines.filtered(
-            lambda line: not line.product_id.variant_company_id
+        companies = self._get_variant_company_invoiceable_lines(final=final).mapped(
+            "product_id.variant_company_id"
         )
-        if missing_company_lines:
-            raise UserError(
-                _("Variant company is missing from products on these order lines: %s")
-                % ", ".join(missing_company_lines.mapped("name"))
-            )
 
-        return lines.mapped("product_id.variant_company_id")
+        if companies:
+            return companies
+
+        return self.company_id
 
     def _validate_split_invoice_partners(self):
         self.ensure_one()
@@ -86,6 +113,19 @@ class SaleOrder(models.Model):
             self.partner_invoice_id
         )
 
+    def _get_split_partner_bank(self, company):
+        self.ensure_one()
+
+        return self.env["res.partner.bank"].sudo().search(
+            [
+                ("partner_id", "=", company.partner_id.id),
+                "|",
+                ("company_id", "=", company.id),
+                ("company_id", "=", False),
+            ],
+            limit=1,
+        )
+
     def _prepare_invoice(self):
         invoice_vals = super()._prepare_invoice()
 
@@ -94,12 +134,15 @@ class SaleOrder(models.Model):
             return invoice_vals
 
         fiscal_position = self._get_split_fiscal_position(company)
+        partner_bank = self._get_split_partner_bank(company)
 
-        invoice_vals.update({
-            "company_id": company.id,
-            "partner_bank_id": company.partner_id.bank_ids[:1].id,
-            "fiscal_position_id": fiscal_position.id if fiscal_position else False,
-        })
+        invoice_vals.update(
+            {
+                "company_id": company.id,
+                "partner_bank_id": partner_bank.id or False,
+                "fiscal_position_id": fiscal_position.id if fiscal_position else False,
+            }
+        )
 
         return invoice_vals
 
@@ -131,7 +174,9 @@ class SaleOrder(models.Model):
                     order = original_order.with_company(company).with_context(
                         default_company_id=company.id,
                         allowed_company_ids=list(allowed_company_ids),
-                        split_fiscal_position_id=fiscal_position.id if fiscal_position else False,
+                        split_fiscal_position_id=fiscal_position.id
+                        if fiscal_position
+                        else False,
                     )
 
                     moves = super(SaleOrder, order)._create_invoices(
@@ -148,6 +193,7 @@ class SaleOrder(models.Model):
                         )
 
                     all_moves |= moves
+
             finally:
                 original_order.current_invoice_company_id = False
 
