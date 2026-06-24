@@ -1,80 +1,53 @@
-from odoo import api, fields, models
+from odoo import _, models
+from odoo.exceptions import UserError
 
 
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    product_id = fields.Many2one(
-        check_company=False,
-    )
-
-    @api.model
-    def create(self, values):
-        res = super().create(values)
-
-        for record in self:
-            if (
-                record.product_id
-                and record.product_id.company_id
-                and record.product_id.company_id != record.company_id
-            ):
-                record.company_id = record.product_id.company_id.id
-
-        return res
-
-    def write(self, values):
-        res = super().write(values)
-
-        for record in self:
-            if (
-                record.product_id
-                and record.product_id.company_id
-                and record.product_id.company_id != record.company_id
-            ):
-                record.company_id = record.product_id.company_id.id
-
-        return res
-
     def _prepare_invoice_line(self, **optional_values):
         res = super()._prepare_invoice_line(**optional_values)
 
-        if self.order_id.current_invoice_company_id:
-            # Override some company-specific line values
-            company = self.order_id.current_invoice_company_id
+        company = self.order_id.current_invoice_company_id
+        if not company or self.display_type:
+            return res
 
-            if res.get("account_id"):
-                # Fetch a matching account
-                # TODO: add an option to use the default account from product
-                # (for this company)
-                account = (
-                    self.env["account.account"]
-                    .sudo()
-                    .search(
-                        [
-                            ("company_id", "=", company.id),
-                            ("code", "=", res["account_id"]),
-                        ]
-                    )
+        product = self.product_id.with_company(company)
+
+        fiscal_position = self.env["account.fiscal.position"].browse(
+            self.env.context.get("split_fiscal_position_id")
+        )
+
+        account = (
+            product.property_account_income_id
+            or product.categ_id.with_company(company).property_account_income_categ_id
+        )
+
+        if fiscal_position and account:
+            account = fiscal_position.map_account(account)
+
+        if not account:
+            raise UserError(
+                _(
+                    "No income account found for product '%(product)s' "
+                    "in company '%(company)s'."
                 )
+                % {
+                    "product": product.display_name,
+                    "company": company.display_name,
+                }
+            )
 
-                if account:
-                    res["account_id"] = account.id
+        taxes = product.taxes_id.filtered(lambda tax: tax.company_id == company)
+        if fiscal_position:
+            taxes = fiscal_position.map_tax(taxes)
 
-            if res.get("tax_ids"):
-                # Change taxes
-                tax_names = self.tax_id.mapped("name")
+        res.update(
+            {
+                "company_id": company.id,
+                "account_id": account.id,
+                "tax_ids": [(6, 0, taxes.ids)],
+            }
+        )
 
-                taxes = (
-                    self.env["account.tax"]
-                    .sudo()
-                    .search(
-                        [
-                            ("company_id", "=", company.id),
-                            ("name", "in", tax_names),
-                            ("type_tax_use", "=", "sale"),
-                        ]
-                    )
-                )
-                if taxes:
-                    res["tax_ids"] = [(6, 0, taxes.ids)]
         return res
