@@ -16,8 +16,11 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='sales_purchases']//field[@name='company_id']" position="attributes">
-                <attribute name="readonly">parent_id and parent_id.company_id</attribute>
+            <xpath expr="//group[@name='misc']/field[@name='company_id']" position="before">
+                <field name="parent_company_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//group[@name='misc']/field[@name='company_id']" position="attributes">
+                <attribute name="readonly">parent_id and parent_company_id</attribute>
             </xpath>
         </field>
     </record>
