@@ -235,7 +235,7 @@ class SaleBlanketOrder(models.Model):
                     "sequence": line.sequence,
                     "price_unit": line.price_unit,
                     "blanket_order_line": line.id,
-                    "product_uom_qty": qty,
+                    "product_uom_qty": qty if qty > 0 else 0,
                     "tax_id": [(6, 0, line.taxes_id.ids)],
                     "analytic_tag_ids": [(6, 0, line.analytic_tag_ids.ids)],
                 }
