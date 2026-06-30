@@ -222,7 +222,7 @@ class SaleBlanketOrder(models.Model):
 
         for product_id, qty in forecast_lines.items():
             # For any forecast lines that weren't handled, create a new SO line
-            _logger.info("SO line for product '%s' is missing. Creating it")
+            _logger.info("SO line for product '%s' is missing. Creating it" % product_id)
             line = self.line_ids.filtered(lambda l: l.product_id.id == product_id)
             if len(line) != 1:
                 _logger.error("Forecast line for product %s not found" % product_id)
