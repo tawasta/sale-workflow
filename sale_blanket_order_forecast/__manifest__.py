@@ -21,7 +21,7 @@
 {
     "name": "Sale blanket order forecast",
     "summary": "Allows making forecast sale orders from blanket orders",
-    "version": "14.0.1.1.19",
+    "version": "14.0.1.2.0",
     "category": "Sale",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Tawasta",

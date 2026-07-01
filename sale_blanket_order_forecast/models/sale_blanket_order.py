@@ -215,12 +215,31 @@ class SaleBlanketOrder(models.Model):
         forecast_lines = self._compute_forecast_lines()
         for order_line in sale_order.order_line:
             product_id = order_line.product_id.id
-            if forecast_lines.get(product_id) is not None:
-                order_line.product_uom_qty = (
-                    forecast_lines[product_id] if forecast_lines[product_id] > 0 else 0
-                )
+            forecast_qty = forecast_lines.pop(product_id, 0)
+            order_line.product_uom_qty = forecast_qty if forecast_qty > 0 else 0
+
+        SaleOrderLine = self.env["sale.order.line"]
+
+        for product_id, qty in forecast_lines.items():
+            # For any forecast lines that weren't handled, create a new SO line
+            _logger.info("SO line for product '%s' is missing. Creating it" % product_id)
+            line = self.line_ids.filtered(lambda l: l.product_id.id == product_id)
+            if len(line) != 1:
+                _logger.error("Forecast line for product %s not found" % product_id)
             else:
-                order_line.product_uom_qty = 0
+                line_vals = {
+                    "order_id": sale_order.id,
+                    "product_id": line.product_id.id,
+                    "name": line.product_id.name,
+                    "product_uom": line.product_uom.id,
+                    "sequence": line.sequence,
+                    "price_unit": line.price_unit,
+                    "blanket_order_line": line.id,
+                    "product_uom_qty": qty if qty > 0 else 0,
+                    "tax_id": [(6, 0, line.taxes_id.ids)],
+                    "analytic_tag_ids": [(6, 0, line.analytic_tag_ids.ids)],
+                }
+                SaleOrderLine.create(line_vals)
 
         # Confirm the SO to create deliveries
         _logger.info(_("Confirming sale order {}").format(sale_order.name))
