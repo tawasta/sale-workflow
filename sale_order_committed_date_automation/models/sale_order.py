@@ -12,7 +12,6 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     def action_confirm(self):
-        res = super().action_confirm()
         for order in self:
             if order.commitment_date:
                 continue
@@ -20,7 +19,7 @@ class SaleOrder(models.Model):
             if automation == "no":
                 continue
             order.commitment_date = order._compute_delivery_date(automation)
-        return res
+        return super().action_confirm()
 
     def _compute_delivery_date(self, automation):
         """Return the UTC datetime to store in the commitment_date field."""
