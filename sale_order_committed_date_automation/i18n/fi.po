@@ -1,0 +1,115 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_committed_date_automation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-24 12:00+0000\n"
+"PO-Revision-Date: 2026-07-24 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fi\n"
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields.selection,name:sale_order_committed_date_automation.selection__res_company__delivery_date_automation__company
+msgid "Company-wide"
+msgstr "Koko yritys"
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields,field_description:sale_order_committed_date_automation.field_res_company__delivery_date_automation
+#: model:ir.model.fields,field_description:sale_order_committed_date_automation.field_res_config_settings__delivery_date_automation
+#: model_terms:ir.ui.view,arch_db:sale_order_committed_date_automation.res_config_settings_view_form
+msgid "Delivery date automation"
+msgstr "Toimituspäivän automaatio"
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields,field_description:sale_order_committed_date_automation.field_res_company__delivery_date_time_cutoff
+#: model:ir.model.fields,field_description:sale_order_committed_date_automation.field_res_config_settings__delivery_date_time_cutoff
+msgid "Delivery date time cutoff"
+msgstr "Toimituspäivän aikaraja"
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields,field_description:sale_order_committed_date_automation.field_res_company__delivery_date_timezone
+#: model:ir.model.fields,field_description:sale_order_committed_date_automation.field_res_config_settings__delivery_date_timezone
+msgid "Delivery date timezone"
+msgstr "Toimituspäivän aikavyöhyke"
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields,field_description:sale_order_committed_date_automation.field_res_company__delivery_date_default_weekdays
+#: model:ir.model.fields,field_description:sale_order_committed_date_automation.field_res_config_settings__delivery_date_default_weekdays
+msgid "Default delivery lead time (weekdays)"
+msgstr "Oletustoimitusaika (arkipäivinä)"
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields,field_description:sale_order_committed_date_automation.field_crm_team__delivery_date_weekdays
+msgid "Delivery lead time (weekdays)"
+msgstr "Toimitusaika (arkipäivinä)"
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields.selection,name:sale_order_committed_date_automation.selection__res_company__delivery_date_automation__no
+msgid "No automation"
+msgstr "Ei automaatiota"
+
+#. module: sale_order_committed_date_automation
+#: model_terms:ir.ui.view,arch_db:sale_order_committed_date_automation.res_config_settings_view_form
+msgid "Sales Teams"
+msgstr "Myyntitiimit"
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields.selection,name:sale_order_committed_date_automation.selection__res_company__delivery_date_automation__team
+msgid "Sales team specific"
+msgstr "Myyntitiimikohtainen"
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields,help:sale_order_committed_date_automation.field_res_company__delivery_date_time_cutoff
+msgid "Confirmation before this time counts the current day as day 0. Confirmation at or after this time counts the current day as day 1."
+msgstr "Vahvistus ennen tätä aikaa lasketaan nykyiseksi päiväksi +0. Tämän ajan jälkeen tai samaan aikaan tehty vahvistus lasketaan nykyiseksi päiväksi +1."
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields,help:sale_order_committed_date_automation.field_res_company__delivery_date_default_weekdays
+msgid "Number of weekdays added to the delivery date. Used in company-wide mode and as fallback for sales teams."
+msgstr "Toimituspäivään lisättävien arkipäivien määrä. Käytetään koko yrityksen tilassa ja varavaihtoehtona myyntitiimeille."
+
+#. module: sale_order_committed_date_automation
+#: model:ir.model.fields,help:sale_order_committed_date_automation.field_crm_team__delivery_date_weekdays
+msgid "Number of weekdays added to the delivery date. If empty, the company default is used."
+msgstr "Toimituspäivään lisättävien arkipäivien määrä. Jos tyhjä, käytetään yrityksen oletusarvoa."
+
+#. module: sale_order_committed_date_automation
+#: model_terms:ir.ui.view,arch_db:sale_order_committed_date_automation.res_config_settings_view_form
+msgid "Automatically fill the delivery date on order confirmation."
+msgstr "Täytä toimituspäivä automaattisesti tilauksen vahvistamisen yhteydessä."
+
+#. module: sale_order_committed_date_automation
+#: model_terms:ir.ui.view,arch_db:sale_order_committed_date_automation.res_config_settings_view_form
+msgid "time cutoff"
+msgstr "aikaraja"
+
+#. module: sale_order_committed_date_automation
+#: model_terms:ir.ui.view,arch_db:sale_order_committed_date_automation.res_config_settings_view_form
+msgid "weekdays"
+msgstr "arkipäivää"
+
+#. module: sale_order_committed_date_automation
+#. odoo-python
+#: code:addons/sale_order_committed_date_automation/models/res_company.py:0
+msgid "Delivery date time cutoff must be between 00:00 and 23:59."
+msgstr "Toimituspäivän aikarajan on oltava välillä 00:00–23:59."
+
+#. module: sale_order_committed_date_automation
+#. odoo-python
+#: code:addons/sale_order_committed_date_automation/models/res_company.py:0
+msgid "Default delivery lead time (weekdays) must be a non-negative integer."
+msgstr "Oletustoimitusajan on oltava ei-negatiivinen kokonaisluku."
+
+#. module: sale_order_committed_date_automation
+#. odoo-python
+#: code:addons/sale_order_committed_date_automation/models/crm_team.py:0
+msgid "Delivery lead time (weekdays) must be a non-negative integer."
+msgstr "Toimitusajan on oltava ei-negatiivinen kokonaisluku."

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.form.sale.delivery.date.automation</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <block name="quotation_order_setting_container" position="inside">
+                <setting
+                    id="delivery_date_automation_setting"
+                    string="Delivery date automation"
+                    help="Automatically fill the delivery date on order confirmation."
+                >
+                    <field
+                        name="delivery_date_automation"
+                        widget="radio"
+                        class="o_light_label"
+                        options="{'horizontal': true}"
+                    />
+                    <div invisible="delivery_date_automation == 'no'" class="mt16">
+                        <div>
+                            <label
+                                for="delivery_date_timezone"
+                                class="o_light_label me-2"
+                            />
+                            <field name="delivery_date_timezone" class="oe_inline" />
+                        </div>
+                        <div class="mt8">
+                            <label
+                                for="delivery_date_time_cutoff"
+                                class="o_light_label me-2"
+                            />
+                            <field
+                                name="delivery_date_time_cutoff"
+                                widget="float_time"
+                                class="oe_inline"
+                            />
+                            <span class="ms-1">time cutoff</span>
+                        </div>
+                        <div class="mt8">
+                            <label
+                                for="delivery_date_default_weekdays"
+                                class="o_light_label me-2"
+                            />
+                            <field
+                                name="delivery_date_default_weekdays"
+                                class="oe_inline text-center"
+                                style="width: 3rem;"
+                            />
+                            <span class="ms-1">weekdays</span>
+                        </div>
+                    </div>
+                    <div invisible="delivery_date_automation != 'team'" class="mt8">
+                        <button
+                            name="%(sales_team.crm_team_action_sales)d"
+                            icon="oi-arrow-right"
+                            type="action"
+                            string="Sales Teams"
+                            class="btn-link"
+                        />
+                    </div>
+                </setting>
+            </block>
+        </field>
+    </record>
+</odoo>
