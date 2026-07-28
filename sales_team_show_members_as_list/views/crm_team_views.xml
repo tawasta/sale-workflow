@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="crm_team_view_form_members_list" model="ir.ui.view">
+        <field name="name">crm.team.form.members.list</field>
+        <field name="model">crm.team</field>
+        <field name="inherit_id" ref="sales_team.crm_team_view_form" />
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='member_ids']/kanban" position="replace">
+                <tree editable="bottom">
+                    <field name="name" />
+                    <field name="email" />
+                </tree>
+            </xpath>
+            <!-- The field is declared mode="kanban", point it at the tree instead -->
+            <xpath expr="//field[@name='member_ids']" position="attributes">
+                <attribute name="mode">tree</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

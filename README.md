@@ -91,5 +91,6 @@ addon | version | maintainers | summary
 [sale_stock_availability_unreserved](sale_stock_availability_unreserved/) | 17.0.1.0.0 |  | Add product unreserved availability to SO line
 [sale_stock_client_ref_to_picking](sale_stock_client_ref_to_picking/) | 17.0.1.0.0 |  | Move SO customer reference to created stock pickings
 [sale_stock_disable_warehouse_onchange](sale_stock_disable_warehouse_onchange/) | 17.0.1.0.0 |  | Don't auto-change company when warehouse changes
+[sales_team_show_members_as_list](sales_team_show_members_as_list/) | 17.0.1.0.0 |  | Replaces kanban grid with a simple list
 
 [//]: # (end addons)
