@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="sale_warnings.partner_id">
+    <Many2One t-props="m2oProps" />
+    <t t-if="state.warning">
+      <div class="o_cell alert alert-warning">
+        <t t-esc="state.warning" />
+      </div>
+    </t>
+  </t>
+</templates>
