@@ -6,15 +6,22 @@
 Sale Warnings
 =============
 
-* Adds options to how Sale Warnings are shown
+- Adds options to how Sale Warnings are shown
   - Warning
+
     - Show underneath the field only
+
   - Popup Warning
+
     - Show popup warning in addition to underneath the field
+
   - Blocking Warning
+
     - Show popup warning and prevent choosing the value
-* Allows easy extension to other Many2One fields
-* Currently adds warnings to fields:
+
+- Allows easy extension to other Many2One fields
+- Currently adds warnings to fields:
+
     - partner_id
 
 Configuration
