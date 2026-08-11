@@ -21,7 +21,7 @@ Sale Warnings
     * Show popup warning and prevent choosing the value
 
 * Allows easy extension to other Many2One fields
-* Currently adds warnings to fields:
+* Currently adds warnings to fields
 
     * partner_id
 
@@ -37,6 +37,7 @@ Usage
     * Go to Settings -> Sale
 
         * Check "Sale Warnings"
+
 * Developer
 
     * Add sale_warn_msg and sale_warn_level to target model similar to models/partner.py
