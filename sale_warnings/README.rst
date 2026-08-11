@@ -31,6 +31,7 @@ Configuration
 
 Usage
 =====
+
 * User
 
     * Install module
