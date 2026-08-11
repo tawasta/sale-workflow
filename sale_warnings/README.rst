@@ -23,7 +23,7 @@ Sale Warnings
 * Allows easy extension to other Many2One fields
 * Currently adds warnings to fields
 
-    * partner_id
+  * partner_id
 
 Configuration
 =============
