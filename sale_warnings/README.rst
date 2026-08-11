@@ -7,6 +7,7 @@ Sale Warnings
 =============
 
 * Adds options to how Sale Warnings are shown
+
   * Warning
 
     * Show underneath the field only
@@ -30,20 +31,26 @@ Configuration
 
 Usage
 =====
-- User
-    - Install module
-    - Go to Settings -> Sale
-        - Check "Sale Warnings"
-- Developer
-    - Add sale_warn_msg and sale_warn_level to target model similar to
-      models/partner.py
-        - res.partner already has sale_warn_msg field from other module
-        - Add the field name to "Currently adds warnings to field list" above
-    - Add sale_order field name and model of which the fields points to into
+* User
+
+    * Install module
+    * Go to Settings -> Sale
+
+        * Check "Sale Warnings"
+* Developer
+
+    * Add sale_warn_msg and sale_warn_level to target model similar to models/partner.py
+
+        * res.partner already has sale_warn_msg field from other module
+        * Add the field name to "Currently adds warnings to field list" above
+
+    * Add sale_order field name and model of which the fields points to into
       models/sale_order.py check dictionary
-    - Add view similar to views/res_partner.xml
-        - res.partner already has field for sale_warn_msg
-    - Add the widget into sale order field attributes in views/sale_order.xml
+    * Add view similar to views/res_partner.xml
+
+        * res.partner already has field for sale_warn_msg
+
+    * Add the widget into sale order field attributes in views/sale_order.xml
 
 Known issues / Roadmap
 ======================
