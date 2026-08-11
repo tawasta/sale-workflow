@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record id="sale_form_view" model="ir.ui.view">
+    <field name="name">sale.order.form.inherit</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form" />
+    <field name="arch" type="xml">
+      <field name="partner_id" position="attributes">
+        <attribute name="widget">Many2OneWarn</attribute>
+      </field>
+      <xpath expr="//div[@invisible='not sale_warning_text']" position="attributes">
+        <attribute name="style">display: none;</attribute>
+      </xpath>
+    </field>
+  </record>
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="sale_warnings.partner_id">
+    <Many2One t-props="m2oProps" />
+    <t
+      t-if="state.showWarning and state.warningLevel !== 'blocking_warning' and state.warning"
+    >
+      <div class="o_cell alert alert-warning">
+        <t t-esc="state.warning" />
+      </div>
+    </t>
+    <t
+      t-if="state.showWarning and state.warningLevel === 'blocking_warning' and state.warning"
+    >
+      <div class="o_cell alert alert-danger">
+        <t t-esc="state.warning" />
+      </div>
+    </t>
+  </t>
+</templates>
