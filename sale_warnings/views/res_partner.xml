@@ -6,8 +6,8 @@
     <field name="inherit_id" ref="base.view_partner_form" />
     <field name="arch" type="xml">
       <group name="warnings" position="inside">
-        <label for="sale_warn_level" />
-        <field name="sale_warn_level" />
+        <label groups="sale.group_warning_sale" for="sale_warn_level" />
+        <field groups="sale.group_warning_sale" name="sale_warn_level" />
       </group>
     </field>
   </record>

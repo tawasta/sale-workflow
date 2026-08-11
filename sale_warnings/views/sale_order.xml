@@ -8,6 +8,9 @@
       <field name="partner_id" position="attributes">
         <attribute name="widget">Many2OneWarn</attribute>
       </field>
+      <xpath expr="//div[@invisible='not sale_warning_text']" position="attributes">
+        <attribute name="style">display: none;</attribute>
+      </xpath>
     </field>
   </record>
 </odoo>

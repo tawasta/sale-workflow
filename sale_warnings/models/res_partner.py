@@ -1,7 +1,7 @@
 from odoo import fields, models
 
 
-class SaleOrder(models.Model):
+class Partner(models.Model):
     _inherit = "res.partner"
 
     sale_warn_level = fields.Selection(
