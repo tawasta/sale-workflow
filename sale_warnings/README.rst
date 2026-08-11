@@ -46,7 +46,7 @@ Usage
     * res.partner already has sale_warn_msg field from other module
     * Add the field name to "Currently adds warnings to field list" above
 
-  * Add sale_order field name and model of which the fields points to into
+  * Add sale\_order field name and model of which the fields points to into
       models/sale_order.py check dictionary
   * Add view similar to views/res_partner.xml
 
