@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Multi Company",
     "summary": "Allows selling multiple company products on a single sale",
-    "version": "17.0.1.2.1",
+    "version": "17.0.1.1.1",
     "category": "Website",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
