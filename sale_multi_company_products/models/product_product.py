@@ -3,11 +3,7 @@ from odoo.osv import expression
 
 
 def _check_company_domain_with_invoice_company(self, companies):
-    """Like models.check_company_domain_parent_of, but also treats a
-    product as compatible with a company when its own invoice_company_id
-    explicitly says so.
-
-    Without this, Odoo's own check_company constraint on
+    """Without this, Odoo's own check_company constraint on
     account.move.line.product_id (product.product's default
     _check_company_domain only allows a blank company_id or a parent
     company) would reject a split invoice as soon as a product's
@@ -32,11 +28,6 @@ class ProductProduct(models.Model):
     invoice_company_id = fields.Many2one(
         "res.company",
         string="Invoicing Company",
-        help="Which company receives payment for this product in the "
-        "webshop and issues its invoice / uses its payment methods. "
-        "Distinct from 'Variant Company' (visibility/access scoping only, "
-        "see the product_variant_variant_company module) and from "
-        "'Company' (may be blank for products shared between companies). "
-        "Empty by default: falls back to the order's own company when "
-        "not set (see sale.order._get_split_invoice_companies()).",
+        default=lambda self: self.env.company,
+        help="Which company receives payment for this product",
     )
