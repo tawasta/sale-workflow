@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <template
+    id="report_saleorder_document_customer_marking"
+    inherit_id="sale.report_saleorder_document"
+  >
+    <!-- In 17 this "Salesperson" block was a <span t-field="doc.user_id">;
+             in 19 it's a <div t-field="doc.user_id"> and doesn't carry a
+             name attribute, so xpath on that field is the stable anchor. -->
+    <xpath
+      expr="//div[@id='informations']/div[div[@t-field='doc.user_id']]"
+      position="after"
+    >
+      <div
+        t-if="doc.customer_marking"
+        class="col-auto col-3 mw-100 mb-2"
+        name="informations_customer_marking"
+      >
+        <strong>Customer Marking:</strong>
+        <br />
+        <span class="m-0" t-field="doc.customer_marking" />
+      </div>
+    </xpath>
+  </template>
+</odoo>
