@@ -83,6 +83,7 @@ addon | version | maintainers | summary
 [sale_order_show_purchase_order](sale_order_show_purchase_order/) | 17.0.1.0.0 |  | Show Linked Purchase Orders on Sale Orders
 [sale_order_template_disable_note_auto_reload](sale_order_template_disable_note_auto_reload/) | 17.0.1.0.0 |  | Don't auto-reload SO template note when changing a partner
 [sale_order_tree_customer_reference](sale_order_tree_customer_reference/) | 17.0.1.0.0 |  | Add customer reference to sale order tree view
+[sale_order_tree_invoice_and_delivery_addresses](sale_order_tree_invoice_and_delivery_addresses/) | 17.0.1.0.0 |  | Optionally show address fields in the list view
 [sale_order_tree_view_quotations_only](sale_order_tree_view_quotations_only/) | 17.0.1.0.0 |  | Sale Quotations tree view - Show only quotations
 [sale_order_warehouse_do_not_copy](sale_order_warehouse_do_not_copy/) | 17.0.1.0.0 |  | Do not copy a warehouse when copying a sale order
 [sale_order_warranty](sale_order_warranty/) | 17.0.1.0.1 |  | Sale Order Warranty
