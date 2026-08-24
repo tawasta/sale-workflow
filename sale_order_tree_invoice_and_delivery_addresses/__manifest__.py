@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2018- Futural Oy (https://futural.fi)
+#    Author: Futural Oy
+#    Copyright 2026- Futural Oy (http://www.futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,25 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Multi Company",
-    "summary": "Allows selling multiple company products on a single sale",
-    "version": "17.0.1.1.1",
-    "category": "Website",
+    "name": "Sale Order: Show Delivery & Invoice Addresses in List View",
+    "summary": "Optionally show address fields in the list view",
+    "version": "17.0.1.0.0",
+    "category": "Sales",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "product",
-        "product_variant_variant_company",
-        "sale_loyalty",
-        "sale_management",
-        "stock",
-    ],
-    "data": [
-        "security/product_security.xml",
-        "views/product_product.xml",
-        "views/sale_order.xml",
-    ],
+    "depends": ["sale"],
+    "data": ["views/sale_views.xml"],
 }

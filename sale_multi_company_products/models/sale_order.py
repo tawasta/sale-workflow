@@ -28,7 +28,7 @@ class SaleOrder(models.Model):
                 lambda line: (
                     not line.display_type
                     and line.product_id
-                    and line.product_id.variant_company_id
+                    and line.product_id.invoice_company_id
                 )
             )
         )
@@ -42,7 +42,7 @@ class SaleOrder(models.Model):
                 lambda line: (
                     line.display_type
                     or not line.product_id
-                    or not line.product_id.variant_company_id
+                    or not line.product_id.invoice_company_id
                 )
             )
         )
@@ -57,7 +57,7 @@ class SaleOrder(models.Model):
             lambda line: (
                 not line.display_type
                 and line.product_id
-                and line.product_id.variant_company_id
+                and line.product_id.invoice_company_id
                 == self.current_invoice_company_id
             )
         )
@@ -66,12 +66,12 @@ class SaleOrder(models.Model):
             lambda line: (
                 line.display_type
                 or not line.product_id
-                or not line.product_id.variant_company_id
+                or not line.product_id.invoice_company_id
             )
         )
 
         companies = self._get_variant_company_invoiceable_lines(final=final).mapped(
-            "product_id.variant_company_id"
+            "product_id.invoice_company_id"
         )
         first_company = companies[:1]
 
@@ -84,7 +84,7 @@ class SaleOrder(models.Model):
         self.ensure_one()
 
         companies = self._get_variant_company_invoiceable_lines(final=final).mapped(
-            "product_id.variant_company_id"
+            "product_id.invoice_company_id"
         )
 
         if companies:
