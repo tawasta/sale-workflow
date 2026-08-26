@@ -1,0 +1,35 @@
+<odoo>
+  <record id="view_order_form_auto_confirm" model="ir.ui.view">
+    <field name="name">sale.order.form.auto.confirm.helper</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form" />
+    <field name="arch" type="xml">
+      <field name="show_update_fpos" position="after">
+        <field name="auto_confirm_invoice" readonly="0" widget="boolean_toggle" />
+      </field>
+
+      <xpath expr="//header" position="after">
+        <div
+          class="o_alert alert alert-info mt-2 mb-3"
+          role="alert"
+          invisible="not auto_confirm_invoice"
+          style="border-left: 4px solid #0d6efd;"
+        >
+                    <span class="fa fa-bolt me-2 text-primary" title="Lightning bolt" />
+                    <strong>Auto-confirm enabled:</strong>
+                    All products in this sale are marked as <em>auto-invoicable</em>.
+                    The invoice will be confirmed automatically after creation.
+
+                    <!-- disable button -->
+                    <button
+          name="action_disable_auto_confirm"
+          type="object"
+          string="Disable"
+          class="btn btn-sm btn-danger ms-2"
+          confirm="Are you sure you want to disable auto-confirm for this sale order?"
+        />
+                </div>
+      </xpath>
+    </field>
+  </record>
+</odoo>
