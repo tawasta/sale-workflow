@@ -34,7 +34,9 @@ class SaleOrder(models.Model):
             if failed_pickings:
                 self.env.cr.commit()
 
-                message = self.env._("Sale confirmed. Picking could not be validated.")
+                message = self.env._(
+                    "Sale has been confirmed, but Picking could not be validated."
+                )
                 message_wiz = self.env["sale.order.kiosk.message"].create(
                     {"message": message}
                 )
@@ -58,11 +60,29 @@ class SaleOrder(models.Model):
                     limit=1,
                 )
 
-                self.env["account.payment.register"].with_context(
-                    active_model="account.move",
-                    active_ids=[invoice.id],
-                    default_journal_id=(journal_id and journal_id.id or None),
-                ).create({"group_payment": False}).action_create_payments()
+                try:
+                    with self.env.cr.savepoint():
+                        self.env["account.payment.register"].with_context(
+                            active_model="account.move",
+                            active_ids=[invoice.id],
+                            default_journal_id=(journal_id and journal_id.id or None),
+                        ).create({"group_payment": False}).action_create_payments()
+                except Exception:
+                    self.env.cr.commit()
+
+                    message = self.env._("Invoice could not be paid")
+                    message_wiz = self.env["sale.order.kiosk.message"].create(
+                        {"message": message}
+                    )
+
+                    return {
+                        "type": "ir.actions.act_window",
+                        "res_model": "sale.order.kiosk.message",
+                        "view_type": "form",
+                        "view_mode": "form",
+                        "res_id": message_wiz.id,
+                        "target": "new",
+                    }
 
         # Display invoice view after confirm sales order.
         invoices.extend(order.invoice_ids.ids)
