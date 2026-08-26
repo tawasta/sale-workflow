@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 09:35+0000\n"
-"PO-Revision-Date: 2026-08-25 12:36+0300\n"
+"POT-Creation-Date: 2026-08-26 07:23+0000\n"
+"PO-Revision-Date: 2026-08-26 10:25+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -18,14 +18,24 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 
 #. module: sale_order_kiosk_sale
-#: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_account_move__display_name
+#: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_sale_order_kiosk_message__create_uid
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: sale_order_kiosk_sale
+#: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_sale_order_kiosk_message__create_date
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: sale_order_kiosk_sale
 #: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_sale_order__display_name
+#: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_sale_order_kiosk_message__display_name
 msgid "Display Name"
 msgstr "Näyttönimi"
 
 #. module: sale_order_kiosk_sale
-#: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_account_move__id
 #: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_sale_order__id
+#: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_sale_order_kiosk_message__id
 msgid "ID"
 msgstr "Tunnus"
 
@@ -36,19 +46,40 @@ msgid "Invoices"
 msgstr "Laskut"
 
 #. module: sale_order_kiosk_sale
-#: model:ir.model,name:sale_order_kiosk_sale.model_account_move
-msgid "Journal Entry"
-msgstr "Kirjaus"
-
-#. module: sale_order_kiosk_sale
 #: model_terms:ir.ui.view,arch_db:sale_order_kiosk_sale.view_order_form
 msgid "Kiosk sale done"
 msgstr "Tiskimyynti valmis"
 
 #. module: sale_order_kiosk_sale
-#: model_terms:ir.ui.view,arch_db:sale_order_kiosk_sale.view_move_form
-msgid "Print Receipt"
-msgstr "Tulosta kuittu"
+#: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_sale_order_kiosk_message__write_uid
+msgid "Last Updated by"
+msgstr "Viimeksi päivittänyt"
+
+#. module: sale_order_kiosk_sale
+#: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_sale_order_kiosk_message__write_date
+msgid "Last Updated on"
+msgstr "Viimeksi päivitetty"
+
+#. module: sale_order_kiosk_sale
+#: model:ir.model.fields,field_description:sale_order_kiosk_sale.field_sale_order_kiosk_message__message
+msgid "Message"
+msgstr "Viesti"
+
+#. module: sale_order_kiosk_sale
+#: model_terms:ir.ui.view,arch_db:sale_order_kiosk_sale.sale_order_kiosk_message_message_wizard
+msgid "OK"
+msgstr "OK"
+
+#. module: sale_order_kiosk_sale
+#: model:ir.model,name:sale_order_kiosk_sale.model_sale_order_kiosk_message
+msgid "Sale Kiosk - message"
+msgstr "Tiskimyynti - viesti"
+
+#. module: sale_order_kiosk_sale
+#. odoo-python
+#: code:addons/sale_order_kiosk_sale/models/sale_order.py:0
+msgid "Sale confirmed. Picking could not be validated."
+msgstr "Myynti vahvistettu. Toimitustilausta ei voitu vahvistaa."
 
 #. module: sale_order_kiosk_sale
 #: model:ir.model,name:sale_order_kiosk_sale.model_sale_order

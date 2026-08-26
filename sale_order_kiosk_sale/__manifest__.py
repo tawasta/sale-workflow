@@ -34,7 +34,8 @@
         "sale",
     ],
     "data": [
-        "views/account_move.xml",
+        "security/ir.model.access.csv",
         "views/sale_order_view.xml",
+        "wizards/sale_order_kiosk_message_view.xml",
     ],
 }
