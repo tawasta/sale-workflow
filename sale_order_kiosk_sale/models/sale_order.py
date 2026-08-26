@@ -4,6 +4,7 @@ from odoo import models
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
+    # pylint: disable=E8102
     def process_picking_and_payment(self):
         """
         1. Verify and Confirm SO.
@@ -15,12 +16,40 @@ class SaleOrder(models.Model):
         self.action_confirm()
         invoices = []
         for order in self:
+            failed_pickings = self.env["stock.picking"]
+
             for picking in order.picking_ids:
                 picking.action_assign()
                 picking.action_confirm()
-                picking.button_validate()
+
+                try:
+                    with self.env.cr.savepoint():
+                        picking.button_validate()
+
+                        if picking.state != "done":
+                            failed_pickings |= picking
+                except Exception:
+                    failed_pickings |= picking
+
+            if failed_pickings:
+                self.env.cr.commit()
+
+                message = self.env._("Sale confirmed. Picking could not be validated.")
+                message_wiz = self.env["sale.order.kiosk.message"].create(
+                    {"message": message}
+                )
+
+                return {
+                    "type": "ir.actions.act_window",
+                    "res_model": "sale.order.kiosk.message",
+                    "view_type": "form",
+                    "view_mode": "form",
+                    "res_id": message_wiz.id,
+                    "target": "new",
+                }
 
             order._create_invoices()
+
             for invoice in order.invoice_ids:
                 invoice.action_post()
 

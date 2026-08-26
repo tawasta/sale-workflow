@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_kiosk_sale_message,access_sale.order.kiosk.message,model_sale_order_kiosk_message,base.group_user,1,1,1,0
