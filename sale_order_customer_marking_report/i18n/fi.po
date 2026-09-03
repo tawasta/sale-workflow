@@ -1,0 +1,23 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_customer_marking_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20250131\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-03 08:59+0000\n"
+"PO-Revision-Date: 2026-09-03 12:00+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+
+#. module: sale_order_customer_marking_report
+#: model_terms:ir.ui.view,arch_db:sale_order_customer_marking_report.report_saleorder_document_customer_marking
+msgid "<strong>Customer Marking:</strong><br/>"
+msgstr "<strong>Asiakasmerkki:</strong><br/>"
