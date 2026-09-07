@@ -21,7 +21,7 @@
 {
     'name': 'Sale Order – Warehouse usability domain in form view',
     'summary': 'Warehouse usability domain in Sale Order form view',
-    'version': '14.0.1.0.0',
+    'version': '14.0.1.0.1',
     'category': 'Sales',
     'website': 'https://github.com/tawasta/sale-workflow',
     'author': 'Futural',
