@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Futural Oy
+#    Copyright 2026 Futural Oy (https://futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,24 +19,20 @@
 ##############################################################################
 
 {
-    "name": "Sale blanket order forecast",
-    "summary": "Allows making forecast sale orders from blanket orders",
-    "version": "14.0.1.2.0",
-    "category": "Sale",
-    "website": "https://github.com/tawasta/sale-workflow",
-    "author": "Tawasta",
-    "license": "AGPL-3",
-    "application": False,
-    "installable": True,
-    "depends": [
-        "queue_job",
-        "sale_blanket_order",
-        "sale_stock",
+    'name': 'Sale Order – Warehouse usability domain in form view',
+    'summary': 'Warehouse usability domain in Sale Order form view',
+    'version': '14.0.1.0.0',
+    'category': 'Sales',
+    'website': 'https://github.com/tawasta/sale-workflow',
+    'author': 'Futural',
+    'license': 'AGPL-3',
+    'application': False,
+    'installable': True,
+    'depends': [
+        'sale_stock',
     ],
-    "data": [
-        "data/ir_cron.xml",
-        "views/sale_blanket_order.xml",
-        "views/sale_order.xml",
-        "views/stock_picking.xml",
+    'data': [
+        'views/sale_order.xml',
+        'views/warehouse_view.xml',
     ],
 }

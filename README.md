@@ -11,7 +11,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.1.19 |  | Allows making forecast sale orders from blanket orders
+[sale_blanket_order_forecast](sale_blanket_order_forecast/) | 14.0.1.2.0 |  | Allows making forecast sale orders from blanket orders
 [sale_blanket_order_kit](sale_blanket_order_kit/) | 14.0.1.2.1 |  | Add kits and expand them as forecast lines
 [sale_customer_default_my](sale_customer_default_my/) | 14.0.1.0.0 |  | Show my customers by default on Customer list view
 [sale_customers_no_default_filter](sale_customers_no_default_filter/) | 14.0.1.0.0 |  | Remove Customers default filter
@@ -46,6 +46,7 @@ addon | version | maintainers | summary
 [sale_order_email_wizard_default_to_confirmation_template](sale_order_email_wizard_default_to_confirmation_template/) | 14.0.1.0.0 |  | Sale Order Email Wizard suggests the confirmation template also for quotations
 [sale_order_enable_delivery_address_as_company](sale_order_enable_delivery_address_as_company/) | 14.0.1.0.0 |  | Enable to automatically set Delivery address even if it is a company
 [sale_order_excel_import](sale_order_excel_import/) | 14.0.1.0.0 |  | Import Sale orders with excel file
+[sale_order_form_use_warehouse_domain](sale_order_form_use_warehouse_domain/) | 14.0.1.0.0 |  | Warehouse usability domain in Sale Order form view
 [sale_order_handler](sale_order_handler/) | 14.0.1.0.0 |  | Handler on SO, invoice and picking
 [sale_order_header](sale_order_header/) | 14.0.1.0.2 |  | New field for SO header/title
 [sale_order_header_fiscal_position_warehouse_incoterm](sale_order_header_fiscal_position_warehouse_incoterm/) | 14.0.1.0.0 |  | Move fiscal position, warehouse, and incoterm to so header
