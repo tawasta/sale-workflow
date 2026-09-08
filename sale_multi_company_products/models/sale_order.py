@@ -172,11 +172,12 @@ class SaleOrder(models.Model):
         all_moves = self.env["account.move"]
 
         for original_order in self:
-            original_order._validate_split_invoice_partners()
-
             companies = original_order._get_split_invoice_companies(final=final)
             if not companies:
                 continue
+
+            if len(companies) > 1:
+                original_order._validate_split_invoice_partners()
 
             try:
                 for company in companies:
