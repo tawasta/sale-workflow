@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_line_qty_available
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-21 12:05+0000\n"
+"PO-Revision-Date: 2026-09-21 15:05+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+
+#. module: sale_order_line_qty_available
+#: model:ir.model.fields,field_description:sale_order_line_qty_available.field_sale_order_line__product_qty_available
+msgid "Available"
+msgstr "Saatavilla"
+
+#. module: sale_order_line_qty_available
+#: model:ir.model.fields,field_description:sale_order_line_qty_available.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: sale_order_line_qty_available
+#: model:ir.model.fields,field_description:sale_order_line_qty_available.field_sale_order_line__id
+msgid "ID"
+msgstr "Tunnus"
+
+#. module: sale_order_line_qty_available
+#: model:ir.model,name:sale_order_line_qty_available.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Myyntitilausrivi"
