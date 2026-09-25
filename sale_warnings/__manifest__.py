@@ -18,6 +18,7 @@
 ##############################################################################
 {
     "name": "Sale Warnings",
+    "summary": "Show warnings from customers with popups",
     "category": "Sales",
     "version": "19.0.1.0.0",
     "installable": True,
@@ -29,10 +30,10 @@
         "views/sale_order.xml",
         "views/res_partner.xml",
     ],
-    "assets": {
-        "web.assets_backend": [
-            "sale_warnings/static/src/js/sale_order.esm.js",
-            "sale_warnings/static/src/xml/sale_order.xml",
-        ]
-    },
+    #    "assets": {
+    #        "web.assets_backend": [
+    #            "sale_warnings/static/src/js/sale_order.esm.js",
+    #            "sale_warnings/static/src/xml/sale_order.xml",
+    #        ]
+    #    },
 }
