@@ -18,7 +18,6 @@ export class Many2OneWarn extends Many2OneField {
   };
   setup() {
     super.setup();
-    // Console.log("SUPER SETUP", super.setup());
     this.dialogService = useService("dialog");
     this.state = useState({
       warning: "",

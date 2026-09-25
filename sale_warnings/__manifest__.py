@@ -20,7 +20,7 @@
     "name": "Sale Warnings",
     "summary": "Show warnings from customers with popups",
     "category": "Sales",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "installable": True,
     "author": "Futural",
     "license": "AGPL-3",
