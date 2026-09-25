@@ -20,7 +20,7 @@ Sale Warnings
 
     * Show popup warning and prevent choosing the value
 
-* Allows easy extension to other Many2One fields
+* Allows easy extension to other Many2One fields (TimoK: currently this is not available)
 * Currently adds warnings to fields
 
   * partner_id
@@ -65,6 +65,7 @@ Contributors
 ------------
 
 * Joona Isoaho <joona.isoaho@futural.fi>
+* Timo Kekäläinen <timo.kekalainen@tawasta.fi>
 
 Maintainer
 ----------

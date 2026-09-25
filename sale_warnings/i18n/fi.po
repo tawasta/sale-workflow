@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 19.0-20260810\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-11 08:48+0000\n"
-"PO-Revision-Date: 2026-08-11 11:50+0300\n"
+"POT-Creation-Date: 2026-09-25 12:33+0000\n"
+"PO-Revision-Date: 2026-09-25 15:34+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -15,7 +15,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.9\n"
+
+#. module: sale_warnings
+#. odoo-python
+#: code:addons/sale_warnings/models/sale_order.py:0
+msgid "Blocked: customer has a blocking warning to prevent saving!"
+msgstr "Estetty: asiakkaalla on estävä varoitus, joka estää tallennuksen!"
 
 #. module: sale_warnings
 #. odoo-javascript
@@ -53,6 +59,7 @@ msgstr "Ponnahdusikkuna varoitus"
 #. module: sale_warnings
 #: model:ir.model.fields,field_description:sale_warnings.field_res_partner__sale_warn_level
 #: model:ir.model.fields,field_description:sale_warnings.field_res_users__sale_warn_level
+#: model:ir.model.fields,field_description:sale_warnings.field_sale_order__partner_sale_warn_level
 msgid "Sale Warning Level"
 msgstr "Myynnin varoitustaso"
 
@@ -65,6 +72,12 @@ msgstr "Myyntitilaus"
 #: model:ir.model.fields.selection,name:sale_warnings.selection__res_partner__sale_warn_level__warning
 msgid "Warning"
 msgstr "Varoitus"
+
+#. module: sale_warnings
+#. odoo-python
+#: code:addons/sale_warnings/models/sale_order.py:0
+msgid "Warning from customer!"
+msgstr "Varoitus asiakkaalta!"
 
 #. module: sale_warnings
 #. odoo-javascript
