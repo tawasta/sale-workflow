@@ -21,7 +21,7 @@
 {
     "name": "Sale Order Line – Qty Available",
     "summary": "Add Qty available to sale order line list view and SO form view",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Sales",
     "website": "https://github.com/tawasta/sale-workflow",
     "author": "Futural",

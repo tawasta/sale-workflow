@@ -8,7 +8,7 @@ class SaleOrderLine(models.Model):
         string="Available",
         digits="Product Unit",
         compute="_compute_product_qty_available",
-        readonly=1,
+        readonly=True,
     )
 
     @api.depends("product_uom_qty", "product_uom_id", "product_id")
