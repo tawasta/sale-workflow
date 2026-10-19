@@ -10,17 +10,20 @@ Sale Warnings
 
   * Warning
 
-    * Show underneath the field only
+    * Show the warning in the banner at the top of the sales order only
 
   * Popup Warning
 
-    * Show popup warning in addition to underneath the field
+    * Show popup warning in addition to the banner
 
   * Blocking Warning
 
-    * Show popup warning and prevent choosing the value
+    * Prevent changing the customer of an existing sales order to this
+      customer. The banner is not shown.
 
-* Allows easy extension to other Many2One fields (TimoK: currently this is not available)
+* The popup and the blocking are provided by the module partner_warnings
+  (abstract model ``partner.warning.mixin``), which is also used by other
+  documents, e.g. stock_warnings
 * Currently adds warnings to fields
 
   * partner_id
@@ -41,18 +44,8 @@ Usage
 
 * Developer
 
-  * Add sale_warn_msg and sale_warn_level to target model similar to models/partner.py
-
-    * res.partner already has sale_warn_msg field from other module
-    * Add the field name to "Currently adds warnings to field list" above
-
-  * Add sale_order field name and model of which the fields points to into
-      models/sale_order.py check dictionary
-  * Add view similar to views/res_partner.xml
-
-    * res.partner already has field for sale_warn_msg
-
-  * Add the widget into sale order field attributes in views/sale_order.xml
+  * To add the same warnings to another document, see the Usage section of
+    partner_warnings
 
 Known issues / Roadmap
 ======================
@@ -66,6 +59,7 @@ Contributors
 
 * Joona Isoaho <joona.isoaho@futural.fi>
 * Timo Kekäläinen <timo.kekalainen@tawasta.fi>
+* Valtteri Lattu <valtteri.lattu@futural.fi>
 
 Maintainer
 ----------

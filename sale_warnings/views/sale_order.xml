@@ -7,21 +7,16 @@
     <field name="arch" type="xml">
       <field name="partner_id" position="after">
         <field name="partner_sale_warn_level" invisible="1" />
-        <group>
-          <div
-            class="alert alert-warning col-12"
-            role="alert"
-            invisible="not sale_warning_text or (partner_sale_warn_level not in ('warning', 'popup_warning'))"
-          >
-            <field name="sale_warning_text" class="fw-bold" />
-          </div>
-        </group>
       </field>
-      <!--       <field name="partner_id" position="attributes"> -->
-      <!--         <attribute name="widget">Many2OneWarn</attribute> -->
-      <!--       </field> -->
-      <xpath expr="//div[@invisible='not sale_warning_text']" position="attributes">
-        <attribute name="style">display: none;</attribute>
+      <!-- Use the core banner at the top of the form. A blocking warning
+           is shown only as the error when saving. -->
+      <xpath
+        expr="//field[@name='sale_warning_text']/parent::div"
+        position="attributes"
+      >
+        <attribute
+          name="invisible"
+        >not sale_warning_text or partner_sale_warn_level == 'blocking_warning'</attribute>
       </xpath>
     </field>
   </record>
