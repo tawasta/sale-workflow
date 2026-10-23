@@ -3,12 +3,11 @@
   <record id="partner_form_view" model="ir.ui.view">
     <field name="name">res.partner.form.inherit</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="base.view_partner_form" />
+    <field name="inherit_id" ref="sale.res_partner_view_buttons" />
     <field name="arch" type="xml">
-      <group name="warnings" position="inside">
-        <label groups="sale.group_warning_sale" for="sale_warn_level" />
-        <field groups="sale.group_warning_sale" name="sale_warn_level" />
-      </group>
+      <field name="sale_warn_msg" position="after">
+        <field name="sale_warn_level" />
+      </field>
     </field>
   </record>
 </odoo>
