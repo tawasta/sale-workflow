@@ -7,16 +7,19 @@
     <field name="arch" type="xml">
       <field name="partner_id" position="after">
         <field name="partner_sale_warn_level" invisible="1" />
+        <div colspan="2">
+          <div
+            class="alert alert-warning col-12"
+            role="alert"
+            invisible="not sale_warning_text or (partner_sale_warn_level not in ('warning', 'popup_warning'))"
+          >
+            <field name="sale_warning_text" class="fw-bold" />
+          </div>
+        </div>
       </field>
-      <!-- Use the core banner at the top of the form. A blocking warning
-           is shown only as the error when saving. -->
-      <xpath
-        expr="//field[@name='sale_warning_text']/parent::div"
-        position="attributes"
-      >
-        <attribute
-          name="invisible"
-        >not sale_warning_text or partner_sale_warn_level == 'blocking_warning'</attribute>
+
+      <xpath expr="//div[@invisible='not sale_warning_text']" position="attributes">
+        <attribute name="style">display: none;</attribute>
       </xpath>
     </field>
   </record>
