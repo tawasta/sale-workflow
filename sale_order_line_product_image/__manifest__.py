@@ -20,7 +20,7 @@
 
 {
     "name": "Sale Order Line – Product Image",
-    "summary": "Show the product image as the first column of the sale order lines",
+    "summary": "Show the product image on the sale order lines",
     "version": "19.0.1.0.0",
     "category": "Sales",
     "website": "https://github.com/tawasta/sale-workflow",

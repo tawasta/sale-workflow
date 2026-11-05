@@ -6,8 +6,8 @@
 Sale Order Line Product Image
 =============================
 
-* Shows the product image as the first column of the order lines in the
-  sale order form view
+* Shows the product image on the order lines in the sale order form view,
+  between the drag handle and the product
 
 Configuration
 =============
@@ -18,8 +18,8 @@ Usage
 
 * User
 
-  * Open a sale order. The product image is shown as the first column of
-    the order lines
+  * Open a sale order. The product image is shown between the drag handle
+    and the product on the order lines
   * The column can be hidden from the optional columns menu
 
 Known issues / Roadmap
