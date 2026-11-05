@@ -6,15 +6,15 @@
     <field name="inherit_id" ref="sale.view_order_form" />
     <field name="arch" type="xml">
       <xpath
-                expr="//field[@name='order_line']/list/field[@name='sequence']"
-                position="before"
-            >
+        expr="//field[@name='order_line']/list/field[@name='sequence']"
+        position="before"
+      >
         <field
-                    name="product_image"
-                    widget="image"
-                    options="{'size': [64, 64]}"
-                    optional="show"
-                />
+          name="product_image"
+          widget="image"
+          options="{'size': [64, 64]}"
+          optional="show"
+        />
       </xpath>
     </field>
   </record>
