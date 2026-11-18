@@ -1,0 +1,1 @@
+from . import test_sale_attached_product_packaging_support
