@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="sale_order_optional_section_label" name="Optional Section Label">
+    <span t-if="line.is_optional" class="fst-italic fw-normal text-muted ms-2">
+      Optional, not included in the total
+    </span>
+  </template>
+
+  <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//td[@name='td_section_name']" position="inside">
+      <t
+        t-call="sale_order_optional_section_keep_qty.sale_order_optional_section_label"
+      />
+    </xpath>
+  </template>
+
+  <template id="sale_order_portal_content" inherit_id="sale.sale_order_portal_content">
+    <xpath expr="//td[@name='td_section_name_xs']" position="inside">
+      <t
+        t-call="sale_order_optional_section_keep_qty.sale_order_optional_section_label"
+      />
+    </xpath>
+    <xpath expr="//td[@name='td_section_name_sm']" position="inside">
+      <t
+        t-call="sale_order_optional_section_keep_qty.sale_order_optional_section_label"
+      />
+    </xpath>
+    <xpath expr="//td[@name='td_section_name']" position="inside">
+      <t
+        t-call="sale_order_optional_section_keep_qty.sale_order_optional_section_label"
+      />
+    </xpath>
+  </template>
+</odoo>
